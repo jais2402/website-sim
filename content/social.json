@@ -1,0 +1,113 @@
+{
+  "_note": "posts are sample rows. The page replaces them with the cached Instagram Graph API / Behold feed (and X posts) in the same shape: platform is instagram or x, url is the post permalink, ratio is the image's width / height.",
+  "heading": "Moments",
+  "posts": [
+    {
+      "platform": "instagram",
+      "handle": "@simranrishibagga",
+      "profile": "https://www.instagram.com/simranrishibagga/",
+      "url": "https://www.instagram.com/simranrishibagga/",
+      "when": "[Date]",
+      "text": "[Caption — pulled from Instagram]",
+      "ratio": "4 / 5",
+      "image": null
+    },
+    {
+      "platform": "x",
+      "handle": "@simranbaggaoffc",
+      "profile": "https://x.com/simranbaggaoffc",
+      "url": "https://x.com/simranbaggaoffc",
+      "when": "[Date]",
+      "text": "[Post text — pulled live from X]",
+      "image": null
+    },
+    {
+      "platform": "instagram",
+      "handle": "@simranrishibagga",
+      "profile": "https://www.instagram.com/simranrishibagga/",
+      "url": "https://www.instagram.com/simranrishibagga/",
+      "when": "[Date]",
+      "text": "[Caption — pulled from Instagram]",
+      "ratio": "1 / 1",
+      "image": null
+    },
+    {
+      "platform": "instagram",
+      "handle": "@simranrishibagga",
+      "profile": "https://www.instagram.com/simranrishibagga/",
+      "url": "https://www.instagram.com/simranrishibagga/",
+      "when": "[Date]",
+      "text": "[Caption — pulled from Instagram]",
+      "ratio": "4 / 5",
+      "image": null
+    },
+    {
+      "platform": "x",
+      "handle": "@simranbaggaoffc",
+      "profile": "https://x.com/simranbaggaoffc",
+      "url": "https://x.com/simranbaggaoffc",
+      "when": "[Date]",
+      "text": "[Post text — pulled live from X]",
+      "image": null
+    },
+    {
+      "platform": "instagram",
+      "handle": "@simranrishibagga",
+      "profile": "https://www.instagram.com/simranrishibagga/",
+      "url": "https://www.instagram.com/simranrishibagga/",
+      "when": "[Date]",
+      "text": "[Caption — pulled from Instagram]",
+      "ratio": "1 / 1",
+      "image": null
+    },
+    {
+      "platform": "instagram",
+      "handle": "@simranrishibagga",
+      "profile": "https://www.instagram.com/simranrishibagga/",
+      "url": "https://www.instagram.com/simranrishibagga/",
+      "when": "[Date]",
+      "text": "[Caption — pulled from Instagram]",
+      "ratio": "4 / 5",
+      "image": null
+    },
+    {
+      "platform": "x",
+      "handle": "@simranbaggaoffc",
+      "profile": "https://x.com/simranbaggaoffc",
+      "url": "https://x.com/simranbaggaoffc",
+      "when": "[Date]",
+      "text": "[Post text — pulled live from X]",
+      "image": null
+    }
+  ],
+  "follow": {
+    "heading": "Follow Simran",
+    "note": "Official accounts only",
+    "profiles": [
+      {
+        "platform": "Instagram",
+        "handle": "@simranrishibagga",
+        "url": "https://www.instagram.com/simranrishibagga/",
+        "cta": "Follow"
+      },
+      {
+        "platform": "X",
+        "handle": "@simranbaggaoffc",
+        "url": "https://x.com/simranbaggaoffc",
+        "cta": "Follow"
+      },
+      {
+        "platform": "YouTube",
+        "handle": "@simranandsonsfilms6873",
+        "url": "https://www.youtube.com/@simranandsonsfilms6873",
+        "cta": "Subscribe"
+      },
+      {
+        "platform": "Facebook",
+        "handle": "Simranbaggaofficial",
+        "url": "https://www.facebook.com/Simranbaggaofficial",
+        "cta": "Follow"
+      }
+    ]
+  }
+}

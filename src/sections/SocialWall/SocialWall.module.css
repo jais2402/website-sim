@@ -1,0 +1,301 @@
+.section {
+  padding: 96px 0;
+  background: var(--ground);
+  color: var(--ink);
+  line-height: 1.6;
+  border-top: 1px solid var(--line);
+}
+
+.head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.filter {
+  min-height: 44px;
+  padding: 0 20px;
+  border: 1px solid rgb(243 237 227 / 0.3);
+  border-radius: 0;
+  background: transparent;
+  color: var(--ink);
+  font-family: var(--font-ui);
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.25s, color 0.25s;
+}
+
+.filter:hover {
+  border-color: var(--ink);
+}
+
+.filter[aria-pressed='true'] {
+  background: var(--ink);
+  color: var(--ground);
+}
+
+/* Masonry */
+.wall {
+  columns: 4 240px;
+  column-gap: 16px;
+}
+
+.post {
+  break-inside: avoid;
+  margin-bottom: 16px;
+  background: #141210;
+  border: 1px solid var(--line);
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.postBody {
+  padding: 18px 18px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+}
+
+.who {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.who svg {
+  flex: none;
+}
+
+.xMark {
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.handle {
+  color: var(--ink-soft);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: rgb(196 163 90 / 0.6);
+  overflow-wrap: anywhere;
+}
+
+.caption,
+.tweet {
+  line-height: 1.5;
+  color: var(--ink-soft);
+  overflow-wrap: anywhere;
+}
+
+.caption {
+  font-size: 14px;
+}
+
+.tweet {
+  font-family: var(--font-display);
+  font-size: 22px;
+}
+
+.view {
+  align-self: flex-start;
+  min-height: 32px;
+  display: inline-flex;
+  align-items: center;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+/* Follow panel */
+.follow {
+  margin-top: 48px;
+  padding: 36px;
+  background: linear-gradient(120deg, #1a1412 0%, #120e0c 100%);
+  border: 1px solid rgb(196 163 90 / 0.3);
+}
+
+.followHead {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.followHeading {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 1.1;
+}
+
+.followNote {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+}
+
+.profiles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.profile {
+  --ring: var(--gold);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px;
+  min-height: 44px;
+  min-width: 0;
+  background: rgb(243 237 227 / 0.03);
+  border: 1px solid rgb(243 237 227 / 0.14);
+  color: var(--ink);
+  transition: border-color 0.25s;
+}
+
+.profile:hover {
+  color: var(--ink);
+  border-color: rgb(196 163 90 / 0.6);
+}
+
+.profile[data-platform='instagram'] {
+  --ring: linear-gradient(135deg, var(--gold), var(--red));
+}
+
+.profile[data-platform='x'] {
+  --ring: var(--ink);
+}
+
+.profile[data-platform='youtube'] {
+  --ring: var(--red-bright);
+}
+
+.profile[data-platform='facebook'] {
+  --ring: var(--gold);
+}
+
+.ring {
+  flex: none;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  padding: 2px;
+  background: var(--ring);
+  display: flex;
+}
+
+.avatar {
+  flex: 1 1 auto;
+  border-radius: 50%;
+  background: radial-gradient(circle at 45% 35%, #3a3029 0%, #1a1512 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 20px;
+  color: var(--gold-light);
+}
+
+.profileText {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.platform {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+}
+
+.profileHandle {
+  font-size: 15px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.profileCta {
+  flex: none;
+  padding: 8px 14px;
+  background: var(--ink);
+  color: var(--ground);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.footnote {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-top: 18px;
+}
+
+@media (max-width: 700px) {
+  .section {
+    padding: 72px 0;
+  }
+
+  .head {
+    margin-bottom: 32px;
+  }
+
+  .filter {
+    padding: 0 16px;
+  }
+
+  .follow {
+    margin-top: 32px;
+    padding: 24px 16px;
+  }
+
+  .followHeading {
+    font-size: 30px;
+  }
+
+  .profiles {
+    grid-template-columns: 1fr;
+  }
+
+  .profile {
+    gap: 12px;
+    padding: 14px;
+  }
+}

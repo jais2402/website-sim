@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Beat 1 — video hold</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&amp;family=Noto+Serif+Tamil:wght@400;500&amp;family=Inter:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+.footage{background:radial-gradient(ellipse 70% 60% at 62% 42%,#3a3029 0%,#1c1714 45%,#0A0A0A 100%)}
+</style>
+</helmet>
+<div class="footage" style="position: relative; width: 960px; height: 540px; overflow: hidden; color: #F3EDE3; font-family: Inter, sans-serif">
+<div style="position: absolute; top: 20px; left: 24px; font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase; color: #A39E95">Footage placeholder · muted loop · no header</div>
+<div style="position: absolute; left: 0; right: 0; bottom: 28px; text-align: center; font-size: 10px; letter-spacing: 0.32em; text-transform: uppercase; color: #A39E95">Actor · Producer · Director</div>
+<button type="button" style="position: absolute; right: 24px; bottom: 20px; min-height: 44px; padding: 0 16px; display: flex; align-items: center; gap: 8px; background: transparent; border: 1px solid rgba(243,237,227,0.3); color: #F3EDE3; font-family: Inter, sans-serif; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase">
+<svg width="10" height="10" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 1.5v9l8-4.5z" fill="none" stroke="#F3EDE3" stroke-width="1.2" stroke-linejoin="round"></path></svg>
+Watch reel
+</button>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":960,"height":540}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

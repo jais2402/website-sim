@@ -1,0 +1,11 @@
+{
+  "_note": "Clip titles are the design's working titles; confirm with the client. video: muted preview loop; the same file plays with sound after the visitor presses play.",
+  "secondsPerClip": 8,
+  "clips": [
+    { "title": "Showreel 2026", "film": "Primary reel", "duration": "[2:30]", "kind": "Reel", "video": null, "poster": null, "tint": "#3a2a26" },
+    { "title": "The confrontation", "film": "Andhagan", "duration": "[0:48]", "kind": "Scene", "video": null, "poster": null, "tint": "#2b2220" },
+    { "title": "A quiet return", "film": "Paava Kadhaigal", "duration": "[1:05]", "kind": "Scene", "video": null, "poster": null, "tint": "#33241f" },
+    { "title": "Family table", "film": "Tourist Family", "duration": "[0:52]", "kind": "Scene", "video": null, "poster": null, "tint": "#2e2a22" },
+    { "title": "Title song", "film": "Petta", "duration": "[1:12]", "kind": "Song", "video": null, "poster": null, "tint": "#30201f" }
+  ]
+}

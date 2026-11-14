@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Interviews and Articles</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&amp;family=Noto+Serif+Tamil:wght@400;500&amp;family=Inter:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+</style>
+</helmet>
+<section id="interviews" aria-labelledby="iv-h" style="width: 100%; box-sizing: border-box; padding: 104px 0; background: {{red}}; color: #F3EDE3; font-family: Inter, system-ui, sans-serif; line-height: 1.6">
+<div style="max-width: 1280px; margin: 0 auto; padding: 0 32px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 24px; margin-bottom: 48px">
+<div>
+<h2 id="iv-h" style="margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: 64px; line-height: 1.05">Interviews &amp; Articles</h2>
+</div>
+<div role="group" aria-label="Filter" style="display: flex; flex-wrap: wrap; gap: 8px">
+<sc-for list="{{tabs}}" as="t" hint-placeholder-count="4">
+<button type="button" onClick="{{t.pick}}" aria-pressed="{{t.pressed}}" style="min-height: 44px; padding: 0 20px; border: 1px solid rgba(243,237,227,0.45); background: {{t.bg}}; color: {{t.fg}}; font-family: Inter, sans-serif; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; cursor: pointer">{{t.label}}</button>
+</sc-for>
+</div>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; gap: 48px; align-items: flex-start">
+<a href="#interviews" style="flex: 1 1 520px; min-width: 0; color: #F3EDE3; text-decoration: none; display: flex; flex-direction: column; gap: 18px">
+<div style="position: relative; aspect-ratio: 16 / 9; background: {{feat.bg}}; display: flex; align-items: center; justify-content: center; overflow: hidden; transition: background 400ms ease">
+<sc-if value="{{feat.isVideo}}" hint-placeholder-val="{{ true }}">
+<span style="width: 84px; height: 84px; border-radius: 50%; border: 1px solid rgba(243,237,227,0.6); display: flex; align-items: center; justify-content: center">
+<svg width="20" height="20" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 1.5v9l7.5-4.5z" fill="none" stroke="#F3EDE3" stroke-width="1" stroke-linejoin="round"></path></svg>
+</span>
+</sc-if>
+<sc-if value="{{feat.isText}}" hint-placeholder-val="{{ false }}">
+<div style="width: 78%; display: flex; flex-direction: column; gap: 14px">
+<div style="font-family: Oswald, sans-serif; font-size: 13px; letter-spacing: 0.3em; text-transform: uppercase; color: #F6E2B8; border-bottom: 1px solid rgba(246,226,184,0.4); padding-bottom: 10px">{{feat.source}}</div>
+<div style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 30px; line-height: 1.2">“[Opening line or pull quote from the piece]”</div>
+<div style="display: flex; flex-direction: column; gap: 6px" aria-hidden="true"><span style="height: 2px; width: 100%; background: rgba(243,237,227,0.18)"></span><span style="height: 2px; width: 92%; background: rgba(243,237,227,0.18)"></span><span style="height: 2px; width: 64%; background: rgba(243,237,227,0.18)"></span></div>
+</div>
+</sc-if>
+<span style="position: absolute; left: 20px; top: 16px; font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase; color: #EBCFC7">{{feat.badge}}</span>
+</div>
+<span style="font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: #EBCFC7">{{feat.source}}</span>
+<span style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 36px; line-height: 1.15">{{feat.title}}</span>
+<span style="font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase">{{feat.action}} →</span>
+</a>
+
+<ul style="flex: 1 1 400px; min-width: 0; list-style: none; margin: 0; padding: 0">
+<sc-for list="{{items}}" as="it" hint-placeholder-count="5">
+<li onMouseEnter="{{it.hover}}" style="border-top: 1px solid rgba(243,237,227,0.22); background: {{it.rowBg}}; transition: background 250ms ease">
+<a href="#interviews" onFocus="{{it.hover}}" style="color: #F3EDE3; text-decoration: none; display: grid; grid-template-columns: 96px 1fr auto; gap: 20px; align-items: baseline; padding: 20px 12px; min-height: 44px">
+<span style="font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #EBCFC7">{{it.type}}</span>
+<span style="display: flex; flex-direction: column; gap: 4px">
+<span style="font-family: 'Cormorant Garamond', serif; font-size: 24px; line-height: 1.2">{{it.title}}</span>
+<span style="font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #EBCFC7">{{it.source}}</span>
+</span>
+<span style="font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase">{{it.action}} →</span>
+</a>
+</li>
+</sc-for>
+</ul>
+</div>
+</div>
+</section>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"red":{"editor":"color","default":"#7A1F24","options":["#7A1F24","#8E1B22","#5E1418"]},"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { filter: 'All', hover: 0 }; }
+  renderVals() {
+    const red = this.props.red ?? '#7A1F24';
+    const all = [
+      { type: 'Interview', title: '[Interview headline 1]', source: '[Publication · Month 2026]', action: 'Read', tint: '#3a1416' },
+      { type: 'Video', title: '[Video interview headline]', source: '[Channel · Month 2026]', action: 'Watch', tint: '#2a1a24' },
+      { type: 'Article', title: '[Article headline 1]', source: '[Publication · Month 2026]', action: 'Read', tint: '#241a14' },
+      { type: 'Interview', title: '[Interview headline 2]', source: '[Publication · Month 2026]', action: 'Read', tint: '#1e1a22' },
+      { type: 'Article', title: '[Article headline 2]', source: '[Publication · Month 2026]', action: 'Read', tint: '#2a1612' }
+    ];
+    const f = this.state.filter;
+    const tabs = ['All', 'Interview', 'Article', 'Video'].map((label) => ({
+      label: label === 'All' ? 'All' : label + 's',
+      pressed: label === f ? 'true' : 'false',
+      bg: label === f ? '#F3EDE3' : 'transparent',
+      fg: label === f ? red : '#F3EDE3',
+      pick: () => this.setState({ filter: label, hover: 0 })
+    }));
+    const list = f === 'All' ? all : all.filter((x) => x.type === f);
+    const h = Math.min(this.state.hover, list.length - 1);
+    const items = list.map((x, i) => ({
+      ...x,
+      rowBg: i === h ? 'rgba(10,10,10,0.22)' : 'transparent',
+      hover: () => { if (this.state.hover !== i) this.setState({ hover: i }); }
+    }));
+    const cur = list[h] || all[0];
+    const isVideo = cur.type === 'Video';
+    const feat = {
+      ...cur,
+      isVideo,
+      isText: !isVideo,
+      badge: isVideo ? 'Video · muted preview plays on hover' : cur.type + ' · preview',
+      bg: 'radial-gradient(ellipse 70% 60% at 60% 40%,' + cur.tint + ' 0%,#170b0c 60%,#0A0A0A 100%)'
+    };
+    return { red, tabs, items, feat };
+  }
+}
+</script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&amp;family=Noto+Serif+Tamil:wght@400;500&amp;family=Inter:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+</style>
+</helmet>
+<section id="interviews" aria-labelledby="iv-h" style="width: 100%; box-sizing: border-box; padding: 104px 0; background: {{red}}; color: #F3EDE3; font-family: Inter, system-ui, sans-serif; line-height: 1.6">
+<div style="max-width: 1280px; margin: 0 auto; padding: 0 32px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 24px; margin-bottom: 48px">
+<div>
+<h2 id="iv-h" style="margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: 64px; line-height: 1.05">Interviews &amp; Articles</h2>
+</div>
+<div role="group" aria-label="Filter" style="display: flex; flex-wrap: wrap; gap: 8px">
+<sc-for list="{{tabs}}" as="t" hint-placeholder-count="4">
+<button type="button" onClick="{{t.pick}}" aria-pressed="{{t.pressed}}" style="min-height: 44px; padding: 0 20px; border: 1px solid rgba(243,237,227,0.45); background: {{t.bg}}; color: {{t.fg}}; font-family: Inter, sans-serif; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; cursor: pointer">{{t.label}}</button>
+</sc-for>
+</div>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; gap: 48px; align-items: flex-start">
+<a href="#interviews" style="flex: 1 1 520px; min-width: 0; color: #F3EDE3; text-decoration: none; display: flex; flex-direction: column; gap: 18px">
+<div style="position: relative; aspect-ratio: 16 / 9; background: {{feat.bg}}; display: flex; align-items: center; justify-content: center; overflow: hidden; transition: background 400ms ease">
+<sc-if value="{{feat.isVideo}}" hint-placeholder-val="{{ true }}">
+<span style="width: 84px; height: 84px; border-radius: 50%; border: 1px solid rgba(243,237,227,0.6); display: flex; align-items: center; justify-content: center">
+<svg width="20" height="20" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 1.5v9l7.5-4.5z" fill="none" stroke="#F3EDE3" stroke-width="1" stroke-linejoin="round"></path></svg>
+</span>
+</sc-if>
+<sc-if value="{{feat.isText}}" hint-placeholder-val="{{ false }}">
+<div style="width: 78%; display: flex; flex-direction: column; gap: 14px">
+<div style="font-family: Oswald, sans-serif; font-size: 13px; letter-spacing: 0.3em; text-transform: uppercase; color: #F6E2B8; border-bottom: 1px solid rgba(246,226,184,0.4); padding-bottom: 10px">{{feat.source}}</div>
+<div style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 30px; line-height: 1.2">“[Opening line or pull quote from the piece]”</div>
+<div style="display: flex; flex-direction: column; gap: 6px" aria-hidden="true"><span style="height: 2px; width: 100%; background: rgba(243,237,227,0.18)"></span><span style="height: 2px; width: 92%; background: rgba(243,237,227,0.18)"></span><span style="height: 2px; width: 64%; background: rgba(243,237,227,0.18)"></span></div>
+</div>
+</sc-if>
+<span style="position: absolute; left: 20px; top: 16px; font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase; color: #EBCFC7">{{feat.badge}}</span>
+</div>
+<span style="font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: #EBCFC7">{{feat.source}}</span>
+<span style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 36px; line-height: 1.15">{{feat.title}}</span>
+<span style="font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase">{{feat.action}} →</span>
+</a>
+
+<ul style="flex: 1 1 400px; min-width: 0; list-style: none; margin: 0; padding: 0">
+<sc-for list="{{items}}" as="it" hint-placeholder-count="5">
+<li onMouseEnter="{{it.hover}}" style="border-top: 1px solid rgba(243,237,227,0.22); background: {{it.rowBg}}; transition: background 250ms ease">
+<a href="#interviews" onFocus="{{it.hover}}" style="color: #F3EDE3; text-decoration: none; display: grid; grid-template-columns: 96px 1fr auto; gap: 20px; align-items: baseline; padding: 20px 12px; min-height: 44px">
+<span style="font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #EBCFC7">{{it.type}}</span>
+<span style="display: flex; flex-direction: column; gap: 4px">
+<span style="font-family: 'Cormorant Garamond', serif; font-size: 24px; line-height: 1.2">{{it.title}}</span>
+<span style="font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #EBCFC7">{{it.source}}</span>
+</span>
+<span style="font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase">{{it.action}} →</span>
+</a>
+</li>
+</sc-for>
+</ul>
+</div>
+</div>
+</section>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"red":{"editor":"color","default":"#7A1F24","options":["#7A1F24","#8E1B22","#5E1418"]},"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { filter: 'All' }; }
+  renderVals() {
+    const red = this.props.red ?? '#7A1F24';
+    const all = [
+      { type: 'Interview', title: '[Headline]', source: '[Publication · Month 2026]', action: 'Read' },
+      { type: 'Video', title: '[Headline]', source: '[Channel · Month 2026]', action: 'Watch' },
+      { type: 'Article', title: '[Headline]', source: '[Publication · Month 2026]', action: 'Read' },
+      { type: 'Interview', title: '[Headline]', source: '[Publication · Month 2026]', action: 'Read' },
+      { type: 'Article', title: '[Headline]', source: '[Publication · Month 2026]', action: 'Read' }
+    ];
+    const f = this.state.filter;
+    const tabs = ['All', 'Interview', 'Article', 'Video'].map((label) => ({
+      label: label === 'All' ? 'All' : label + 's',
+      pressed: label === f ? 'true' : 'false',
+      bg: label === f ? '#F3EDE3' : 'transparent',
+      fg: label === f ? red : '#F3EDE3',
+      pick: () => this.setState({ filter: label })
+    }));
+    const items = f === 'All' ? all : all.filter((x) => x.type === f);
+    return { red, tabs, items };
+  }
+}
+</script>
+</body>
+</html>

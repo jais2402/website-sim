@@ -1,0 +1,208 @@
+{
+  "v": 3,
+  "attachments": {},
+  "boards": {
+    "Beat1-Hold.dc.html": {
+      "h": 540,
+      "title": "Beat 1 · Video hold (0–100vh)",
+      "w": 960,
+      "x": 0,
+      "y": 0
+    },
+    "Beat2-Signature.dc.html": {
+      "h": 540,
+      "title": "Beat 2 · Signature appears (+20–30vh)",
+      "w": 960,
+      "x": 1040,
+      "y": 0
+    },
+    "Beat3-Zoom.dc.html": {
+      "h": 540,
+      "title": "Beat 3 · Signature zoom (+150–180vh)",
+      "w": 960,
+      "x": 2080,
+      "y": 0
+    },
+    "Beat4-Handoff.dc.html": {
+      "h": 540,
+      "title": "Beat 4 · Handoff to Reel Wall",
+      "w": 960,
+      "x": 3120,
+      "y": 0
+    },
+    "Beat5-Header.dc.html": {
+      "h": 540,
+      "title": "Beat 5 · Header + Credit Crawl reveal",
+      "w": 960,
+      "x": 4160,
+      "y": 0
+    },
+    "Main.dc.html": {
+      "expand": "fill",
+      "h": 13700,
+      "title": "Homepage — after the reveal",
+      "w": 1440,
+      "x": 0,
+      "y": 920
+    },
+    "Mobile-Hero.dc.html": {
+      "h": 844,
+      "title": "Mobile · Beat 1, 9:16 crop",
+      "w": 390,
+      "x": 1520,
+      "y": 920
+    },
+    "New-Movies.dc.html": {
+      "h": 810,
+      "title": "Parked · New Movies 16:9 (not on homepage)",
+      "w": 1440,
+      "x": 4010,
+      "y": 920
+    },
+    "Photoshoots.dc.html": {
+      "x": 2490,
+      "y": 5000,
+      "w": 1440,
+      "h": 1250,
+      "title": "Component · Latest Photoshoots",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "Interviews.dc.html": {
+      "x": 2490,
+      "y": 7640,
+      "w": 1440,
+      "h": 900,
+      "title": "Component · Interviews & Articles (red)",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "SocialWall.dc.html": {
+      "x": 2490,
+      "y": 9880,
+      "w": 1440,
+      "h": 1150,
+      "title": "Component · Social wall — Instagram + X",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "Upcoming.dc.html": {
+      "x": 2490,
+      "y": 920,
+      "w": 1440,
+      "h": 820,
+      "title": "Component · Coming Soon & On Set",
+      "expand": "fill"
+    },
+    "MemoryLane.dc.html": {
+      "x": 2490,
+      "y": 3080,
+      "w": 1440,
+      "h": 1800,
+      "title": "Component · Memory Lane — classic montages",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "Awards.dc.html": {
+      "x": 2490,
+      "y": 6370,
+      "w": 1440,
+      "h": 1150,
+      "title": "Component · Honours — trophy cabinet",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "Buzz.dc.html": {
+      "w": 1440,
+      "expand": "fill",
+      "is_interactive": true,
+      "x": 2490,
+      "y": 1860,
+      "h": 1100,
+      "title": "Component · The Buzz — hot news"
+    },
+    "FanNotes.dc.html": {
+      "w": 1440,
+      "expand": "fill",
+      "is_interactive": true,
+      "x": 2490,
+      "y": 8660,
+      "h": 1100,
+      "title": "Component · Notes from Simran"
+    }
+  },
+  "createdOnFiles": {
+    "at": "2026-11-14T19:44:13Z",
+    "v": 1
+  },
+  "designSystems": [],
+  "launch": {
+    "view": "canvas"
+  },
+  "noteOrder": [
+    "storyTitle",
+    "homeTitle",
+    "assets",
+    "compTitle",
+    "parkedTitle"
+  ],
+  "notes": {
+    "assets": {
+      "fill": "orange",
+      "text": "Placeholders, not finals:\n• Footage frames = stand-ins for the 8–15s muted showreel loop (open question 2).\n• The சிம்ரன் / Simran lockup is a typeset stand-in. The zoom ships only on the official vectorised autograph (open question 1).\n• Crawl titles marked [Confirm] need client sign-off before launch (open question 4).\n• No photos of Simran used — poster tiles are labelled frames for licensed stills.",
+      "w": 420,
+      "x": 1990,
+      "y": 920
+    },
+    "homeTitle": {
+      "kind": "title1",
+      "maxW": 1910,
+      "text": "Homepage & mobile",
+      "w": 240,
+      "x": 0,
+      "y": 620
+    },
+    "storyTitle": {
+      "kind": "title1",
+      "maxW": 5120,
+      "text": "Hero — Title Sequence storyboard (pin ≈ 270–310vh)",
+      "w": 240,
+      "x": 0,
+      "y": -300
+    },
+    "compTitle": {
+      "kind": "title1",
+      "x": 2490,
+      "y": 620,
+      "text": "Homepage components (in page order)",
+      "maxW": 1440
+    },
+    "parkedTitle": {
+      "kind": "title1",
+      "x": 4010,
+      "y": 620,
+      "text": "Parked",
+      "maxW": 1440
+    }
+  },
+  "order": [
+    "Main.dc.html",
+    "Beat1-Hold.dc.html",
+    "Beat2-Signature.dc.html",
+    "Beat3-Zoom.dc.html",
+    "Beat4-Handoff.dc.html",
+    "Beat5-Header.dc.html",
+    "Mobile-Hero.dc.html",
+    "New-Movies.dc.html",
+    "Photoshoots.dc.html",
+    "Interviews.dc.html",
+    "SocialWall.dc.html",
+    "Upcoming.dc.html",
+    "MemoryLane.dc.html",
+    "Awards.dc.html",
+    "Buzz.dc.html",
+    "FanNotes.dc.html"
+  ],
+  "pages": [],
+  "title": "Simran.actor — Title Sequence"
+}

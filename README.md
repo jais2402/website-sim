@@ -1,55 +1,43 @@
-# website-sim
+# simran.actor
 
-A motion-first website starter: Vite, React and TypeScript, with GSAP (ScrollTrigger, SplitText) and Lenis smooth scrolling. Pages are assembled from reusable, prop-driven layouts.
+The official site for Simran, built from the *Title Sequence* handover pack in `docs/handover/`.
+
+Next.js (App Router) + TypeScript + CSS modules, with GSAP/ScrollTrigger for the hero. Fonts are self-hosted.
 
 ## Run it
 
 ```bash
 npm install
-npm run dev      # develop at http://localhost:5173
-npm run build    # type-check, bundle and prerender into dist/
-npm run preview  # serve the production build
-npm run lint
+npm run dev            # http://localhost:3000
+npm run build          # content report, then production build
+npm run start
+npm run typecheck
+npm run content:check  # list every unconfirmed placeholder and missing asset
 ```
 
-## Structure
+Set `CONTENT_STRICT=1` on production deploys. The build then fails while any `[ … ]` placeholder or missing media remains, so none can ship.
 
-| Path | What lives there |
+`ENQUIRY_WEBHOOK_URL` is where the Connect form forwards enquiries (JSON POST). Until it is set the form tells visitors to email instead.
+
+## Where things are
+
+| Path | What |
 | --- | --- |
-| `src/pages/` | Pages. Each one holds its own content and passes it into layouts. |
-| `src/layouts/` | Reusable layouts. No hard-coded content; everything comes in as props or children. |
-| `src/motion/` | Motion primitives the layouts are built from. |
-| `src/index.css` | Design tokens (`:root`) and the styles for every layout. |
-| `scripts/prerender.mjs` | Writes the rendered page into `dist/index.html` at build time. |
+| `content/*.json` | All copy and data. Nothing is hard-coded in components. |
+| `src/app/` | Routes: `/`, `/work`, `/about`, `/reel`, `/press`, `/connect`, `/photoshoots`. |
+| `src/sections/` | One reusable layout per section, each taking a typed `data` prop. |
+| `src/components/layouts/` | Inner-page layouts: `PageIntro`, `Chapters`, `Filmography`, `LedgerList`. |
+| `src/components/ui/` | `Container`, `SectionHeading`, `ArrowButton`, `TextLink`, `Wordmark`. |
+| `src/app/globals.css` | Design tokens. |
+| `src/lib/status.ts` | Date-driven release status for the crawl and Coming Soon. |
+| `CONVENTIONS.md` | Rules for adding or changing a section. |
+| `docs/handover/` | The handover, creative direction and design sources. |
 
-### Layouts
+## Content that is still outstanding
 
-| Layout | Use it for |
-| --- | --- |
-| `PageLayout` | Page shell: smooth scroll, cursor, fixed nav, `footer` slot. |
-| `HeroLayout` | Full-height opener with masked headline and pointer-following glow. |
-| `MarqueeLayout` | Ticker that reacts to scroll speed and direction. |
-| `FeatureGridLayout` | Heading plus a grid of cards that stagger in. |
-| `HorizontalScrollLayout` + `Card` | Pinned section where scrolling moves panels sideways. |
-| `CtaLayout` | Oversized closing statement; `as="footer"` for the page footer. |
-| `Button` | Magnetic pill link. |
+Run `npm run content:check` for the full list. The blocking client assets are in `docs/handover/HANDOVER.md` §4: the official autograph SVG, hero loop and poster, key art, clips, photos, and confirmed titles, dates and awards.
 
-Any layout can appear several times on a page or across pages; each instance scopes its own animations.
-
-### Motion primitives
-
-`SmoothScroll`, `Reveal`, `SplitHeading`, `Magnetic`, `Cursor`, plus the configured `gsap`, `ScrollTrigger` and `useGSAP` exports. Always import GSAP from `src/motion` so plugins are registered once.
-
-## Adding a layout
-
-1. Create `src/layouts/MyLayout.tsx` that takes its content as props or children.
-2. Put animations in `useGSAP(() => { ... }, { scope: ref })` and select only inside that scope, so several instances never collide.
-3. Return early when `prefersReducedMotion()` is true, and make sure the layout reads well without animation.
-4. Export it from `src/layouts/index.ts`.
-
-## Performance rules
-
-- Animate `transform` and `opacity` only.
-- The production page is prerendered, so it paints before JavaScript loads. Above-the-fold elements that animate in carry `data-intro`, which keeps them hidden until their entrance starts.
-- Libraries are split into long-lived `react` and `motion` chunks.
-- No web fonts are downloaded by default; add one in `--font` only if the brand needs it.
+- **Hero** is a stub (`src/sections/Hero/Hero.tsx`): poster stand-in, typeset mark and the real scroll beats. The signature-mask zoom goes in when `content/hero.json` has `signature`.
+- **Filmography, honours list and biography** (`filmography.json`, `honours.json`, `biography.json`) are carried over from the current simran.actor and need client review.
+- **Release status** is never typed. Set `production.stage` and, once locked, `production.releaseDate`; the crawl flips to NOW SHOWING on that date. Pages revalidate hourly.
+- **Moments** renders `content/social.json`. Replace it with a cached Instagram Graph API or Behold fetch; no third-party widget.

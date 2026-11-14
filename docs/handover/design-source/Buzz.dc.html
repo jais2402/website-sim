@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Buzz — hot news</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&amp;family=Noto+Serif+Tamil:wght@400;500&amp;family=Inter:wght@400;500&amp;family=Oswald:wght@500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+</style>
+</helmet>
+<section id="buzz" aria-labelledby="bz-h" style="width: 100%; box-sizing: border-box; padding: 96px 0; background: radial-gradient(ellipse 80% 70% at 50% 40%, #F3EBDB 0%, #E8DDC8 70%, #DCCFB6 100%); color: #1a1410; font-family: Inter, system-ui, sans-serif; line-height: 1.6">
+<div style="max-width: 1280px; margin: 0 auto; padding: 0 32px">
+
+<div style="border-top: 3px solid #1a1410; border-bottom: 1px solid #1a1410; padding: 14px 0 10px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 12px">
+<span style="font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase; color: #5a4a38">{{today}}</span>
+<h2 id="bz-h" style="margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 72px; line-height: 1; letter-spacing: 0.02em; text-align: center; flex: 1 1 auto">The Buzz</h2>
+<span style="display: inline-flex; align-items: center; gap: 8px; font-family: Oswald, sans-serif; font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase; color: #7A1F24"><span aria-hidden="true" style="width: 8px; height: 8px; border-radius: 50%; background: #C8323A; box-shadow: 0 0 0 4px rgba(200,50,58,0.18)"></span>Hot right now</span>
+</div>
+<div style="border-bottom: 3px double #1a1410; padding: 10px 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-bottom: 40px">
+<sc-for list="{{chips}}" as="c" hint-placeholder-count="6">
+<button type="button" onClick="{{c.pick}}" aria-pressed="{{c.pressed}}" style="min-height: 36px; padding: 0 16px; background: {{c.bg}}; color: {{c.fg}}; border: 1px solid #1a1410; font-family: Oswald, sans-serif; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; cursor: pointer">{{c.label}}</button>
+</sc-for>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; gap: 48px; align-items: flex-start">
+<article style="flex: 999 1 560px; min-width: 0">
+<a href="#buzz" style="color: #1a1410; text-decoration: none; display: flex; flex-direction: column; gap: 16px">
+<div style="position: relative; aspect-ratio: 16 / 9; background: radial-gradient(ellipse 70% 60% at 55% 40%, #6e5338 0%, #2e241b 60%, #15100c 100%); filter: grayscale(0.35)">
+<span style="position: absolute; left: 0; top: 18px; background: #7A1F24; color: #F3EDE3; font-family: Oswald, sans-serif; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; padding: 6px 14px">{{lead.kicker}}</span>
+<span style="position: absolute; right: 16px; bottom: 12px; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: #E9DCC3">Photo placeholder</span>
+</div>
+<h3 style="margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 46px; line-height: 1.02">{{lead.title}}</h3>
+<p style="margin: 0; font-family: 'Cormorant Garamond', serif; font-size: 20px; line-height: 1.45; color: #3a2c1e; column-count: 2; column-gap: 32px; column-rule: 1px solid rgba(26,20,16,0.25)">{{lead.dek}}</p>
+<span style="font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #5a4a38">{{lead.meta}} · Read the story →</span>
+</a>
+</article>
+
+<div style="flex: 1 1 340px; min-width: 0; border-left: 1px solid rgba(26,20,16,0.35); padding-left: 32px">
+<div style="font-family: Oswald, sans-serif; font-size: 13px; letter-spacing: 0.24em; text-transform: uppercase; margin-bottom: 8px">Trending</div>
+<ol style="list-style: none; margin: 0; padding: 0">
+<sc-for list="{{list}}" as="n" hint-placeholder-count="5">
+<li onMouseEnter="{{n.hover}}" style="border-top: 1px solid rgba(26,20,16,0.25); background: {{n.bg}}; transition: background 220ms ease">
+<a href="#buzz" style="color: #1a1410; text-decoration: none; display: grid; grid-template-columns: 44px 1fr; gap: 14px; padding: 16px 8px; min-height: 44px">
+<span style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 36px; line-height: 1; color: {{n.numColor}}">{{n.num}}</span>
+<span style="display: flex; flex-direction: column; gap: 4px">
+<span style="font-family: Oswald, sans-serif; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #7A1F24">{{n.kicker}}</span>
+<span style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 21px; line-height: 1.2">{{n.title}}</span>
+<span style="font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: #5a4a38">{{n.meta}}</span>
+</span>
+</a>
+</li>
+</sc-for>
+</ol>
+<a href="#buzz" style="display: inline-flex; align-items: center; min-height: 44px; margin-top: 12px; padding: 0 20px; background: #1a1410; color: #F3EDE3; text-decoration: none; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase">All news →</a>
+</div>
+</div>
+</div>
+</section>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1100}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { cat: 'All', hover: 0 }; }
+  renderVals() {
+    const N = [
+      { cat: 'Shoot update', kicker: 'Shoot update · Dharman', title: '[Headline — latest from the Dharman set]', dek: '[Two or three lines of standfirst from the official update. Facts only — schedule, location, what was shot.]', meta: '[Source · time ago]' },
+      { cat: 'Announcement', kicker: 'Announcement', title: '[Headline — new project or role]', dek: '[Standfirst]', meta: '[Source · date]' },
+      { cat: 'Box office', kicker: 'Box office', title: '[Headline — box office milestone]', dek: '[Standfirst]', meta: '[Source · date]' },
+      { cat: 'Event', kicker: 'Event', title: '[Headline — appearance or premiere]', dek: '[Standfirst]', meta: '[Source · date]' },
+      { cat: 'Fan moment', kicker: 'Fan moment', title: '[Headline — fan tribute or trend]', dek: '[Standfirst]', meta: '[Source · date]' },
+      { cat: 'Announcement', kicker: 'Brand', title: '[Headline — brand collaboration]', dek: '[Standfirst]', meta: '[Source · date]' }
+    ];
+    const cats = ['All', 'Shoot update', 'Announcement', 'Box office', 'Event', 'Fan moment'];
+    const cat = this.state.cat;
+    const chips = cats.map((c) => ({
+      label: c, pressed: c === cat ? 'true' : 'false',
+      bg: c === cat ? '#1a1410' : 'transparent', fg: c === cat ? '#F3EDE3' : '#1a1410',
+      pick: () => this.setState({ cat: c, hover: 0 })
+    }));
+    const pool = cat === 'All' ? N : N.filter((n) => n.cat === cat);
+    const h = Math.min(this.state.hover, Math.max(pool.length - 1, 0));
+    const lead = pool[h] || N[0];
+    const list = pool.map((n, k) => ({
+      ...n,
+      num: String(k + 1),
+      bg: k === h ? 'rgba(122,31,36,0.08)' : 'transparent',
+      numColor: k === h ? '#7A1F24' : '#9c8a72',
+      hover: () => { if (this.state.hover !== k) this.setState({ hover: k }); }
+    }));
+    const d = new Date();
+    const today = d.toLocaleDateString('en-IN', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
+    return { chips, lead: { ...lead, meta: lead.meta }, list, today };
+  }
+}
+</script>
+</body>
+</html>

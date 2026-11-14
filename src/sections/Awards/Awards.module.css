@@ -1,0 +1,392 @@
+.section {
+  position: relative;
+  width: 100%;
+  padding: 104px 0 112px;
+  overflow: hidden;
+  color: var(--ink);
+  background:
+    linear-gradient(118deg, transparent 0%, transparent 52%, rgb(255 214 160 / 0.07) 58%, rgb(255 214 160 / 0.1) 62%, transparent 70%),
+    radial-gradient(ellipse 50% 40% at 80% 10%, rgb(255 200 140 / 0.12) 0%, transparent 70%),
+    radial-gradient(circle at 20% 70%, rgb(255 255 255 / 0.025) 0 1px, transparent 2px) 0 0 / 7px 7px,
+    linear-gradient(180deg, var(--teal) 0%, #112630 55%, var(--teal-deep) 100%);
+}
+
+.defs {
+  position: absolute;
+}
+
+.head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.intro {
+  margin-top: 8px;
+  color: #c9d3d2;
+  font-size: 16px;
+}
+
+.headingTa {
+  font-family: var(--font-tamil);
+  font-size: 22px;
+  color: var(--gold-light);
+}
+
+/* ---------- wall and shelves ---------- */
+
+.wall {
+  position: relative;
+  height: 760px;
+  --scale: 1;
+}
+
+.shelf {
+  position: absolute;
+}
+
+.shelf[data-shelf='1'] {
+  left: 2%;
+  top: 40px;
+  width: 46%;
+}
+
+.shelf[data-shelf='2'] {
+  left: 56%;
+  top: 0;
+  width: 40%;
+}
+
+.shelf[data-shelf='3'] {
+  left: 60%;
+  top: 330px;
+  width: 14%;
+}
+
+.shelf[data-shelf='4'] {
+  left: 8%;
+  top: 400px;
+  width: 42%;
+}
+
+.pool {
+  position: absolute;
+  left: 10%;
+  right: 10%;
+  bottom: 0;
+  height: 280px;
+  background: radial-gradient(ellipse 60% 100% at 50% 100%, rgb(255 210 150 / 0.16) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.row {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  padding: 0 18px;
+}
+
+.plank {
+  position: relative;
+  height: 20px;
+  border-radius: 2px;
+  background:
+    repeating-linear-gradient(90deg, rgb(0 0 0 / 0.08) 0 3px, transparent 3px 17px),
+    linear-gradient(180deg, #9a6438 0%, #7a4a26 40%, #4e2c14 100%);
+  box-shadow:
+    inset 0 1px 0 rgb(255 220 180 / 0.35),
+    0 16px 22px rgb(0 0 0 / 0.55);
+}
+
+.brackets {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 16%;
+}
+
+.brackets span {
+  width: 6px;
+  height: 22px;
+  background: linear-gradient(180deg, #2a2a2a, #111);
+}
+
+/* ---------- trophy ---------- */
+
+.item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1;
+}
+
+.item[data-active] {
+  z-index: 30;
+}
+
+.trophy {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  transition: transform 380ms var(--ease-spring);
+}
+
+.item[data-active] .trophy {
+  transform: translateY(-10px);
+}
+
+.art {
+  position: relative;
+  width: calc(var(--w, 120px) * var(--scale, 1));
+  height: auto;
+  filter: drop-shadow(-8px 12px 10px rgb(0 0 0 / 0.45));
+}
+
+/* Gold glow. Faded with opacity so only transform and opacity animate. */
+.glow {
+  position: absolute;
+  inset: -22px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse 50% 50% at 50% 50%, rgb(255 214 150 / 0.6) 0%, rgb(255 214 150 / 0.28) 40%, transparent 70%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 300ms ease;
+}
+
+.item[data-active] .glow {
+  opacity: 1;
+}
+
+/* ---------- citation callout ---------- */
+
+.tip {
+  position: absolute;
+  bottom: calc(100% + 12px);
+  left: 50%;
+  width: 270px;
+  z-index: 40;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateX(-50%) translateY(14px) scale(0.92);
+  transform-origin: 50% 100%;
+  transition:
+    opacity 260ms ease,
+    transform 380ms var(--ease-spring);
+}
+
+.item[data-active] .tip {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0) scale(1);
+}
+
+.card {
+  padding: 20px 22px 18px;
+  background: linear-gradient(160deg, #f6eedd 0%, #e9dcc3 100%);
+  color: #1d1510;
+  box-shadow:
+    0 24px 50px rgb(0 0 0 / 0.55),
+    inset 0 0 0 1px rgb(196 163 90 / 0.6);
+}
+
+.tipArrow {
+  width: 18px;
+  height: 18px;
+  margin: -9px auto 0;
+  background: #e9dcc3;
+  transform: rotate(45deg);
+  box-shadow: 1px 1px 0 rgb(196 163 90 / 0.6);
+}
+
+.cardTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.kind {
+  font-family: var(--font-poster);
+  font-size: 11px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--red);
+}
+
+.count {
+  font-family: var(--font-poster);
+  font-size: 18px;
+  color: var(--gold-deep);
+}
+
+.title {
+  margin-top: 6px;
+  font-family: var(--font-display);
+  font-size: 26px;
+  line-height: 1.1;
+}
+
+.rule {
+  height: 1px;
+  margin: 12px 0;
+  background: rgb(156 126 60 / 0.5);
+}
+
+.detail {
+  font-size: 13px;
+  line-height: 1.5;
+  color: #3a2c1e;
+}
+
+.when {
+  margin-top: 10px;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #6e5a38;
+}
+
+.note {
+  margin-top: 8px;
+  font-size: 12px;
+  color: #a9b6b6;
+}
+
+/* ---------- tap sheet (narrow screens) ---------- */
+
+.sheet {
+  position: fixed;
+  inset: auto 0 0 0;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #1d1510;
+  overflow: visible;
+}
+
+.sheet::backdrop {
+  background: rgb(4 10 12 / 0.66);
+}
+
+.sheet[open] {
+  animation: sheetIn 380ms cubic-bezier(0.2, 0.9, 0.3, 1);
+}
+
+.sheetCard {
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 26px 24px calc(22px + env(safe-area-inset-bottom, 0px));
+  background: linear-gradient(160deg, #f6eedd 0%, #e9dcc3 100%);
+  box-shadow:
+    0 -18px 50px rgb(0 0 0 / 0.55),
+    inset 0 0 0 1px rgb(196 163 90 / 0.6);
+}
+
+.sheetCard .title {
+  font-size: 30px;
+}
+
+.sheetCard .detail {
+  font-size: 15px;
+}
+
+.sheetClose {
+  width: 100%;
+  min-height: 48px;
+  margin-top: 20px;
+  border: 1px solid rgb(29 21 16 / 0.55);
+  background: transparent;
+  color: #1d1510;
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.sheetClose:focus-visible {
+  outline-color: var(--red);
+}
+
+@keyframes sheetIn {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+}
+
+/* ---------- responsive ---------- */
+
+@media (max-width: 1160px) {
+  .wall {
+    --scale: 0.82;
+  }
+}
+
+/* Shelves stack; the callout is replaced by the tap sheet. Keep in step with NARROW in Awards.tsx. */
+@media (max-width: 1000px) {
+  .wall {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 44px;
+    padding: 28px 0 36px;
+    --scale: 0.9;
+  }
+
+  .shelf,
+  .shelf[data-shelf] {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 100%;
+    max-width: 560px;
+    margin: 0 auto;
+  }
+
+  .tip {
+    display: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .section {
+    padding: 72px 0 80px;
+  }
+}
+
+@media (max-width: 520px) {
+  .wall {
+    --scale: 0.7;
+    gap: 36px;
+  }
+
+  .row {
+    padding: 0 8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tip,
+  .item[data-active] .tip {
+    transform: translateX(-50%);
+  }
+
+  .item[data-active] .trophy {
+    transform: none;
+  }
+
+  .sheet[open] {
+    animation: none;
+  }
+}

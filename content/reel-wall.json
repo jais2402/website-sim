@@ -1,0 +1,12 @@
+{
+  "_note": "poster: licensed 27:40 key art. Until supplied, the frame shows a tinted stand-in built from `tint`. `plate` is the brass label under the frame.",
+  "films": [
+    { "slug": "tourist-family", "title": "Tourist Family", "language": "Tamil", "year": "2025", "plate": "Now playing", "poster": null, "tint": ["#E8A53A", "#8a3b1c"], "glow": "232 165 58" },
+    { "slug": "andhagan", "title": "Andhagan", "language": "Tamil", "year": "2024", "plate": "Premiere", "poster": null, "tint": ["#2a7f9e", "#122f4a"], "glow": "42 127 158" },
+    { "slug": "good-bad-ugly", "title": "Good Bad Ugly", "language": "Tamil", "year": "2025", "plate": "Cameo", "poster": null, "tint": ["#C8323A", "#4a1215"], "glow": "200 50 58" },
+    { "slug": "gulmohar", "title": "Gulmohar", "language": "Hindi", "year": "2023", "plate": "Hindi", "poster": null, "tint": ["#d0607a", "#3d4f2a"], "glow": "208 96 122" },
+    { "slug": "rocketry-the-nambi-effect", "title": "Rocketry: The Nambi Effect", "language": "Multilingual", "year": "2022", "plate": "Biopic", "poster": null, "tint": ["#3b5bb5", "#16163a"], "glow": "59 91 181" },
+    { "slug": "paava-kadhaigal", "title": "Paava Kadhaigal", "language": "Tamil", "year": "2020", "plate": "Streaming", "poster": null, "tint": ["#7e4bb0", "#2a1638"], "glow": "126 75 176" },
+    { "slug": "petta", "title": "Petta", "language": "Tamil", "year": "2019", "plate": "Classic", "poster": null, "tint": ["#e0702a", "#3a1a0d"], "glow": "224 112 42" }
+  ]
+}

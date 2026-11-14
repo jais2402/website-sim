@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Memory Lane — timeless classics</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&amp;family=Noto+Serif+Tamil:wght@400;500&amp;family=Inter:wght@400;500&amp;family=Oswald:wght@500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+</style>
+</helmet>
+<section id="memory-lane" aria-labelledby="ml-h" style="position: relative; width: 100%; box-sizing: border-box; padding: 112px 0 96px; background: radial-gradient(ellipse 55% 45% at 38% 30%, rgba(227,199,127,0.10) 0%, transparent 70%), linear-gradient(180deg, #120e0a 0%, #1a130d 50%, #0d0a08 100%); color: #F1E6D2; font-family: Inter, system-ui, sans-serif; line-height: 1.6; overflow: hidden">
+<div style="max-width: 1280px; margin: 0 auto; padding: 0 32px">
+
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 24px; margin-bottom: 48px">
+<div>
+<div aria-hidden="true" style="display: flex; align-items: center; gap: 12px; color: #C4A35A; margin-bottom: 14px"><span style="font-family: 'Cormorant Garamond', serif; font-size: 18px">✦</span><span style="width: 72px; height: 1px; background: #C4A35A"></span></div>
+<h2 id="ml-h" style="margin: 0; font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 400; font-size: 84px; line-height: 0.95">Memory Lane</h2>
+<div style="display: flex; align-items: baseline; gap: 16px; margin-top: 12px">
+<span lang="ta" style="font-family: 'Noto Serif Tamil', serif; font-size: 20px; color: #C4A35A">நினைவுகள்</span>
+<span style="font-size: 15px; color: #CDBFA6">Three decades, one frame at a time.</span>
+</div>
+</div>
+<button type="button" onClick="{{toggle}}" style="min-height: 48px; display: inline-flex; align-items: center; gap: 12px; padding: 0 24px; background: {{playBg}}; color: {{playFg}}; border: 1px solid #C4A35A; cursor: pointer; font-family: Inter, sans-serif; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase">
+<svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="{{playIcon}}" fill="{{playFg}}"></path></svg>
+{{playLabel}}
+</button>
+</div>
+
+<div style="position: relative">
+<div aria-hidden="false" style="position: relative; height: 250px; margin: 0 -8px 8px">
+<svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" style="position: absolute; left: 0; top: 0; width: 100%; height: 100px; overflow: visible"><path d="M0,10 Q25,90 50,30 Q75,90 100,10" fill="none" stroke="#4a3826" stroke-width="2" vector-effect="non-scaling-stroke"></path></svg>
+<sc-for list="{{bulbs}}" as="b" hint-placeholder-count="20">
+<span aria-hidden="true" style="position: absolute; left: {{b.x}}; top: {{b.y}}; width: 9px; height: 12px; margin: -2px 0 0 -4.5px; border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%; background: radial-gradient(circle at 50% 40%, #FFF8E6 0%, #FFD58A 55%, #E8A53A 100%); box-shadow: 0 0 10px 3px rgba(255,200,120,{{b.glow}}), 0 0 26px 8px rgba(255,190,100,0.18)"></span>
+</sc-for>
+<sc-for list="{{hang}}" as="h" hint-placeholder-count="7">
+<figure style="position: absolute; left: {{h.x}}; top: {{h.y}}; width: 104px; margin: 0; transform: translateX(-50%) rotate({{h.r}}); transform-origin: 50% 0">
+<span aria-hidden="true" style="position: absolute; left: 50%; top: -6px; width: 8px; height: 16px; margin-left: -4px; background: linear-gradient(180deg, #c9a46a, #8a6a3a); border-radius: 2px; z-index: 1; display: block"></span>
+<div style="padding: 7px 7px 28px; background: #EFE6D6; box-shadow: 0 14px 24px rgba(0,0,0,0.55)">
+<div style="aspect-ratio: 1 / 1; background: {{h.bg}}"></div>
+</div>
+<figcaption style="position: absolute; left: 0; right: 0; bottom: 6px; text-align: center; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 14px; color: #3a2c1e">{{h.cap}}</figcaption>
+</figure>
+</sc-for>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 40px">
+<div style="flex: 1 1 auto; width: 100%; max-width: 980px; min-width: 0; position: relative; padding-top: 96px">
+<div aria-hidden="true" style="position: absolute; left: 50%; top: 0; width: 2px; height: 120px; background: linear-gradient(180deg, #d9d2c6, #6e6a63); transform-origin: bottom center; transform: translateX(-60px) rotate(-28deg); border-radius: 2px"></div>
+<div aria-hidden="true" style="position: absolute; left: 50%; top: 0; width: 2px; height: 120px; background: linear-gradient(180deg, #d9d2c6, #6e6a63); transform-origin: bottom center; transform: translateX(-40px) rotate(24deg); border-radius: 2px"></div>
+<div aria-hidden="true" style="position: absolute; left: 50%; top: 104px; width: 56px; height: 20px; transform: translateX(-78px); background: linear-gradient(180deg, #2a221c, #120e0b); border-radius: 28px 28px 4px 4px"></div>
+
+<div style="position: relative; display: flex; flex-direction: column; gap: 20px; padding: 26px; border-radius: 30px; background: repeating-linear-gradient(92deg, rgba(0,0,0,0.10) 0 2px, transparent 2px 9px, rgba(255,255,255,0.03) 9px 10px, transparent 10px 23px), linear-gradient(160deg, #6a4428 0%, #4a2e1a 55%, #2f1d11 100%); box-shadow: inset 0 2px 0 rgba(255,255,255,0.12), inset 0 -6px 16px rgba(0,0,0,0.45), 0 50px 90px rgba(0,0,0,0.65)">
+<div style="display: flex; gap: 22px">
+
+<div style="flex: 1 1 auto; min-width: 0; padding: 20px; border-radius: 26px; background: linear-gradient(160deg, #221b16 0%, #0e0b09 100%); box-shadow: inset 0 0 0 2px rgba(196,163,90,0.35), inset 0 6px 18px rgba(0,0,0,0.8)">
+<div style="position: relative; aspect-ratio: 4 / 3; border-radius: 42px / 34px; overflow: hidden; background: {{cur.bg}}; box-shadow: inset 0 0 70px rgba(0,0,0,0.85), inset 0 0 0 3px #050403">
+<div aria-hidden="true" style="position: absolute; inset: 0; background: repeating-linear-gradient(0deg, rgba(0,0,0,0.22) 0 1px, transparent 1px 3px)"></div>
+<div aria-hidden="true" style="position: absolute; inset: 0; opacity: {{staticOp}}; transition: opacity 180ms linear; background: repeating-radial-gradient(circle at 17% 32%, rgba(255,255,255,0.55) 0 1px, rgba(0,0,0,0.6) 1px 2px, rgba(200,200,200,0.4) 2px 3px), repeating-linear-gradient(0deg, rgba(255,255,255,0.25) 0 2px, rgba(0,0,0,0.5) 2px 4px), #6b6b6b"></div>
+<div style="position: absolute; top: 20px; left: 26px; font-family: Oswald, sans-serif; font-size: 22px; letter-spacing: 0.08em; color: #F2C25B; text-shadow: 0 0 8px rgba(242,194,91,0.8)">CH {{cur.ch}}</div>
+<div style="position: absolute; top: 22px; right: 28px; display: flex; align-items: center; gap: 8px; font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase; color: #D8C9AE"><span style="width: 6px; height: 6px; border-radius: 50%; background: {{recDot}}" aria-hidden="true"></span>{{cur.era}}</div>
+<div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center">
+<button type="button" aria-label="{{cur.playLabel}}" style="width: 84px; height: 84px; border-radius: 50%; background: rgba(13,10,8,0.35); border: 1px solid rgba(241,230,210,0.7); display: flex; align-items: center; justify-content: center; cursor: pointer"><svg width="20" height="20" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 1.5v9l7.5-4.5z" fill="#F1E6D2"></path></svg></button>
+</div>
+<div style="position: absolute; left: 0; right: 0; bottom: 0; padding: 40px 32px 26px; background: linear-gradient(180deg, rgba(13,10,8,0) 0%, rgba(13,10,8,0.9) 100%)">
+<div style="font-family: 'Cormorant Garamond', serif; font-size: 42px; line-height: 1">{{cur.t}}</div>
+<div style="font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: #CDBFA6; margin-top: 8px">{{cur.y}} · {{cur.lang}} · montage</div>
+</div>
+<div aria-hidden="true" style="position: absolute; inset: 0; background: radial-gradient(ellipse 45% 35% at 28% 18%, rgba(255,255,255,0.14) 0%, transparent 70%); pointer-events: none"></div>
+</div>
+</div>
+
+<div style="flex: 0 0 120px; display: flex; flex-direction: column; align-items: center; gap: 20px; padding: 10px 0">
+<div style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 18px; color: #E3C77F; padding: 2px 10px; border: 1px solid rgba(227,199,127,0.5); border-radius: 3px; background: rgba(0,0,0,0.25)">Simran</div>
+<div style="display: flex; flex-direction: column; align-items: center; gap: 6px">
+<button type="button" onClick="{{next}}" aria-label="Change channel" style="width: 78px; height: 78px; border-radius: 50%; border: none; padding: 0; cursor: pointer; background: radial-gradient(circle at 35% 30%, #f3e6c8 0%, #bfa77a 35%, #6e5a38 75%, #3b2f1d 100%); box-shadow: 0 6px 12px rgba(0,0,0,0.6), inset 0 -3px 6px rgba(0,0,0,0.35); display: flex; align-items: center; justify-content: center">
+<span aria-hidden="true" style="display: block; width: 54px; height: 54px; border-radius: 50%; background: radial-gradient(circle at 40% 35%, #3a2e22, #1a140f); transform: rotate({{knob}}); transition: transform 500ms cubic-bezier(0.65, 0, 0.35, 1); position: relative"><span style="position: absolute; left: 50%; top: 5px; width: 3px; height: 16px; margin-left: -1.5px; background: #E3C77F; border-radius: 2px; display: block"></span></span>
+</button>
+<span style="font-size: 9px; letter-spacing: 0.24em; text-transform: uppercase; color: #E9DCC3">Channel</span>
+</div>
+<div style="display: flex; flex-direction: column; align-items: center; gap: 6px">
+<button type="button" onClick="{{toggle}}" aria-label="{{playLabel}}" style="width: 52px; height: 52px; border-radius: 50%; border: none; padding: 0; cursor: pointer; background: radial-gradient(circle at 35% 30%, #f3e6c8 0%, #bfa77a 35%, #6e5a38 75%, #3b2f1d 100%); box-shadow: 0 4px 10px rgba(0,0,0,0.6); display: flex; align-items: center; justify-content: center">
+<svg width="14" height="14" viewBox="0 0 12 12" aria-hidden="true"><path d="{{playIcon}}" fill="#2a2018"></path></svg>
+</button>
+<span style="font-size: 9px; letter-spacing: 0.24em; text-transform: uppercase; color: #E9DCC3">Auto</span>
+</div>
+<div aria-hidden="true" style="flex: 1 1 auto; width: 84px; min-height: 90px; border-radius: 8px; background: repeating-linear-gradient(0deg, #1a120b 0 3px, #3a2718 3px 7px); box-shadow: inset 0 2px 6px rgba(0,0,0,0.6)"></div>
+</div>
+</div>
+<div role="group" aria-label="Tuner — choose a film by year" style="display: flex; align-items: center; gap: 14px">
+<button type="button" onClick="{{prev}}" aria-label="Previous film" style="flex: 0 0 auto; width: 44px; height: 44px; border-radius: 50%; border: none; padding: 0; cursor: pointer; background: radial-gradient(circle at 35% 30%, #f3e6c8 0%, #bfa77a 35%, #6e5a38 75%, #3b2f1d 100%); box-shadow: 0 4px 10px rgba(0,0,0,0.6); display: flex; align-items: center; justify-content: center"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3 5 8l5 5" fill="none" stroke="#2a2018" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></button>
+<div style="position: relative; flex: 1 1 auto; height: 96px; border-radius: 10px; border: 2px solid #9c7e3c; background: radial-gradient(ellipse 70% 120% at 50% 130%, rgba(242,194,91,0.38) 0%, transparent 70%), linear-gradient(180deg, #24180d 0%, #140d07 100%); box-shadow: inset 0 4px 14px rgba(0,0,0,0.8), 0 1px 0 rgba(255,255,255,0.12); overflow: hidden">
+<div onPointerDown="{{dragStart}}" onPointerMove="{{dragMove}}" onPointerUp="{{dragEnd}}" onPointerCancel="{{dragEnd}}" style="position: absolute; left: 28px; right: 28px; top: 0; height: 84px; cursor: ew-resize; touch-action: none">
+<div aria-hidden="true" style="position: absolute; left: 0; right: 0; top: 52px; height: 1px; background: rgba(242,194,91,0.7)"></div>
+<sc-for list="{{yearMarks}}" as="d" hint-placeholder-count="11">
+<span aria-hidden="true" style="position: absolute; left: {{d.x}}; top: 42px; width: 1px; height: 10px; background: rgba(242,194,91,0.7)"></span>
+<span style="position: absolute; left: {{d.x}}; top: 58px; transform: translateX(-50%); font-family: Oswald, sans-serif; font-size: 11px; letter-spacing: 0.06em; color: {{d.color}}; text-shadow: 0 0 8px rgba(242,194,91,0.6); pointer-events: none">{{d.y}}</span>
+</sc-for>
+<sc-for list="{{breaks}}" as="b" hint-placeholder-count="2">
+<span aria-hidden="true" style="position: absolute; left: {{b.x}}; top: 44px; transform: translateX(-50%); font-family: Oswald, sans-serif; font-size: 12px; color: rgba(242,194,91,0.55); background: #1a1209; padding: 0 3px; pointer-events: none">{{b.label}}</span>
+</sc-for>
+<sc-for list="{{marks}}" as="m" hint-placeholder-count="17">
+<button type="button" onClick="{{m.pick}}" aria-label="{{m.aria}}" aria-pressed="{{m.sel}}" style="position: absolute; left: {{m.x}}; top: {{m.top}}; transform: translate(-50%, -50%); width: 22px; height: 22px; padding: 0; background: transparent; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center">
+<span style="display: block; width: {{m.size}}; height: {{m.size}}; border-radius: 50%; border: 1px solid #F2C25B; background: {{m.fill}}; box-shadow: {{m.glow}}"></span>
+</button>
+</sc-for>
+<div aria-hidden="true" style="position: absolute; left: {{needle}}; top: 4px; height: 76px; width: 2px; margin-left: -1px; background: #E0565E; box-shadow: 0 0 8px #E0565E; transition: left {{needleT}} cubic-bezier(0.65, 0, 0.35, 1)"></div>
+</div>
+<div aria-hidden="true" style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(255,255,255,0.10) 0%, transparent 40%); pointer-events: none"></div>
+</div>
+<button type="button" onClick="{{next}}" aria-label="Next film" style="flex: 0 0 auto; width: 44px; height: 44px; border-radius: 50%; border: none; padding: 0; cursor: pointer; background: radial-gradient(circle at 35% 30%, #f3e6c8 0%, #bfa77a 35%, #6e5a38 75%, #3b2f1d 100%); box-shadow: 0 4px 10px rgba(0,0,0,0.6); display: flex; align-items: center; justify-content: center"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5 5-5 5" fill="none" stroke="#2a2018" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></button>
+</div>
+</div>
+<div aria-hidden="true" style="display: flex; justify-content: space-between; padding: 0 70px">
+<span style="width: 40px; height: 22px; background: linear-gradient(180deg, #3b2415, #1a0f08); clip-path: polygon(10% 0, 90% 0, 70% 100%, 30% 100%)"></span>
+<span style="width: 40px; height: 22px; background: linear-gradient(180deg, #3b2415, #1a0f08); clip-path: polygon(10% 0, 90% 0, 70% 100%, 30% 100%)"></span>
+</div>
+</div>
+</div>
+
+<div style="max-width: 760px; margin: 56px auto 0; text-align: center">
+<div style="font-family: Oswald, sans-serif; font-size: 13px; letter-spacing: 0.24em; text-transform: uppercase; color: #C4A35A">{{cur.era}}</div>
+<p style="margin: 10px 0 0; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 28px; line-height: 1.3; color: #F1E6D2">“[A line on {{cur.t}} — memory, co-star or song, in Simran’s words]”</p>
+</div>
+</div>
+
+</div>
+</section>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1800}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { i: 10, playing: false, sw: false, drag: false }; }
+  componentDidMount() {
+    this.timer = setInterval(() => {
+      if (this.state.playing) this.go((this.state.i + 1) % 17, true);
+    }, 3500);
+  }
+  componentWillUnmount() { clearInterval(this.timer); clearTimeout(this.swT); }
+  go(k, keepPlaying) {
+    this.setState({ i: k, sw: true, playing: keepPlaying ? this.state.playing : false });
+    clearTimeout(this.swT);
+    this.swT = setTimeout(() => this.setState({ sw: false }), 260);
+  }
+  renderVals() {
+    const F = [
+      ['VIP', 1997, 'Tamil'], ['Nerukku Ner', 1997, 'Tamil'], ['Kannedhirey Thondrinal', 1998, 'Tamil'],
+      ['Vaali', 1999, 'Tamil'], ['Thulladha Manamum Thullum', 1999, 'Tamil'], ['Samarasimha Reddy', 1999, 'Telugu'],
+      ['Priyamaanavale', 2000, 'Tamil'], ['Kalisundam Raa', 2000, 'Telugu'], ['Parthale Paravasam', 2001, 'Tamil'],
+      ['Narasimha Naidu', 2001, 'Telugu'], ['Kannathil Muthamittal', 2002, 'Tamil'], ['Pammal K. Sambandam', 2002, 'Tamil'],
+      ['Vaaranam Aayiram', 2008, 'Tamil'], ['Petta', 2019, 'Tamil'], ['Paava Kadhaigal', 2020, 'Tamil'],
+      ['Andhagan', 2024, 'Tamil'], ['Tourist Family', 2025, 'Tamil']
+    ];
+    const years = [...new Set(F.map((f) => f[1]))];
+    const U = years.length;
+    const pos = (y) => (years.indexOf(y) / (U - 1) * 100) + '%';
+    const era = (y) => y < 2000 ? 'The nineties' : (y < 2010 ? 'The golden run' : 'The return');
+    const tint = (y) => y < 2000 ? ['#8a6a45', '#3b2a1b'] : (y < 2010 ? ['#9a7a4c', '#40301e'] : ['#8a7658', '#2e241b']);
+    const n = F.length;
+    const i = Math.min(Math.max(this.state.i, 0), n - 1);
+    const seen = {};
+    const marks = F.map((f, k) => {
+      const stack = seen[f[1]] || 0; seen[f[1]] = stack + 1;
+      const sel = k === i;
+      return {
+        x: pos(f[1]),
+        top: (30 - stack * 12) + 'px',
+        sel: sel ? 'true' : 'false',
+        size: sel ? '14px' : '9px',
+        fill: sel ? '#E3C77F' : '#120e0a',
+        glow: sel ? '0 0 14px rgba(227,199,127,0.8)' : 'none',
+        aria: f[0] + ', ' + f[1],
+        pick: () => this.go(k)
+      };
+    });
+    const f = F[i];
+    const t = tint(f[1]);
+    const cur = {
+      t: f[0], y: String(f[1]), lang: f[2], era: era(f[1]), ch: String(i + 1).padStart(2, '0'),
+      playLabel: 'Play ' + f[0] + ' montage with sound',
+      bg: 'radial-gradient(ellipse 70% 60% at 55% 40%,' + t[0] + ' 0%,' + t[1] + ' 55%,#120d09 100%)'
+    };
+    const pb = (a) => 'radial-gradient(ellipse 80% 70% at 50% 40%,' + a + ' 0%,#2a1f16 70%,#1a130d 100%)';
+    const wy = (x) => {
+      const h = x <= 50 ? [10, 90, 30, x / 50] : [30, 90, 10, (x - 50) / 50];
+      const u = h[3];
+      return (1 - u) * (1 - u) * h[0] + 2 * u * (1 - u) * h[1] + u * u * h[2];
+    };
+    const bulbs = [];
+    for (let k = 0; k < 22; k++) {
+      const x = 2 + k * (96 / 21);
+      bulbs.push({ x: x + '%', y: wy(x) + 'px', glow: (k % 3 === 0 ? 0.95 : 0.75) });
+    }
+    const caps = ['On set', 'The song', 'Rehearsal', 'The scene', 'Premiere night', 'With the crew', 'Award night'];
+    const tones = [t[0], '#a3835a', '#7a5d3e', '#8f6f4a', '#6e5338', '#9a7a4c', '#5c4630'];
+    const hang = caps.map((cap, k) => {
+      const x = 9 + k * (82 / 6);
+      return { x: x + '%', y: (wy(x) + 2) + 'px', r: (k % 2 ? 4 : -4) + 'deg', cap, bg: pb(tones[k]) };
+    });
+    const yearMarks = years.map((y) => ({ y: String(y), x: pos(y), color: y === f[1] ? '#FFE7B8' : '#F2C25B' }));
+    const breaks = [];
+    for (let u = 1; u < U; u++) {
+      if (years[u] - years[u - 1] > 1) breaks.push({ x: ((u - 0.5) / (U - 1) * 100) + '%', label: '≈' });
+    }
+    const idxAt = (e) => {
+      const r = e.currentTarget.getBoundingClientRect();
+      const t = Math.min(Math.max((e.clientX - r.left) / r.width, 0), 1);
+      const yi = Math.round(t * (U - 1));
+      const k = F.findIndex((ff) => ff[1] === years[yi]);
+      return k < 0 ? i : k;
+    };
+    const playing = this.state.playing;
+    return {
+      cur, marks, bulbs, hang, yearMarks, breaks, i,
+      needleT: this.state.drag ? '120ms' : '600ms',
+      scrubText: f[0] + ', ' + f[1],
+      scrub: (e) => { const k = Number(e.target.value); if (k !== i) this.go(k); },
+      dragStart: (e) => { if (e.target.closest && e.target.closest('button')) return; e.currentTarget.setPointerCapture && e.currentTarget.setPointerCapture(e.pointerId); this.setState({ drag: true }); const k = idxAt(e); if (k !== i) this.go(k); },
+      dragMove: (e) => { if (!this.state.drag) return; const k = idxAt(e); if (k !== this.state.i) this.go(k); },
+      dragEnd: () => { if (this.state.drag) this.setState({ drag: false }); },
+      needle: pos(f[1]),
+      recDot: playing ? '#E0565E' : '#9C907C',
+      playLabel: playing ? 'Pause the decades' : 'Play the decades',
+      playIcon: playing ? 'M2.5 1.5h2.5v9H2.5zM7 1.5h2.5v9H7z' : 'M3 1.5v9l7.5-4.5z',
+      playBg: playing ? '#C4A35A' : 'transparent',
+      playFg: playing ? '#120e0a' : '#F1E6D2',
+      toggle: () => this.setState({ playing: !playing }),
+      prev: () => this.go((i - 1 + n) % n),
+      next: () => this.go((i + 1) % n),
+      knob: (i * 21) + 'deg',
+      staticOp: this.state.sw ? 0.85 : 0
+    };
+  }
+}
+</script>
+</body>
+</html>

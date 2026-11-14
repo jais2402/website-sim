@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Social wall — Instagram and X</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&amp;family=Noto+Serif+Tamil:wght@400;500&amp;family=Inter:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+</style>
+</helmet>
+<section id="social" aria-labelledby="sw-h" style="width: 100%; box-sizing: border-box; padding: 96px 0; background: #0A0A0A; color: #F3EDE3; font-family: Inter, system-ui, sans-serif; line-height: 1.6; border-top: 1px solid rgba(243,237,227,0.08)">
+<div style="max-width: 1280px; margin: 0 auto; padding: 0 32px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 24px; margin-bottom: 40px">
+<div>
+<h2 id="sw-h" style="margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: 64px; line-height: 1.05">Moments</h2>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<sc-for list="{{tabs}}" as="t" hint-placeholder-count="3">
+<button type="button" onClick="{{t.pick}}" aria-pressed="{{t.pressed}}" style="min-height: 44px; padding: 0 20px; border: 1px solid rgba(243,237,227,0.3); background: {{t.bg}}; color: {{t.fg}}; font-family: Inter, sans-serif; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; cursor: pointer">{{t.label}}</button>
+</sc-for>
+</div>
+</div>
+
+<div style="columns: 4 240px; column-gap: 16px">
+<sc-for list="{{posts}}" as="p" hint-placeholder-count="8">
+<article style="break-inside: avoid; margin-bottom: 16px; background: #141210; border: 1px solid rgba(243,237,227,0.08)">
+<sc-if value="{{p.insta}}" hint-placeholder-val="{{ true }}">
+<div style="aspect-ratio: {{p.ratio}}; background: linear-gradient(160deg,#2a2420 0%,#151210 60%,#0d0c0b 100%)"></div>
+</sc-if>
+<div style="padding: 18px 18px 16px; display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; justify-content: space-between; align-items: center; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: #A39E95">
+<span style="display: flex; align-items: center; gap: 8px">
+<sc-if value="{{p.insta}}" hint-placeholder-val="{{ true }}"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true"><rect x="1.5" y="1.5" width="13" height="13" rx="4" fill="none" stroke="#A39E95" stroke-width="1.2"></rect><circle cx="8" cy="8" r="3" fill="none" stroke="#A39E95" stroke-width="1.2"></circle></svg></sc-if>
+<sc-if value="{{p.x}}" hint-placeholder-val="{{ false }}"><span style="font-weight: 500; color: #F3EDE3">X</span></sc-if>
+<a href="{{p.profile}}" target="_blank" rel="noopener" style="color: #D9D2C6; text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(196,163,90,0.6)">{{p.handle}}</a>
+</span>
+<span>{{p.when}}</span>
+</div>
+<p style="margin: 0; font-size: {{p.size}}; line-height: 1.5; color: #D9D2C6; font-family: {{p.font}}">{{p.text}}</p>
+<a href="{{p.url}}" style="color: #F3EDE3; text-decoration: none; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; min-height: 32px; display: inline-flex; align-items: center">View post →</a>
+</div>
+</article>
+</sc-for>
+</div>
+
+<div style="margin-top: 48px; padding: 36px; background: linear-gradient(120deg, #1a1412 0%, #120e0c 100%); border: 1px solid rgba(196,163,90,0.3)">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 12px; margin-bottom: 24px">
+<h3 style="margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: 36px; line-height: 1.1">Follow Simran</h3>
+<span style="font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #A39E95">Official accounts only</span>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px">
+<sc-for list="{{profiles}}" as="pr" hint-placeholder-count="4">
+<a href="{{pr.url}}" target="_blank" rel="noopener" aria-label="{{pr.aria}}" style="display: flex; align-items: center; gap: 16px; padding: 18px; min-height: 44px; background: rgba(243,237,227,0.03); border: 1px solid rgba(243,237,227,0.14); color: #F3EDE3; text-decoration: none">
+<span aria-hidden="true" style="flex: 0 0 auto; width: 52px; height: 52px; border-radius: 50%; padding: 2px; background: {{pr.ring}}; display: flex"><span style="flex: 1 1 auto; border-radius: 50%; background: radial-gradient(circle at 45% 35%, #3a3029 0%, #1a1512 100%); display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 20px; color: #E3C77F">S</span></span>
+<span style="flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: 2px">
+<span style="font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #A39E95">{{pr.platform}}</span>
+<span style="font-size: 15px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap">{{pr.handle}}</span>
+</span>
+<span style="flex: 0 0 auto; padding: 8px 14px; background: #F3EDE3; color: #0A0A0A; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase">{{pr.cta}}</span>
+</a>
+</sc-for>
+</div>
+<div style="font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #6E6A63; margin-top: 18px">Cached feed · first row pinned by the team</div>
+</div>
+</div>
+</section>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1150}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { filter: 'all' }; }
+  renderVals() {
+    const ig = (ratio, when) => ({ insta: true, x: false, ratio, handle: '@simranrishibagga', when, text: '[Caption — pulled from Instagram]', size: '14px', font: 'Inter, sans-serif', url: 'https://www.instagram.com/simranrishibagga/', profile: 'https://www.instagram.com/simranrishibagga/' });
+    const xp = (when) => ({ insta: false, x: true, ratio: '1 / 1', handle: '@simranbaggaoffc', when, text: '[Post text — pulled live from X]', size: '22px', font: "'Cormorant Garamond', serif", url: 'https://x.com/simranbaggaoffc', profile: 'https://x.com/simranbaggaoffc' });
+    const all = [ig('4 / 5', '[Date]'), xp('[Date]'), ig('1 / 1', '[Date]'), ig('4 / 5', '[Date]'), xp('[Date]'), ig('1 / 1', '[Date]'), ig('4 / 5', '[Date]'), xp('[Date]')];
+    const f = this.state.filter;
+    const posts = f === 'all' ? all : all.filter((p) => (f === 'ig' ? p.insta : p.x));
+    const tabs = [['all', 'All'], ['ig', 'Instagram'], ['x', 'X']].map(([id, label]) => ({
+      label,
+      pressed: id === f ? 'true' : 'false',
+      bg: id === f ? '#F3EDE3' : 'transparent',
+      fg: id === f ? '#0A0A0A' : '#F3EDE3',
+      pick: () => this.setState({ filter: id })
+    }));
+    const igRing = 'linear-gradient(135deg, #C4A35A, #7A1F24)';
+    const profiles = [
+      { platform: 'Instagram', handle: '@simranrishibagga', url: 'https://www.instagram.com/simranrishibagga/', cta: 'Follow', ring: igRing },
+      { platform: 'X', handle: '@simranbaggaoffc', url: 'https://x.com/simranbaggaoffc', cta: 'Follow', ring: '#F3EDE3' },
+      { platform: 'YouTube', handle: '@simranandsonsfilms6873', url: 'https://www.youtube.com/@simranandsonsfilms6873', cta: 'Subscribe', ring: '#C8323A' },
+      { platform: 'Facebook', handle: 'Simranbaggaofficial', url: 'https://www.facebook.com/Simranbaggaofficial', cta: 'Follow', ring: '#C4A35A' }
+    ].map((x) => ({ ...x, aria: x.cta + ' Simran on ' + x.platform + ' (' + x.handle + ')' }));
+    return { posts, tabs, profiles };
+  }
+}
+</script>
+</body>
+</html>

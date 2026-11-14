@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Beat 5 — header reveal</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&amp;family=Noto+Serif+Tamil:wght@400;500&amp;family=Inter:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#F3EDE3;text-decoration:none}a:hover{color:#C4A35A}
+.still{background:linear-gradient(160deg,#2a2420 0%,#151210 60%,#0d0c0b 100%)}
+</style>
+</helmet>
+<div style="position: relative; width: 960px; height: 540px; overflow: hidden; background: #0A0A0A; color: #F3EDE3; font-family: Inter, sans-serif">
+<header style="border-bottom: 1px solid rgba(243,237,227,0.08)">
+<nav aria-label="Main" style="height: 60px; padding: 0 28px; display: flex; align-items: center; justify-content: space-between">
+<a href="#" style="font-family: 'Cormorant Garamond', serif; font-size: 18px; letter-spacing: 0.32em; font-weight: 500">SIMRAN</a>
+<div style="display: flex; gap: 28px; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase">
+<a href="#">Work</a><a href="#">About</a><a href="#">Reel</a><a href="#">Press</a><a href="#">Connect</a>
+</div>
+</nav>
+<div style="height: 34px; border-top: 1px solid rgba(243,237,227,0.08); display: flex; align-items: center; gap: 40px; padding-left: 28px; white-space: nowrap; font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase">
+<span><span style="color: #C4A35A">Now showing</span> — [Confirm title]</span><span style="color: #6E6A63">·</span>
+<span><span lang="ta" style="font-family: 'Noto Serif Tamil', serif; letter-spacing: 0.04em; color: #C4A35A">வருகை</span> / <span style="color: #C4A35A">Coming soon</span> — [Confirm title]</span><span style="color: #6E6A63">·</span>
+<span><span style="color: #C4A35A">Shooting</span> — Dharman</span>
+</div>
+</header>
+<div style="position: absolute; right: 28px; top: 106px; font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase; color: #A39E95">Fade + slide ↓ 20px · 500ms · then sticky</div>
+<div style="position: absolute; left: 64px; top: 150px">
+<div style="font-family: 'Cormorant Garamond', serif; font-size: 44px; line-height: 1">The Reel Wall</div>
+</div>
+<div style="position: absolute; left: 64px; top: 244px; display: flex; gap: 18px">
+<div class="still" style="width: 170px; height: 255px"></div>
+<div class="still" style="width: 170px; height: 255px"></div>
+<div class="still" style="width: 140px; height: 210px; align-self: flex-end"></div>
+<div class="still" style="width: 140px; height: 210px; align-self: flex-end"></div>
+<div class="still" style="width: 140px; height: 210px; align-self: flex-end"></div>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":960,"height":540}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Simran — official homepage</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&amp;family=Noto+Serif+Tamil:wght@400;500;600&amp;family=Inter:wght@400;500&amp;family=Oswald:wght@500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#0A0A0A}
+a{color:#F3EDE3;text-decoration:none}a:hover{color:#C4A35A}
+.footage{background:radial-gradient(ellipse 70% 60% at 62% 42%,#3a3029 0%,#1c1714 45%,#0A0A0A 100%)}
+.still{background:linear-gradient(160deg,#2a2420 0%,#151210 60%,#0d0c0b 100%)}
+.lobby{background:
+radial-gradient(ellipse 100% 60% at 50% 50%,transparent 55%,rgba(0,0,0,0.55) 100%),
+radial-gradient(ellipse 7% 58% at 12% 8%,rgba(255,214,150,0.30),rgba(255,214,150,0.06) 55%,transparent 75%),
+radial-gradient(ellipse 7% 58% at 37% 8%,rgba(255,214,150,0.30),rgba(255,214,150,0.06) 55%,transparent 75%),
+radial-gradient(ellipse 7% 58% at 63% 8%,rgba(255,214,150,0.30),rgba(255,214,150,0.06) 55%,transparent 75%),
+radial-gradient(ellipse 7% 58% at 88% 8%,rgba(255,214,150,0.30),rgba(255,214,150,0.06) 55%,transparent 75%),
+linear-gradient(180deg,rgba(255,196,120,0.18) 0,transparent 140px),
+repeating-linear-gradient(90deg,rgba(0,0,0,0.55) 0 1px,transparent 1px 7px,rgba(255,255,255,0.025) 7px 8px,transparent 8px 120px),
+linear-gradient(180deg,#2a1a12 0%,#3a2418 40%,#2c1b12 100%)}
+.ceiling{background:
+linear-gradient(180deg,transparent 0,transparent calc(100% - 4px),#FFD58A calc(100% - 4px),#FFE7B8 100%),
+radial-gradient(circle at 50% 42%,#FFF6DE 0 4px,rgba(255,226,170,0.45) 6px,transparent 11px) 0 0/25% 100% repeat-x,
+linear-gradient(180deg,#0b0908 0%,#16110e 100%);
+box-shadow:0 6px 30px rgba(255,200,120,0.45)}
+.floor{background:
+linear-gradient(180deg,#B8954F 0,#E3C77F 2px,#9C7E3C 4px,#120d0b 4px,#120d0b 10px,transparent 10px),
+radial-gradient(ellipse 12% 80% at 14% 0,rgba(255,200,130,0.16),transparent 70%),
+radial-gradient(ellipse 12% 80% at 38% 0,rgba(255,200,130,0.16),transparent 70%),
+radial-gradient(ellipse 12% 80% at 62% 0,rgba(255,200,130,0.16),transparent 70%),
+radial-gradient(ellipse 12% 80% at 86% 0,rgba(255,200,130,0.16),transparent 70%),
+linear-gradient(100deg,#141010 0%,#1d1715 30%,#121010 55%,#1a1513 80%,#100d0c 100%)}
+@keyframes crawl{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.crawl-track{animation:crawl 60s linear infinite}
+.crawl:hover .crawl-track{animation-play-state:paused}
+@media (prefers-reduced-motion: reduce){.crawl-track{animation:none}}
+input,textarea,select{font:inherit}
+input:focus,textarea:focus,select:focus{outline:1px solid #C4A35A;outline-offset:2px}
+</style>
+</helmet>
+<div style="min-height: 100vh; background: #0A0A0A; color: #F3EDE3; font-family: Inter, system-ui, sans-serif; font-size: 16px; line-height: 1.6">
+
+<section aria-label="Hero" class="footage" style="position: relative; height: 810px; overflow: hidden; display: flex; flex-direction: column; justify-content: flex-end; align-items: center">
+<div style="position: absolute; top: 24px; left: 32px; font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase; color: #A39E95">Footage placeholder · muted showreel loop · pinned 270–310vh</div>
+<div style="display: flex; flex-direction: column; align-items: center; gap: 4px; margin-bottom: 72px">
+<div style="display: flex; align-items: baseline; gap: 20px; color: {{ink}}">
+<span lang="ta" style="font-family: 'Noto Serif Tamil', serif; font-weight: 500; font-size: 56px; line-height: 1">சிம்ரன்</span>
+<span style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 500; font-size: 64px; line-height: 1">Simran</span>
+</div>
+<div style="font-size: 11px; letter-spacing: 0.32em; text-transform: uppercase; color: #A39E95">Actor · Producer · Director</div>
+</div>
+<button type="button" style="position: absolute; right: 32px; bottom: 32px; min-height: 44px; padding: 0 20px; display: flex; align-items: center; gap: 10px; background: transparent; border: 1px solid rgba(243,237,227,0.35); color: #F3EDE3; font-family: Inter, sans-serif; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; cursor: pointer">
+<svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 1.5v9l8-4.5z" fill="none" stroke="#F3EDE3" stroke-width="1.2" stroke-linejoin="round"></path></svg>
+Watch reel
+</button>
+</section>
+
+<header style="position: sticky; top: 0; z-index: 10; background: rgba(10,10,10,0.92); border-bottom: 1px solid rgba(243,237,227,0.08)">
+<nav aria-label="Main" style="max-width: 1280px; margin: 0 auto; padding: 0 32px; min-height: 72px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
+<a href="#top" style="font-family: 'Cormorant Garamond', serif; font-size: 22px; letter-spacing: 0.32em; font-weight: 500">SIMRAN</a>
+<div style="display: flex; flex-wrap: wrap; gap: 36px; font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase">
+<a href="#work">Work</a><a href="#about">About</a><a href="#reel">Reel</a><a href="#press">Press</a><a href="#connect">Connect</a>
+</div>
+</nav>
+<div class="crawl" aria-label="Release status" style="overflow: hidden; background: #7A1F24; height: 40px; display: flex; align-items: center">
+<div class="crawl-track" style="display: flex; white-space: nowrap; gap: 64px; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; padding-left: 32px">
+<span><span style="color: #F6E2B8">Now showing</span> — [Confirm title]</span><span style="color: #EBCFC7">·</span>
+<span><span lang="ta" style="font-family: 'Noto Serif Tamil', serif; letter-spacing: 0.04em; color: #F6E2B8">வருகை</span> / <span style="color: #F6E2B8">Coming soon</span> — [Confirm title]</span><span style="color: #EBCFC7">·</span>
+<span><span style="color: #F6E2B8">Shooting</span> — Dharman</span><span style="color: #EBCFC7">·</span>
+<span><span style="color: #F6E2B8">Now showing</span> — [Confirm title]</span><span style="color: #EBCFC7">·</span>
+<span><span lang="ta" style="font-family: 'Noto Serif Tamil', serif; letter-spacing: 0.04em; color: #F6E2B8">வருகை</span> / <span style="color: #F6E2B8">Coming soon</span> — [Confirm title]</span><span style="color: #EBCFC7">·</span>
+<span><span style="color: #F6E2B8">Shooting</span> — Dharman</span><span style="color: #EBCFC7">·</span>
+</div>
+</div>
+</header>
+
+<section id="work" aria-labelledby="work-h" class="lobby" style="position: relative; padding: 0 0 0; overflow: hidden">
+<div aria-hidden="true" class="ceiling" style="height: 56px"></div>
+<div style="max-width: 1280px; margin: 0 auto; padding: 56px 32px 0; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 24px; margin-bottom: 56px; position: relative">
+<h2 id="work-h" style="margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: 64px; line-height: 1.05; text-shadow: 0 2px 20px rgba(0,0,0,0.5)">The Reel Wall</h2>
+<div style="display: flex; align-items: center; gap: 24px">
+<a href="#work" style="font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; border-bottom: 1px solid #C4A35A; padding-bottom: 4px">Full filmography</a>
+<div style="display: flex; gap: 8px">
+<button type="button" onClick="{{prev}}" aria-label="Previous films" style="width: 52px; height: 52px; border-radius: 50%; background: rgba(10,10,10,0.35); border: 1px solid rgba(243,237,227,0.45); display: flex; align-items: center; justify-content: center; cursor: pointer; opacity: {{prevOp}}">
+<svg width="18" height="18" viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3 5 8l5 5" fill="none" stroke="#F3EDE3" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</button>
+<button type="button" onClick="{{next}}" aria-label="Next films" style="width: 52px; height: 52px; border-radius: 50%; background: #7A1F24; border: 1px solid #7A1F24; display: flex; align-items: center; justify-content: center; cursor: pointer; opacity: {{nextOp}}">
+<svg width="18" height="18" viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5 5-5 5" fill="none" stroke="#F3EDE3" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</button>
+</div>
+</div>
+</div>
+
+<div style="max-width: 1280px; margin: 0 auto; padding: 0 32px 72px; perspective: 2200px">
+<div style="transform: rotateY(-6deg); transform-origin: left center">
+<div style="display: flex; gap: 56px; width: max-content; align-items: flex-start; transform: translateX({{shift}}); transition: transform 700ms cubic-bezier(0.65, 0, 0.35, 1)">
+<sc-for list="{{films}}" as="f" hint-placeholder-count="6">
+<a href="#work" aria-label="{{f.aria}}" style="display: flex; flex-direction: column; width: 240px; text-decoration: none">
+<div style="padding: 14px; background: linear-gradient(145deg,#2c2622 0%,#1a1614 50%,#0e0c0b 100%); border-radius: 3px; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.06), inset 0 0 0 5px #0c0a09, 0 0 70px {{f.glow}}, 0 30px 50px rgba(0,0,0,0.55)">
+<div style="position: relative; aspect-ratio: 27 / 40; background: {{f.art}}; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; padding: 18px 14px 20px; box-sizing: border-box; box-shadow: 0 0 18px {{f.glow}}">
+<div aria-hidden="true" style="position: absolute; inset: 0; background: linear-gradient(118deg, rgba(255,255,255,0.16) 0%, rgba(255,255,255,0.04) 32%, transparent 33%)"></div>
+<div style="position: relative; text-align: center; font-size: 10px; letter-spacing: 0.42em; text-transform: uppercase; color: #FFF3D2">Simran</div>
+<div style="position: relative; text-align: center; display: flex; flex-direction: column; gap: 10px">
+<div style="font-family: Oswald, 'Arial Narrow', sans-serif; font-weight: 600; font-size: {{f.size}}; line-height: 0.95; text-transform: uppercase; letter-spacing: 0.02em; color: #FFFFFF; text-shadow: 0 2px 12px rgba(0,0,0,0.5)">{{f.title}}</div>
+<div style="font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.75)">{{f.lang}} · In cinemas</div>
+<div style="font-size: 8px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.55)">Key art placeholder</div>
+</div>
+</div>
+</div>
+<div style="margin: 0 14px; height: 34px; background: linear-gradient(180deg,#E3C77F 0%,#C4A35A 45%,#9C7E3C 100%); box-shadow: inset 0 1px 0 rgba(255,255,255,0.5), 0 6px 14px rgba(0,0,0,0.45); display: flex; align-items: center; justify-content: center; gap: 10px; font-family: Oswald, sans-serif; text-transform: uppercase; color: #1a1410">
+<span style="font-weight: 600; font-size: 16px; letter-spacing: 0.14em">{{f.year}}</span>
+<span style="width: 1px; height: 14px; background: rgba(26,20,16,0.4)"></span>
+<span style="font-weight: 500; font-size: 11px; letter-spacing: 0.22em">{{f.plate}}</span>
+</div>
+</a>
+</sc-for>
+</div>
+</div>
+</div>
+<div aria-hidden="true" class="floor" style="height: 72px"></div>
+</section>
+
+<dc-import name="Upcoming" hint-size="100%,820px"></dc-import>
+
+<dc-import name="Buzz" hint-size="100%,1100px"></dc-import>
+
+<section id="reel" aria-labelledby="reel-h" style="padding: 104px 0 96px; background: radial-gradient(ellipse 60% 70% at 50% 45%, #8E1B22 0%, #7A1F24 45%, #4a1215 100%); overflow: hidden">
+<div style="max-width: 1280px; margin: 0 auto; padding: 0 32px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 24px; margin-bottom: 40px">
+<div>
+<h2 id="reel-h" style="margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: 64px; line-height: 1.05">Showreel</h2>
+</div>
+<div style="display: flex; align-items: center; gap: 16px">
+<span style="font-family: Oswald, sans-serif; font-size: 18px; letter-spacing: 0.12em; color: #F6E2B8">{{reelNum}} <span style="color: #EBCFC7">/ {{reelTotal}}</span></span>
+<button type="button" onClick="{{reelPrev}}" aria-label="Previous clip" style="width: 52px; height: 52px; border-radius: 50%; background: transparent; border: 1px solid rgba(243,237,227,0.5); display: flex; align-items: center; justify-content: center; cursor: pointer"><svg width="18" height="18" viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3 5 8l5 5" fill="none" stroke="#F3EDE3" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path></svg></button>
+<button type="button" onClick="{{reelNext}}" aria-label="Next clip" style="width: 52px; height: 52px; border-radius: 50%; background: #F3EDE3; border: 1px solid #F3EDE3; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg width="18" height="18" viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5 5-5 5" fill="none" stroke="#7A1F24" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></button>
+</div>
+</div>
+
+<div onMouseEnter="{{reelPause}}" onMouseLeave="{{reelResume}}" style="position: relative; height: 470px; perspective: 1600px; margin-bottom: 48px">
+<sc-for list="{{clips}}" as="c" hint-placeholder-count="5">
+<div onClick="{{c.pick}}" style="position: absolute; left: 50%; top: 0; width: 760px; max-width: 86vw; aspect-ratio: 16 / 9; transform: {{c.tf}}; opacity: {{c.op}}; z-index: {{c.z}}; transition: transform 700ms cubic-bezier(0.65, 0, 0.35, 1), opacity 700ms ease, filter 700ms ease; filter: {{c.filter}}; cursor: pointer; background: {{c.bg}}; box-shadow: 0 0 0 1px rgba(246,226,184,0.35), 0 40px 80px rgba(0,0,0,0.6)">
+<div style="position: absolute; left: 24px; top: 18px; font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase; color: #EBCFC7">{{c.kind}} · muted preview</div>
+<sc-if value="{{c.active}}" hint-placeholder-val="{{ false }}">
+<div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center">
+<button type="button" aria-label="{{c.playLabel}}" style="width: 92px; height: 92px; border-radius: 50%; background: rgba(10,10,10,0.35); border: 1px solid rgba(243,237,227,0.7); display: flex; align-items: center; justify-content: center; cursor: pointer"><svg width="22" height="22" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 1.5v9l7.5-4.5z" fill="#F3EDE3"></path></svg></button>
+</div>
+<div style="position: absolute; left: 0; right: 0; bottom: 0; padding: 22px 24px 20px; background: linear-gradient(180deg, rgba(10,10,10,0) 0%, rgba(10,10,10,0.85) 100%); display: flex; justify-content: space-between; align-items: flex-end; gap: 16px">
+<div>
+<div style="font-family: Oswald, sans-serif; font-weight: 500; font-size: 30px; line-height: 1.05; text-transform: uppercase; letter-spacing: 0.03em">{{c.title}}</div>
+<div style="font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #EBCFC7; margin-top: 6px">{{c.film}} · {{c.dur}}</div>
+</div>
+<span style="font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; border: 1px solid rgba(243,237,227,0.5); padding: 6px 10px">Sound on ↗</span>
+</div>
+<div style="position: absolute; left: 0; bottom: 0; height: 3px; width: {{progress}}; background: #F6E2B8"></div>
+</sc-if>
+</div>
+</sc-for>
+</div>
+
+<div style="max-width: 1280px; margin: 0 auto; padding: 0 32px">
+<div role="group" aria-label="Clips" style="display: flex; gap: 8px; max-width: 520px; margin: 0 auto">
+<sc-for list="{{clips}}" as="c" hint-placeholder-count="5">
+<button type="button" onClick="{{c.pick}}" aria-label="{{c.segLabel}}" aria-pressed="{{c.pressed}}" style="flex: 1 1 0; min-height: 44px; background: transparent; border: none; padding: 0; cursor: pointer; display: flex; align-items: center">
+<span style="position: relative; display: block; width: 100%; height: 3px; background: rgba(243,237,227,0.28)"><span style="position: absolute; left: 0; top: 0; bottom: 0; width: {{c.fill}}; background: #F6E2B8; display: block"></span></span>
+</button>
+</sc-for>
+</div>
+</div>
+</section>
+
+<section id="about" aria-labelledby="about-h" style="padding: 96px 0; border-top: 1px solid rgba(243,237,227,0.08)">
+<div style="max-width: 1280px; margin: 0 auto; padding: 0 32px; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 64px; align-items: start">
+<div class="still" style="aspect-ratio: 4 / 5; display: flex; align-items: flex-end; padding: 20px; box-sizing: border-box">
+<span style="font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase; color: #6E6A63">Editorial portrait — commissioned</span>
+</div>
+<div>
+<h2 id="about-h" style="margin: 0 0 8px; font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: 64px; line-height: 1.05">Three Decades</h2>
+
+<p style="margin: 0 0 40px; max-width: 520px; color: #D9D2C6; font-size: 17px">Actor, producer and director across Tamil, Telugu, Hindi, Malayalam and Kannada cinema — known for her dance and for performances that have spanned three decades.</p>
+<ol style="list-style: none; margin: 0 0 40px; padding: 0; display: flex; flex-direction: column">
+<li style="display: grid; grid-template-columns: 140px 1fr; gap: 24px; padding: 20px 0; border-top: 1px solid rgba(243,237,227,0.12)"><span style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 24px; color: #C4A35A">Mid-90s</span><span style="color: #D9D2C6">Debut, and the decade that made her a household name across the South.</span></li>
+<li style="display: grid; grid-template-columns: 140px 1fr; gap: 24px; padding: 20px 0; border-top: 1px solid rgba(243,237,227,0.12)"><span style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 24px; color: #C4A35A">The return</span><span style="color: #D9D2C6">[Client copy — key films and the step into producing.]</span></li>
+<li style="display: grid; grid-template-columns: 140px 1fr; gap: 24px; padding: 20px 0; border-top: 1px solid rgba(243,237,227,0.12); border-bottom: 1px solid rgba(243,237,227,0.12)"><span style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 24px; color: #C4A35A">2020s</span><span style="color: #D9D2C6">Paava Kadhaigal, Andhagan, Tourist Family — and Dharman, now shooting.</span></li>
+</ol>
+<a href="#about" style="font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; border-bottom: 1px solid #C4A35A; padding-bottom: 4px">Read the biography</a>
+</div>
+</div>
+</section>
+
+<dc-import name="MemoryLane" hint-size="100%,1800px"></dc-import>
+
+
+<dc-import name="Photoshoots" hint-size="100%,1250px"></dc-import>
+
+<section id="press" aria-labelledby="press-h" style="padding: 96px 0; border-top: 1px solid rgba(243,237,227,0.08)">
+<div style="max-width: 1280px; margin: 0 auto; padding: 0 32px; display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 64px">
+<div class="still" style="position: relative; aspect-ratio: 3 / 4; padding: 32px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between">
+<div style="font-family: 'Cormorant Garamond', serif; font-size: 56px; letter-spacing: 0.3em; font-weight: 500">SIMRAN</div>
+<div>
+<div style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 32px; line-height: 1.15; max-width: 360px">[Cover line — from a real feature]</div>
+<div style="font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase; color: #6E6A63; margin-top: 20px">Cover still placeholder</div>
+</div>
+</div>
+<div>
+<h2 id="press-h" style="margin: 0 0 32px; font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: 64px; line-height: 1.05">Cover Story</h2>
+<blockquote style="margin: 0 0 12px; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 30px; line-height: 1.3; color: #D9D2C6">“[Pull quote — sourced from published review]”</blockquote>
+<div style="font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: #A39E95">— [Publication]</div>
+</div>
+</div>
+</section>
+
+<dc-import name="Awards" hint-size="100%,1150px"></dc-import>
+
+<dc-import name="Interviews" hint-size="100%,900px"></dc-import>
+
+<dc-import name="FanNotes" hint-size="100%,1100px"></dc-import>
+
+<dc-import name="SocialWall" hint-size="100%,1150px"></dc-import>
+
+<section id="connect" aria-labelledby="connect-h" style="padding: 120px 0; border-top: 1px solid rgba(243,237,227,0.08)">
+<div style="max-width: 1280px; margin: 0 auto; padding: 0 32px; display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 64px">
+<div>
+<h2 id="connect-h" style="margin: 0 0 24px; font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: 64px; line-height: 1.05">Closed Set</h2>
+<p style="margin: 0 0 32px; max-width: 440px; color: #D9D2C6; font-size: 17px">For press, brand and professional enquiries.</p>
+<a href="mailto:admin@simran.actor" style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 34px; border-bottom: 1px solid #C4A35A">admin@simran.actor</a>
+</div>
+<form style="display: flex; flex-direction: column; gap: 20px">
+<div style="display: flex; flex-direction: column; gap: 8px"><label for="c-name" style="font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase; color: #A39E95">Name</label><input id="c-name" type="text" style="min-height: 48px; background: transparent; border: none; border-bottom: 1px solid rgba(243,237,227,0.3); color: #F3EDE3; padding: 0 2px"></div>
+<div style="display: flex; flex-direction: column; gap: 8px"><label for="c-email" style="font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase; color: #A39E95">Email</label><input id="c-email" type="email" style="min-height: 48px; background: transparent; border: none; border-bottom: 1px solid rgba(243,237,227,0.3); color: #F3EDE3; padding: 0 2px"></div>
+<div style="display: flex; flex-direction: column; gap: 8px"><label for="c-type" style="font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase; color: #A39E95">Enquiry</label><select id="c-type" style="min-height: 48px; background: #0A0A0A; border: none; border-bottom: 1px solid rgba(243,237,227,0.3); color: #F3EDE3"><option>Press</option><option>Brand</option><option>Professional</option></select></div>
+<div style="display: flex; flex-direction: column; gap: 8px"><label for="c-msg" style="font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase; color: #A39E95">Message</label><textarea id="c-msg" rows="4" style="background: transparent; border: none; border-bottom: 1px solid rgba(243,237,227,0.3); color: #F3EDE3; padding: 8px 2px; resize: vertical"></textarea></div>
+<button type="submit" style="align-self: flex-start; min-height: 48px; padding: 0 32px; background: #F3EDE3; color: #0A0A0A; border: none; font-family: Inter, sans-serif; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; cursor: pointer">Send enquiry</button>
+</form>
+</div>
+</section>
+
+<footer style="padding: 64px 32px 48px; border-top: 1px solid rgba(243,237,227,0.08)">
+<div style="max-width: 1280px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 32px">
+<div style="display: flex; align-items: baseline; gap: 12px; color: {{ink}}">
+<span lang="ta" style="font-family: 'Noto Serif Tamil', serif; font-weight: 500; font-size: 26px">சிம்ரன்</span>
+<span style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 30px">Simran</span>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 28px; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase">
+<a href="mailto:admin@simran.actor">admin@simran.actor</a>
+<a href="https://www.instagram.com/simranrishibagga/">Instagram</a>
+<a href="https://x.com/simranbaggaoffc">X</a>
+<a href="https://www.youtube.com/@simranandsonsfilms6873">YouTube</a>
+</div>
+<div style="font-size: 12px; color: #A39E95; width: 100%">© 2026 Simran. All rights reserved.</div>
+</div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"ink":{"editor":"color","default":"#F3EDE3","options":["#F3EDE3","#C4A35A"]},"$preview":{"width":1440,"height":13700}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { idx: 0, reel: 0, tick: 0, paused: false }; }
+  componentDidMount() {
+    this.timer = setInterval(() => {
+      if (this.state.paused) return;
+      const t = this.state.tick + 1;
+      if (t >= 40) this.setState({ tick: 0, reel: (this.state.reel + 1) % 5 });
+      else this.setState({ tick: t });
+    }, 200);
+  }
+  componentWillUnmount() { clearInterval(this.timer); }
+  reelVals() {
+    const base = [
+      { title: 'Showreel 2026', film: 'Primary reel', dur: '[2:30]', kind: 'Reel', tint: '#3a2a26' },
+      { title: 'The confrontation', film: 'Andhagan', dur: '[0:48]', kind: 'Scene', tint: '#2b2220' },
+      { title: 'A quiet return', film: 'Paava Kadhaigal', dur: '[1:05]', kind: 'Scene', tint: '#33241f' },
+      { title: 'Family table', film: 'Tourist Family', dur: '[0:52]', kind: 'Scene', tint: '#2e2a22' },
+      { title: 'Title song', film: 'Petta', dur: '[1:12]', kind: 'Song', tint: '#30201f' }
+    ];
+    const a = this.state.reel, n = base.length;
+    const clips = base.map((c, i) => {
+      let d = i - a; if (d > n / 2) d -= n; if (d < -n / 2) d += n;
+      const ad = Math.abs(d);
+      return {
+        ...c,
+        num: String(i + 1).padStart(2, '0'),
+        active: d === 0,
+        pressed: d === 0 ? 'true' : 'false',
+        playLabel: 'Play ' + c.title + ' with sound',
+        tf: 'translateX(calc(-50% + ' + (d * 520) + 'px)) translateZ(' + (-ad * 280) + 'px) rotateY(' + (-d * 24) + 'deg)',
+        op: ad > 2 ? 0 : (ad === 2 ? 0.35 : (ad === 1 ? 0.75 : 1)),
+        z: 10 - ad,
+        filter: ad === 0 ? 'none' : 'brightness(0.55)',
+        bg: 'radial-gradient(ellipse 70% 60% at 60% 40%,' + c.tint + ' 0%,#141110 60%,#0A0A0A 100%)',
+        segLabel: 'Go to clip ' + (i + 1) + ': ' + c.title,
+        fill: d === 0 ? (this.state.tick * 2.5) + '%' : (i < a ? '100%' : '0%'),
+        pick: () => this.setState({ reel: i, tick: 0 })
+      };
+    });
+    return {
+      clips,
+      progress: (this.state.tick * 2.5) + '%',
+      reelNum: String(a + 1).padStart(2, '0'),
+      reelTotal: String(n).padStart(2, '0'),
+      reelPrev: () => this.setState({ reel: (a - 1 + n) % n, tick: 0 }),
+      reelNext: () => this.setState({ reel: (a + 1) % n, tick: 0 }),
+      reelPause: () => this.setState({ paused: true }),
+      reelResume: () => this.setState({ paused: false })
+    };
+  }
+  renderVals() {
+    const poster = (top, mid) => 'linear-gradient(180deg,' + top + ' 0%,' + mid + ' 55%,#0d0a09 100%)';
+    const films = [
+      { title: 'Tourist Family', lang: 'Tamil', year: '2025', plate: 'Now playing', size: '34px', art: poster('#E8A53A', '#8a3b1c'), glow: 'rgba(232,165,58,0.35)' },
+      { title: 'Andhagan', lang: 'Tamil', year: '2024', plate: 'Premiere', size: '36px', art: poster('#2a7f9e', '#122f4a'), glow: 'rgba(42,127,158,0.35)' },
+      { title: 'Good Bad Ugly', lang: 'Tamil', year: '2025', plate: 'Cameo', size: '34px', art: poster('#C8323A', '#4a1215'), glow: 'rgba(200,50,58,0.35)' },
+      { title: 'Gulmohar', lang: 'Hindi', year: '2023', plate: 'Hindi', size: '36px', art: poster('#d0607a', '#3d4f2a'), glow: 'rgba(208,96,122,0.3)' },
+      { title: 'Rocketry: The Nambi Effect', lang: 'Multilingual', year: '2022', plate: 'Biopic', size: '26px', art: poster('#3b5bb5', '#16163a'), glow: 'rgba(59,91,181,0.35)' },
+      { title: 'Paava Kadhaigal', lang: 'Tamil', year: '2020', plate: 'Streaming', size: '30px', art: poster('#7e4bb0', '#2a1638'), glow: 'rgba(126,75,176,0.35)' },
+      { title: 'Petta', lang: 'Tamil', year: '2019', plate: 'Classic', size: '40px', art: poster('#e0702a', '#3a1a0d'), glow: 'rgba(224,112,42,0.35)' }
+    ];
+    films.forEach((f) => { f.aria = f.title + ', ' + f.year; });
+    const max = films.length - 4;
+    const idx = Math.min(Math.max(this.state.idx, 0), max);
+    return {
+      ...this.reelVals(),
+      ink: this.props.ink ?? '#F3EDE3',
+      films,
+      shift: (-idx * 296) + 'px',
+      prevOp: idx === 0 ? 0.35 : 1,
+      nextOp: idx === max ? 0.35 : 1,
+      prev: () => this.setState({ idx: Math.max(idx - 1, 0) }),
+      next: () => this.setState({ idx: Math.min(idx + 1, max) })
+    };
+  }
+}
+</script>
+</body>
+</html>

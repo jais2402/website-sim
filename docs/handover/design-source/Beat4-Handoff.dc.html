@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Beat 4 — handoff</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&amp;family=Noto+Serif+Tamil:wght@400;500&amp;family=Inter:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+.still{background:linear-gradient(160deg,#2a2420 0%,#151210 60%,#0d0c0b 100%)}
+</style>
+</helmet>
+<div style="position: relative; width: 960px; height: 540px; overflow: hidden; background: #0A0A0A; color: #F3EDE3; font-family: Inter, sans-serif">
+<div style="position: absolute; top: 20px; left: 24px; font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase; color: #A39E95">Mask released · video faded out · unpin</div>
+<div style="position: absolute; left: 64px; top: 92px">
+<div style="font-family: 'Cormorant Garamond', serif; font-size: 44px; line-height: 1">The Reel Wall</div>
+</div>
+<div style="position: absolute; left: 64px; top: 190px; display: flex; gap: 18px">
+<div class="still" style="width: 170px; height: 255px"></div>
+<div class="still" style="width: 170px; height: 255px"></div>
+<div class="still" style="width: 140px; height: 210px; align-self: flex-end"></div>
+<div class="still" style="width: 140px; height: 210px; align-self: flex-end"></div>
+<div class="still" style="width: 140px; height: 210px; align-self: flex-end"></div>
+</div>
+<div style="position: absolute; right: 28px; bottom: 24px; display: flex; align-items: baseline; gap: 6px; color: {{ink}}; opacity: 0.7">
+<span lang="ta" style="font-family: 'Noto Serif Tamil', serif; font-weight: 500; font-size: 14px">சிம்ரன்</span>
+<span style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 16px">Simran</span>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"ink":{"editor":"color","default":"#C4A35A","options":["#F3EDE3","#C4A35A"]},"$preview":{"width":960,"height":540}}'>
+class Component extends DCLogic {
+  renderVals() { return { ink: this.props.ink ?? '#C4A35A' }; }
+}
+</script>
+</body>
+</html>

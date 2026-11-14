@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Notes from Simran</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&amp;family=Noto+Serif+Tamil:wght@400;500&amp;family=Inter:wght@400;500&amp;family=Oswald:wght@500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+</style>
+</helmet>
+<section id="notes" aria-labelledby="fn-h" style="width: 100%; box-sizing: border-box; padding: 104px 0; background: radial-gradient(ellipse 60% 60% at 35% 45%, rgba(227,199,127,0.10) 0%, transparent 70%), linear-gradient(180deg, #16110d 0%, #0f0b09 100%); color: #F1E6D2; font-family: Inter, system-ui, sans-serif; line-height: 1.6">
+<div style="max-width: 1280px; margin: 0 auto; padding: 0 32px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 24px; margin-bottom: 48px">
+<div>
+<h2 id="fn-h" style="margin: 0; font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 400; font-size: 72px; line-height: 1">Notes from Simran</h2>
+<div style="display: flex; align-items: baseline; gap: 14px; margin-top: 10px">
+<span lang="ta" style="font-family: 'Noto Serif Tamil', serif; font-size: 20px; color: #C4A35A">அன்புடன்</span>
+<span style="font-size: 15px; color: #CDBFA6">Messages to the people who’ve been there all along.</span>
+</div>
+</div>
+<a href="#notes" style="min-height: 44px; display: inline-flex; align-items: center; padding: 0 22px; border: 1px solid #C4A35A; color: #F1E6D2; text-decoration: none; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase">All notes →</a>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; gap: 48px; align-items: flex-start">
+<div style="flex: 999 1 560px; min-width: 0; position: relative; padding: 18px 0 0 18px">
+<div aria-hidden="true" style="position: absolute; left: 0; top: 0; right: 30px; bottom: 30px; background: #E2D5BC; transform: rotate(-2.5deg); box-shadow: 0 20px 40px rgba(0,0,0,0.5)"></div>
+<article aria-live="polite" style="position: relative; padding: 56px 64px 48px; background: linear-gradient(180deg, #F7F0E1 0%, #EFE4CE 100%); color: #2a1f16; box-shadow: 0 30px 60px rgba(0,0,0,0.55); opacity: {{fade}}; transform: translateY({{shift}}); transition: opacity 320ms ease, transform 420ms cubic-bezier(0.2, 0.9, 0.3, 1)">
+<div aria-hidden="true" style="position: absolute; right: 48px; top: -22px; width: 64px; height: 64px; border-radius: 50%; background: radial-gradient(circle at 40% 35%, #a33a3f 0%, #7A1F24 55%, #4a1215 100%); box-shadow: 0 6px 12px rgba(0,0,0,0.4); display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 30px; color: #E9C9B0">S</div>
+<div style="display: flex; justify-content: space-between; gap: 16px; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: #7A1F24; margin-bottom: 28px"><span>{{cur.occasion}}</span><span style="color: #6e5a38">{{cur.date}}</span></div>
+<p style="margin: 0 0 18px; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 30px; line-height: 1.3">{{cur.greet}}</p>
+<p style="margin: 0; font-family: 'Cormorant Garamond', serif; font-size: 22px; line-height: 1.6; color: #3a2c1e; white-space: pre-line">{{cur.body}}</p>
+<div style="margin-top: 36px; display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; flex-wrap: wrap">
+<div>
+<div style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 20px; color: #6e5a38">With love,</div>
+<div style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 40px; line-height: 1">Simran</div>
+<div style="font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase; color: #8a7658; margin-top: 4px">Signature placeholder</div>
+</div>
+<a href="https://www.instagram.com/simranrishibagga/" style="min-height: 44px; display: inline-flex; align-items: center; padding: 0 20px; background: #2a1f16; color: #F7F0E1; text-decoration: none; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase">Send your wishes →</a>
+</div>
+</article>
+</div>
+
+<div style="flex: 1 1 320px; min-width: 0">
+<div style="font-family: Oswald, sans-serif; font-size: 12px; letter-spacing: 0.24em; text-transform: uppercase; color: #C4A35A; margin-bottom: 12px">Earlier notes</div>
+<ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px">
+<sc-for list="{{notes}}" as="n" hint-placeholder-count="5">
+<li>
+<button type="button" onClick="{{n.pick}}" onMouseEnter="{{n.pick}}" aria-pressed="{{n.pressed}}" style="width: 100%; text-align: left; cursor: pointer; padding: 16px 18px; min-height: 44px; background: {{n.bg}}; border: 1px solid {{n.border}}; color: #F1E6D2; font-family: Inter, sans-serif; display: grid; grid-template-columns: 1fr auto; gap: 4px 12px; transform: translateX({{n.nudge}}); transition: transform 280ms cubic-bezier(0.2, 0.9, 0.3, 1), background 220ms ease, border-color 220ms ease">
+<span style="font-family: Oswald, sans-serif; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #C4A35A">{{n.occasion}}</span>
+<span style="font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: #9C907C">{{n.date}}</span>
+<span style="grid-column: 1 / -1; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 20px; line-height: 1.3">{{n.preview}}</span>
+</button>
+</li>
+</sc-for>
+</ul>
+</div>
+</div>
+<p style="margin: 28px 0 0; font-size: 12px; color: #9C907C">Every note is published only in Simran’s own words, as supplied by her team.</p>
+</div>
+</section>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1100}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { sel: 0, anim: false }; }
+  componentWillUnmount() { clearTimeout(this.t); }
+  pick(k) {
+    if (k === this.state.sel) return;
+    this.setState({ anim: true });
+    clearTimeout(this.t);
+    this.t = setTimeout(() => this.setState({ sel: k, anim: false }), 180);
+  }
+  renderVals() {
+    const N = [
+      { occasion: 'Thank you', date: '[Date]', greet: 'Dear all of you,', body: '[A thank-you note after a release — in Simran’s own words.]\n\n[Second paragraph.]', preview: '“[Opening line of the note]”' },
+      { occasion: 'Festival greetings', date: '[Date]', greet: '[Greeting]', body: '[Festival message — in Simran’s own words.]', preview: '“[Opening line of the note]”' },
+      { occasion: 'From the set', date: '[Date]', greet: '[Greeting]', body: '[A note from the Dharman shoot — in Simran’s own words.]', preview: '“[Opening line of the note]”' },
+      { occasion: 'Birthday thanks', date: '[Date]', greet: '[Greeting]', body: '[Thank-you for birthday wishes — in Simran’s own words.]', preview: '“[Opening line of the note]”' },
+      { occasion: 'Three decades', date: '[Date]', greet: '[Greeting]', body: '[A reflective note on the journey — in Simran’s own words.]', preview: '“[Opening line of the note]”' }
+    ];
+    const sel = this.state.sel;
+    const notes = N.map((n, k) => ({
+      ...n,
+      pressed: k === sel ? 'true' : 'false',
+      bg: k === sel ? 'rgba(196,163,90,0.12)' : 'rgba(241,230,210,0.03)',
+      border: k === sel ? 'rgba(196,163,90,0.7)' : 'rgba(241,230,210,0.12)',
+      nudge: k === sel ? '-6px' : '0px',
+      pick: () => this.pick(k)
+    }));
+    return { notes, cur: N[sel], fade: this.state.anim ? 0 : 1, shift: this.state.anim ? '10px' : '0px' };
+  }
+}
+</script>
+</body>
+</html>

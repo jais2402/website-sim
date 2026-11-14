@@ -1,0 +1,173 @@
+{
+  "_note": "Carried over from the awards tables on the current simran.actor (November 2026). Client to confirm years, films and bodies before launch (HANDOVER.md §4).",
+  "awards": [
+    {
+      "year": 2025,
+      "body": "Blacksheep Cine Awards",
+      "award": "Best Actress Critic Award",
+      "work": "Andhagan",
+      "role": "Simi",
+      "result": "Won"
+    },
+    {
+      "year": 2025,
+      "body": "JFW Movie Awards",
+      "award": "Best Actress Critic Award – Andhagan",
+      "work": null,
+      "role": null,
+      "result": "Won"
+    },
+    {
+      "year": 2024,
+      "body": "Ananda Vikatan Cinema Awards",
+      "award": "Best Villain Actress",
+      "work": "Andhagan",
+      "role": "Simi",
+      "result": "Won"
+    },
+    {
+      "year": 2024,
+      "body": "Galatta Awards",
+      "award": "Evergreen Golden Icon Of Inspiration",
+      "work": null,
+      "role": null,
+      "result": "Won"
+    },
+    {
+      "year": 2020,
+      "body": "JFW Movie Awards",
+      "award": "Best Actress – OTT for Paava Kadhaigal",
+      "work": null,
+      "role": null,
+      "result": "Won"
+    },
+    {
+      "year": 2019,
+      "body": "JFW Movie Awards",
+      "award": "Award for Excellence in Tamil Cinema",
+      "work": null,
+      "role": null,
+      "result": "Won"
+    },
+    {
+      "year": 2018,
+      "body": "Behindwoods Gold Medals Awards",
+      "award": "Woman Icon of Inspiration Award",
+      "work": null,
+      "role": null,
+      "result": "Won"
+    },
+    {
+      "year": 2008,
+      "body": "Film Fans Association Awards",
+      "award": "Best Supporting Actress",
+      "work": "Vaaranam Aayiram",
+      "role": "Malini Krishnan",
+      "result": "Won"
+    },
+    {
+      "year": 2008,
+      "body": "Filmfare Awards South",
+      "award": "Best Supporting Actress",
+      "work": "Vaaranam Aayiram",
+      "role": "Malini Krishnan",
+      "result": "Won"
+    },
+    {
+      "year": 2008,
+      "body": "Vijay Awards",
+      "award": "Best Supporting Actress",
+      "work": "Vaaranam Aayiram",
+      "role": "Malini Krishnan",
+      "result": "Won"
+    },
+    {
+      "year": 2003,
+      "body": "Kalaimamani Awards",
+      "award": "Contribution to Tamil film industry",
+      "work": null,
+      "role": null,
+      "result": "Won"
+    },
+    {
+      "year": 2002,
+      "body": "Cinema Express Awards",
+      "award": "Best Tamil Actress in Leading Role",
+      "work": "Kannathil Muthamittal",
+      "role": "Indra Thiruchelvan",
+      "result": "Won"
+    },
+    {
+      "year": 2002,
+      "body": "Filmfare Awards South",
+      "award": "Best Actress",
+      "work": "Kannathil Muthamittal",
+      "role": "Indra Thiruchelvan",
+      "result": "Won"
+    },
+    {
+      "year": 2002,
+      "body": "International Tamil Film Awards",
+      "award": "Best Actress in Leading Role",
+      "work": "Kannathil Muthamittal",
+      "role": "Indra Thiruchelvan",
+      "result": "Won"
+    },
+    {
+      "year": 2001,
+      "body": "Filmfare Awards South",
+      "award": "Best Actress",
+      "work": "Narasimha Naidu",
+      "role": "Sravani",
+      "result": "Nominated"
+    },
+    {
+      "year": 2000,
+      "body": "Film Fans Association Awards",
+      "award": "Special Jury Award for Best Actress in Leading Role",
+      "work": "Kalisundam Raa, Priyamanavale",
+      "role": "Manga, Priya",
+      "result": "Won"
+    },
+    {
+      "year": 1999,
+      "body": "Cinema Express Awards",
+      "award": "Best Tamil Actress in Leading Role",
+      "work": "Vaali",
+      "role": "Priya",
+      "result": "Won"
+    },
+    {
+      "year": 1999,
+      "body": "Dinakaran Film Awards",
+      "award": "Best Tamil Actress in Leading Role",
+      "work": "Thulladha Manamum Thullum, Vaali",
+      "role": "Rukmani, Priya",
+      "result": "Won"
+    },
+    {
+      "year": 1999,
+      "body": "Tamil Nadu State Film Awards",
+      "award": "Best Actress in Leading Role",
+      "work": "Thulladha Manamum Thullum",
+      "role": "Rukmani",
+      "result": "Won"
+    },
+    {
+      "year": 1997,
+      "body": "Dinakaran Film Awards",
+      "award": "Best Newface Actress",
+      "work": "Nerrukku Ner, Once More, V.I.P.",
+      "role": "Asha, Kavitha, Priya",
+      "result": "Won"
+    },
+    {
+      "year": 1997,
+      "body": "Filmfare Awards South",
+      "award": "Best Female Debut",
+      "work": "Nerrukku Ner, Once More, V.I.P.",
+      "role": "Asha, Kavitha, Priya",
+      "result": "Won"
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "_note": "The first item of the chosen category is the lead story. `category` must be one of `categories`. The masthead date is computed, not stored.",
+  "heading": "The Buzz",
+  "flag": "Hot right now",
+  "categories": ["Shoot update", "Announcement", "Box office", "Event", "Fan moment"],
+  "items": [
+    {
+      "category": "Shoot update",
+      "kicker": "Shoot update · Dharman",
+      "title": "[Headline — latest from the Dharman set]",
+      "dek": "[Two or three lines of standfirst from the official update. Facts only — schedule, location, what was shot.]",
+      "meta": "[Source · time ago]",
+      "image": null,
+      "href": "#buzz"
+    },
+    {
+      "category": "Announcement",
+      "kicker": "Announcement",
+      "title": "[Headline — new project or role]",
+      "dek": "[Standfirst]",
+      "meta": "[Source · date]",
+      "image": null,
+      "href": "#buzz"
+    },
+    {
+      "category": "Box office",
+      "kicker": "Box office",
+      "title": "[Headline — box office milestone]",
+      "dek": "[Standfirst]",
+      "meta": "[Source · date]",
+      "image": null,
+      "href": "#buzz"
+    },
+    {
+      "category": "Event",
+      "kicker": "Event",
+      "title": "[Headline — appearance or premiere]",
+      "dek": "[Standfirst]",
+      "meta": "[Source · date]",
+      "image": null,
+      "href": "#buzz"
+    },
+    {
+      "category": "Fan moment",
+      "kicker": "Fan moment",
+      "title": "[Headline — fan tribute or trend]",
+      "dek": "[Standfirst]",
+      "meta": "[Source · date]",
+      "image": null,
+      "href": "#buzz"
+    },
+    {
+      "category": "Announcement",
+      "kicker": "Brand",
+      "title": "[Headline — brand collaboration]",
+      "dek": "[Standfirst]",
+      "meta": "[Source · date]",
+      "image": null,
+      "href": "#buzz"
+    }
+  ],
+  "allNews": { "label": "All news", "href": "#buzz" }
+}

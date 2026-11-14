@@ -1,0 +1,16 @@
+{
+  "_note": "Every \"when\" value is unconfirmed (HANDOVER §4). shape: cup | star | crystal | plaque. metal: gold | silver (cups only). base: black | navy. size: trophy width in px at 1440. shelf: 1 = left upper, 2 = right upper, 3 = wall-hung (no plank), 4 = left lower. Trophies are generic illustrations: do not replace them with replicas of real statuettes.",
+  "heading": "Honours",
+  "headingTa": "விருதுகள்",
+  "intro": "Select a trophy to read the citation.",
+  "note": null,
+  "awards": [
+    { "shelf": 1, "shape": "cup", "metal": "gold", "base": "black", "size": 150, "kind": "Film award", "title": "Filmfare Awards South", "count": "×3", "detail": "Three wins across her South Indian work.", "when": "[Years · films — confirm]" },
+    { "shelf": 1, "shape": "star", "metal": "gold", "base": "black", "size": 110, "kind": "State award", "title": "Tamil Nadu State Film Award", "count": "Best Actress", "detail": "Best Actress.", "when": "[Year · film — confirm]" },
+    { "shelf": 1, "shape": "cup", "metal": "silver", "base": "navy", "size": 120, "kind": "Critics", "title": "Cinema Express Awards", "count": "×4", "detail": "Four wins from the Cinema Express awards.", "when": "[Years · films — confirm]" },
+    { "shelf": 2, "shape": "crystal", "metal": "gold", "base": "black", "size": 110, "kind": "National", "title": "National Film Award", "count": "Nominee", "detail": "Nominated at the National Film Awards.", "when": "[Year · film — confirm]" },
+    { "shelf": 4, "shape": "cup", "metal": "gold", "base": "black", "size": 132, "kind": "For one film", "title": "Andhagan", "count": "×3", "detail": "Three awards for her role in Andhagan.", "when": "[Awards · year — confirm]" },
+    { "shelf": 2, "shape": "cup", "metal": "silver", "base": "navy", "size": 104, "kind": "Streaming", "title": "Best Actress — OTT", "count": "×1", "detail": "For Paava Kadhaigal.", "when": "[Year · awarding body — confirm]" },
+    { "shelf": 3, "shape": "plaque", "metal": "gold", "base": "black", "size": 132, "kind": "State honour", "title": "Kalaimamani", "count": "×2", "detail": "Tamil Nadu’s honour for contribution to the arts.", "when": "[Years — confirm]" }
+  ]
+}

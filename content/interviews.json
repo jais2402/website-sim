@@ -1,0 +1,52 @@
+{
+  "_note": "type is Interview, Article or Video. Video rows take `video` (muted preview clip) and `poster`; the others take `quote`. `tint` is the featured panel's glow colour. Replace every [ … ] before launch.",
+  "heading": "Interviews & Articles",
+  "items": [
+    {
+      "type": "Interview",
+      "title": "[Interview headline 1]",
+      "source": "[Publication · Month 2026]",
+      "action": "Read",
+      "url": "[Link to the piece]",
+      "tint": "#3a1416",
+      "quote": "[Opening line or pull quote from the piece]"
+    },
+    {
+      "type": "Video",
+      "title": "[Video interview headline]",
+      "source": "[Channel · Month 2026]",
+      "action": "Watch",
+      "url": "[Link to the piece]",
+      "tint": "#2a1a24",
+      "video": null,
+      "poster": null
+    },
+    {
+      "type": "Article",
+      "title": "[Article headline 1]",
+      "source": "[Publication · Month 2026]",
+      "action": "Read",
+      "url": "[Link to the piece]",
+      "tint": "#241a14",
+      "quote": "[Opening line or pull quote from the piece]"
+    },
+    {
+      "type": "Interview",
+      "title": "[Interview headline 2]",
+      "source": "[Publication · Month 2026]",
+      "action": "Read",
+      "url": "[Link to the piece]",
+      "tint": "#1e1a22",
+      "quote": "[Opening line or pull quote from the piece]"
+    },
+    {
+      "type": "Article",
+      "title": "[Article headline 2]",
+      "source": "[Publication · Month 2026]",
+      "action": "Read",
+      "url": "[Link to the piece]",
+      "tint": "#2a1612",
+      "quote": "[Opening line or pull quote from the piece]"
+    }
+  ]
+}

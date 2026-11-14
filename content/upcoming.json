@@ -1,0 +1,23 @@
+{
+  "_note": "Status, tracker and countdown are derived from `production` (see src/lib/status.ts). Never type a status here. Set production.releaseDate (YYYY-MM-DD) only once the date is locked; until then `releaseNote` is shown, or 'To be announced' when it is absent.",
+  "heading": "Coming Soon & On Set",
+  "headingTa": "வருகை",
+  "films": [
+    {
+      "title": "Dharman",
+      "meta": "[Language · role — confirm]",
+      "poster": null,
+      "production": { "stage": "shooting", "releaseDate": null },
+      "cta": { "label": "Production updates", "href": "#upcoming" }
+    },
+    {
+      "title": "[Confirm title]",
+      "meta": "[Language · role — confirm]",
+      "poster": null,
+      "posterLine": "First look",
+      "production": { "stage": "post", "releaseDate": null },
+      "releaseNote": "[Release date]",
+      "cta": { "label": "Watch teaser", "href": "#upcoming" }
+    }
+  ]
+}

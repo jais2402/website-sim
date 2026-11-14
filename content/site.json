@@ -1,0 +1,20 @@
+{
+  "name": "Simran",
+  "nameTamil": "சிம்ரன்",
+  "roles": "Actor · Producer · Director",
+  "description": "The official home of Simran: actor, producer and director across Tamil, Telugu, Hindi, Malayalam and Kannada cinema.",
+  "email": "admin@simran.actor",
+  "nav": [
+    { "label": "Work", "href": "/work" },
+    { "label": "About", "href": "/about" },
+    { "label": "Reel", "href": "/reel" },
+    { "label": "Press", "href": "/press" },
+    { "label": "Connect", "href": "/connect" }
+  ],
+  "social": [
+    { "label": "Instagram", "handle": "@simranrishibagga", "href": "https://www.instagram.com/simranrishibagga/" },
+    { "label": "X", "handle": "@simranbaggaoffc", "href": "https://x.com/simranbaggaoffc" },
+    { "label": "YouTube", "handle": "@simranandsonsfilms6873", "href": "https://www.youtube.com/@simranandsonsfilms6873" },
+    { "label": "Facebook", "handle": "Simranbaggaofficial", "href": "https://www.facebook.com/Simranbaggaofficial" }
+  ]
+}

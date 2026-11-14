@@ -1,0 +1,312 @@
+.curtain {
+  padding: 104px 0 96px;
+  overflow: hidden;
+  background: radial-gradient(ellipse 60% 70% at 50% 45%, #8e1b22 0%, var(--red) 45%, #4a1215 100%);
+}
+
+.head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.counter {
+  font-family: var(--font-poster);
+  font-size: 18px;
+  letter-spacing: 0.12em;
+  color: var(--red-ink);
+}
+
+.total {
+  color: var(--red-soft);
+}
+
+.stage {
+  position: relative;
+  height: 470px;
+  perspective: 1600px;
+  margin-bottom: 48px;
+}
+
+/* --d: signed distance from the active screen; --ad: its absolute value. */
+.screen {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 760px;
+  max-width: 86vw;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  z-index: calc(10 - var(--ad));
+  opacity: calc(1 - var(--ad) * 0.3);
+  transform: translateX(calc(-50% + var(--d) * 520px)) translateZ(calc(var(--ad) * -280px)) rotateY(calc(var(--d) * -24deg));
+  transition:
+    transform 700ms var(--ease-cut),
+    opacity 700ms ease;
+  box-shadow:
+    0 0 0 1px rgb(246 226 184 / 0.35),
+    0 40px 80px rgb(0 0 0 / 0.6);
+}
+
+.screen[data-far] {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Side screens sit in shadow. An overlay keeps this to opacity only. */
+.screen::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgb(0 0 0 / 0.45);
+  pointer-events: none;
+  transition: opacity 700ms ease;
+}
+
+.screen[data-active]::after {
+  opacity: 0;
+}
+
+.fill {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.kind {
+  position: absolute;
+  left: 24px;
+  top: 18px;
+  font-size: 10px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--red-soft);
+}
+
+.play {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 92px;
+  height: 92px;
+  border-radius: 50%;
+  background: rgb(10 10 10 / 0.35);
+  border: 1px solid rgb(243 237 227 / 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.play:disabled {
+  cursor: default;
+  opacity: 0.6;
+}
+
+.pick {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: flex-end;
+  padding: 20px 24px;
+}
+
+.pickTitle {
+  font-family: var(--font-poster);
+  font-size: 18px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.caption {
+  position: absolute;
+  inset: auto 0 0;
+  padding: 22px 24px 20px;
+  background: linear-gradient(180deg, rgb(10 10 10 / 0) 0%, rgb(10 10 10 / 0.85) 100%);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 16px;
+}
+
+.clipTitle {
+  font-family: var(--font-poster);
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 1.05;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.clipMeta {
+  margin-top: 6px;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--red-soft);
+}
+
+.sound {
+  flex: none;
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  border: 1px solid rgb(243 237 227 / 0.5);
+  padding: 6px 10px;
+}
+
+.bar {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--red-ink);
+  transform-origin: left;
+}
+
+.segments {
+  display: flex;
+  gap: 8px;
+  max-width: 520px;
+  margin-inline: auto;
+}
+
+.segment {
+  flex: 1 1 0;
+  min-height: 44px;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.segTrack {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 3px;
+  background: rgb(243 237 227 / 0.28);
+  overflow: hidden;
+}
+
+.segFill {
+  position: absolute;
+  inset: 0;
+  background: var(--red-ink);
+  transform-origin: left;
+}
+
+/* Mobile: a flat swipe (HANDOVER.md §5). */
+@media (max-width: 900px) {
+  .curtain {
+    padding: 72px 0 64px;
+  }
+
+  .stage {
+    height: auto;
+    perspective: none;
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-inline: var(--gutter);
+    scroll-padding-inline: var(--gutter);
+    scrollbar-width: none;
+    margin-bottom: 24px;
+  }
+
+  .screen,
+  .screen[data-far] {
+    position: relative;
+    left: auto;
+    flex: none;
+    width: 84vw;
+    max-width: none;
+    transform: none;
+    opacity: 1;
+    pointer-events: auto;
+    scroll-snap-align: start;
+  }
+
+  .screen::after {
+    opacity: 0;
+  }
+
+  .clipTitle {
+    font-size: 22px;
+  }
+
+  .sound {
+    display: none;
+  }
+
+  .controls,
+  .segments {
+    display: none;
+  }
+
+  .play {
+    width: 60px;
+    height: 60px;
+  }
+
+  .caption {
+    padding: 14px 16px;
+  }
+
+  .kind {
+    left: 16px;
+    top: 12px;
+  }
+}
+
+/* Reduced motion: a static list of screens. */
+@media (prefers-reduced-motion: reduce) and (min-width: 901px) {
+  .stage {
+    height: auto;
+    perspective: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    gap: 24px;
+    max-width: var(--container);
+    margin-inline: auto;
+    padding-inline: var(--gutter);
+  }
+
+  .screen,
+  .screen[data-far] {
+    position: relative;
+    left: auto;
+    width: auto;
+    max-width: none;
+    transform: none;
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .screen::after,
+  .bar,
+  .segments,
+  .controls {
+    display: none;
+  }
+}

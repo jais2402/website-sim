@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>New Movies — 16:9 block</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&amp;family=Noto+Serif+Tamil:wght@400;500&amp;family=Inter:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#F3EDE3;text-decoration:none}a:hover{color:#C4A35A}
+.still{background:linear-gradient(160deg,#2a2420 0%,#151210 60%,#0d0c0b 100%)}
+.footage{background:radial-gradient(ellipse 70% 60% at 62% 42%,#3a3029 0%,#1c1714 45%,#0A0A0A 100%)}
+</style>
+</helmet>
+<section aria-labelledby="nm-h" style="width: 1440px; height: 810px; box-sizing: border-box; padding: 72px 80px; background: #0A0A0A; color: #F3EDE3; font-family: Inter, sans-serif; display: flex; flex-direction: column; gap: 40px">
+<div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 24px">
+<div>
+<div style="font-size: 11px; letter-spacing: 0.32em; text-transform: uppercase; color: #A39E95; margin-bottom: 14px">Latest</div>
+<div style="display: flex; align-items: baseline; gap: 24px">
+<h2 id="nm-h" style="margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: 64px; line-height: 1">New Movies</h2>
+<span lang="ta" style="font-family: 'Noto Serif Tamil', serif; font-size: 22px; color: #C4A35A">புதிய திரைப்படங்கள்</span>
+</div>
+</div>
+<a href="#work" style="font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; border-bottom: 1px solid #C4A35A; padding-bottom: 4px">All films</a>
+</div>
+
+<div style="display: flex; gap: 48px; flex-grow: 1; min-height: 0">
+<a href="#" class="footage" style="position: relative; width: 818px; height: 460px; flex-shrink: 0; display: flex; flex-direction: column; justify-content: flex-end; padding: 32px; box-sizing: border-box">
+<span style="position: absolute; top: 20px; left: 24px; font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase; color: #A39E95">16:9 still / muted teaser loop</span>
+<span style="font-size: 12px; letter-spacing: 0.24em; text-transform: uppercase; color: #C4A35A; margin-bottom: 10px">Shooting</span>
+<span style="font-family: 'Cormorant Garamond', serif; font-size: 56px; line-height: 1">Dharman</span>
+<span style="font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #D9D2C6; margin-top: 12px">[Role · language — confirm]</span>
+</a>
+
+<ul style="list-style: none; margin: 0; padding: 0; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; height: 460px">
+<sc-for list="{{films}}" as="f" hint-placeholder-count="3">
+<li style="border-top: 1px solid rgba(243,237,227,0.12); padding-top: 18px">
+<a href="#" style="display: flex; gap: 20px; align-items: center">
+<div class="still" style="width: 192px; height: 108px; flex-shrink: 0"></div>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<span style="font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase; color: #C4A35A">{{f.status}}</span>
+<span style="font-family: 'Cormorant Garamond', serif; font-size: 28px; line-height: 1.1">{{f.title}}</span>
+<span style="font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #A39E95">{{f.meta}}</span>
+</div>
+</a>
+</li>
+</sc-for>
+</ul>
+</div>
+</section>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":810}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      films: [
+        { status: 'Coming soon', title: '[Confirm title]', meta: '[Language · release date]' },
+        { status: 'Released', title: 'Tourist Family', meta: 'Tamil · 2025' },
+        { status: 'Released', title: 'Good Bad Ugly', meta: 'Tamil · 2025 · Cameo' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

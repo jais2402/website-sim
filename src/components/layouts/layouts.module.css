@@ -1,0 +1,273 @@
+/* PageIntro */
+.intro {
+  padding-top: 96px;
+  padding-bottom: 64px;
+}
+
+.introTa {
+  font-size: 22px;
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+
+.introTitle {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(52px, 9vw, 112px);
+  line-height: 0.98;
+  letter-spacing: -0.01em;
+}
+
+.introLede {
+  margin-top: 28px;
+  max-width: 620px;
+  font-size: 18px;
+  color: var(--ink-soft);
+}
+
+/* Chapters */
+.chapters {
+  padding-bottom: 96px;
+}
+
+.chapter {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 680px);
+  gap: 48px;
+  padding: 48px 0;
+  border-top: 1px solid var(--line-strong);
+}
+
+.chapterEra {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 26px;
+  color: var(--gold);
+}
+
+.chapterTitle {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.chapterText {
+  color: var(--ink-soft);
+  font-size: 17px;
+  line-height: 1.75;
+}
+
+.chapterText + .chapterText {
+  margin-top: 18px;
+}
+
+/* Filmography */
+.filmography {
+  padding-bottom: 96px;
+}
+
+.filters {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--line-strong);
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chip {
+  min-height: 44px;
+  padding: 0 18px;
+  background: transparent;
+  border: 1px solid rgb(243 237 227 / 0.3);
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.25s, color 0.25s;
+}
+
+.chip:hover {
+  border-color: var(--gold);
+}
+
+.chip[aria-pressed='true'] {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--ground);
+}
+
+.count {
+  padding: 20px 0 4px;
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+}
+
+.yearRow {
+  display: grid;
+  grid-template-columns: 160px minmax(0, 1fr);
+  gap: 32px;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--line-strong);
+}
+
+.year {
+  font-family: var(--font-poster);
+  font-weight: 500;
+  font-size: 30px;
+  letter-spacing: 0.06em;
+  color: var(--gold);
+  line-height: 1.2;
+}
+
+.filmRow {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr) 120px;
+  gap: 24px;
+  align-items: baseline;
+  padding: 6px 0;
+  scroll-margin-top: calc(var(--header-h) + 24px);
+}
+
+.filmRow:target .filmTitle {
+  color: var(--gold);
+}
+
+.filmTitle {
+  font-family: var(--font-display);
+  font-size: 26px;
+  line-height: 1.2;
+}
+
+.filmRole {
+  color: var(--ink-soft);
+}
+
+.filmLang {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  text-align: right;
+}
+
+/* LedgerList */
+.ledger {
+  padding-top: 72px;
+  padding-bottom: 96px;
+}
+
+.ledgerHeading {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: var(--h2);
+  line-height: 1.05;
+  margin-bottom: 32px;
+}
+
+.ledgerRow {
+  display: grid;
+  grid-template-columns: 120px minmax(0, 1fr) auto;
+  gap: 32px;
+  align-items: baseline;
+  padding: 18px 0;
+  border-top: 1px solid var(--line-strong);
+}
+
+.ledgerRow:last-child {
+  border-bottom: 1px solid var(--line-strong);
+}
+
+.ledgerLead {
+  font-family: var(--font-poster);
+  font-weight: 500;
+  font-size: 22px;
+  letter-spacing: 0.06em;
+  color: var(--gold);
+}
+
+.ledgerTitle {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 26px;
+  line-height: 1.2;
+}
+
+.ledgerDetail {
+  display: block;
+  margin-top: 4px;
+  color: var(--ink-soft);
+  font-size: 15px;
+}
+
+.ledgerAside {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  text-align: right;
+}
+
+@media (max-width: 800px) {
+  .intro {
+    padding-top: 56px;
+    padding-bottom: 40px;
+  }
+
+  .chapter {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding: 36px 0;
+  }
+
+  .chapterTitle {
+    font-size: 32px;
+  }
+
+  .yearRow {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .filmRow {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 2px 16px;
+  }
+
+  .filmTitle {
+    font-size: 22px;
+  }
+
+  .filmRole {
+    grid-column: 1;
+    grid-row: 2;
+    font-size: 14px;
+  }
+
+  .ledgerRow {
+    grid-template-columns: 64px minmax(0, 1fr);
+    gap: 4px 16px;
+  }
+
+  .ledgerLead {
+    font-size: 18px;
+  }
+
+  .ledgerTitle {
+    font-size: 22px;
+  }
+
+  .ledgerAside {
+    grid-column: 2;
+    text-align: left;
+  }
+}

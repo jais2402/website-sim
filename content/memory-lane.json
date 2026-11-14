@@ -1,0 +1,189 @@
+{
+  "_note": "Film list and years need client confirmation (HANDOVER §4). Each film takes a montage `video` and/or a still `image`; while both are null the TV shows the sepia stand-in. Polaroids take an `image`.",
+  "heading": "Memory Lane",
+  "headingTa": "நினைவுகள்",
+  "tagline": "Three decades, one frame at a time.",
+  "badge": "Simran",
+  "startFilm": "Kannathil Muthamittal",
+  "eras": [
+    {
+      "label": "The nineties",
+      "beforeYear": 2000
+    },
+    {
+      "label": "The golden run",
+      "beforeYear": 2010
+    },
+    {
+      "label": "The return"
+    }
+  ],
+  "films": [
+    {
+      "title": "VIP",
+      "year": 1997,
+      "language": "Tamil",
+      "quote": "[A line on VIP — memory, co-star or song, in Simran’s words]",
+      "video": null,
+      "image": null
+    },
+    {
+      "title": "Nerukku Ner",
+      "year": 1997,
+      "language": "Tamil",
+      "quote": "[A line on Nerukku Ner — memory, co-star or song, in Simran’s words]",
+      "video": null,
+      "image": null
+    },
+    {
+      "title": "Kannedhirey Thondrinal",
+      "year": 1998,
+      "language": "Tamil",
+      "quote": "[A line on Kannedhirey Thondrinal — memory, co-star or song, in Simran’s words]",
+      "video": null,
+      "image": null
+    },
+    {
+      "title": "Vaali",
+      "year": 1999,
+      "language": "Tamil",
+      "quote": "[A line on Vaali — memory, co-star or song, in Simran’s words]",
+      "video": null,
+      "image": null
+    },
+    {
+      "title": "Thulladha Manamum Thullum",
+      "year": 1999,
+      "language": "Tamil",
+      "quote": "[A line on Thulladha Manamum Thullum — memory, co-star or song, in Simran’s words]",
+      "video": null,
+      "image": null
+    },
+    {
+      "title": "Samarasimha Reddy",
+      "year": 1999,
+      "language": "Telugu",
+      "quote": "[A line on Samarasimha Reddy — memory, co-star or song, in Simran’s words]",
+      "video": null,
+      "image": null
+    },
+    {
+      "title": "Priyamaanavale",
+      "year": 2000,
+      "language": "Tamil",
+      "quote": "[A line on Priyamaanavale — memory, co-star or song, in Simran’s words]",
+      "video": null,
+      "image": null
+    },
+    {
+      "title": "Kalisundam Raa",
+      "year": 2000,
+      "language": "Telugu",
+      "quote": "[A line on Kalisundam Raa — memory, co-star or song, in Simran’s words]",
+      "video": null,
+      "image": null
+    },
+    {
+      "title": "Parthale Paravasam",
+      "year": 2001,
+      "language": "Tamil",
+      "quote": "[A line on Parthale Paravasam — memory, co-star or song, in Simran’s words]",
+      "video": null,
+      "image": null
+    },
+    {
+      "title": "Narasimha Naidu",
+      "year": 2001,
+      "language": "Telugu",
+      "quote": "[A line on Narasimha Naidu — memory, co-star or song, in Simran’s words]",
+      "video": null,
+      "image": null
+    },
+    {
+      "title": "Kannathil Muthamittal",
+      "year": 2002,
+      "language": "Tamil",
+      "quote": "[A line on Kannathil Muthamittal — memory, co-star or song, in Simran’s words]",
+      "video": null,
+      "image": null
+    },
+    {
+      "title": "Pammal K. Sambandam",
+      "year": 2002,
+      "language": "Tamil",
+      "quote": "[A line on Pammal K. Sambandam — memory, co-star or song, in Simran’s words]",
+      "video": null,
+      "image": null
+    },
+    {
+      "title": "Vaaranam Aayiram",
+      "year": 2008,
+      "language": "Tamil",
+      "quote": "[A line on Vaaranam Aayiram — memory, co-star or song, in Simran’s words]",
+      "video": null,
+      "image": null
+    },
+    {
+      "title": "Petta",
+      "year": 2019,
+      "language": "Tamil",
+      "quote": "[A line on Petta — memory, co-star or song, in Simran’s words]",
+      "video": null,
+      "image": null
+    },
+    {
+      "title": "Paava Kadhaigal",
+      "year": 2020,
+      "language": "Tamil",
+      "quote": "[A line on Paava Kadhaigal — memory, co-star or song, in Simran’s words]",
+      "video": null,
+      "image": null
+    },
+    {
+      "title": "Andhagan",
+      "year": 2024,
+      "language": "Tamil",
+      "quote": "[A line on Andhagan — memory, co-star or song, in Simran’s words]",
+      "video": null,
+      "image": null
+    },
+    {
+      "title": "Tourist Family",
+      "year": 2025,
+      "language": "Tamil",
+      "quote": "[A line on Tourist Family — memory, co-star or song, in Simran’s words]",
+      "video": null,
+      "image": null
+    }
+  ],
+  "polaroids": [
+    {
+      "caption": "On set",
+      "image": null
+    },
+    {
+      "caption": "The song",
+      "image": null
+    },
+    {
+      "caption": "Rehearsal",
+      "image": null
+    },
+    {
+      "caption": "The scene",
+      "image": null
+    },
+    {
+      "caption": "Premiere night",
+      "image": null
+    },
+    {
+      "caption": "With the crew",
+      "image": null
+    },
+    {
+      "caption": "Award night",
+      "image": null
+    }
+  ]
+}
