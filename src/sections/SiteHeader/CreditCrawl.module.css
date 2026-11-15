@@ -37,13 +37,8 @@
   padding-left: 32px;
 }
 
-.state,
-.stateTa {
+.state {
   color: var(--red-ink);
-}
-
-.stateTa {
-  letter-spacing: 0.04em;
 }
 
 .dot {

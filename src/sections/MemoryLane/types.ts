@@ -23,7 +23,7 @@ export type MemoryLanePolaroid = {
 
 export type MemoryLaneData = {
   heading: string
-  headingTa: string
+  headingTa?: string
   tagline: string
   /** Brand plate on the cabinet. */
   badge: string

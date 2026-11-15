@@ -1,25 +1,25 @@
 {
   "_note": "Carried over from the filmography tables on the current simran.actor (November 2026). Client to confirm before launch. role: null where the current site lists none. `inProduction` is the current site's list and is not shown as a status anywhere date-driven.",
   "languages": [
-    "Tamil",
-    "Telugu",
     "Hindi",
+    "Kannada",
     "Malayalam",
-    "Kannada"
+    "Tamil",
+    "Telugu"
   ],
   "films": [
-    {
-      "slug": "shabdam",
-      "year": 2025,
-      "title": "Shabdam",
-      "role": "Teresa",
-      "language": "Tamil"
-    },
     {
       "slug": "good-bad-ugly",
       "year": 2025,
       "title": "Good Bad Ugly",
       "role": "Priya",
+      "language": "Tamil"
+    },
+    {
+      "slug": "shabdam",
+      "year": 2025,
+      "title": "Shabdam",
+      "role": "Teresa",
       "language": "Tamil"
     },
     {
@@ -44,20 +44,6 @@
       "language": "Hindi"
     },
     {
-      "slug": "mahaan",
-      "year": 2022,
-      "title": "Mahaan",
-      "role": "Naachi",
-      "language": "Tamil"
-    },
-    {
-      "slug": "rocketry-nambi-vilaivu",
-      "year": 2022,
-      "title": "Rocketry: Nambi Vilaivu",
-      "role": "Meena Narayanan",
-      "language": "Tamil"
-    },
-    {
       "slug": "captain",
       "year": 2022,
       "title": "Captain",
@@ -65,25 +51,25 @@
       "language": "Tamil"
     },
     {
-      "slug": "rocketry-nambi-effect",
-      "year": 2022,
-      "title": "Rocketry: Nambi Effect",
-      "role": "Meena Narayanan",
-      "language": "Telugu"
-    },
-    {
-      "slug": "rocketry-the-nambi-effect",
-      "year": 2022,
-      "title": "Rocketry: The Nambi Effect",
-      "role": "Meena Narayanan",
-      "language": "Hindi"
-    },
-    {
       "slug": "gulmohar",
       "year": 2022,
       "title": "Gulmohar",
       "role": "Indira Batra",
       "language": "Hindi"
+    },
+    {
+      "slug": "mahaan",
+      "year": 2022,
+      "title": "Mahaan",
+      "role": "Naachi",
+      "language": "Tamil"
+    },
+    {
+      "slug": "rocketry-nambi-effect",
+      "year": 2022,
+      "title": "Rocketry: Nambi Effect",
+      "role": "Meena Narayanan",
+      "language": "Kannada"
     },
     {
       "slug": "rocketry-nambi-effect",
@@ -97,7 +83,21 @@
       "year": 2022,
       "title": "Rocketry: Nambi Effect",
       "role": "Meena Narayanan",
-      "language": "Kannada"
+      "language": "Telugu"
+    },
+    {
+      "slug": "rocketry-nambi-vilaivu",
+      "year": 2022,
+      "title": "Rocketry: Nambi Vilaivu",
+      "role": "Meena Narayanan",
+      "language": "Tamil"
+    },
+    {
+      "slug": "rocketry-the-nambi-effect",
+      "year": 2022,
+      "title": "Rocketry: The Nambi Effect",
+      "role": "Meena Narayanan",
+      "language": "Hindi"
     },
     {
       "slug": "paava-kadhaigal",
@@ -142,18 +142,18 @@
       "language": "Tamil"
     },
     {
-      "slug": "karai-oram",
-      "year": 2016,
-      "title": "Karai Oram",
-      "role": "Simran",
-      "language": "Tamil"
-    },
-    {
       "slug": "alone",
       "year": 2016,
       "title": "Alone",
       "role": "Simran",
       "language": "Kannada"
+    },
+    {
+      "slug": "karai-oram",
+      "year": 2016,
+      "title": "Karai Oram",
+      "role": "Simran",
+      "language": "Tamil"
     },
     {
       "slug": "trisha-illana-nayanthara",
@@ -170,6 +170,13 @@
       "language": "Tamil"
     },
     {
+      "slug": "ainthaam-padai",
+      "year": 2009,
+      "title": "Ainthaam Padai",
+      "role": "Devasena",
+      "language": "Tamil"
+    },
+    {
       "slug": "tn-07-al-4777",
       "year": 2009,
       "title": "TN-07 AL 4777",
@@ -177,11 +184,18 @@
       "language": "Tamil"
     },
     {
-      "slug": "ainthaam-padai",
-      "year": 2009,
-      "title": "Ainthaam Padai",
-      "role": "Devasena",
-      "language": "Tamil"
+      "slug": "john-appa-rao-40-plus",
+      "year": 2008,
+      "title": "John Appa Rao 40 plus",
+      "role": "Pravallika",
+      "language": "Telugu"
+    },
+    {
+      "slug": "okka-magadu",
+      "year": 2008,
+      "title": "Okka Magadu",
+      "role": "Sharada",
+      "language": "Telugu"
     },
     {
       "slug": "seval",
@@ -198,18 +212,11 @@
       "language": "Tamil"
     },
     {
-      "slug": "okka-magadu",
-      "year": 2008,
-      "title": "Okka Magadu",
-      "role": "Sharada",
-      "language": "Telugu"
-    },
-    {
-      "slug": "john-appa-rao-40-plus",
-      "year": 2008,
-      "title": "John Appa Rao 40 plus",
-      "role": "Pravallika",
-      "language": "Telugu"
+      "slug": "heart-beats",
+      "year": 2007,
+      "title": "Heart Beats",
+      "role": "Thangam George",
+      "language": "Malayalam"
     },
     {
       "slug": "vijayadasami",
@@ -219,24 +226,17 @@
       "language": "Telugu"
     },
     {
-      "slug": "heart-beats",
-      "year": 2007,
-      "title": "Heart Beats",
-      "role": "Thangam George",
-      "language": "Malayalam"
+      "slug": "inidhu-inidhu-kaadhal-inidhu",
+      "year": 2005,
+      "title": "Inidhu Inidhu Kaadhal Inidhu",
+      "role": "Herself",
+      "language": "Tamil"
     },
     {
       "slug": "kichaa-vayasu-16",
       "year": 2005,
       "title": "Kichaa Vayasu 16",
       "role": "Nirmala",
-      "language": "Tamil"
-    },
-    {
-      "slug": "inidhu-inidhu-kaadhal-inidhu",
-      "year": 2005,
-      "title": "Inidhu Inidhu Kaadhal Inidhu",
-      "role": "Herself",
       "language": "Tamil"
     },
     {
@@ -247,17 +247,17 @@
       "language": "Tamil"
     },
     {
-      "slug": "udhaya",
-      "year": 2004,
-      "title": "Udhaya",
-      "role": "Vasanthi",
-      "language": "Tamil"
-    },
-    {
       "slug": "new",
       "year": 2004,
       "title": "New",
       "role": "Priya",
+      "language": "Tamil"
+    },
+    {
+      "slug": "udhaya",
+      "year": 2004,
+      "title": "Udhaya",
+      "role": "Vasanthi",
       "language": "Tamil"
     },
     {
@@ -266,13 +266,6 @@
       "title": "Yuva",
       "role": "Girl in crowd",
       "language": "Hindi"
-    },
-    {
-      "slug": "pop-carn",
-      "year": 2003,
-      "title": "Pop Carn",
-      "role": "Jamuna",
-      "language": "Tamil"
     },
     {
       "slug": "arasu",
@@ -303,6 +296,13 @@
       "language": "Tamil"
     },
     {
+      "slug": "pop-carn",
+      "year": 2003,
+      "title": "Pop Carn",
+      "role": "Jamuna",
+      "language": "Tamil"
+    },
+    {
       "slug": "raghavendra",
       "year": 2003,
       "title": "Raghavendra",
@@ -317,31 +317,17 @@
       "language": "Telugu"
     },
     {
-      "slug": "pammal-k-sambandam",
+      "slug": "aakheer",
       "year": 2002,
-      "title": "Pammal K. Sambandam",
-      "role": "Janaki",
-      "language": "Tamil"
+      "title": "Aakheer",
+      "role": "Suman",
+      "language": "Hindi"
     },
     {
       "slug": "dhaya",
       "year": 2002,
       "title": "Dhaya",
       "role": "Herself",
-      "language": "Tamil"
-    },
-    {
-      "slug": "kannathil-muthamittal",
-      "year": 2002,
-      "title": "Kannathil Muthamittal",
-      "role": "Indira Thiruchelvan",
-      "language": "Tamil"
-    },
-    {
-      "slug": "thamizh",
-      "year": 2002,
-      "title": "Thamizh",
-      "role": "Meenakshi",
       "language": "Tamil"
     },
     {
@@ -352,17 +338,31 @@
       "language": "Tamil"
     },
     {
+      "slug": "i-love-you-daa",
+      "year": 2002,
+      "title": "I Love You Daa",
+      "role": "Priya",
+      "language": "Tamil"
+    },
+    {
+      "slug": "kannathil-muthamittal",
+      "year": 2002,
+      "title": "Kannathil Muthamittal",
+      "role": "Indira Thiruchelvan",
+      "language": "Tamil"
+    },
+    {
+      "slug": "pammal-k-sambandam",
+      "year": 2002,
+      "title": "Pammal K. Sambandam",
+      "role": "Janaki",
+      "language": "Tamil"
+    },
+    {
       "slug": "panchathantiram",
       "year": 2002,
       "title": "Panchathantiram",
       "role": "Mythili",
-      "language": "Tamil"
-    },
-    {
-      "slug": "youth",
-      "year": 2002,
-      "title": "Youth",
-      "role": null,
       "language": "Tamil"
     },
     {
@@ -373,13 +373,6 @@
       "language": "Tamil"
     },
     {
-      "slug": "i-love-you-daa",
-      "year": 2002,
-      "title": "I Love You Daa",
-      "role": "Priya",
-      "language": "Tamil"
-    },
-    {
       "slug": "seema-simham",
       "year": 2002,
       "title": "Seema Simham",
@@ -387,11 +380,18 @@
       "language": "Telugu"
     },
     {
-      "slug": "aakheer",
+      "slug": "thamizh",
       "year": 2002,
-      "title": "Aakheer",
-      "role": "Suman",
-      "language": "Hindi"
+      "title": "Thamizh",
+      "role": "Meenakshi",
+      "language": "Tamil"
+    },
+    {
+      "slug": "youth",
+      "year": 2002,
+      "title": "Youth",
+      "role": null,
+      "language": "Tamil"
     },
     {
       "slug": "12b",
@@ -399,34 +399,6 @@
       "title": "12B",
       "role": "Priya",
       "language": "Tamil"
-    },
-    {
-      "slug": "parthale-paravasam",
-      "year": 2001,
-      "title": "Parthale Paravasam",
-      "role": "Simi Madhava",
-      "language": "Tamil"
-    },
-    {
-      "slug": "mrugaraju",
-      "year": 2001,
-      "title": "Mrugaraju",
-      "role": "Aiswarya",
-      "language": "Telugu"
-    },
-    {
-      "slug": "narasimha-naidu",
-      "year": 2001,
-      "title": "Narasimha Naidu",
-      "role": "Sravani",
-      "language": "Telugu"
-    },
-    {
-      "slug": "prematho-raa",
-      "year": 2001,
-      "title": "Prematho Raa",
-      "role": "Geetha",
-      "language": "Telugu"
     },
     {
       "slug": "bava-nachadu",
@@ -443,6 +415,34 @@
       "language": "Telugu"
     },
     {
+      "slug": "mrugaraju",
+      "year": 2001,
+      "title": "Mrugaraju",
+      "role": "Aiswarya",
+      "language": "Telugu"
+    },
+    {
+      "slug": "narasimha-naidu",
+      "year": 2001,
+      "title": "Narasimha Naidu",
+      "role": "Sravani",
+      "language": "Telugu"
+    },
+    {
+      "slug": "parthale-paravasam",
+      "year": 2001,
+      "title": "Parthale Paravasam",
+      "role": "Simi Madhava",
+      "language": "Tamil"
+    },
+    {
+      "slug": "prematho-raa",
+      "year": 2001,
+      "title": "Prematho Raa",
+      "role": "Geetha",
+      "language": "Telugu"
+    },
+    {
       "slug": "sabse-badkar-hum",
       "year": 2001,
       "title": "Sabse Badkar Hum",
@@ -450,11 +450,39 @@
       "language": "Hindi"
     },
     {
-      "slug": "unnai-kodu-ennai-tharuven",
+      "slug": "annayya",
       "year": 2000,
-      "title": "Unnai Kodu Ennai Tharuven",
-      "role": "Indhu",
-      "language": "Tamil"
+      "title": "Annayya",
+      "role": null,
+      "language": "Telugu"
+    },
+    {
+      "slug": "goppinti-alludu",
+      "year": 2000,
+      "title": "Goppinti Alludu",
+      "role": "Sowmya",
+      "language": "Telugu"
+    },
+    {
+      "slug": "kalisundam-raa",
+      "year": 2000,
+      "title": "Kalisundam Raa",
+      "role": "Manga",
+      "language": "Telugu"
+    },
+    {
+      "slug": "khauff",
+      "year": 2000,
+      "title": "Khauff",
+      "role": "Ritu Pereira",
+      "language": "Hindi"
+    },
+    {
+      "slug": "nuvvu-vastavani",
+      "year": 2000,
+      "title": "Nuvvu Vastavani",
+      "role": "Indu",
+      "language": "Telugu"
     },
     {
       "slug": "parthen-rasithen",
@@ -471,25 +499,11 @@
       "language": "Tamil"
     },
     {
-      "slug": "annayya",
+      "slug": "unnai-kodu-ennai-tharuven",
       "year": 2000,
-      "title": "Annayya",
-      "role": null,
-      "language": "Telugu"
-    },
-    {
-      "slug": "kalisundam-raa",
-      "year": 2000,
-      "title": "Kalisundam Raa",
-      "role": "Manga",
-      "language": "Telugu"
-    },
-    {
-      "slug": "nuvvu-vastavani",
-      "year": 2000,
-      "title": "Nuvvu Vastavani",
-      "role": "Indu",
-      "language": "Telugu"
+      "title": "Unnai Kodu Ennai Tharuven",
+      "role": "Indhu",
+      "language": "Tamil"
     },
     {
       "slug": "yuvaraju",
@@ -499,24 +513,17 @@
       "language": "Telugu"
     },
     {
-      "slug": "goppinti-alludu",
-      "year": 2000,
-      "title": "Goppinti Alludu",
-      "role": "Sowmya",
-      "language": "Telugu"
-    },
-    {
-      "slug": "khauff",
-      "year": 2000,
-      "title": "Khauff",
-      "role": "Ritu Pereira",
+      "slug": "anari-no-1",
+      "year": 1999,
+      "title": "Anari No.1",
+      "role": "Sona",
       "language": "Hindi"
     },
     {
-      "slug": "thulladha-manamum-thullum",
+      "slug": "anthapuram",
       "year": 1999,
-      "title": "Thulladha Manamum Thullum",
-      "role": "Rukmani",
+      "title": "Anthapuram",
+      "role": "Radha",
       "language": "Tamil"
     },
     {
@@ -527,31 +534,24 @@
       "language": "Tamil"
     },
     {
-      "slug": "vaali",
+      "slug": "jodi",
       "year": 1999,
-      "title": "Vaali",
-      "role": "Priya",
+      "title": "Jodi",
+      "role": "Gayathri",
       "language": "Tamil"
+    },
+    {
+      "slug": "kachche-dhaage",
+      "year": 1999,
+      "title": "Kachche Dhaage",
+      "role": null,
+      "language": "Hindi"
     },
     {
       "slug": "kanave-kalaiyadhe",
       "year": 1999,
       "title": "Kanave Kalaiyadhe",
       "role": "Amrita, Saradha",
-      "language": "Tamil"
-    },
-    {
-      "slug": "anthapuram",
-      "year": 1999,
-      "title": "Anthapuram",
-      "role": "Radha",
-      "language": "Tamil"
-    },
-    {
-      "slug": "jodi",
-      "year": 1999,
-      "title": "Jodi",
-      "role": "Gayathri",
       "language": "Tamil"
     },
     {
@@ -562,32 +562,11 @@
       "language": "Tamil"
     },
     {
-      "slug": "time",
-      "year": 1999,
-      "title": "Time",
-      "role": "Thulasi",
-      "language": "Tamil"
-    },
-    {
       "slug": "samarasimha-reddy",
       "year": 1999,
       "title": "Samarasimha Reddy",
       "role": "Sampangi",
       "language": "Telugu"
-    },
-    {
-      "slug": "kachche-dhaage",
-      "year": 1999,
-      "title": "Kachche Dhaage",
-      "role": null,
-      "language": "Hindi"
-    },
-    {
-      "slug": "anari-no-1",
-      "year": 1999,
-      "title": "Anari No.1",
-      "role": "Sona",
-      "language": "Hindi"
     },
     {
       "slug": "sirf-tum",
@@ -597,30 +576,23 @@
       "language": "Hindi"
     },
     {
-      "slug": "kondattam",
-      "year": 1998,
-      "title": "Kondattam",
-      "role": "Lalitha",
+      "slug": "thulladha-manamum-thullum",
+      "year": 1999,
+      "title": "Thulladha Manamum Thullum",
+      "role": "Rukmani",
       "language": "Tamil"
     },
     {
-      "slug": "aval-varuvala",
-      "year": 1998,
-      "title": "Aval Varuvala",
-      "role": "Divya",
+      "slug": "time",
+      "year": 1999,
+      "title": "Time",
+      "role": "Thulasi",
       "language": "Tamil"
     },
     {
-      "slug": "natpukkaga",
-      "year": 1998,
-      "title": "Natpukkaga",
-      "role": "Prabhavathi",
-      "language": "Tamil"
-    },
-    {
-      "slug": "kannedhirey-thondrinal",
-      "year": 1998,
-      "title": "Kannedhirey Thondrinal",
+      "slug": "vaali",
+      "year": 1999,
+      "title": "Vaali",
       "role": "Priya",
       "language": "Tamil"
     },
@@ -632,31 +604,31 @@
       "language": "Telugu"
     },
     {
-      "slug": "v-i-p",
-      "year": 1997,
-      "title": "V.I.P",
+      "slug": "aval-varuvala",
+      "year": 1998,
+      "title": "Aval Varuvala",
+      "role": "Divya",
+      "language": "Tamil"
+    },
+    {
+      "slug": "kannedhirey-thondrinal",
+      "year": 1998,
+      "title": "Kannedhirey Thondrinal",
       "role": "Priya",
       "language": "Tamil"
     },
     {
-      "slug": "once-more",
-      "year": 1997,
-      "title": "Once More",
-      "role": "Kavitha",
+      "slug": "kondattam",
+      "year": 1998,
+      "title": "Kondattam",
+      "role": "Lalitha",
       "language": "Tamil"
     },
     {
-      "slug": "nerrukku-ner",
-      "year": 1997,
-      "title": "Nerrukku Ner",
-      "role": "Asha",
-      "language": "Tamil"
-    },
-    {
-      "slug": "poochudava",
-      "year": 1997,
-      "title": "Poochudava",
-      "role": "Nandini",
+      "slug": "natpukkaga",
+      "year": 1998,
+      "title": "Natpukkaga",
+      "role": "Prabhavathi",
       "language": "Tamil"
     },
     {
@@ -667,31 +639,10 @@
       "language": "Telugu"
     },
     {
-      "slug": "priya-o-priya",
-      "year": 1997,
-      "title": "Priya O Priya",
-      "role": "Priya",
-      "language": "Telugu"
-    },
-    {
-      "slug": "maa-nannaki-pelli",
-      "year": 1997,
-      "title": "Maa Nannaki Pelli",
-      "role": "Lahari",
-      "language": "Telugu"
-    },
-    {
       "slug": "agni-morcha",
       "year": 1997,
       "title": "Agni Morcha",
       "role": null,
-      "language": "Hindi"
-    },
-    {
-      "slug": "gunda-gardi",
-      "year": 1997,
-      "title": "Gunda Gardi",
-      "role": "Guddi",
       "language": "Hindi"
     },
     {
@@ -702,6 +653,48 @@
       "language": "Hindi"
     },
     {
+      "slug": "gunda-gardi",
+      "year": 1997,
+      "title": "Gunda Gardi",
+      "role": "Guddi",
+      "language": "Hindi"
+    },
+    {
+      "slug": "maa-nannaki-pelli",
+      "year": 1997,
+      "title": "Maa Nannaki Pelli",
+      "role": "Lahari",
+      "language": "Telugu"
+    },
+    {
+      "slug": "nerrukku-ner",
+      "year": 1997,
+      "title": "Nerrukku Ner",
+      "role": "Asha",
+      "language": "Tamil"
+    },
+    {
+      "slug": "once-more",
+      "year": 1997,
+      "title": "Once More",
+      "role": "Kavitha",
+      "language": "Tamil"
+    },
+    {
+      "slug": "poochudava",
+      "year": 1997,
+      "title": "Poochudava",
+      "role": "Nandini",
+      "language": "Tamil"
+    },
+    {
+      "slug": "priya-o-priya",
+      "year": 1997,
+      "title": "Priya O Priya",
+      "role": "Priya",
+      "language": "Telugu"
+    },
+    {
       "slug": "simhada-mari",
       "year": 1997,
       "title": "Simhada Mari",
@@ -709,10 +702,17 @@
       "language": "Kannada"
     },
     {
-      "slug": "muqaddar",
+      "slug": "v-i-p",
+      "year": 1997,
+      "title": "V.I.P",
+      "role": "Priya",
+      "language": "Tamil"
+    },
+    {
+      "slug": "angaara",
       "year": 1996,
-      "title": "Muqaddar",
-      "role": "Pooja",
+      "title": "Angaara",
+      "role": "Pooja Pascal",
       "language": "Hindi"
     },
     {
@@ -723,10 +723,17 @@
       "language": "Hindi"
     },
     {
-      "slug": "angaara",
+      "slug": "indraprastham",
       "year": 1996,
-      "title": "Angaara",
-      "role": "Pooja Pascal",
+      "title": "Indraprastham",
+      "role": "Chitra",
+      "language": "Malayalam"
+    },
+    {
+      "slug": "muqaddar",
+      "year": 1996,
+      "title": "Muqaddar",
+      "role": "Pooja",
       "language": "Hindi"
     },
     {
@@ -735,13 +742,6 @@
       "title": "Tere Mere Sapne",
       "role": "Pooja Mathur",
       "language": "Hindi"
-    },
-    {
-      "slug": "indraprastham",
-      "year": 1996,
-      "title": "Indraprastham",
-      "role": "Chitra",
-      "language": "Malayalam"
     },
     {
       "slug": "sanam-harjai",

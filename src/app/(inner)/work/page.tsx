@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 export default function WorkPage() {
   return (
     <>
-      <PageIntro title="Work" tamil="படங்கள்" lede="Every film, by year. Filter by language or decade." />
+      <PageIntro title="Work" lede="Every film, by year. Filter by language or decade." />
       <ReelWall data={reelWall} id="signature" title="Signature titles" allHref={null} />
       <PageIntro title="Filmography" />
       <Filmography films={filmography.films} languages={filmography.languages} />

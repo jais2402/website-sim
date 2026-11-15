@@ -1,7 +1,6 @@
 {
   "_note": "Film list and years need client confirmation (HANDOVER §4). Each film takes a montage `video` and/or a still `image`; while both are null the TV shows the sepia stand-in. Polaroids take an `image`.",
   "heading": "Memory Lane",
-  "headingTa": "நினைவுகள்",
   "tagline": "Three decades, one frame at a time.",
   "badge": "Simran",
   "startFilm": "Kannathil Muthamittal",

@@ -10,7 +10,7 @@ type Props = { films: Film[]; languages: string[] }
 
 const decadeOf = (year: number) => `${Math.floor(year / 10) * 10}s`
 
-/** Complete filmography, filterable by language (Tamil first) and by decade. */
+/** Complete filmography, filterable by language and by decade. */
 export function Filmography({ films, languages }: Props) {
   const [language, setLanguage] = useState('All')
   const [decade, setDecade] = useState('All')

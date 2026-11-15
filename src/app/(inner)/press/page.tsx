@@ -15,7 +15,7 @@ export const metadata: Metadata = { title: 'Press', description: 'Cover stories,
 export default function PressPage() {
   return (
     <>
-      <PageIntro title="Press" tamil="செய்திகள்" lede="Cover stories, honours, interviews and the latest news." />
+      <PageIntro title="Press" lede="Cover stories, honours, interviews and the latest news." />
       <CoverStory data={press} id="cover-story" />
       <Awards data={awards} />
       <LedgerList

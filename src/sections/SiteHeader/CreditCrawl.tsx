@@ -8,14 +8,7 @@ const ORDER: CrawlState[] = ['now-showing', 'coming-soon', 'shooting']
 function Label({ state }: { state: CrawlState }) {
   if (state === 'now-showing') return <span className={s.state}>Now showing</span>
   if (state === 'shooting') return <span className={s.state}>Shooting</span>
-  return (
-    <>
-      <span lang="ta" className={s.stateTa}>
-        வருகை
-      </span>{' '}
-      / <span className={s.state}>Coming soon</span>
-    </>
-  )
+  return <span className={s.state}>Coming soon</span>
 }
 
 /**

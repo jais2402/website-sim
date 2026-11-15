@@ -19,7 +19,7 @@ export type UpcomingFilm = {
 
 export type UpcomingData = {
   heading: string
-  headingTa: string
+  headingTa?: string
   updatedNote?: string | null
   footnote?: string | null
   films: UpcomingFilm[]

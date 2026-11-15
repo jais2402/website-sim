@@ -24,7 +24,7 @@ export type AwardItem = {
 
 export type AwardsData = {
   heading: string
-  headingTa: string
+  headingTa?: string
   intro: string
   note?: string | null
   awards: AwardItem[]

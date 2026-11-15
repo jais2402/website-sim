@@ -22,9 +22,11 @@ export function MemoryLane({ data }: { data: MemoryLaneData }) {
                 {data.heading}
               </SectionHeading>
               <div className={s.sub}>
-                <span lang="ta" className={s.subTa}>
-                  {data.headingTa}
-                </span>
+                {data.headingTa && (
+                  <span lang="ta" className={s.subTa}>
+                    {data.headingTa}
+                  </span>
+                )}
                 <span className={s.tagline}>{data.tagline}</span>
               </div>
             </div>

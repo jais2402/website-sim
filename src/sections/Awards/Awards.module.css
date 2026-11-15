@@ -31,7 +31,7 @@
 }
 
 .headingTa {
-  font-family: var(--font-tamil);
+  font-family: var(--font-display);
   font-size: 22px;
   color: var(--gold-light);
 }

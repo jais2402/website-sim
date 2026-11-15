@@ -11,7 +11,7 @@ export const metadata: Metadata = { title: 'About', description: biography.lede 
 export default function AboutPage() {
   return (
     <>
-      <PageIntro title="About" tamil="சிம்ரன்" lede={biography.lede} />
+      <PageIntro title="About" lede={biography.lede} />
       <ThreeDecades data={about} id="three-decades" moreHref={null} />
       <Chapters chapters={biography.chapters} />
       <MemoryLane data={memoryLane} />

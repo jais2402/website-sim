@@ -8,7 +8,7 @@ export const metadata: Metadata = { title: 'Reel', description: 'The showreel an
 export default function ReelPage() {
   return (
     <>
-      <PageIntro title="Reel" tamil="காட்சிகள்" lede="One primary reel, then a few selected scenes. Sound stays off until you press play." />
+      <PageIntro title="Reel" lede="One primary reel, then a few selected scenes. Sound stays off until you press play." />
       <Showreel data={showreel} id="showreel" />
       <LedgerList
         id="clips"

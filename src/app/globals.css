@@ -23,7 +23,6 @@
   --line-strong: rgb(243 237 227 / 0.12);
 
   --font-display: 'Cormorant Garamond', 'Times New Roman', serif;
-  --font-tamil: 'Noto Serif Tamil', serif;
   --font-ui: 'Inter', system-ui, sans-serif;
   --font-poster: 'Oswald', 'Arial Narrow', sans-serif;
 
@@ -112,10 +111,6 @@ svg {
 :focus-visible {
   outline: 2px solid var(--gold);
   outline-offset: 3px;
-}
-
-[lang='ta'] {
-  font-family: var(--font-tamil);
 }
 
 .sr-only {

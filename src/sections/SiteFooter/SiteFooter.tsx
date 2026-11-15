@@ -3,7 +3,7 @@ import s from './SiteFooter.module.css'
 
 type Props = { email: string; social: { label: string; href: string }[]; year: number }
 
-/** Typographic close: bilingual mark, email and handles. */
+/** Typographic close: the mark, email and handles. */
 export function SiteFooter({ email, social, year }: Props) {
   return (
     <footer className={s.footer}>

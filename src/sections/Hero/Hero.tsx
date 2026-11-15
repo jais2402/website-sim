@@ -6,7 +6,7 @@ import { gsap, useGSAP, useReducedMotion } from '@/lib/motion'
 import s from './Hero.module.css'
 
 export type HeroData = {
-  /** Official bilingual autograph as an SVG path file. Blocking client asset. */
+  /** Official autograph as an SVG path file. Blocking client asset. */
   signature: string | null
   poster: string | null
   posterMobile: string | null
@@ -95,7 +95,7 @@ export function Hero({ data, roles }: Props) {
         <div className={s.dim} aria-hidden="true" />
 
         <h1 className={s.mark}>
-          {data.signature ? <img src={data.signature} alt="சிம்ரன் — Simran" /> : <Wordmark className={s.wordmark} />}
+          {data.signature ? <img src={data.signature} alt="Simran" /> : <Wordmark className={s.wordmark} />}
         </h1>
 
         <div className={s.chrome}>

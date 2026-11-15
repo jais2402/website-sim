@@ -8,7 +8,7 @@ export const metadata: Metadata = { title: 'Photoshoots', description: 'Editoria
 export default function PhotoshootsPage() {
   return (
     <>
-      <PageIntro title="Photoshoots" tamil="புகைப்படங்கள்" />
+      <PageIntro title="Photoshoots" />
       <Photoshoots data={photoshoots} showViewAll={false} />
     </>
   )
