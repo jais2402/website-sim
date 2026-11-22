@@ -4,6 +4,8 @@ The official site for Simran, built from the *Title Sequence* handover pack in `
 
 Next.js (App Router) + TypeScript + CSS modules, with GSAP/ScrollTrigger for the hero. Fonts are self-hosted.
 
+The homepage follows the design canvas artboard **V9 · WebGL Cinema**: twelve full-height scenes with live WebGL backgrounds. The inner pages still use the earlier *Title Sequence* sections.
+
 ## Run it
 
 ```bash
@@ -25,7 +27,8 @@ Set `CONTENT_STRICT=1` on production deploys. The build then fails while any `[ 
 | --- | --- |
 | `content/*.json` | All copy and data. Nothing is hard-coded in components. |
 | `src/app/` | Routes: `/`, `/work`, `/about`, `/reel`, `/press`, `/connect`, `/photoshoots`. |
-| `src/sections/` | One reusable layout per section, each taking a typed `data` prop. |
+| `src/cinema/` | The homepage: `scenes/` (one component per scene), `shaders.ts`, `ShaderCanvas.tsx`, shared `ui.tsx` and `cinema.module.css`. |
+| `src/sections/` | Sections used by the inner pages, each taking a typed `data` prop. |
 | `src/components/layouts/` | Inner-page layouts: `PageIntro`, `Chapters`, `Filmography`, `LedgerList`. |
 | `src/components/ui/` | `Container`, `SectionHeading`, `ArrowButton`, `TextLink`, `Wordmark`. |
 | `src/app/globals.css` | Design tokens. |
@@ -37,7 +40,13 @@ Set `CONTENT_STRICT=1` on production deploys. The build then fails while any `[ 
 
 Run `npm run content:check` for the full list. The blocking client assets are in `docs/handover/HANDOVER.md` §4: the official autograph SVG, hero loop and poster, key art, clips, photos, and confirmed titles, dates and awards.
 
-- **Hero** is a stub (`src/sections/Hero/Hero.tsx`): poster stand-in, typeset mark and the real scroll beats. The signature-mask zoom goes in when `content/hero.json` has `signature`.
+- **Homepage stills and clips** are colour stand-ins until `poster`, `image`, `video` and `portrait` paths are filled in the content files.
 - **Filmography, honours list and biography** (`filmography.json`, `honours.json`, `biography.json`) are carried over from the current simran.actor and need client review.
 - **Release status** is never typed. Set `production.stage` and, once locked, `production.releaseDate`; the crawl flips to NOW SHOWING on that date. Pages revalidate hourly.
 - **Moments** renders `content/social.json`. Replace it with a cached Instagram Graph API or Behold fetch; no third-party widget.
+
+## Homepage WebGL
+
+Four scenes draw a fragment shader behind their content (projector light, film wash, memory burn, stars). `ShaderCanvas` only renders while its scene is on screen, caps the pixel ratio, and draws a single still frame under `prefers-reduced-motion`. If the browser has no GPU acceleration, reports a software renderer, or cannot hold about 24fps, the canvas is hidden and the CSS gradient behind it shows instead, so the page never stalls.
+
+The film leader (3 · 2 · 1) plays once per browser session.

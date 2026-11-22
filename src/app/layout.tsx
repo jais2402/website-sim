@@ -1,7 +1,6 @@
 import type { Metadata, Viewport } from 'next'
 import type { ReactNode } from 'react'
 import site from '@content/site.json'
-import { SiteFooter } from '@/sections/SiteFooter/SiteFooter'
 import './fonts.css'
 import './globals.css'
 
@@ -25,7 +24,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           Skip to content
         </a>
         {children}
-        <SiteFooter email={site.email} social={site.social} year={new Date().getFullYear()} />
       </body>
     </html>
   )

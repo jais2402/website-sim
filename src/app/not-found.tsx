@@ -1,6 +1,6 @@
 import { PageIntro } from '@/components/layouts'
 import { TextLink } from '@/components/ui'
-import { Header } from '@/lib/site'
+import { Footer, Header } from '@/lib/site'
 
 export default function NotFound() {
   return (
@@ -13,6 +13,7 @@ export default function NotFound() {
           </p>
         </PageIntro>
       </main>
+      <Footer />
     </>
   )
 }

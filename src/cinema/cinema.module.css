@@ -1,0 +1,2195 @@
+/* Homepage: "WebGL Cinema". Black ground, ivory type, tungsten gold. */
+.page {
+  --ivory: #f5f2ec;
+  --tungsten: #e8c77a;
+  --curtain: #8e1b22;
+  --rail: 172px; /* width reserved for the scene rail */
+  --gut: 48px;
+  --inset: 56px; /* content inset inside a stage */
+  --right: calc(var(--rail) + 64px);
+  --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --cinzel: 'Cinzel', 'Times New Roman', serif;
+  --monof: 'JetBrains Mono', ui-monospace, monospace;
+  position: relative;
+  background: #000;
+  color: var(--ivory);
+  font-family: 'Inter Tight', system-ui, sans-serif;
+  font-size: 17px;
+  line-height: 1.55;
+}
+
+/* No sticky header on this page, so scene links land flush with the top. */
+:global(html):has(.page) {
+  scroll-padding-top: 0;
+}
+
+.page a:hover {
+  color: var(--tungsten);
+}
+
+.page ::selection {
+  background: var(--tungsten);
+  color: #000;
+}
+
+.page :focus-visible {
+  outline: 2px solid var(--tungsten);
+  outline-offset: 3px;
+}
+
+/* ---------- Shared pieces ---------- */
+.mono {
+  font-family: var(--monof);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.gold {
+  color: var(--tungsten);
+}
+
+.dim {
+  color: rgb(245 242 236 / 0.7);
+}
+
+.faint {
+  color: rgb(245 242 236 / 0.5);
+}
+
+.sub {
+  font-size: 22px;
+  line-height: 1.35;
+  color: #fff;
+  text-shadow:
+    0 2px 6px rgb(0 0 0 / 0.9),
+    0 0 18px rgb(0 0 0 / 0.6);
+}
+
+.h2 {
+  font-family: var(--cinzel);
+  font-weight: 400;
+  font-size: clamp(30px, 3vw, 44px);
+  letter-spacing: 0.08em;
+  line-height: 1.1;
+}
+
+.kicker {
+  position: absolute;
+  inset: 40px 0 auto;
+  z-index: 3;
+  text-align: center;
+  font-family: var(--cinzel);
+  font-weight: 400;
+  font-size: 28px;
+  letter-spacing: 0.4em;
+  color: rgb(245 242 236 / 0.8);
+}
+
+.kickerStatic {
+  position: relative;
+  inset: auto;
+  padding-top: 44px;
+}
+
+.fill {
+  position: absolute;
+  inset: 0;
+}
+
+.plate {
+  position: absolute;
+  inset: -4%;
+}
+
+.plateWide {
+  position: absolute;
+  inset: -8%;
+}
+
+.cover {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.contents {
+  display: contents;
+}
+
+.gl {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Stand-ins for stills that have not been supplied. */
+.m1 {
+  background: radial-gradient(ellipse 70% 60% at 60% 35%, #3a302a 0%, #1b1714 55%, #080706 100%);
+}
+
+.m2 {
+  background: radial-gradient(ellipse 70% 60% at 35% 40%, #2c2a30 0%, #17161a 55%, #070709 100%);
+}
+
+.m3 {
+  background: radial-gradient(ellipse 70% 60% at 50% 30%, #3a2a22 0%, #1d1511 55%, #080605 100%);
+}
+
+.plateNote {
+  position: absolute;
+  left: var(--inset);
+  top: var(--inset);
+  z-index: 2;
+  color: rgb(245 242 236 / 0.6);
+}
+
+.grain {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.16;
+  mix-blend-mode: overlay;
+  background-image:
+    radial-gradient(circle at 20% 30%, rgb(255 255 255 / 0.55) 0 0.6px, transparent 1px),
+    radial-gradient(circle at 70% 60%, rgb(0 0 0 / 0.6) 0 0.6px, transparent 1px),
+    radial-gradient(circle at 40% 80%, rgb(255 255 255 / 0.4) 0 0.5px, transparent 1px);
+  background-size:
+    3px 3px,
+    4px 4px,
+    5px 5px;
+  animation: grain 0.9s steps(5) infinite;
+}
+
+.grainHeavy {
+  opacity: 0.3;
+}
+
+.kb {
+  animation: kb 26s ease-in-out infinite alternate;
+}
+
+.live {
+  animation: blink 1.6s ease-in-out infinite;
+}
+
+.reveal {
+  animation: fadeUp 1s var(--ease) both;
+}
+
+.iris {
+  animation: iris 1.2s var(--ease) both;
+}
+
+@supports (animation-timeline: view()) {
+  .reveal,
+  .iris {
+    animation-timeline: view();
+    animation-range: entry 0% entry 100%;
+    animation-duration: auto;
+  }
+}
+
+/* Cross-fade for text that swaps in place. */
+.swap {
+  transition:
+    opacity 0.5s ease,
+    transform 0.8s var(--ease);
+}
+
+.swapOut {
+  opacity: 0;
+  transform: translateX(-20px);
+  transition-duration: 0.2s;
+}
+
+.swapDown {
+  opacity: 0;
+  transform: translateY(10px);
+  transition-duration: 0.3s;
+}
+
+.uline {
+  background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px no-repeat;
+  transition: background-size 0.5s var(--ease);
+  padding-bottom: 3px;
+}
+
+.uline:hover,
+.uline:focus-visible {
+  background-size: 100% 1px;
+}
+
+.pill {
+  min-height: 46px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 20px;
+  border-radius: 999px;
+  background: rgb(0 0 0 / 0.6);
+  border: 1px solid rgb(245 242 236 / 0.3);
+  font-size: 14px;
+  color: var(--ivory);
+}
+
+.pillLarge {
+  min-height: 54px;
+  padding: 0 28px;
+  gap: 12px;
+  font-size: 15px;
+  background: rgb(0 0 0 / 0.35);
+  border-color: rgb(245 242 236 / 0.5);
+}
+
+.mag {
+  transition: transform 0.35s var(--ease);
+}
+
+.mag:active {
+  transform: scale(0.97) !important;
+}
+
+.tilt {
+  transition:
+    transform 0.5s var(--ease),
+    box-shadow 0.5s ease,
+    opacity 0.4s ease;
+  transform-style: preserve-3d;
+}
+
+.round {
+  flex: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgb(245 242 236 / 0.4);
+  background: transparent;
+  color: var(--ivory);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.roundSolid {
+  border: none;
+  background: var(--ivory);
+  color: #000;
+}
+
+/* ---------- Scene shell ---------- */
+.scene {
+  position: relative;
+  min-height: 860px;
+  background: #000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.slate,
+.tc {
+  position: absolute;
+  top: 52px;
+  z-index: 4;
+}
+
+.slate {
+  left: var(--gut);
+  color: rgb(245 242 236 / 0.7);
+}
+
+.tc {
+  right: calc(var(--rail) + 48px);
+  color: var(--tungsten);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Letterboxed 2.39:1 frame inside a scene. */
+.stage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 2.39 / 1;
+  min-height: 520px;
+  overflow: hidden;
+}
+
+.caption {
+  position: absolute;
+  left: 0;
+  right: calc(var(--rail) + 48px);
+  bottom: 26px;
+  z-index: 3;
+  text-align: center;
+  font-size: 18px;
+}
+
+/* ---------- Rail ---------- */
+.railAnchor {
+  position: sticky;
+  top: 0;
+  height: 0;
+  z-index: 80;
+}
+
+.rail {
+  position: absolute;
+  right: 18px;
+  top: 150px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 14px 14px 14px 18px;
+  border-radius: 14px;
+  background: rgb(0 0 0 / 0.55);
+  border: 1px solid rgb(245 242 236 / 0.08);
+}
+
+.rail a {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  min-height: 28px;
+  color: rgb(245 242 236 / 0.45);
+}
+
+.rail a:hover,
+.rail a:focus-visible {
+  color: var(--ivory);
+}
+
+.rail .mono {
+  font-size: 10px;
+  letter-spacing: 0.12em;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgb(245 242 236 / 0.5);
+  transition:
+    transform 0.3s ease,
+    background-color 0.3s ease;
+}
+
+.rail a:hover .dot,
+.rail a:focus-visible .dot {
+  background: var(--tungsten);
+  transform: scale(1.5);
+}
+
+/* ---------- 01 Opening ---------- */
+.opening {
+  --lead: 0s; /* time already spent on the leader */
+  height: clamp(640px, 100svh, 1000px);
+  min-height: 0;
+  overflow: hidden;
+}
+
+:global(.seen) .opening {
+  --lead: 1.9s;
+}
+
+.glHero {
+  background:
+    radial-gradient(ellipse 30% 85% at 50% -12%, rgb(232 184 120 / 0.42) 0%, rgb(232 184 120 / 0.08) 55%, transparent 75%),
+    radial-gradient(ellipse 80% 50% at 50% 110%, rgb(142 27 34 / 0.18), transparent 70%),
+    #000;
+}
+
+.heroShade {
+  z-index: 1;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 48% 40% at 50% 52%, rgb(0 0 0 / 0.5) 0%, transparent 75%),
+    radial-gradient(ellipse 85% 70% at 50% 50%, transparent 45%, rgb(0 0 0 / 0.75) 100%);
+}
+
+.lb {
+  position: absolute;
+  inset-inline: 0;
+  height: 15%;
+  background: #000;
+  z-index: 3;
+  animation: letterbox 1.3s cubic-bezier(0.7, 0, 0.2, 1) calc(1.7s - var(--lead)) both;
+}
+
+.lbTop {
+  top: 0;
+  transform-origin: top;
+}
+
+.lbBottom {
+  bottom: 0;
+  transform-origin: bottom;
+}
+
+.heroBody {
+  position: absolute;
+  inset: 15% 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 var(--gut);
+}
+
+.heroName {
+  font-family: var(--cinzel);
+  font-weight: 500;
+  font-size: clamp(54px, 12vw, 184px);
+  line-height: 0.9;
+  letter-spacing: 0.12em;
+  margin-right: -0.12em; /* optical centring: drop the trailing tracking */
+}
+
+.word {
+  display: inline-block;
+  animation: wordIn 1.2s var(--ease) calc(var(--d, 0s) - var(--lead)) both;
+}
+
+.heroSub {
+  margin-top: 28px;
+}
+
+.heroCta {
+  margin-top: 36px;
+}
+
+.cueTrack {
+  position: absolute;
+  left: 50%;
+  bottom: 40px;
+  z-index: 4;
+  width: 1px;
+  height: 48px;
+  background: rgb(245 242 236 / 0.2);
+  overflow: hidden;
+}
+
+.cue {
+  position: absolute;
+  inset: 0 0 auto;
+  height: 40%;
+  background: var(--ivory);
+  animation: cue 1.8s cubic-bezier(0.6, 0, 0.4, 1) infinite;
+}
+
+/* Film leader: 3 · 2 · 1, then gone. */
+.leader {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  background: #0d0c0b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  animation: leaderOut 1.9s linear both;
+}
+
+:global(.seen) .leader {
+  display: none;
+}
+
+.leaderDial {
+  position: relative;
+  width: min(320px, 70vw);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 2px solid rgb(245 242 236 / 0.6);
+  overflow: hidden;
+}
+
+.sweep {
+  position: absolute;
+  inset: 0;
+  background: conic-gradient(rgb(245 242 236 / 0.22) 0deg 90deg, transparent 90deg);
+  animation: sweep 0.55s linear 3;
+}
+
+.leaderV,
+.leaderH {
+  position: absolute;
+  background: rgb(245 242 236 / 0.4);
+}
+
+.leaderV {
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+}
+
+.leaderH {
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+}
+
+.ln {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--cinzel);
+  font-size: 150px;
+  opacity: 0;
+  animation: num 0.55s linear both;
+}
+
+/* ---------- 02 Now playing ---------- */
+.rollStage {
+  background: #050505;
+}
+
+.rollWindow {
+  position: absolute;
+  inset: 100px 0 0;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 80px, #000 calc(100% - 110px), transparent 100%);
+  mask-image: linear-gradient(180deg, transparent 0, #000 80px, #000 calc(100% - 110px), transparent 100%);
+}
+
+.roll {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: roll 28s linear infinite;
+}
+
+.credits:hover .roll,
+.rollWindow:focus-visible .roll {
+  animation-play-state: paused;
+}
+
+.rollCopy {
+  display: contents;
+}
+
+.rollRow {
+  display: grid;
+  grid-template-columns: 320px 40px 420px;
+  align-items: baseline;
+  text-align: center;
+  padding-bottom: 44px;
+}
+
+.rollState {
+  display: inline-flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+}
+
+.rollState i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+}
+
+.rollDot {
+  color: rgb(245 242 236 / 0.3);
+}
+
+.rollTitle {
+  text-align: left;
+  font-family: var(--cinzel);
+  font-size: 34px;
+  letter-spacing: 0.06em;
+}
+
+/* ---------- 03 The films ---------- */
+.filmShade {
+  background: linear-gradient(90deg, rgb(0 0 0 / 0.85) 0%, rgb(0 0 0 / 0.35) 45%, rgb(0 0 0 / 0.6) 100%);
+  pointer-events: none;
+}
+
+.filmInfo {
+  position: absolute;
+  inset: var(--inset) auto var(--inset) var(--inset);
+  width: 360px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.filmYear {
+  font-family: var(--cinzel);
+  font-size: clamp(88px, 10.4vw, 150px);
+  line-height: 0.85;
+  color: var(--tungsten);
+}
+
+.filmTitle {
+  font-family: var(--cinzel);
+  font-size: 30px;
+  line-height: 1.15;
+  margin: 14px 0 8px;
+}
+
+.filmStrip {
+  position: absolute;
+  inset: 0 0 0 440px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  /* Room after the last poster so it can reach the first slot. */
+  padding: 0 max(calc(var(--rail) + 48px), calc(100% - 300px)) 0 20px;
+  perspective: 1200px;
+}
+
+.filmStrip::-webkit-scrollbar,
+.shots::-webkit-scrollbar,
+.years::-webkit-scrollbar {
+  display: none;
+}
+
+.filmCell {
+  flex: 0 0 260px;
+  scroll-snap-align: start;
+  scroll-margin-left: 20px;
+}
+
+.poster {
+  position: relative;
+  display: block;
+  aspect-ratio: 2 / 3;
+  border-radius: 6px;
+  overflow: hidden;
+  opacity: 0.6;
+  box-shadow: 0 16px 30px rgb(0 0 0 / 0.5);
+  color: var(--ivory);
+}
+
+.poster[data-current],
+.poster[data-tilting],
+.poster:focus-visible {
+  opacity: 1;
+}
+
+.poster[data-tilting] {
+  box-shadow: 0 40px 70px rgb(0 0 0 / 0.7);
+}
+
+.page .poster:hover {
+  color: var(--ivory);
+}
+
+.posterShade {
+  background: linear-gradient(180deg, transparent 50%, rgb(0 0 0 / 0.8) 100%);
+}
+
+.sheen {
+  background: linear-gradient(115deg, rgb(255 255 255 / 0.18) 0%, transparent 35%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.poster[data-tilting] .sheen {
+  opacity: 1;
+}
+
+.posterNote {
+  position: absolute;
+  top: 14px;
+  left: 16px;
+  font-size: 10px;
+  color: rgb(245 242 236 / 0.6);
+}
+
+.posterText {
+  position: absolute;
+  inset: auto 18px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.posterTitle {
+  font-family: var(--cinzel);
+  font-size: 22px;
+  line-height: 1.1;
+}
+
+.posterMeta {
+  font-size: 10px;
+  color: rgb(245 242 236 / 0.75);
+}
+
+.filmCaption {
+  left: 440px;
+}
+
+/* ---------- 04 On set now ---------- */
+.onSetShade {
+  background: linear-gradient(90deg, rgb(0 0 0 / 0.85) 0%, rgb(0 0 0 / 0.2) 60%, rgb(0 0 0 / 0.6) 100%);
+}
+
+.onSetLead {
+  position: absolute;
+  left: var(--inset);
+  top: var(--inset);
+  max-width: 640px;
+  z-index: 2;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 14px;
+  border: 1px solid rgb(232 199 122 / 0.6);
+  border-radius: 999px;
+  color: var(--tungsten);
+}
+
+.badge i {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.badge[data-live] {
+  border-color: rgb(232 85 90 / 0.7);
+  color: #ffb4b7;
+}
+
+.badge[data-live] i {
+  background: #ff5a61;
+}
+
+.onSetTitle {
+  margin-top: 22px;
+  font-family: var(--cinzel);
+  font-weight: 500;
+  font-size: clamp(48px, 7.8vw, 112px);
+  line-height: 0.9;
+  letter-spacing: 0.04em;
+  overflow-wrap: anywhere;
+}
+
+.onSetMeta {
+  margin-top: 18px;
+  font-size: 20px;
+}
+
+.nextCard {
+  position: absolute;
+  right: var(--right);
+  top: var(--inset);
+  width: 300px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  padding: 22px 24px;
+  border: 1px solid rgb(245 242 236 / 0.25);
+  background: rgb(0 0 0 / 0.45);
+  transition: border-color 0.3s ease;
+}
+
+.nextCard:hover,
+.nextCard:focus-visible {
+  border-color: var(--tungsten);
+}
+
+.nextTitle {
+  font-family: var(--cinzel);
+  font-size: 28px;
+  line-height: 1.15;
+  margin-top: 10px;
+  color: var(--ivory);
+}
+
+.nextDate {
+  color: rgb(245 242 236 / 0.7);
+  font-size: 14px;
+  margin-top: 6px;
+}
+
+.tickerBar {
+  position: absolute;
+  inset: auto 0 0;
+  height: 64px;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: rgb(0 0 0 / 0.82);
+  border-top: 1px solid rgb(232 199 122 / 0.35);
+}
+
+.tickerFlag {
+  flex: none;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 22px;
+  background: var(--curtain);
+  color: #fff;
+  position: relative;
+  z-index: 2;
+}
+
+.tickerWindow {
+  flex: 1 1 auto;
+  overflow: hidden;
+}
+
+.ticker {
+  display: flex;
+  width: max-content;
+  white-space: nowrap;
+  animation: ticker 40s linear infinite;
+}
+
+.newsreel:hover .ticker,
+.ticker:focus-within {
+  animation-play-state: paused;
+}
+
+.tickerItem {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 14px;
+  padding-left: 64px;
+}
+
+/* ---------- 05 The reel ---------- */
+.reelScene {
+  justify-content: flex-start;
+  padding-top: 156px;
+  padding-bottom: 48px;
+}
+
+.reelHeading {
+  position: absolute;
+  left: var(--gut);
+  top: 92px;
+  z-index: 2;
+}
+
+.frames {
+  position: relative;
+  display: flex;
+  gap: 6px;
+  height: 560px;
+  margin: 0 calc(var(--rail) + 28px) 0 var(--gut);
+  overflow: hidden;
+}
+
+.frameCell {
+  position: relative;
+  flex: 1 1 0;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  cursor: pointer;
+  filter: brightness(0.45);
+  transition:
+    flex-grow 700ms var(--ease),
+    filter 700ms var(--ease);
+}
+
+.frameCell[data-open] {
+  flex-grow: 8;
+  filter: none;
+  cursor: default;
+}
+
+.frameShade {
+  background: linear-gradient(0deg, rgb(0 0 0 / 0.85) 0%, transparent 55%);
+}
+
+.spine {
+  position: absolute;
+  inset: 0;
+  background: transparent;
+  border: none;
+  padding: 0 0 28px;
+  cursor: pointer;
+  color: var(--ivory);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  transition: opacity 400ms ease;
+}
+
+.spine .mono {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  white-space: nowrap;
+  letter-spacing: 0.24em;
+}
+
+.frameCell[data-open] .spine {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.frameCard {
+  position: absolute;
+  inset: auto 160px 40px 44px;
+  z-index: 2;
+  opacity: 0;
+  transform: translateY(24px);
+  pointer-events: none;
+  transition:
+    opacity 300ms ease,
+    transform 300ms ease;
+}
+
+.frameCell[data-open] .frameCard {
+  opacity: 1;
+  transform: none;
+  transition:
+    opacity 500ms ease 200ms,
+    transform 700ms var(--ease) 150ms;
+}
+
+.frameTitle {
+  margin-top: 10px;
+  font-family: var(--cinzel);
+  font-size: clamp(26px, 3vw, 44px);
+  line-height: 1.05;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  text-shadow: 0 2px 6px rgb(0 0 0 / 0.9);
+}
+
+.playBig {
+  position: absolute;
+  right: 44px;
+  bottom: 40px;
+  z-index: 3;
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  border: 1px solid rgb(245 242 236 / 0.6);
+  background: rgb(0 0 0 / 0.35);
+  color: var(--ivory);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  animation: fadeIn 0.6s ease 0.3s both;
+}
+
+.playBig:disabled {
+  cursor: default;
+  opacity: 0.55;
+}
+
+.reelCaption {
+  margin: 26px calc(var(--rail) + 28px) 0 var(--gut);
+  text-align: center;
+  font-size: 18px;
+}
+
+/* ---------- 06 Who she is ---------- */
+.whoShade {
+  background: linear-gradient(90deg, transparent 30%, rgb(0 0 0 / 0.8) 100%);
+}
+
+.whoBody {
+  position: absolute;
+  right: var(--right);
+  top: var(--inset);
+  width: 460px;
+  z-index: 2;
+}
+
+.facts {
+  margin-top: 28px;
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 12px 16px;
+  align-items: baseline;
+}
+
+.facts dd {
+  margin: 0;
+}
+
+.whoLink {
+  display: inline-block;
+  margin-top: 28px;
+}
+
+.whoLine {
+  position: absolute;
+  inset: auto 0 70px;
+  z-index: 3;
+  text-align: center;
+  padding: 0 min(260px, 16vw);
+}
+
+.whoLine .mono {
+  margin-bottom: 10px;
+}
+
+.whoLine .sub {
+  font-size: 26px;
+}
+
+.lineDots {
+  position: absolute;
+  inset: auto 0 26px;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+}
+
+.lineDots button {
+  width: 44px;
+  height: 28px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lineDots span {
+  width: 32px;
+  height: 3px;
+  border-radius: 2px;
+  background: rgb(245 242 236 / 0.35);
+  transform: scaleX(0.375);
+  transition:
+    transform 0.4s var(--ease),
+    background-color 0.4s ease;
+}
+
+.lineDots [aria-pressed='true'] span {
+  background: var(--tungsten);
+  transform: none;
+}
+
+/* ---------- 07 Memory lane ---------- */
+.memShade {
+  background: radial-gradient(ellipse 80% 75% at 50% 50%, transparent 40%, rgb(0 0 0 / 0.8) 100%);
+}
+
+.memHeading {
+  position: absolute;
+  left: var(--inset);
+  top: 48px;
+  z-index: 2;
+}
+
+.yearWindow {
+  --yh: 230px;
+  position: absolute;
+  inset: 90px 0 auto;
+  height: var(--yh);
+  overflow: hidden;
+  z-index: 2;
+  -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 22%, #000 78%, transparent 100%);
+  mask-image: linear-gradient(180deg, transparent 0%, #000 22%, #000 78%, transparent 100%);
+}
+
+.yearStack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: translateY(calc(var(--i) * -1 * var(--yh)));
+  transition: transform 0.9s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.yearStack div {
+  height: var(--yh);
+  line-height: var(--yh);
+  font-family: var(--cinzel);
+  font-size: calc(var(--yh) * 0.913);
+  letter-spacing: 0.04em;
+  color: rgb(245 242 236 / 0.92);
+}
+
+.memFilm {
+  position: absolute;
+  inset: 340px 0 auto;
+  z-index: 2;
+  text-align: center;
+  animation: fadeIn 0.6s ease both;
+}
+
+.memFilm .sub {
+  font-size: 30px;
+  margin-bottom: 8px;
+}
+
+.dial {
+  position: absolute;
+  inset: auto var(--right) 30px var(--inset);
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.years {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid rgb(245 242 236 / 0.25);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.years button {
+  flex: none;
+  background: transparent;
+  border: none;
+  padding: 0 6px 4px;
+  min-height: 44px;
+  cursor: pointer;
+  color: rgb(245 242 236 / 0.45);
+  font-family: var(--monof);
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.4s ease;
+}
+
+.years i {
+  width: 1px;
+  height: 18px;
+  background: currentColor;
+  transform: scaleY(0.39);
+  transform-origin: top;
+  transition: transform 0.4s var(--ease);
+}
+
+.years [aria-pressed='true'] {
+  color: var(--ivory);
+}
+
+.years [aria-pressed='true'] i {
+  transform: none;
+}
+
+/* ---------- 08 Photoshoots ---------- */
+.photoStage {
+  background: #0a0908;
+  min-height: 600px;
+}
+
+.photoHead {
+  position: absolute;
+  inset: 44px var(--right) auto var(--inset);
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+}
+
+.filmstrip {
+  position: absolute;
+  inset: 120px 0 auto;
+  height: 420px;
+  background: #141210;
+}
+
+.sprockets {
+  position: absolute;
+  inset: 10px 0 auto;
+  height: 14px;
+  border-radius: 2px;
+  background: repeating-linear-gradient(90deg, transparent 0 14px, rgb(245 242 236 / 0.22) 14px 28px, transparent 28px 40px);
+}
+
+.sprocketsBottom {
+  inset: auto 0 10px;
+}
+
+.shots {
+  position: absolute;
+  inset: 36px 0;
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding: 0 calc(var(--rail) + 48px) 0 var(--inset);
+}
+
+.shot {
+  position: relative;
+  flex: none;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 3px;
+}
+
+.shotImg {
+  transition: transform 1s var(--ease);
+}
+
+.shot:hover .shotImg,
+.shot:focus-within .shotImg,
+.shot:focus .shotImg {
+  transform: scale(1.07);
+}
+
+.dl {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  min-height: 40px;
+  padding: 0 14px;
+  gap: 8px;
+  font-size: 13px;
+  background: rgb(0 0 0 / 0.7);
+  opacity: 0;
+  transform: translateY(8px);
+  transition:
+    opacity 0.35s ease,
+    transform 0.45s var(--ease);
+}
+
+.shot:hover .dl,
+.shot:focus-within .dl,
+.shot:focus .dl {
+  opacity: 1;
+  transform: none;
+}
+
+.dl[aria-disabled='true'] {
+  color: rgb(245 242 236 / 0.55);
+  cursor: default;
+}
+
+/* ---------- 09 Honours ---------- */
+.honourStage {
+  background: #050505;
+}
+
+.honours {
+  position: relative;
+  z-index: 2;
+  margin: 34px auto 0;
+  width: 820px;
+  max-width: 80%;
+}
+
+.honours a {
+  display: grid;
+  grid-template-columns: 1fr 24px 1fr;
+  align-items: baseline;
+  padding: 9px 0;
+  min-height: 44px;
+  color: var(--ivory);
+  transition:
+    color 0.35s ease,
+    transform 0.5s var(--ease);
+}
+
+.honours a > :first-child {
+  text-align: right;
+  font-size: 11px;
+}
+
+.honours a > :nth-child(2) {
+  text-align: center;
+  color: rgb(245 242 236 / 0.3);
+}
+
+.honours[data-active] a:not([data-on]) {
+  color: rgb(245 242 236 / 0.35);
+}
+
+.page .honours a[data-on] {
+  color: var(--ivory);
+  transform: scale(1.03);
+}
+
+.honourTitle {
+  font-family: var(--cinzel);
+  font-size: 24px;
+  letter-spacing: 0.04em;
+}
+
+.honourTitle em {
+  font-style: normal;
+  color: var(--tungsten);
+}
+
+.trophy {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 200px;
+  height: 250px;
+  margin: -125px 0 0 24px;
+  border-radius: 10px;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 5;
+  opacity: 0;
+  transform: scale(0.85);
+  transition:
+    opacity 0.35s ease,
+    transform 0.5s var(--ease);
+  box-shadow: 0 30px 60px rgb(0 0 0 / 0.6);
+  border: 1px solid rgb(232 199 122 / 0.35);
+}
+
+.trophy[data-show] {
+  opacity: 1;
+  transform: rotate(-3deg);
+}
+
+.trophy[data-show][data-odd] {
+  transform: rotate(3deg);
+}
+
+.trophy .mono {
+  position: absolute;
+  left: 12px;
+  bottom: 10px;
+  font-size: 10px;
+  color: rgb(245 242 236 / 0.8);
+}
+
+@media (hover: none) {
+  .trophy {
+    display: none;
+  }
+}
+
+/* ---------- 10 In her words ---------- */
+.wordsShade {
+  background: rgb(0 0 0 / 0.55);
+}
+
+.wordsHeading {
+  position: absolute;
+  left: var(--inset);
+  top: 48px;
+  z-index: 2;
+}
+
+.readPane {
+  position: absolute;
+  left: var(--inset);
+  top: 130px;
+  width: min(560px, 40%);
+  z-index: 2;
+}
+
+.readTitle {
+  margin-top: 14px;
+  font-family: var(--cinzel);
+  font-size: 30px;
+  line-height: 1.25;
+}
+
+.readBody {
+  margin: 14px 0 16px;
+  color: rgb(245 242 236 / 0.8);
+  line-height: 1.6;
+  white-space: pre-line;
+}
+
+.readList {
+  position: absolute;
+  right: var(--right);
+  top: 120px;
+  width: 380px;
+  z-index: 2;
+}
+
+.readList li {
+  border-top: 1px solid rgb(245 242 236 / 0.15);
+}
+
+.readList button {
+  width: 100%;
+  min-height: 64px;
+  padding: 14px 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: rgb(245 242 236 / 0.55);
+  text-align: left;
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: 12px;
+  align-items: center;
+  transition:
+    color 0.3s ease,
+    transform 0.45s var(--ease);
+}
+
+.readList [aria-pressed='true'] {
+  color: var(--ivory);
+  transform: translateX(12px);
+}
+
+.readIcon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid rgb(245 242 236 / 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.readList .mono {
+  display: block;
+  font-size: 10px;
+}
+
+.readShort {
+  display: block;
+  font-size: 16px;
+}
+
+/* ---------- 11 Moments ---------- */
+.split {
+  display: flex;
+  gap: 4px;
+}
+
+.split > a {
+  position: relative;
+  flex: 1 1 0;
+  overflow: hidden;
+  color: var(--ivory);
+  transition: flex-grow 0.8s var(--ease);
+}
+
+.split > a:hover,
+.split > a:focus-visible {
+  flex-grow: 1.8;
+}
+
+.postShade {
+  background: linear-gradient(180deg, rgb(0 0 0 / 0.2) 0%, transparent 40%, rgb(0 0 0 / 0.7) 100%);
+}
+
+.postText {
+  position: absolute;
+  inset: 40% 28px auto;
+  font-family: var(--cinzel);
+  font-size: 24px;
+  line-height: 1.3;
+}
+
+.postHandle {
+  position: absolute;
+  left: 22px;
+  bottom: 96px;
+  font-size: 11px;
+  color: rgb(245 242 236 / 0.85);
+}
+
+.momentsHeading {
+  position: absolute;
+  left: var(--inset);
+  top: 48px;
+  z-index: 2;
+  text-shadow: 0 2px 14px rgb(0 0 0 / 0.7);
+  pointer-events: none;
+}
+
+.follow {
+  position: absolute;
+  inset: auto calc(var(--rail) + 48px) 28px 0;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.follow .mono {
+  font-size: 10px;
+}
+
+/* ---------- 12 Credits ---------- */
+.creditsScene {
+  isolation: isolate;
+  align-items: center;
+  text-align: center;
+  padding: 120px var(--gut);
+}
+
+.glStars {
+  z-index: -1;
+  background:
+    radial-gradient(ellipse 60% 50% at 50% 50%, rgb(232 184 120 / 0.07), transparent 70%),
+    #000;
+}
+
+.email {
+  margin-top: 18px;
+  font-family: var(--cinzel);
+  font-weight: 400;
+  font-size: clamp(26px, 6vw, 88px);
+  letter-spacing: 0.04em;
+  line-height: 1.1;
+  overflow-wrap: anywhere;
+}
+
+.handles {
+  margin-top: 72px;
+  display: grid;
+  grid-template-columns: 220px 220px;
+  gap: 14px 40px;
+  text-align: left;
+}
+
+.handles dt {
+  text-align: right;
+  color: rgb(245 242 236 / 0.55);
+  align-self: center;
+}
+
+.handles dd {
+  margin: 0;
+}
+
+.siteLinks {
+  margin-top: 64px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 28px;
+}
+
+.siteLinks a {
+  padding-block: 12px;
+}
+
+.fin {
+  margin-top: 72px;
+  font-family: var(--cinzel);
+  font-size: 22px;
+  letter-spacing: 0.5em;
+  margin-right: -0.5em;
+  color: rgb(245 242 236 / 0.7);
+}
+
+.copyright {
+  margin-top: 18px;
+  color: rgb(245 242 236 / 0.45);
+}
+
+/* ---------- Keyframes ---------- */
+@keyframes kb {
+  to {
+    transform: scale(1.14) translate(-2.5%, -1.5%);
+  }
+}
+
+@keyframes grain {
+  20% {
+    background-position: -12px 8px;
+  }
+  40% {
+    background-position: 9px -14px;
+  }
+  60% {
+    background-position: -6px -4px;
+  }
+  80% {
+    background-position: 14px 10px;
+  }
+}
+
+@keyframes wordIn {
+  from {
+    opacity: 0;
+    transform: translateY(40%);
+    filter: blur(10px);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes iris {
+  from {
+    clip-path: circle(8% at 50% 50%);
+  }
+  to {
+    clip-path: circle(75% at 50% 50%);
+  }
+}
+
+/* Bars start closed (meeting mid-screen) and open to 15% each. Scale, not height, so nothing reflows. */
+@keyframes letterbox {
+  from {
+    transform: scaleY(3.334);
+  }
+}
+
+@keyframes leaderOut {
+  0%,
+  85% {
+    opacity: 1;
+    visibility: visible;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@keyframes sweep {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes num {
+  0% {
+    opacity: 0;
+    transform: scale(1.3);
+  }
+  15%,
+  80% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes roll {
+  to {
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes ticker {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0.25;
+  }
+}
+
+@keyframes cue {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(220%);
+  }
+}
+
+/* ---------- Narrower than the rail allows ---------- */
+@media (max-width: 1199px) {
+  .page {
+    --rail: 0px;
+    --right: var(--inset);
+  }
+
+  .railAnchor {
+    display: none;
+  }
+
+  .tc {
+    right: var(--gut);
+  }
+
+  .caption,
+  .follow {
+    right: 0;
+  }
+
+  .frames,
+  .reelCaption {
+    margin-right: var(--gut);
+  }
+
+  .filmStrip {
+    padding-right: max(48px, calc(100% - 300px));
+  }
+}
+
+/* ---------- Phones and small tablets: scenes stack instead of overlaying ---------- */
+@media (max-width: 900px) {
+  .page {
+    --gut: 20px;
+    --inset: 20px;
+  }
+
+  .scene {
+    min-height: 0;
+    padding: 92px 0 36px;
+  }
+
+  .slate,
+  .tc {
+    top: 40px;
+    font-size: 10px;
+  }
+
+  .slate {
+    max-width: 62%;
+  }
+
+  .stage {
+    aspect-ratio: auto;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sub {
+    font-size: 18px;
+  }
+
+  .caption,
+  .filmCaption {
+    position: relative;
+    inset: auto;
+    padding: 18px var(--gut);
+    font-size: 15px;
+  }
+
+  .opening {
+    padding: 0;
+  }
+
+  .heroSub {
+    margin-top: 20px;
+  }
+
+  .ln {
+    font-size: 110px;
+  }
+
+  /* 02 */
+  .rollStage {
+    height: 520px;
+  }
+
+  .rollWindow {
+    inset: 90px 0 70px;
+  }
+
+  .rollRow {
+    grid-template-columns: 1fr;
+    gap: 6px;
+    padding-bottom: 36px;
+  }
+
+  .rollState {
+    justify-content: center;
+  }
+
+  .rollDot {
+    display: none;
+  }
+
+  .rollTitle {
+    text-align: center;
+    font-size: 26px;
+  }
+
+  .rollStage .caption {
+    position: absolute;
+    inset: auto 0 10px;
+    padding-block: 0;
+  }
+
+  /* 03 */
+  .filmInfo {
+    position: relative;
+    inset: auto;
+    width: auto;
+    padding: 28px var(--gut) 0;
+    gap: 20px;
+  }
+
+  .filmStrip {
+    position: relative;
+    inset: auto;
+    padding: 28px max(20px, calc(100% - 240px)) 8px var(--gut);
+    gap: 16px;
+  }
+
+  .filmCell {
+    flex-basis: 200px;
+    scroll-margin-left: var(--gut);
+  }
+
+  /* 04 */
+  .onSetLead,
+  .nextCard {
+    position: relative;
+    inset: auto;
+    margin: 28px var(--gut) 0;
+  }
+
+  .nextCard {
+    width: auto;
+    margin-bottom: 28px;
+  }
+
+  .onSetMeta {
+    font-size: 17px;
+  }
+
+  .tickerBar {
+    position: relative;
+    margin-top: auto;
+    height: 56px;
+  }
+
+  .tickerFlag {
+    padding: 0 14px;
+  }
+
+  /* 05 */
+  .reelScene {
+    padding-top: 92px;
+  }
+
+  .reelHeading {
+    position: static;
+    margin: 0 var(--gut) 20px;
+  }
+
+  .frames {
+    flex-direction: column;
+    height: 640px;
+  }
+
+  .frameCell[data-open] {
+    flex-grow: 6;
+  }
+
+  .spine {
+    padding: 0 16px;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .spine .mono {
+    writing-mode: horizontal-tb;
+    transform: none;
+    letter-spacing: 0.14em;
+    font-size: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .frameCard {
+    inset: auto 96px 20px 16px;
+  }
+
+  .frameTitle {
+    white-space: normal;
+  }
+
+  .playBig {
+    right: 16px;
+    bottom: 20px;
+    width: 64px;
+    height: 64px;
+  }
+
+  .reelCaption {
+    font-size: 15px;
+  }
+
+  /* 06 */
+  .plateNote {
+    display: none;
+  }
+
+  .whoBody,
+  .whoLine,
+  .lineDots {
+    position: relative;
+    inset: auto;
+  }
+
+  .whoBody {
+    width: auto;
+    padding: 28px var(--gut) 0;
+  }
+
+  .facts {
+    grid-template-columns: 104px 1fr;
+  }
+
+  .whoLine {
+    padding: 48px var(--gut) 12px;
+    min-height: 150px;
+  }
+
+  .whoLine .sub {
+    font-size: 20px;
+  }
+
+  .lineDots {
+    padding-bottom: 20px;
+  }
+
+  /* 07 */
+  .stage:has(.dial) {
+    height: 520px;
+  }
+
+  .memHeading {
+    top: 24px;
+  }
+
+  .yearWindow {
+    --yh: 120px;
+    top: 84px;
+  }
+
+  .memFilm {
+    top: 230px;
+    padding: 0 var(--gut);
+  }
+
+  .memFilm .sub {
+    font-size: 22px;
+  }
+
+  .dial {
+    bottom: 20px;
+    gap: 8px;
+  }
+
+  .years {
+    justify-content: flex-start;
+    gap: 6px;
+  }
+
+  /* 08 */
+  .photoStage {
+    height: 480px;
+    min-height: 0;
+  }
+
+  .photoHead {
+    top: 20px;
+  }
+
+  .filmstrip {
+    top: 84px;
+    height: 320px;
+  }
+
+  .photoStage .caption {
+    position: absolute;
+    inset: auto 0 12px;
+    padding-block: 0;
+  }
+
+  /* 09 */
+  .honourStage {
+    padding-bottom: 36px;
+  }
+
+  .kickerStatic {
+    padding-top: 28px;
+    font-size: 22px;
+  }
+
+  .honours {
+    width: auto;
+    max-width: none;
+    padding: 0 var(--gut);
+    margin-top: 20px;
+  }
+
+  .honours a {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 12px 0;
+    gap: 2px;
+  }
+
+  .honours a > :first-child {
+    text-align: center;
+    order: 2;
+  }
+
+  .honours a > :nth-child(2) {
+    display: none;
+  }
+
+  .honourTitle {
+    font-size: 19px;
+  }
+
+  /* 10 */
+  .wordsHeading,
+  .readPane,
+  .readList {
+    position: relative;
+    inset: auto;
+    width: auto;
+    margin: 28px var(--gut) 0;
+  }
+
+  .readPane {
+    min-height: 230px;
+  }
+
+  .readTitle {
+    font-size: 24px;
+  }
+
+  .readList [aria-pressed='true'] {
+    transform: none;
+  }
+
+  /* 11 */
+  .stage:has(.split) {
+    height: 620px;
+  }
+
+  .split {
+    flex-wrap: wrap;
+  }
+
+  .split > a {
+    flex: 1 1 45%;
+  }
+
+  .split > a:hover,
+  .split > a:focus-visible {
+    flex-grow: 1;
+  }
+
+  .postText {
+    inset: 34% 14px auto;
+    font-size: 16px;
+  }
+
+  .postHandle {
+    left: 14px;
+    bottom: 14px;
+    font-size: 10px;
+  }
+
+  .momentsHeading {
+    top: 20px;
+  }
+
+  .follow {
+    bottom: 24px;
+    padding: 0 var(--gut);
+    gap: 8px;
+  }
+
+  .follow .pill {
+    padding: 0 14px;
+    font-size: 13px;
+  }
+
+  /* 12 */
+  .creditsScene {
+    padding: 110px var(--gut) 56px;
+  }
+
+  .handles {
+    margin-top: 48px;
+    grid-template-columns: auto auto;
+    gap: 12px 16px;
+    font-size: 15px;
+  }
+}
+
+/* ---------- Reduced motion: nothing moves on its own ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .kb,
+  .grain,
+  .word,
+  .reveal,
+  .iris,
+  .lb,
+  .sweep,
+  .ln,
+  .roll,
+  .ticker,
+  .live,
+  .cue,
+  .memFilm,
+  .playBig {
+    animation: none !important;
+  }
+
+  .leader {
+    display: none;
+  }
+
+  /* Still lists the visitor can scroll through. */
+  .rollWindow {
+    overflow-y: auto;
+  }
+
+  .roll > .contents,
+  .ticker > [aria-hidden] {
+    display: none;
+  }
+
+  .tickerWindow {
+    overflow-x: auto;
+  }
+
+  .swap,
+  .mag,
+  .tilt,
+  .shotImg,
+  .split > a,
+  .frameCell,
+  .frameCard,
+  .yearStack,
+  .trophy,
+  .readList button {
+    transition: none !important;
+  }
+}

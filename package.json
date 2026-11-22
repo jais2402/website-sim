@@ -10,8 +10,11 @@
     "content:check": "node scripts/validate-content.mjs"
   },
   "dependencies": {
+    "@fontsource/cinzel": "^5.3.0",
     "@fontsource/cormorant-garamond": "^5.3.0",
     "@fontsource/inter": "^5.3.0",
+    "@fontsource/inter-tight": "^5.3.0",
+    "@fontsource/jetbrains-mono": "^5.3.0",
     "@fontsource/oswald": "^5.3.0",
     "@gsap/react": "^2.1.2",
     "gsap": "^3.15.1",

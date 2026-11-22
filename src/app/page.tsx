@@ -1,58 +1,75 @@
-import about from '@content/about.json'
 import awards from '@content/awards.json'
 import buzz from '@content/buzz.json'
 import connect from '@content/connect.json'
+import crawl from '@content/crawl.json'
 import fanNotes from '@content/fan-notes.json'
-import hero from '@content/hero.json'
 import interviews from '@content/interviews.json'
 import memoryLane from '@content/memory-lane.json'
 import photoshoots from '@content/photoshoots.json'
-import press from '@content/press.json'
 import reelWall from '@content/reel-wall.json'
 import showreel from '@content/showreel.json'
+import site from '@content/site.json'
 import social from '@content/social.json'
 import upcoming from '@content/upcoming.json'
-import { Header, site } from '@/lib/site'
-import { Awards } from '@/sections/Awards/Awards'
-import { Buzz } from '@/sections/Buzz/Buzz'
-import { Connect } from '@/sections/Connect/Connect'
-import { CoverStory } from '@/sections/CoverStory/CoverStory'
-import { FanNotes } from '@/sections/FanNotes/FanNotes'
-import { Hero } from '@/sections/Hero/Hero'
-import { HomeTop } from '@/sections/Hero/HomeTop'
-import { Interviews } from '@/sections/Interviews/Interviews'
-import { MemoryLane } from '@/sections/MemoryLane/MemoryLane'
-import { Photoshoots } from '@/sections/Photoshoots/Photoshoots'
-import { ReelWall } from '@/sections/ReelWall/ReelWall'
-import { Showreel } from '@/sections/Showreel/Showreel'
-import { SocialWall } from '@/sections/SocialWall/SocialWall'
-import { ThreeDecades } from '@/sections/ThreeDecades/ThreeDecades'
-import { Upcoming, type UpcomingData } from '@/sections/Upcoming/Upcoming'
+import who from '@content/who.json'
+import { CinemaHome } from '@/cinema/CinemaHome'
+import { Credits } from '@/cinema/scenes/Credits'
+import { Films } from '@/cinema/scenes/Films'
+import { Honours } from '@/cinema/scenes/Honours'
+import { Memory } from '@/cinema/scenes/Memory'
+import { Moments } from '@/cinema/scenes/Moments'
+import { NowPlaying, type RollData } from '@/cinema/scenes/NowPlaying'
+import { OnSet, type OnSetFilm } from '@/cinema/scenes/OnSet'
+import { Opening } from '@/cinema/scenes/Opening'
+import { Photos } from '@/cinema/scenes/Photos'
+import { Reel } from '@/cinema/scenes/Reel'
+import { Who } from '@/cinema/scenes/Who'
+import { Words, type Read } from '@/cinema/scenes/Words'
 
-// Release states (crawl, Coming Soon) are date-driven, so refresh hourly.
+// Release states (Now playing, On set) are date-driven, so refresh hourly.
 export const revalidate = 3600
 
-// Section order is fixed by docs/handover/HANDOVER.md §3.
+// Scene order and names follow the design: "V9 · WebGL Cinema".
+const SCENES = ['Opening', 'Now playing', 'The films', 'On set now', 'The reel', 'Who she is', 'Memory lane', 'Photoshoots', 'Honours', 'In her words', 'Moments', 'Credits']
+
+// Play the film leader once per browser session; on return visits go straight to the title.
+const SKIP_LEADER = `try{if(sessionStorage.getItem('leader'))document.documentElement.classList.add('seen');else sessionStorage.setItem('leader','1')}catch(e){}`
+
+/** "In her words": the latest note, then one each of the first video, interview and article. */
+function reads(): Read[] {
+  const note = fanNotes.notes[0]
+  const pick = (type: string) => interviews.items.find((i) => i.type === type)
+  const pieces = [pick('Video'), pick('Interview'), pick('Article')].filter((i) => i !== undefined)
+  return [
+    { type: 'Note to fans', short: note.greet, title: note.greet, body: `${note.body}\n\n— ${fanNotes.signature.name}`, source: note.date },
+    ...pieces.map((i) => ({
+      type: i.type === 'Video' ? 'Video interview' : i.type,
+      short: i.title,
+      title: i.title,
+      body: i.quote ?? '',
+      source: i.source,
+      url: i.url,
+    })),
+  ]
+}
+
 export default function Home() {
   const now = new Date()
   return (
-    <>
-      <HomeTop hero={<Hero data={hero} roles={site.roles} />} header={<Header revealOnArrival />} />
-      <main id="main">
-        <ReelWall data={reelWall} />
-        <Upcoming data={upcoming as UpcomingData} now={now} />
-        <Buzz data={buzz} now={now.toISOString()} />
-        <Showreel data={showreel} />
-        <ThreeDecades data={about} />
-        <MemoryLane data={memoryLane} />
-        <Photoshoots data={photoshoots} />
-        <CoverStory data={press} />
-        <Awards data={awards} />
-        <Interviews data={interviews} />
-        <FanNotes data={fanNotes} />
-        <SocialWall data={social} />
-        <Connect data={connect} email={site.email} />
-      </main>
-    </>
+    <CinemaHome scenes={SCENES}>
+      <script dangerouslySetInnerHTML={{ __html: SKIP_LEADER }} />
+      <Opening name={site.name} tagline={site.tagline} reelHref="#s05" />
+      <NowPlaying data={crawl as RollData} now={now} />
+      <Films films={reelWall.films} allHref="/work" />
+      <OnSet films={upcoming.films as OnSetFilm[]} news={buzz.items.slice(0, 3).map((n) => ({ category: n.category, title: n.title, meta: n.meta, href: '/press#buzz' }))} updatesHref="/work#upcoming" now={now} />
+      <Reel clips={showreel.clips} />
+      <Who data={who} bioHref="/about" />
+      <Memory films={memoryLane.films} startFilm={memoryLane.startFilm} />
+      <Photos photos={photoshoots.photos.slice(0, 8)} allHref="/photoshoots" />
+      <Honours awards={awards.awards} allHref="/press#honours-list" />
+      <Words reads={reads()} />
+      <Moments posts={social.posts.slice(0, 4)} profiles={social.follow.profiles} />
+      <Credits email={site.email} line="Press · Brands · Professional enquiries" social={site.social} year={now.getFullYear()} links={site.nav} />
+    </CinemaHome>
   )
 }

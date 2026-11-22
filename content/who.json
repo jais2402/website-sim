@@ -1,0 +1,37 @@
+{
+  "_note": "Scene 06 of the homepage. Interview lines must be real, verbatim quotes.",
+  "portrait": null,
+  "portraitAlt": "Interview portrait of Simran",
+  "facts": [
+    {
+      "label": "Roles",
+      "value": "Actor · Producer · Director"
+    },
+    {
+      "label": "Languages",
+      "value": "Hindi · Kannada · Malayalam · Tamil · Telugu"
+    },
+    {
+      "label": "On screen",
+      "value": "Three decades"
+    }
+  ],
+  "lines": [
+    {
+      "who": "Interviewer",
+      "text": "[Question — from a real interview]"
+    },
+    {
+      "who": "Simran",
+      "text": "[Her answer, verbatim]"
+    },
+    {
+      "who": "Interviewer",
+      "text": "[Follow-up question]"
+    },
+    {
+      "who": "Simran",
+      "text": "[Her answer, verbatim]"
+    }
+  ]
+}
