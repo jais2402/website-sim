@@ -103,3 +103,21 @@ Self-building saves about $120 a year but adds about 1–1.5 days of build time 
 4. **Day 3:** `x.ts` in oEmbed mode with `content/social-x.json`, deleted-post pruning, and an API-mode stub behind `X_MODE`.
 5. **Day 4:** `src/lib/social/index.ts`. Wire `page.tsx` and the Connect page to `getSocialPosts()`, fill pins and hides from the curation file, add fallback tests, and review on staging.
 6. **Later:** if the site goes to Vercel Pro, move storage to variant B without changing the snapshot format.
+
+## X update (oEmbed)
+
+Built 25 November 2026. This is the curated-URL route from §2, using only X's official oEmbed endpoint (`publish.twitter.com/oembed`, falling back to `publish.x.com/oembed`). It does no scraping, uses no login or cookies, and calls no undocumented endpoints. The curated list lives in `content/x-posts.json`, not the `content/social-x.json` named in §3.
+
+**Add a post:** paste its URL (`https://x.com/simranbaggaoffc/status/<id>`) into `urls` in `content/x-posts.json`, newest first, then run:
+
+```
+npm run social:x
+```
+
+`scripts/social/fetch-x.mjs` asks oEmbed for each URL and keeps a post only if its author is @simranbaggaoffc. It takes the post text and date from the returned blockquote, strips links and media and keeps emoji, then rewrites only the `platform: "x"` entries in `content/social.json`. Instagram entries and their positions are left alone. X slots are filled newest first, extra posts go at the end, and unused slots go back to placeholders. Each post keeps its handle and a link to the original, as X's display terms require. Long posts come back from oEmbed shortened with "…", and we store them that way.
+
+**Failures:** a 404 or 403 means the post was deleted or made private. That post is dropped and listed as `skip` in the output, which meets the 24-hour removal rule when the script runs daily. Any other error (network, 5xx, rate limit) stops the run before anything is written and exits 1, so the last good data stays in place.
+
+**Scheduling:** the script uses plain Node 22, needs no secrets or dependencies, and only changes `social.json` content, so it suits a scheduled job such as the hourly or daily GitHub Actions run in §3 that commits only when the file changes. Behind an HTTPS proxy, Node's built-in `fetch` needs `NODE_USE_ENV_PROXY=1` (Node ≥ 22.21).
+
+**Limit:** oEmbed can only look up posts we already know about. It cannot list her latest posts (oEmbed on the profile URL returns only a script-driven timeline placeholder), so someone has to add new URLs to the list. If posts should appear automatically, use the X API route in §2.

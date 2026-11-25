@@ -16,6 +16,7 @@ function walk(value, path, file) {
   } else if (value && typeof value === 'object') {
     for (const [k, v] of Object.entries(value)) {
       if (k.startsWith('_')) continue // notes to editors
+      if (v === null && k === 'image' && value.platform === 'x') continue // X tiles are text-only
       if (v === null && MEDIA_KEY.test(k)) problems.push(`${file}  ${path}.${k}  missing media`)
       else walk(v, path ? `${path}.${k}` : k, file)
     }
