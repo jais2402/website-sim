@@ -23,9 +23,9 @@ export function Photos({ photos, allHref }: { photos: Photo[]; allHref?: string 
         </div>
         <ul className={`${s.shots} ${s.reveal}`}>
           {photos.map((p, k) => (
-            <li key={k} className={s.shot} tabIndex={p.image ? undefined : 0}>
+            <li key={p.image ?? k} className={s.shot} tabIndex={p.image ? undefined : 0}>
               {p.image ? <img className={`${s.cover} ${s.shotImg}`} src={p.image} alt={p.alt ?? ''} loading="lazy" /> : <div className={`${s.fill} ${s.shotImg} ${PLATES[k % 3]}`} />}
-              <a className={`${s.pill} ${s.dl}`} href={p.image ?? undefined} download={p.image ? '' : undefined} aria-disabled={p.image ? undefined : true} aria-label={`Download photo ${k + 1}`}>
+              <a className={`${s.pill} ${s.dl}`} href={p.image ?? undefined} download={p.image ? '' : undefined} aria-disabled={p.image ? undefined : true} aria-label={p.alt ? `Download: ${p.alt}` : `Download photo ${k + 1}`}>
                 <svg width="12" height="12" viewBox="0 0 16 16" aria-hidden="true">
                   <path d="M8 2v8M4.5 6.5 8 10l3.5-3.5M2.5 13.5h11" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>

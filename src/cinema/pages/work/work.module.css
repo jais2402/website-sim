@@ -1,0 +1,241 @@
+/* /work: full filmography and television, in the homepage "WebGL Cinema" look.
+   Tokens (--ivory, --tungsten, --cinzel, --gut, --hdr, --ease) come from .page. */
+
+/* A list scene: starts at the top instead of centring, with room for the slate. */
+.listScene {
+  justify-content: flex-start;
+  min-height: 0;
+  padding: 136px 0 96px;
+  border-top: 1px solid rgb(245 242 236 / 0.08);
+}
+
+.inner {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--gut);
+}
+
+.head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  padding-bottom: 28px;
+}
+
+/* ---------- Filters ---------- */
+.filters {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 24px 0 28px;
+  border-block: 1px solid rgb(245 242 236 / 0.14);
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.chipLabel {
+  width: 92px;
+  flex: none;
+  font-size: 10px;
+}
+
+.chip {
+  min-height: 44px;
+  padding: 0 18px;
+  border-radius: 999px;
+  border: 1px solid rgb(245 242 236 / 0.3);
+  background: rgb(0 0 0 / 0.6);
+  color: rgb(245 242 236 / 0.75);
+  font-size: 11px;
+  cursor: pointer;
+  transition:
+    transform 0.35s var(--ease),
+    opacity 0.3s ease;
+}
+
+.chip:hover,
+.chip:focus-visible {
+  color: var(--tungsten);
+  border-color: var(--tungsten);
+}
+
+.chip:active {
+  transform: scale(0.97);
+}
+
+.chip[aria-pressed='true'] {
+  background: var(--tungsten);
+  border-color: var(--tungsten);
+  color: #000;
+}
+
+.empty {
+  padding: 48px 0;
+  text-align: center;
+}
+
+/* ---------- Years ---------- */
+.yearRow {
+  display: grid;
+  grid-template-columns: 160px minmax(0, 1fr);
+  gap: 32px;
+  padding: 26px 0;
+  border-bottom: 1px solid rgb(245 242 236 / 0.08);
+}
+
+.year {
+  font-family: var(--cinzel);
+  font-weight: 400;
+  font-size: 34px;
+  line-height: 1.1;
+  letter-spacing: 0.08em;
+  color: var(--tungsten);
+}
+
+.row {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr) 120px;
+  gap: 24px;
+  align-items: baseline;
+  padding: 7px 0;
+  scroll-margin-top: calc(var(--hdr) + 32px);
+}
+
+.title {
+  font-family: var(--cinzel);
+  font-size: 24px;
+  line-height: 1.25;
+  letter-spacing: 0.04em;
+  color: var(--ivory);
+}
+
+.role {
+  color: rgb(245 242 236 / 0.7);
+  font-size: 16px;
+}
+
+.block {
+  display: block;
+  margin-top: 4px;
+}
+
+.lang {
+  font-size: 10px;
+  color: rgb(245 242 236 / 0.5);
+  text-align: right;
+}
+
+/* Landing from a poster in "The films": the row lights up in tungsten. */
+.row[data-target] {
+  animation: lit 2.4s ease both;
+}
+
+.row[data-target] .title {
+  color: var(--tungsten);
+}
+
+@keyframes lit {
+  from {
+    opacity: 0.3;
+  }
+}
+
+/* ---------- Television ledger ---------- */
+.ledger {
+  border-top: 1px solid rgb(245 242 236 / 0.14);
+}
+
+.ledgerRow {
+  display: grid;
+  grid-template-columns: 160px minmax(0, 1fr) auto;
+  gap: 32px;
+  align-items: baseline;
+  padding: 20px 0;
+  border-bottom: 1px solid rgb(245 242 236 / 0.08);
+}
+
+.ledgerYear {
+  font-family: var(--cinzel);
+  font-size: 22px;
+  letter-spacing: 0.08em;
+  color: var(--tungsten);
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 900px) {
+  .listScene {
+    padding: 92px 0 56px;
+  }
+
+  .chipLabel {
+    width: 100%;
+  }
+
+  .chip {
+    padding: 0 14px;
+  }
+
+  .yearRow {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding: 22px 0;
+  }
+
+  .year {
+    font-size: 28px;
+  }
+
+  .row {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 2px 16px;
+  }
+
+  .title {
+    font-size: 20px;
+  }
+
+  .role {
+    grid-column: 1;
+    grid-row: 2;
+    font-size: 14px;
+  }
+
+  .lang {
+    grid-row: 1;
+    grid-column: 2;
+  }
+
+  .ledgerRow {
+    grid-template-columns: 84px minmax(0, 1fr);
+    gap: 6px 16px;
+  }
+
+  .ledgerYear {
+    font-size: 17px;
+  }
+
+  .ledgerRow > :last-child {
+    grid-column: 2;
+    text-align: left;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .row[data-target] {
+    animation: none;
+  }
+
+  .chip {
+    transition: none;
+  }
+}

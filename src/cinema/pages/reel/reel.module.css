@@ -1,0 +1,255 @@
+/* /reel: the list of every clip, in the homepage "WebGL Cinema" look.
+   Tokens (--ivory, --tungsten, --cinzel, --gut, --ease) come from .page. */
+
+.listScene {
+  justify-content: flex-start;
+  min-height: 0;
+  padding: 136px 0 96px;
+  border-top: 1px solid rgb(245 242 236 / 0.08);
+}
+
+.inner {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--gut);
+}
+
+.heading {
+  margin-bottom: 32px;
+}
+
+.list {
+  border-top: 1px solid rgb(245 242 236 / 0.14);
+}
+
+.item {
+  border-bottom: 1px solid rgb(245 242 236 / 0.08);
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+/* The whole row is the play button. */
+.hit {
+  flex: 1;
+  min-width: 0;
+  display: grid;
+  grid-template-columns: 48px 192px minmax(0, 1fr) auto;
+  gap: 28px;
+  align-items: center;
+  padding: 18px 0;
+  background: transparent;
+  border: none;
+  color: var(--ivory);
+  font: inherit;
+  text-align: left;
+}
+
+button.hit {
+  cursor: pointer;
+}
+
+.num {
+  color: var(--tungsten);
+  font-variant-numeric: tabular-nums;
+}
+
+.thumb {
+  position: relative;
+  display: block;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 4px;
+  background: #0d0b0a;
+}
+
+.thumb img {
+  transition:
+    transform 0.7s var(--ease),
+    opacity 0.4s ease;
+  opacity: 0.7;
+}
+
+.thumbShade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgb(0 0 0 / 0.55) 0%, transparent 60%);
+}
+
+.playDot {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 40px;
+  height: 40px;
+  margin: -20px 0 0 -20px;
+  border-radius: 50%;
+  border: 1px solid rgb(245 242 236 / 0.6);
+  background: rgb(0 0 0 / 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ivory);
+  transition: transform 0.45s var(--ease);
+}
+
+.text {
+  min-width: 0;
+}
+
+.film {
+  display: block;
+}
+
+.title {
+  display: block;
+  margin-top: 6px;
+  font-family: var(--cinzel);
+  font-size: clamp(22px, 2.2vw, 32px);
+  line-height: 1.15;
+  letter-spacing: 0.04em;
+  transition: transform 0.5s var(--ease);
+}
+
+.kind {
+  color: rgb(245 242 236 / 0.5);
+  font-size: 11px;
+  text-align: right;
+}
+
+.out {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-size: 11px;
+  color: rgb(245 242 236 / 0.75);
+}
+
+/* Hover, keyboard focus and the open row all light the frame. */
+button.hit:hover .thumb img,
+button.hit:focus-visible .thumb img,
+.item[data-open] .thumb img {
+  opacity: 1;
+  transform: scale(1.06);
+}
+
+button.hit:hover .playDot,
+button.hit:focus-visible .playDot,
+.item[data-open] .playDot {
+  transform: scale(1.15);
+}
+
+button.hit:hover .title,
+button.hit:focus-visible .title,
+.item[data-open] .title {
+  transform: translateX(8px);
+  color: var(--tungsten);
+}
+
+button.hit:active {
+  opacity: 0.8;
+}
+
+/* The player opens in place under its row, letterboxed like the stages. */
+.player {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  max-height: 80vh;
+  margin: 4px 0 28px;
+  background: #000;
+  overflow: hidden;
+  animation: open 0.6s var(--ease) both;
+}
+
+.player[hidden] {
+  display: none;
+}
+
+@keyframes open {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+}
+
+@media (max-width: 900px) {
+  .listScene {
+    padding: 92px 0 56px;
+  }
+
+  .row {
+    flex-wrap: wrap;
+    gap: 0 16px;
+  }
+
+  .hit {
+    flex-basis: 100%;
+    grid-template-columns: 112px minmax(0, 1fr);
+    gap: 4px 16px;
+    padding: 18px 0 8px;
+  }
+
+  .num {
+    grid-column: 1;
+    grid-row: 1;
+    font-size: 10px;
+  }
+
+  .thumb {
+    grid-column: 1;
+    grid-row: 2 / span 2;
+  }
+
+  .playDot {
+    width: 32px;
+    height: 32px;
+    margin: -16px 0 0 -16px;
+  }
+
+  .text {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    align-self: center;
+  }
+
+  .title {
+    font-size: 19px;
+  }
+
+  .kind {
+    grid-column: 2;
+    grid-row: 3;
+    text-align: left;
+    font-size: 10px;
+  }
+
+  .out {
+    margin: 0 0 8px 128px;
+    font-size: 10px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .thumb img,
+  .playDot,
+  .title {
+    transition: none;
+  }
+
+  .player {
+    animation: none;
+  }
+
+  button.hit:hover .title,
+  button.hit:focus-visible .title,
+  .item[data-open] .title {
+    transform: none;
+  }
+}
