@@ -6,12 +6,13 @@ import { Scene, Sub, magnetic, trackPointer } from '../ui'
 import s from '../cinema.module.css'
 
 /** Scene 01: countdown leader, letterbox opening onto projector light, and the name. */
-export function Opening({ name, tagline, reelHref }: { name: string; tagline: string; reelHref: string }) {
+export function Opening({ name, tagline, reelHref, image, imageAlt }: { name: string; tagline: string; reelHref: string; image?: string | null; imageAlt?: string }) {
   const pointer = useRef<[number, number]>([0.5, 0.5])
   return (
     <Scene n={1} name="Opening" className={s.opening}>
       <div className={s.fill} onPointerMove={trackPointer(pointer)}>
         <div className={`${s.fill} ${s.glHero}`}>
+          {image && <img className={s.heroPhoto} src={image} alt={imageAlt ?? ''} fetchPriority="high" />}
           <ShaderCanvas shader="hero" pointer={pointer} />
         </div>
         <div className={`${s.fill} ${s.heroShade}`} aria-hidden="true" />

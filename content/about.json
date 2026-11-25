@@ -1,10 +1,19 @@
 {
-  "portrait": null,
-  "portraitAlt": "Editorial portrait of Simran",
+  "portrait": "/media/portraits/saree-smile.webp",
+  "portraitAlt": "Portrait of Simran in a blue silk saree",
   "intro": "Actor, producer and director across Tamil, Telugu, Hindi, Malayalam and Kannada cinema — known for her dance and for performances that have spanned three decades.",
   "timeline": [
-    { "era": "Mid-90s", "text": "Debut, and the decade that made her a household name across the South." },
-    { "era": "The return", "text": "[Client copy — key films and the step into producing.]" },
-    { "era": "2020s", "text": "Paava Kadhaigal, Andhagan, Tourist Family — and Dharman, now shooting." }
+    {
+      "era": "Mid-90s",
+      "text": "Debut, and the decade that made her a household name across the South."
+    },
+    {
+      "era": "The return",
+      "text": "Vaaranam Aayiram in 2008 brought the Filmfare Award for Best Supporting Actress; in 2015 she and Deepak Bagga set up their studio, Simran & Sons."
+    },
+    {
+      "era": "2020s",
+      "text": "Paava Kadhaigal, Andhagan, Tourist Family — and Dharman, now shooting."
+    }
   ]
 }

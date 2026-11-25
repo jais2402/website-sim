@@ -5,7 +5,7 @@ import { ShaderCanvas } from '../ShaderCanvas'
 import { Scene, art } from '../ui'
 import s from '../cinema.module.css'
 
-export type MemoryFilm = { title: string; year: number; language: string }
+export type MemoryFilm = { title: string; year: number; language: string; image?: string | null }
 
 // One sepia tone per year on the dial, repeating if there are more years.
 const TINTS = ['#8a6a45', '#8f6f4a', '#9a7a4c', '#a3835a', '#94704a', '#8a6a45', '#7d6a52', '#6e5a48', '#7a6650', '#5f5446', '#8a7658']
@@ -35,6 +35,7 @@ export function Memory({ films, startFilm }: { films: MemoryFilm[]; startFilm?: 
         <div className={s.fill} style={{ background: art(tint, DARK) }}>
           <ShaderCanvas shader="mem" colors={[tint, DARK]} />
         </div>
+        {film.image && <img key={film.image} className={s.memPhoto} src={film.image} alt="" loading="lazy" />}
         <div className={`${s.fill} ${s.memShade}`} aria-hidden="true" />
         <div className={`${s.grain} ${s.grainHeavy}`} />
         <h2 id="s07-h" className={`${s.h2} ${s.memHeading} ${s.reveal}`}>

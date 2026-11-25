@@ -46,7 +46,7 @@ function reads(): Read[] {
       type: i.type === 'Video' ? 'Video interview' : i.type,
       short: i.title,
       title: i.title,
-      body: i.quote ?? '',
+      body: i.quote ?? ('dek' in i ? (i.dek ?? '') : ''),
       source: i.source,
       url: i.url,
     })),
@@ -58,7 +58,7 @@ export default function Home() {
   return (
     <CinemaHome scenes={SCENES}>
       <script dangerouslySetInnerHTML={{ __html: SKIP_LEADER }} />
-      <Opening name={site.name} tagline={site.tagline} reelHref="#s05" />
+      <Opening name={site.name} tagline={site.tagline} reelHref="#s05" image={site.heroImage} imageAlt={site.heroImageAlt} />
       <NowPlaying data={crawl as RollData} now={now} />
       <Films films={reelWall.films} allHref="/work" />
       <OnSet films={upcoming.films as OnSetFilm[]} news={buzz.items.slice(0, 3).map((n) => ({ category: n.category, title: n.title, meta: n.meta, href: '/press#buzz' }))} updatesHref="/work#upcoming" now={now} />

@@ -1,63 +1,53 @@
 {
-  "_note": "The first item of the chosen category is the lead story. `category` must be one of `categories`. The masthead date is computed, not stored.",
+  "_note": "Latest articles from the Simran Hub on the current simran.actor. `dek` is a plain description written for this site.",
   "heading": "The Buzz",
   "flag": "Hot right now",
-  "categories": ["Shoot update", "Announcement", "Box office", "Event", "Fan moment"],
+  "categories": [
+    "Dharman",
+    "Interview",
+    "Brand",
+    "Fan moment"
+  ],
   "items": [
     {
-      "category": "Shoot update",
-      "kicker": "Shoot update · Dharman",
-      "title": "[Headline — latest from the Dharman set]",
-      "dek": "[Two or three lines of standfirst from the official update. Facts only — schedule, location, what was shot.]",
-      "meta": "[Source · time ago]",
-      "image": null,
-      "href": "#buzz"
-    },
-    {
-      "category": "Announcement",
-      "kicker": "Announcement",
-      "title": "[Headline — new project or role]",
-      "dek": "[Standfirst]",
-      "meta": "[Source · date]",
-      "image": null,
-      "href": "#buzz"
-    },
-    {
-      "category": "Box office",
-      "kicker": "Box office",
-      "title": "[Headline — box office milestone]",
-      "dek": "[Standfirst]",
-      "meta": "[Source · date]",
-      "image": null,
-      "href": "#buzz"
-    },
-    {
-      "category": "Event",
-      "kicker": "Event",
-      "title": "[Headline — appearance or premiere]",
-      "dek": "[Standfirst]",
-      "meta": "[Source · date]",
-      "image": null,
-      "href": "#buzz"
+      "category": "Dharman",
+      "kicker": "Dharman · Interview",
+      "title": "Simran opens up about Dharman",
+      "dek": "In an exclusive interview she talks about her role in Dharman and her conversations with Rajinikanth on set.",
+      "meta": "Cinema Express · 20 July 2026",
+      "image": "/media/stills/dharman-rajinikanth.webp",
+      "href": "https://www.cinemaexpress.com/tamil/news/2026/Jul/20/simran-opens-up-about-dharman-i-kept-telling-rajinikanth-sir"
     },
     {
       "category": "Fan moment",
-      "kicker": "Fan moment",
-      "title": "[Headline — fan tribute or trend]",
-      "dek": "[Standfirst]",
-      "meta": "[Source · date]",
-      "image": null,
-      "href": "#buzz"
+      "kicker": "Fan moment · Dharman",
+      "title": "Simran fulfils a differently abled girl’s dream",
+      "dek": "The Times of India reports how she answered a young fan’s special request with a surprise.",
+      "meta": "Times of India",
+      "image": "/media/stills/dharman-team.webp",
+      "href": "https://timesofindia.indiatimes.com/entertainment/tamil/movies/news/dharman-actress-simran-wins-hearts-as-she-fulfills-differently-abled-girls-dream-with-a-special-surprise/articleshow/132714860.cms"
     },
     {
-      "category": "Announcement",
-      "kicker": "Brand",
-      "title": "[Headline — brand collaboration]",
-      "dek": "[Standfirst]",
-      "meta": "[Source · date]",
+      "category": "Brand",
+      "kicker": "Brand · Regal Jewellers",
+      "title": "Vijay Sethupathi and Simran team up for Regal Jewellers",
+      "dek": "Simran is the Tamil Nadu brand ambassador for Regal Jewellers, launched with a new campaign alongside Vijay Sethupathi.",
+      "meta": "News18",
       "image": null,
-      "href": "#buzz"
+      "href": "https://www.news18.com/movies/regional-cinema/vijay-sethupathi-teams-up-with-simran-for-regal-jewellers-campaign-in-tamil-nadu-ws-l-10228135.html"
+    },
+    {
+      "category": "Interview",
+      "kicker": "Interview · 30 years",
+      "title": "“I’m proud of my 30 years”",
+      "dek": "Reflections on three decades in film, in conversation with The Times of India.",
+      "meta": "The Times of India · September 2025",
+      "image": "/media/press/30-years.webp",
+      "href": "https://timesofindia.indiatimes.com/entertainment/tamil/movies/news/i-feel-ive-completed-my-one-round-of-20-years-well-simran/articleshow/123495593.cms"
     }
   ],
-  "allNews": { "label": "All news", "href": "#buzz" }
+  "allNews": {
+    "label": "All press",
+    "href": "/press"
+  }
 }

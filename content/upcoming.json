@@ -1,22 +1,50 @@
 {
-  "_note": "Status, tracker and countdown are derived from `production` (see src/lib/status.ts). Never type a status here. Set production.releaseDate (YYYY-MM-DD) only once the date is locked; until then `releaseNote` is shown, or 'To be announced' when it is absent.",
+  "_note": "Status, tracker and countdown are derived from `production` (src/lib/status.ts). Never type a status here. Titles and stages from the current simran.actor; confirm roles and dates. `still` is the background on the homepage On set scene.",
   "heading": "Coming Soon & On Set",
   "films": [
     {
       "title": "Dharman",
-      "meta": "[Language · role — confirm]",
-      "poster": null,
-      "production": { "stage": "shooting", "releaseDate": null },
-      "cta": { "label": "Production updates", "href": "#upcoming" }
+      "meta": "Tamil · [role — confirm]",
+      "poster": "/media/posters/dharman.webp",
+      "still": "/media/stills/dharman-launch.webp",
+      "posterLine": "Now filming",
+      "production": {
+        "stage": "shooting",
+        "releaseDate": null
+      },
+      "cta": {
+        "label": "Watch the first look",
+        "href": "https://www.youtube.com/watch?v=tpEe10R1f0Y"
+      }
     },
     {
-      "title": "[Confirm title]",
-      "meta": "[Language · role — confirm]",
+      "title": "Dhruva Natchathiram",
+      "meta": "Tamil · with Chiyaan Vikram",
+      "poster": "/media/stills/dhruva-natchathiram.webp",
+      "posterLine": "Trailer out",
+      "production": {
+        "stage": "post",
+        "releaseDate": null
+      },
+      "releaseNote": "Release date to be announced",
+      "cta": {
+        "label": "Watch the trailer",
+        "href": "https://www.youtube.com/watch?v=udAlOSn4yFo"
+      }
+    },
+    {
+      "title": "Gabru",
+      "meta": "Hindi · [role — confirm]",
       "poster": null,
-      "posterLine": "First look",
-      "production": { "stage": "post", "releaseDate": null },
-      "releaseNote": "[Release date]",
-      "cta": { "label": "Watch teaser", "href": "#upcoming" }
+      "production": {
+        "stage": "post",
+        "releaseDate": null
+      },
+      "releaseNote": "Release date to be announced",
+      "cta": {
+        "label": "Full filmography",
+        "href": "/work"
+      }
     }
   ]
 }

@@ -3,7 +3,7 @@ import { stageOn, type Production } from '@/lib/status'
 import { Scene, Sub } from '../ui'
 import s from '../cinema.module.css'
 
-export type OnSetFilm = { title: string; meta: string; production: Production; cta?: { label: string; href: string } }
+export type OnSetFilm = { title: string; meta: string; production: Production; still?: string | null; cta?: { label: string; href: string } }
 export type NewsItem = { category: string; title: string; meta: string; href: string }
 
 const fmt = new Intl.DateTimeFormat('en-IN', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'Asia/Kolkata' })
@@ -31,7 +31,7 @@ export function OnSet({ films, news, updatesHref, now }: { films: OnSetFilm[]; n
   return (
     <Scene n={4} name="On set now" className={s.newsreel}>
       <div className={s.stage}>
-        <div className={`${s.plate} ${s.m3} ${s.kb}`} />
+        {lead.still ? <img className={s.onSetPhoto} src={lead.still} alt="" loading="lazy" /> : <div className={`${s.plate} ${s.m3} ${s.kb}`} />}
         <div className={`${s.fill} ${s.onSetShade}`} aria-hidden="true" />
         <div className={s.grain} />
 
@@ -49,9 +49,7 @@ export function OnSet({ films, news, updatesHref, now }: { films: OnSetFilm[]; n
               Production updates →
             </Link>
           </Sub>
-        </div>
-
-        {next && (
+          {next && (
           <Link href={updatesHref} className={`${s.nextCard} ${s.reveal}`}>
             <span className={`${s.mono} ${s.gold}`}>Coming soon</span>
             <span className={s.nextTitle}>{next.title}</span>
@@ -59,7 +57,8 @@ export function OnSet({ films, news, updatesHref, now }: { films: OnSetFilm[]; n
               {next.production.releaseDate ? `In cinemas ${fmt.format(new Date(`${next.production.releaseDate}T00:00:00+05:30`))}` : 'Release date to be announced'}
             </span>
           </Link>
-        )}
+          )}
+        </div>
 
         {news.length > 0 && (
           <div className={s.tickerBar}>

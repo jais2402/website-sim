@@ -1,0 +1,389 @@
+{
+  "_note": "Every file in public/media was taken from the current simran.actor (or the YouTube thumbnail of a video it links to) in November 2026. Replace with files supplied or cleared by Simran’s team before launch (HANDOVER.md §4).",
+  "files": [
+    {
+      "file": "/media/posters/tourist-family.webp",
+      "width": 720,
+      "height": 1052,
+      "source": "https://simran.actor/wp-content/uploads/2025/09/TOURIST-FAMILY.jpg"
+    },
+    {
+      "file": "/media/posters/andhagan.webp",
+      "width": 720,
+      "height": 1052,
+      "source": "https://simran.actor/wp-content/uploads/2025/10/ANDHAGAN.png"
+    },
+    {
+      "file": "/media/posters/good-bad-ugly.webp",
+      "width": 720,
+      "height": 1052,
+      "source": "https://simran.actor/wp-content/uploads/2025/09/GOOD-BAD-UGLY.png"
+    },
+    {
+      "file": "/media/posters/dharman.webp",
+      "width": 720,
+      "height": 960,
+      "source": "https://simran.actor/wp-content/uploads/2026/07/Dharman.jpg"
+    },
+    {
+      "file": "/media/posters/tiger-3.webp",
+      "width": 720,
+      "height": 1052,
+      "source": "https://simran.actor/wp-content/uploads/2025/09/TIGER-3.png"
+    },
+    {
+      "file": "/media/posters/rocketry.webp",
+      "width": 720,
+      "height": 1052,
+      "source": "https://simran.actor/wp-content/uploads/2025/09/ROCKETRY.png"
+    },
+    {
+      "file": "/media/posters/petta.webp",
+      "width": 720,
+      "height": 1052,
+      "source": "https://simran.actor/wp-content/uploads/2025/09/PETTA.png"
+    },
+    {
+      "file": "/media/posters/kannathil-muthamittal.webp",
+      "width": 720,
+      "height": 1052,
+      "source": "https://simran.actor/wp-content/uploads/2025/09/KANNATHIL-MUTHAMITTAI.png"
+    },
+    {
+      "file": "/media/posters/nerukku-ner.webp",
+      "width": 720,
+      "height": 1052,
+      "source": "https://simran.actor/wp-content/uploads/2025/09/NERUKU-NER.png"
+    },
+    {
+      "file": "/media/posters/thulladha-manamum-thullum.webp",
+      "width": 720,
+      "height": 1052,
+      "source": "https://simran.actor/wp-content/uploads/2025/09/THULLATHA-MANAM-THULLUM.png"
+    },
+    {
+      "file": "/media/posters/priyamaanavale.webp",
+      "width": 720,
+      "height": 1052,
+      "source": "https://simran.actor/wp-content/uploads/2025/09/PIRIYAMANAVALE.png"
+    },
+    {
+      "file": "/media/posters/vaali.webp",
+      "width": 720,
+      "height": 1052,
+      "source": "https://simran.actor/wp-content/uploads/2025/09/VAALI.png"
+    },
+    {
+      "file": "/media/posters/pammal-k-sambandam.webp",
+      "width": 720,
+      "height": 1052,
+      "source": "https://simran.actor/wp-content/uploads/2025/09/PAMMAL-K-SAMBANDAM.png"
+    },
+    {
+      "file": "/media/posters/vaaranam-aayiram.webp",
+      "width": 720,
+      "height": 1052,
+      "source": "https://simran.actor/wp-content/uploads/2025/09/VARANAM-AYIRAM.png"
+    },
+    {
+      "file": "/media/posters/gulmohar.webp",
+      "width": 650,
+      "height": 650,
+      "source": "https://simran.actor/wp-content/uploads/2025/10/Gulmohar.png"
+    },
+    {
+      "file": "/media/posters/paava-kadhaigal.webp",
+      "width": 640,
+      "height": 640,
+      "source": "https://simran.actor/wp-content/uploads/2022/09/Paava-Kadhaigal.jpg"
+    },
+    {
+      "file": "/media/posters/vip.webp",
+      "width": 720,
+      "height": 900,
+      "source": "https://simran.actor/wp-content/uploads/2025/10/VIP.png"
+    },
+    {
+      "file": "/media/posters/once-more.webp",
+      "width": 720,
+      "height": 900,
+      "source": "https://simran.actor/wp-content/uploads/2025/10/Once-More.png"
+    },
+    {
+      "file": "/media/posters/kalisundam-raa.webp",
+      "width": 650,
+      "height": 650,
+      "source": "https://simran.actor/wp-content/uploads/2025/10/Kalisundam-Raa.png"
+    },
+    {
+      "file": "/media/posters/narasimha-naidu.webp",
+      "width": 650,
+      "height": 650,
+      "source": "https://simran.actor/wp-content/uploads/2025/10/Narasimha-Naidu.png"
+    },
+    {
+      "file": "/media/posters/arasu.webp",
+      "width": 650,
+      "height": 650,
+      "source": "https://simran.actor/wp-content/uploads/2025/10/Arasu.png"
+    },
+    {
+      "file": "/media/posters/panchathantiram.webp",
+      "width": 650,
+      "height": 650,
+      "source": "https://simran.actor/wp-content/uploads/2025/10/Panchatanthiram.png"
+    },
+    {
+      "file": "/media/posters/mahaan.webp",
+      "width": 650,
+      "height": 650,
+      "source": "https://simran.actor/wp-content/uploads/2025/10/Mahaan.png"
+    },
+    {
+      "file": "/media/stills/dhruva-natchathiram.webp",
+      "width": 1200,
+      "height": 900,
+      "source": "https://simran.actor/wp-content/uploads/2022/09/dhruva-nathchathiram.jpg"
+    },
+    {
+      "file": "/media/stills/dharman-launch.webp",
+      "width": 1920,
+      "height": 1280,
+      "source": "https://simran.actor/wp-content/uploads/2026/08/HLkB8FQXcAALFYj-scaled.jpg"
+    },
+    {
+      "file": "/media/stills/dharman-rajinikanth.webp",
+      "width": 1200,
+      "height": 1200,
+      "source": "https://simran.actor/wp-content/uploads/2026/08/HLkdm3sboAAPP0C-1.jpg"
+    },
+    {
+      "file": "/media/stills/dharman-team.webp",
+      "width": 1600,
+      "height": 1062,
+      "source": "https://simran.actor/wp-content/uploads/2026/08/HLk7yOwXoAAD-lF.jpg"
+    },
+    {
+      "file": "/media/portraits/runway.webp",
+      "width": 1280,
+      "height": 1600,
+      "source": "https://simran.actor/wp-content/uploads/2024/10/SIMRAN-BAGGA-7.png"
+    },
+    {
+      "file": "/media/portraits/street.webp",
+      "width": 1920,
+      "height": 1280,
+      "source": "https://simran.actor/wp-content/uploads/2022/09/IMG_0775-scaled.jpg"
+    },
+    {
+      "file": "/media/portraits/saree-smile.webp",
+      "width": 900,
+      "height": 1200,
+      "source": "https://simran.actor/wp-content/uploads/2026/08/Blue-never-goes-out-of-style…-3.jpg"
+    },
+    {
+      "file": "/media/photos/shoot-1.webp",
+      "width": 901,
+      "height": 1200,
+      "source": "https://simran.actor/wp-content/uploads/2026/08/Some-journeys-become-even-more-special….jpg"
+    },
+    {
+      "file": "/media/photos/shoot-2.webp",
+      "width": 901,
+      "height": 1200,
+      "source": "https://simran.actor/wp-content/uploads/2026/08/Some-journeys-become-even-more-special…-1.jpg"
+    },
+    {
+      "file": "/media/photos/shoot-3.webp",
+      "width": 901,
+      "height": 1200,
+      "source": "https://simran.actor/wp-content/uploads/2026/08/Some-journeys-become-even-more-special…-2.jpg"
+    },
+    {
+      "file": "/media/photos/shoot-4.webp",
+      "width": 901,
+      "height": 1200,
+      "source": "https://simran.actor/wp-content/uploads/2026/08/Some-journeys-become-even-more-special…-4.jpg"
+    },
+    {
+      "file": "/media/photos/event-1.webp",
+      "width": 900,
+      "height": 1200,
+      "source": "https://simran.actor/wp-content/uploads/2026/08/Blue-never-goes-out-of-style…-4.jpg"
+    },
+    {
+      "file": "/media/photos/event-2.webp",
+      "width": 900,
+      "height": 1200,
+      "source": "https://simran.actor/wp-content/uploads/2026/08/Blue-never-goes-out-of-style…-1.jpg"
+    },
+    {
+      "file": "/media/photos/event-3.webp",
+      "width": 900,
+      "height": 1200,
+      "source": "https://simran.actor/wp-content/uploads/2026/08/Blue-never-goes-out-of-style…-5.jpg"
+    },
+    {
+      "file": "/media/photos/bts-1.webp",
+      "width": 803,
+      "height": 1200,
+      "source": "https://simran.actor/wp-content/uploads/2026/08/1000953416-scaled.jpeg"
+    },
+    {
+      "file": "/media/photos/bts-2.webp",
+      "width": 1107,
+      "height": 1200,
+      "source": "https://simran.actor/wp-content/uploads/2026/08/1000953413-scaled.jpeg"
+    },
+    {
+      "file": "/media/photos/bts-3.webp",
+      "width": 715,
+      "height": 1200,
+      "source": "https://simran.actor/wp-content/uploads/2026/08/1000953424-scaled.jpeg"
+    },
+    {
+      "file": "/media/photos/bts-4.webp",
+      "width": 675,
+      "height": 1200,
+      "source": "https://simran.actor/wp-content/uploads/2026/08/1000953418-scaled.jpeg"
+    },
+    {
+      "file": "/media/photos/jfw-2025-1.webp",
+      "width": 960,
+      "height": 1200,
+      "source": "https://simran.actor/wp-content/uploads/2025/09/JFW-01-scaled.jpg"
+    },
+    {
+      "file": "/media/photos/jfw-2025-2.webp",
+      "width": 960,
+      "height": 1200,
+      "source": "https://simran.actor/wp-content/uploads/2025/09/JFW-05-scaled.jpg"
+    },
+    {
+      "file": "/media/photos/runway-1.webp",
+      "width": 960,
+      "height": 1200,
+      "source": "https://simran.actor/wp-content/uploads/2024/10/SIMRAN-BAGGA.png"
+    },
+    {
+      "file": "/media/photos/runway-2.webp",
+      "width": 960,
+      "height": 1200,
+      "source": "https://simran.actor/wp-content/uploads/2024/10/SIMRAN-BAGGA-4.png"
+    },
+    {
+      "file": "/media/photos/runway-3.webp",
+      "width": 960,
+      "height": 1200,
+      "source": "https://simran.actor/wp-content/uploads/2024/10/SIMRAN-BAGGA-6.png"
+    },
+    {
+      "file": "/media/archive/vaali.webp",
+      "width": 433,
+      "height": 540,
+      "source": "https://simran.actor/wp-content/uploads/2025/10/10.png"
+    },
+    {
+      "file": "/media/archive/nineties-1.webp",
+      "width": 433,
+      "height": 540,
+      "source": "https://simran.actor/wp-content/uploads/2025/10/3.png"
+    },
+    {
+      "file": "/media/archive/nineties-2.webp",
+      "width": 433,
+      "height": 540,
+      "source": "https://simran.actor/wp-content/uploads/2025/10/8.png"
+    },
+    {
+      "file": "/media/archive/nineties-3.webp",
+      "width": 433,
+      "height": 540,
+      "source": "https://simran.actor/wp-content/uploads/2025/10/7.png"
+    },
+    {
+      "file": "/media/archive/nineties-4.webp",
+      "width": 433,
+      "height": 540,
+      "source": "https://simran.actor/wp-content/uploads/2025/10/6.png"
+    },
+    {
+      "file": "/media/archive/vaaranam-aayiram.webp",
+      "width": 433,
+      "height": 540,
+      "source": "https://simran.actor/wp-content/uploads/2025/10/Varanam-Ayiram.png"
+    },
+    {
+      "file": "/media/archive/gulmohar.webp",
+      "width": 433,
+      "height": 540,
+      "source": "https://simran.actor/wp-content/uploads/2025/10/Gulmour.png"
+    },
+    {
+      "file": "/media/awards/jfw-2025.webp",
+      "width": 300,
+      "height": 500,
+      "source": "https://simran.actor/wp-content/uploads/2025/09/SIM.png"
+    },
+    {
+      "file": "/media/awards/galatta-2024.webp",
+      "width": 300,
+      "height": 500,
+      "source": "https://simran.actor/wp-content/uploads/2025/09/SIM-2.png"
+    },
+    {
+      "file": "/media/press/30-years.webp",
+      "width": 1280,
+      "height": 720,
+      "source": "https://simran.actor/wp-content/uploads/2025/09/maxresdefault.jpg"
+    },
+    {
+      "file": "/media/press/tiger-3-dna.webp",
+      "width": 567,
+      "height": 293,
+      "source": "https://simran.actor/wp-content/uploads/2023/11/Tiger-3-DNA-India-Interview-Earthyan.com-edit.jpg"
+    },
+    {
+      "file": "/media/video/dharman-first-look.webp",
+      "width": 1280,
+      "height": 720,
+      "source": "https://i.ytimg.com/vi/tpEe10R1f0Y/maxresdefault.jpg"
+    },
+    {
+      "file": "/media/video/tourist-family-trailer.webp",
+      "width": 1280,
+      "height": 720,
+      "source": "https://i.ytimg.com/vi/9sH1PoGOydc/maxresdefault.jpg"
+    },
+    {
+      "file": "/media/video/andhagan-making.webp",
+      "width": 1280,
+      "height": 720,
+      "source": "https://i.ytimg.com/vi/4S71MbLAVEw/maxresdefault.jpg"
+    },
+    {
+      "file": "/media/video/rocketry-trailer.webp",
+      "width": 1280,
+      "height": 720,
+      "source": "https://i.ytimg.com/vi/wwGbt878_g0/maxresdefault.jpg"
+    },
+    {
+      "file": "/media/video/tiger-3-trailer.webp",
+      "width": 1280,
+      "height": 720,
+      "source": "https://i.ytimg.com/vi/vEjTUDjjU6A/maxresdefault.jpg"
+    },
+    {
+      "file": "/media/video/kala-40-speech.webp",
+      "width": 1280,
+      "height": 720,
+      "source": "https://i.ytimg.com/vi/j9w_NGhl2mM/maxresdefault.jpg"
+    },
+    {
+      "file": "/media/video/jfw-2025.webp",
+      "width": 1280,
+      "height": 720,
+      "source": "https://i.ytimg.com/vi/CUZrcwJhXIQ/maxresdefault.jpg"
+    }
+  ]
+}

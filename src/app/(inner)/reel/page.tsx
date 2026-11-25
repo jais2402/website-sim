@@ -18,7 +18,7 @@ export default function ReelPage() {
           lead: String(i + 1).padStart(2, '0'),
           title: c.title,
           detail: c.film,
-          aside: `${c.kind} · ${c.duration}`,
+          aside: c.duration ? `${c.kind} · ${c.duration}` : c.kind,
         }))}
       />
     </>

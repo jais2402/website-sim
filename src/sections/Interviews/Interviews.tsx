@@ -20,6 +20,8 @@ export type InterviewItem = {
   tint?: string
   /** Article / interview rows: opening line or pull quote. */
   quote?: string | null
+  /** Article rows without a quote: a plain one-line description (shown without quote marks). */
+  dek?: string | null
   /** Video rows: short muted preview clip. `null` renders the play-frame stand-in. */
   video?: string | null
   poster?: string | null
@@ -142,9 +144,10 @@ export function Interviews({ data }: { data: InterviewsData }) {
                   </span>
                 </>
               ) : (
-                <span className={s.article}>
+                <span className={s.article} data-photo={cur.poster ? '' : undefined}>
+                  {cur.poster ? <img className={s.media} src={cur.poster} alt="" loading="lazy" /> : null}
                   <span className={s.masthead}>{cur.source}</span>
-                  {cur.quote ? <span className={s.quote}>“{cur.quote}”</span> : null}
+                  {cur.quote ? <span className={s.quote}>“{cur.quote}”</span> : cur.dek ? <span className={s.dek}>{cur.dek}</span> : null}
                   <span className={s.lines} aria-hidden="true">
                     <span />
                     <span />
@@ -152,7 +155,7 @@ export function Interviews({ data }: { data: InterviewsData }) {
                   </span>
                 </span>
               )}
-              <span className={s.badge}>{isVideo ? 'Video · muted preview' : `${cur.type} · preview`}</span>
+              <span className={s.badge}>{isVideo ? (cur.video ? 'Video · muted preview' : 'Video') : cur.type}</span>
             </span>
             <span className={s.featSource}>{cur.source}</span>
             <span className={s.featTitle}>{cur.title}</span>

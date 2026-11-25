@@ -1,18 +1,40 @@
 {
-  "_note": "The crawl state is computed from `production`, never typed. A title flips to NOW SHOWING on its releaseDate and drops off after runEnds.",
+  "_note": "From the in-production list on the current simran.actor filmography (November 2026); confirm before launch. The state is computed from `production`: a title flips to NOW SHOWING on its releaseDate.",
   "titles": [
     {
-      "title": "[Confirm title]",
-      "_note": "Design slot for the current release. The date below only makes the slot render; replace both.",
-      "production": { "stage": "post", "releaseDate": "2026-01-01", "runEnds": null }
-    },
-    {
-      "title": "[Confirm title]",
-      "production": { "stage": "post", "releaseDate": null }
-    },
-    {
       "title": "Dharman",
-      "production": { "stage": "shooting", "releaseDate": null }
+      "production": {
+        "stage": "shooting",
+        "releaseDate": null
+      }
+    },
+    {
+      "title": "Teacher",
+      "production": {
+        "stage": "shooting",
+        "releaseDate": null
+      }
+    },
+    {
+      "title": "The Last One",
+      "production": {
+        "stage": "shooting",
+        "releaseDate": null
+      }
+    },
+    {
+      "title": "Dhruva Natchathiram",
+      "production": {
+        "stage": "post",
+        "releaseDate": null
+      }
+    },
+    {
+      "title": "Gabru",
+      "production": {
+        "stage": "post",
+        "releaseDate": null
+      }
     }
   ]
 }

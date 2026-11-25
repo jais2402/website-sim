@@ -9,10 +9,12 @@ import s from './Showreel.module.css'
 export type Clip = {
   title: string
   film: string
-  duration: string
+  duration: string | null
   /** Reel, Scene, Song… */
   kind: string
   video: string | null
+  /** External watch page (e.g. YouTube), opened in a new tab when there is no `video` file. */
+  url?: string | null
   poster: string | null
   /** Stand-in colour until the clip is supplied. */
   tint: string
@@ -91,16 +93,25 @@ export function Showreel({ data, id = 'reel', title = 'Showreel' }: { data: Show
                   </span>
                   {active ? (
                     <>
-                      <button type="button" className={s.play} aria-label={`Play ${c.title} with sound`} disabled={!c.video} onClick={() => setPlaying(i)}>
+                      {c.video || !c.url ? (
+                        <button type="button" className={s.play} aria-label={`Play ${c.title} with sound`} disabled={!c.video} onClick={() => setPlaying(i)}>
                         <svg width="22" height="22" viewBox="0 0 12 12" aria-hidden="true">
                           <path d="M3 1.5v9l7.5-4.5z" fill="currentColor" />
                         </svg>
-                      </button>
+                        </button>
+                      ) : (
+                        <a className={s.play} href={c.url} target="_blank" rel="noopener" aria-label={`Watch ${c.film}: ${c.title} on YouTube (opens in a new tab)`}>
+                        <svg width="22" height="22" viewBox="0 0 12 12" aria-hidden="true">
+                          <path d="M3 1.5v9l7.5-4.5z" fill="currentColor" />
+                        </svg>
+                        </a>
+                      )}
                       <div className={s.caption}>
                         <div>
                           <h3 className={s.clipTitle}>{c.title}</h3>
                           <p className={s.clipMeta}>
-                            {c.film} · {c.duration}
+                            {c.film}
+                            {c.duration ? ` · ${c.duration}` : ''}
                           </p>
                         </div>
                         <span className={s.sound}>Sound on ↗</span>

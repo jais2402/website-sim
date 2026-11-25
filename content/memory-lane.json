@@ -1,5 +1,5 @@
 {
-  "_note": "Film list and years need client confirmation (HANDOVER §4). Each film takes a montage `video` and/or a still `image`; while both are null the TV shows the sepia stand-in. Polaroids take an `image`.",
+  "_note": "Posters and archive photos from the current simran.actor. Quotes in [ ] still need Simran’s own words; the Arasu, Rocketry and Tiger 3 lines are verbatim from her posts.",
   "heading": "Memory Lane",
   "tagline": "Three decades, one frame at a time.",
   "badge": "Simran",
@@ -24,7 +24,7 @@
       "language": "Tamil",
       "quote": "[A line on VIP — memory, co-star or song, in Simran’s words]",
       "video": null,
-      "image": null
+      "image": "/media/posters/vip.webp"
     },
     {
       "title": "Nerukku Ner",
@@ -32,7 +32,15 @@
       "language": "Tamil",
       "quote": "[A line on Nerukku Ner — memory, co-star or song, in Simran’s words]",
       "video": null,
-      "image": null
+      "image": "/media/posters/nerukku-ner.webp"
+    },
+    {
+      "title": "Once More",
+      "year": 1997,
+      "language": "Tamil",
+      "quote": "[A line on Once More — memory, co-star or song, in Simran’s words]",
+      "video": null,
+      "image": "/media/posters/once-more.webp"
     },
     {
       "title": "Kannedhirey Thondrinal",
@@ -48,7 +56,7 @@
       "language": "Tamil",
       "quote": "[A line on Vaali — memory, co-star or song, in Simran’s words]",
       "video": null,
-      "image": null
+      "image": "/media/posters/vaali.webp"
     },
     {
       "title": "Thulladha Manamum Thullum",
@@ -56,7 +64,7 @@
       "language": "Tamil",
       "quote": "[A line on Thulladha Manamum Thullum — memory, co-star or song, in Simran’s words]",
       "video": null,
-      "image": null
+      "image": "/media/posters/thulladha-manamum-thullum.webp"
     },
     {
       "title": "Samarasimha Reddy",
@@ -72,7 +80,7 @@
       "language": "Tamil",
       "quote": "[A line on Priyamaanavale — memory, co-star or song, in Simran’s words]",
       "video": null,
-      "image": null
+      "image": "/media/posters/priyamaanavale.webp"
     },
     {
       "title": "Kalisundam Raa",
@@ -80,7 +88,7 @@
       "language": "Telugu",
       "quote": "[A line on Kalisundam Raa — memory, co-star or song, in Simran’s words]",
       "video": null,
-      "image": null
+      "image": "/media/posters/kalisundam-raa.webp"
     },
     {
       "title": "Parthale Paravasam",
@@ -96,7 +104,7 @@
       "language": "Telugu",
       "quote": "[A line on Narasimha Naidu — memory, co-star or song, in Simran’s words]",
       "video": null,
-      "image": null
+      "image": "/media/posters/narasimha-naidu.webp"
     },
     {
       "title": "Kannathil Muthamittal",
@@ -104,7 +112,7 @@
       "language": "Tamil",
       "quote": "[A line on Kannathil Muthamittal — memory, co-star or song, in Simran’s words]",
       "video": null,
-      "image": null
+      "image": "/media/posters/kannathil-muthamittal.webp"
     },
     {
       "title": "Pammal K. Sambandam",
@@ -112,7 +120,23 @@
       "language": "Tamil",
       "quote": "[A line on Pammal K. Sambandam — memory, co-star or song, in Simran’s words]",
       "video": null,
-      "image": null
+      "image": "/media/posters/pammal-k-sambandam.webp"
+    },
+    {
+      "title": "Panchathantiram",
+      "year": 2002,
+      "language": "Tamil",
+      "quote": "[A line on Panchathantiram — memory, co-star or song, in Simran’s words]",
+      "video": null,
+      "image": "/media/posters/panchathantiram.webp"
+    },
+    {
+      "title": "Arasu",
+      "year": 2003,
+      "language": "Tamil",
+      "quote": "Working with Sarathkumar and the entire Arasu team was an amazing experience, and I’m incredibly proud of the film we created together.",
+      "video": null,
+      "image": "/media/posters/arasu.webp"
     },
     {
       "title": "Vaaranam Aayiram",
@@ -120,7 +144,7 @@
       "language": "Tamil",
       "quote": "[A line on Vaaranam Aayiram — memory, co-star or song, in Simran’s words]",
       "video": null,
-      "image": null
+      "image": "/media/posters/vaaranam-aayiram.webp"
     },
     {
       "title": "Petta",
@@ -128,7 +152,7 @@
       "language": "Tamil",
       "quote": "[A line on Petta — memory, co-star or song, in Simran’s words]",
       "video": null,
-      "image": null
+      "image": "/media/posters/petta.webp"
     },
     {
       "title": "Paava Kadhaigal",
@@ -136,7 +160,39 @@
       "language": "Tamil",
       "quote": "[A line on Paava Kadhaigal — memory, co-star or song, in Simran’s words]",
       "video": null,
-      "image": null
+      "image": "/media/posters/paava-kadhaigal.webp"
+    },
+    {
+      "title": "Mahaan",
+      "year": 2022,
+      "language": "Tamil",
+      "quote": "[A line on Mahaan — memory, co-star or song, in Simran’s words]",
+      "video": null,
+      "image": "/media/posters/mahaan.webp"
+    },
+    {
+      "title": "Rocketry: The Nambi Effect",
+      "year": 2022,
+      "language": "Multilingual",
+      "quote": "‘Rocketry’ has been a special film for me, as it allowed me to explore a character with depth, vulnerability, and strength.",
+      "video": null,
+      "image": "/media/posters/rocketry.webp"
+    },
+    {
+      "title": "Gulmohar",
+      "year": 2023,
+      "language": "Hindi",
+      "quote": "[A line on Gulmohar — memory, co-star or song, in Simran’s words]",
+      "video": null,
+      "image": "/media/posters/gulmohar.webp"
+    },
+    {
+      "title": "Tiger 3",
+      "year": 2023,
+      "language": "Hindi",
+      "quote": "From the moment I read the script, I knew “Tiger 3” was going to be a special project.",
+      "video": null,
+      "image": "/media/posters/tiger-3.webp"
     },
     {
       "title": "Andhagan",
@@ -144,7 +200,7 @@
       "language": "Tamil",
       "quote": "[A line on Andhagan — memory, co-star or song, in Simran’s words]",
       "video": null,
-      "image": null
+      "image": "/media/posters/andhagan.webp"
     },
     {
       "title": "Tourist Family",
@@ -152,37 +208,37 @@
       "language": "Tamil",
       "quote": "[A line on Tourist Family — memory, co-star or song, in Simran’s words]",
       "video": null,
-      "image": null
+      "image": "/media/posters/tourist-family.webp"
     }
   ],
   "polaroids": [
     {
-      "caption": "On set",
-      "image": null
+      "caption": "Vaali",
+      "image": "/media/archive/vaali.webp"
     },
     {
-      "caption": "The song",
-      "image": null
+      "caption": "The nineties",
+      "image": "/media/archive/nineties-1.webp"
     },
     {
-      "caption": "Rehearsal",
-      "image": null
+      "caption": "The nineties",
+      "image": "/media/archive/nineties-2.webp"
     },
     {
-      "caption": "The scene",
-      "image": null
+      "caption": "The nineties",
+      "image": "/media/archive/nineties-3.webp"
     },
     {
-      "caption": "Premiere night",
-      "image": null
+      "caption": "The nineties",
+      "image": "/media/archive/nineties-4.webp"
     },
     {
-      "caption": "With the crew",
-      "image": null
+      "caption": "Vaaranam Aayiram",
+      "image": "/media/archive/vaaranam-aayiram.webp"
     },
     {
-      "caption": "Award night",
-      "image": null
+      "caption": "Gulmohar",
+      "image": "/media/archive/gulmohar.webp"
     }
   ]
 }

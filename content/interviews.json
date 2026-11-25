@@ -1,52 +1,70 @@
 {
-  "_note": "type is Interview, Article or Video. Video rows take `video` (muted preview clip) and `poster`; the others take `quote`. `tint` is the featured panel's glow colour. Replace every [ … ] before launch.",
+  "_note": "Pieces linked from the Buzz and Simran Hub pages of the current simran.actor. Quotes are Simran’s own words from her posts about each piece; `dek` is a plain description, not a quote.",
   "heading": "Interviews & Articles",
   "items": [
     {
       "type": "Interview",
-      "title": "[Interview headline 1]",
-      "source": "[Publication · Month 2026]",
+      "title": "“I’m proud of my 30 years”",
+      "source": "The Times of India · September 2025",
       "action": "Read",
-      "url": "[Link to the piece]",
+      "url": "https://timesofindia.indiatimes.com/entertainment/tamil/movies/news/i-feel-ive-completed-my-one-round-of-20-years-well-simran/articleshow/123495593.cms",
       "tint": "#3a1416",
-      "quote": "[Opening line or pull quote from the piece]"
+      "quote": "I had a wonderful conversation with The Times of India recently, where I shared my reflections on completing 30 years in the film industry.",
+      "poster": "/media/press/30-years.webp"
     },
     {
       "type": "Video",
-      "title": "[Video interview headline]",
-      "source": "[Channel · Month 2026]",
+      "title": "Speech at Kala 40",
+      "source": "Cineulagam",
       "action": "Watch",
-      "url": "[Link to the piece]",
-      "tint": "#2a1a24",
+      "url": "https://www.youtube.com/watch?v=j9w_NGhl2mM",
+      "tint": "#2b1012",
+      "quote": null,
       "video": null,
-      "poster": null
+      "poster": "/media/video/kala-40-speech.webp"
     },
     {
       "type": "Article",
-      "title": "[Article headline 1]",
-      "source": "[Publication · Month 2026]",
+      "title": "Simran opens up about Dharman",
+      "source": "Cinema Express · July 2026",
       "action": "Read",
-      "url": "[Link to the piece]",
-      "tint": "#241a14",
-      "quote": "[Opening line or pull quote from the piece]"
+      "url": "https://www.cinemaexpress.com/tamil/news/2026/Jul/20/simran-opens-up-about-dharman-i-kept-telling-rajinikanth-sir",
+      "tint": "#341517",
+      "quote": null,
+      "dek": "An interview on her role in Dharman and working with Rajinikanth.",
+      "poster": "/media/stills/dharman-rajinikanth.webp"
     },
     {
       "type": "Interview",
-      "title": "[Interview headline 2]",
-      "source": "[Publication · Month 2026]",
+      "title": "Tiger 3: playing Pakistan’s Prime Minister",
+      "source": "DNA India · November 2023",
       "action": "Read",
-      "url": "[Link to the piece]",
-      "tint": "#1e1a22",
-      "quote": "[Opening line or pull quote from the piece]"
+      "url": "https://www.dnaindia.com/bollywood/report-tiger-3-actress-simran-took-notes-from-these-real-life-politicians-to-play-pakistan-pm-in-salman-khan-starrer-3068419",
+      "tint": "#2a1214",
+      "quote": "The journey of bringing Nazreen Irani to life was a profound one for me.",
+      "poster": "/media/press/tiger-3-dna.webp"
+    },
+    {
+      "type": "Video",
+      "title": "On stage at the JFW Achievers Awards 2025",
+      "source": "JFW Binge",
+      "action": "Watch",
+      "url": "https://www.youtube.com/watch?v=CUZrcwJhXIQ",
+      "tint": "#301214",
+      "quote": null,
+      "video": null,
+      "poster": "/media/video/jfw-2025.webp"
     },
     {
       "type": "Article",
-      "title": "[Article headline 2]",
-      "source": "[Publication · Month 2026]",
+      "title": "Vijay Sethupathi and Simran team up for Regal Jewellers",
+      "source": "News18",
       "action": "Read",
-      "url": "[Link to the piece]",
-      "tint": "#2a1612",
-      "quote": "[Opening line or pull quote from the piece]"
+      "url": "https://www.news18.com/movies/regional-cinema/vijay-sethupathi-teams-up-with-simran-for-regal-jewellers-campaign-in-tamil-nadu-ws-l-10228135.html",
+      "tint": "#3a1416",
+      "quote": null,
+      "dek": "A new campaign reunites the two for the launch of Regal Jewellers in Tamil Nadu.",
+      "poster": null
     }
   ]
 }

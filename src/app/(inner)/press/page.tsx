@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import awards from '@content/awards.json'
+import brands from '@content/brands.json'
 import buzz from '@content/buzz.json'
 import honours from '@content/honours.json'
 import interviews from '@content/interviews.json'
@@ -28,6 +29,11 @@ export default function PressPage() {
           detail: [a.body, a.work].filter(Boolean).join(' · '),
           aside: a.result,
         }))}
+      />
+      <LedgerList
+        id="brands"
+        heading="Brands"
+        rows={brands.brands.map((b) => ({ key: b.name, lead: b.year ?? '·', title: b.name, detail: b.note || undefined }))}
       />
       <Interviews data={interviews} />
       <Buzz data={buzz} now={new Date().toISOString()} />

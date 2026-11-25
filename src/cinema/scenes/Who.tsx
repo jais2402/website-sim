@@ -29,7 +29,7 @@ export function Who({ data, bioHref }: { data: WhoData; bioHref: string }) {
   return (
     <Scene n={6} name="Who she is">
       <div className={s.stage} onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)} onFocus={() => setPaused(true)} onBlur={() => setPaused(false)}>
-        {data.portrait ? <img className={`${s.cover} ${s.kb}`} src={data.portrait} alt={data.portraitAlt} loading="lazy" /> : <div className={`${s.plate} ${s.m1} ${s.kb}`} />}
+        {data.portrait ? <img className={s.whoPhoto} src={data.portrait} alt={data.portraitAlt} loading="lazy" /> : <div className={`${s.plate} ${s.m1} ${s.kb}`} />}
         <div className={`${s.fill} ${s.whoShade}`} aria-hidden="true" />
         <div className={s.grain} />
         {!data.portrait && <span className={`${s.mono} ${s.plateNote}`}>Interview portrait · placeholder</span>}

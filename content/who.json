@@ -1,7 +1,7 @@
 {
-  "_note": "Scene 06 of the homepage. Interview lines must be real, verbatim quotes.",
-  "portrait": null,
-  "portraitAlt": "Interview portrait of Simran",
+  "_note": "Lines are verbatim from Simran’s own posts on the current simran.actor.",
+  "portrait": "/media/portraits/street.webp",
+  "portraitAlt": "Simran smiling on a city street",
   "facts": [
     {
       "label": "Roles",
@@ -18,20 +18,20 @@
   ],
   "lines": [
     {
-      "who": "Interviewer",
-      "text": "[Question — from a real interview]"
+      "who": "Simran · on Tiger 3",
+      "text": "From the moment I read the script, I knew “Tiger 3” was going to be a special project."
     },
     {
-      "who": "Simran",
-      "text": "[Her answer, verbatim]"
+      "who": "Simran · on Rocketry",
+      "text": "‘Rocketry’ has been a special film for me, as it allowed me to explore a character with depth, vulnerability, and strength."
     },
     {
-      "who": "Interviewer",
-      "text": "[Follow-up question]"
+      "who": "Simran · on Thamizh and Arasu",
+      "text": "It’s been an incredible journey that has taught me so much about life, love, and the power of cinema."
     },
     {
-      "who": "Simran",
-      "text": "[Her answer, verbatim]"
+      "who": "Simran · to her fans",
+      "text": "But most importantly, I want to thank my fans for their unwavering encouragement and support of me."
     }
   ]
 }

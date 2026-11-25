@@ -1,59 +1,77 @@
 {
-  "_note": "poster: licensed 27:40 key art. Until supplied, the frame shows a tinted stand-in built from `tint`. `plate` is the brass label under the frame. `cinema` is the colour pair for the WebGL homepage; `meta` is the billing line shown there (from the design; confirm).",
+  "_note": "Posters, years, languages and roles come from the current simran.actor; replace posters with licensed key art before launch. `plate` is the brass label (language). `meta` is the role. `cinema` is the colour pair for the homepage WebGL wash.",
   "films": [
     {
       "slug": "tourist-family",
       "title": "Tourist Family",
       "language": "Tamil",
       "year": "2025",
-      "plate": "Now playing",
-      "poster": null,
+      "plate": "Tamil",
+      "meta": "as Vasanthi",
+      "poster": "/media/posters/tourist-family.webp",
       "tint": [
-        "#E8A53A",
-        "#8a3b1c"
+        "#a8743a",
+        "#3a2214"
       ],
       "glow": "232 165 58",
       "cinema": [
         "#a8743a",
         "#3a2214"
-      ],
-      "meta": "Lead"
-    },
-    {
-      "slug": "andhagan",
-      "title": "Andhagan",
-      "language": "Tamil",
-      "year": "2024",
-      "plate": "Premiere",
-      "poster": null,
-      "tint": [
-        "#2a7f9e",
-        "#122f4a"
-      ],
-      "glow": "42 127 158",
-      "cinema": [
-        "#2f6d82",
-        "#122733"
-      ],
-      "meta": "Lead"
+      ]
     },
     {
       "slug": "good-bad-ugly",
       "title": "Good Bad Ugly",
       "language": "Tamil",
       "year": "2025",
-      "plate": "Cameo",
-      "poster": null,
+      "plate": "Tamil",
+      "meta": "as Priya",
+      "poster": "/media/posters/good-bad-ugly.webp",
       "tint": [
-        "#C8323A",
-        "#4a1215"
+        "#8e2a30",
+        "#2a0d10"
       ],
       "glow": "200 50 58",
       "cinema": [
         "#8e2a30",
         "#2a0d10"
+      ]
+    },
+    {
+      "slug": "andhagan",
+      "title": "Andhagan",
+      "language": "Tamil",
+      "year": "2024",
+      "plate": "Tamil",
+      "meta": "as Simi",
+      "poster": "/media/posters/andhagan.webp",
+      "tint": [
+        "#2f6d82",
+        "#122733"
       ],
-      "meta": "Special appearance"
+      "glow": "42 127 158",
+      "cinema": [
+        "#2f6d82",
+        "#122733"
+      ]
+    },
+    {
+      "slug": "tiger-3",
+      "title": "Tiger 3",
+      "language": "Hindi",
+      "year": "2023",
+      "plate": "Hindi",
+      "meta": "as Prime Minister Irani",
+      "poster": "/media/posters/tiger-3.webp",
+      "tint": [
+        "#2f5a6a",
+        "#0f1a20"
+      ],
+      "glow": "60 110 130",
+      "cinema": [
+        "#2f5a6a",
+        "#0f1a20"
+      ]
     },
     {
       "slug": "gulmohar",
@@ -61,71 +79,71 @@
       "language": "Hindi",
       "year": "2023",
       "plate": "Hindi",
-      "poster": null,
+      "meta": "as Indira Batra",
+      "poster": "/media/posters/gulmohar.webp",
       "tint": [
-        "#d0607a",
-        "#3d4f2a"
+        "#9a5468",
+        "#2b1f22"
       ],
       "glow": "208 96 122",
       "cinema": [
         "#9a5468",
         "#2b1f22"
-      ],
-      "meta": "Ensemble"
+      ]
     },
     {
       "slug": "rocketry-the-nambi-effect",
       "title": "Rocketry: The Nambi Effect",
       "language": "Multilingual",
       "year": "2022",
-      "plate": "Biopic",
-      "poster": null,
+      "plate": "Multilingual",
+      "meta": "as Meena Narayanan",
+      "poster": "/media/posters/rocketry.webp",
       "tint": [
-        "#3b5bb5",
-        "#16163a"
+        "#3c5596",
+        "#141a33"
       ],
       "glow": "59 91 181",
       "cinema": [
         "#3c5596",
         "#141a33"
-      ],
-      "meta": "Lead"
+      ]
     },
     {
       "slug": "paava-kadhaigal",
       "title": "Paava Kadhaigal",
       "language": "Tamil",
       "year": "2020",
-      "plate": "Streaming",
-      "poster": null,
+      "plate": "Tamil",
+      "meta": "as Madhi",
+      "poster": "/media/posters/paava-kadhaigal.webp",
       "tint": [
-        "#7e4bb0",
-        "#2a1638"
+        "#6d4a95",
+        "#21152e"
       ],
       "glow": "126 75 176",
       "cinema": [
         "#6d4a95",
         "#21152e"
-      ],
-      "meta": "Anthology"
+      ]
     },
     {
       "slug": "petta",
       "title": "Petta",
       "language": "Tamil",
       "year": "2019",
-      "plate": "Classic",
-      "poster": null,
+      "plate": "Tamil",
+      "meta": "as Mangalam",
+      "poster": "/media/posters/petta.webp",
       "tint": [
-        "#e0702a",
-        "#3a1a0d"
+        "#b0602a",
+        "#33190b"
       ],
       "glow": "224 112 42",
       "cinema": [
         "#b0602a",
         "#33190b"
-      ],
-      "meta": "Lead"
+      ]
     }
   ]
 }

@@ -106,10 +106,45 @@
 }
 
 .article {
+  position: relative;
+  z-index: 0;
   width: 78%;
   display: flex;
   flex-direction: column;
   gap: 14px;
+}
+
+/* With a photo the article card becomes a full-frame still with the text over a shade. */
+.article[data-photo] {
+  position: absolute;
+  inset: 0;
+  width: auto;
+  justify-content: flex-end;
+  padding: 0 11% 9%;
+}
+
+.article[data-photo]::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(90deg, rgb(10 10 10 / 0.92) 0%, rgb(10 10 10 / 0.78) 55%, rgb(10 10 10 / 0.3) 100%),
+    linear-gradient(180deg, transparent 50%, rgb(10 10 10 / 0.6) 100%);
+}
+
+.article[data-photo] .media {
+  z-index: -2;
+}
+
+.article[data-photo] .lines {
+  display: none;
+}
+
+.dek {
+  font-size: 17px;
+  line-height: 1.45;
+  color: var(--ink-soft);
 }
 
 .masthead {

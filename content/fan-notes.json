@@ -1,46 +1,45 @@
 {
-  "_note": "Notes are published only in Simran's own words, as supplied by her team. Do not write or edit note text here; paste what the team sends. The first note is the one shown on load. Add \"allNotes\": { \"label\": \"All notes\", \"href\": \"…\" } once an archive page exists.",
+  "_note": "Notes are Simran’s own posts from the current simran.actor, verbatim. Publish only in her own words.",
   "heading": "Notes from Simran",
   "intro": "Messages to the people who’ve been there all along.",
   "signOff": "With love,",
-  "signature": { "name": "Simran", "image": null },
-  "cta": { "label": "Send your wishes", "href": "/connect" },
+  "signature": {
+    "name": "Simran",
+    "image": null
+  },
+  "cta": {
+    "label": "Send your wishes",
+    "href": "/connect"
+  },
   "disclaimer": "Every note is published only in Simran’s own words, as supplied by her team.",
   "notes": [
     {
       "occasion": "Thank you",
-      "date": "[Date]",
-      "greet": "Dear all of you,",
-      "body": "[A thank-you note after a release — in Simran’s own words.]\n\n[Second paragraph.]",
-      "preview": "“[Opening line of the note]”"
+      "date": "16 November 2023",
+      "greet": "My Journey With Tiger 3",
+      "body": "Seeing our hard work translate into success is a dream come true. The way you have embraced our film, has left me exhilarated. Your enthusiasm and appreciation make all the late nights worth it.\n\nI want to take a moment to thank each one of you from the bottom of my heart. Your love and support mean the world to me and the entire team of “Tiger 3”.",
+      "preview": "“Seeing our hard work translate into success is a dream come true.”"
     },
     {
-      "occasion": "Festival greetings",
-      "date": "[Date]",
-      "greet": "[Greeting]",
-      "body": "[Festival message — in Simran’s own words.]",
-      "preview": "“[Opening line of the note]”"
+      "occasion": "Milestone",
+      "date": "29 August 2023",
+      "greet": "Reaching For The Stars, In Cinema And In Science",
+      "body": "And as if the universe were celebrating with us “Rocketry,” which pays tribute to India’s early space pioneers, has won a National Film Award. I am beyond honored.\n\nHere’s to reaching for the stars, in cinema and in science.",
+      "preview": "“I am beyond honored.”"
     },
     {
-      "occasion": "From the set",
-      "date": "[Date]",
-      "greet": "[Greeting]",
-      "body": "[A note from the Dharman shoot — in Simran’s own words.]",
-      "preview": "“[Opening line of the note]”"
+      "occasion": "Nomination",
+      "date": "26 April 2023",
+      "greet": "Rocketry Filmfare Nomination",
+      "body": "I’m thrilled to have been nominated for the Filmfare Award for Best Supporting Actress for my performance in ‘Rocketry.’\n\nBut most importantly, I want to thank my fans for their unwavering encouragement and support of me.",
+      "preview": "“I want to thank my fans for their unwavering encouragement.”"
     },
     {
-      "occasion": "Birthday thanks",
-      "date": "[Date]",
-      "greet": "[Greeting]",
-      "body": "[Thank-you for birthday wishes — in Simran’s own words.]",
-      "preview": "“[Opening line of the note]”"
-    },
-    {
-      "occasion": "Three decades",
-      "date": "[Date]",
-      "greet": "[Greeting]",
-      "body": "[A reflective note on the journey — in Simran’s own words.]",
-      "preview": "“[Opening line of the note]”"
+      "occasion": "Anniversary",
+      "date": "18 April 2023",
+      "greet": "Thamizh and Arasu",
+      "body": "Today, I’m reflecting on two remarkable parts of my cinematic journey – the 21st anniversary of Thamizh and the 20th anniversary of Arasu. As I look back on these milestones, I’m filled with immense gratitude and joy.\n\nHere’s to the magic of cinema and the unforgettable memories.",
+      "preview": "“I’m filled with immense gratitude and joy.”"
     }
   ]
 }

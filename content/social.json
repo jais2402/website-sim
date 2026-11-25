@@ -1,5 +1,5 @@
 {
-  "_note": "posts are sample rows. The page replaces them with the cached Instagram Graph API / Behold feed (and X posts) in the same shape: platform is instagram or x, url is the post permalink, ratio is the image's width / height.",
+  "_note": "Images and the two captions come from Simran’s posts as saved on the current simran.actor. Replace with the cached Instagram feed.",
   "heading": "Moments",
   "posts": [
     {
@@ -8,9 +8,38 @@
       "profile": "https://www.instagram.com/simranrishibagga/",
       "url": "https://www.instagram.com/simranrishibagga/",
       "when": "[Date]",
-      "text": "[Caption — pulled from Instagram]",
-      "ratio": "4 / 5",
+      "text": "Some journeys become even more special when they come full circle. ❤️✨",
+      "ratio": "3 / 4",
+      "image": "/media/photos/shoot-1.webp"
+    },
+    {
+      "platform": "x",
+      "handle": "@simranbaggaoffc",
+      "profile": "https://x.com/simranbaggaoffc",
+      "url": "https://x.com/simranbaggaoffc",
+      "when": "[Date]",
+      "text": "[Post text — pulled live from X]",
       "image": null
+    },
+    {
+      "platform": "instagram",
+      "handle": "@simranrishibagga",
+      "profile": "https://www.instagram.com/simranrishibagga/",
+      "url": "https://www.instagram.com/simranrishibagga/",
+      "when": "[Date]",
+      "text": "Blue never goes out of style. 💙😊",
+      "ratio": "3 / 4",
+      "image": "/media/photos/event-1.webp"
+    },
+    {
+      "platform": "instagram",
+      "handle": "@simranrishibagga",
+      "profile": "https://www.instagram.com/simranrishibagga/",
+      "url": "https://www.instagram.com/simranrishibagga/",
+      "when": "[Date]",
+      "text": "[Caption — pulled from Instagram]",
+      "ratio": "2 / 3",
+      "image": "/media/photos/bts-1.webp"
     },
     {
       "platform": "x",
@@ -37,38 +66,9 @@
       "profile": "https://www.instagram.com/simranrishibagga/",
       "url": "https://www.instagram.com/simranrishibagga/",
       "when": "[Date]",
-      "text": "[Caption — pulled from Instagram]",
-      "ratio": "4 / 5",
-      "image": null
-    },
-    {
-      "platform": "x",
-      "handle": "@simranbaggaoffc",
-      "profile": "https://x.com/simranbaggaoffc",
-      "url": "https://x.com/simranbaggaoffc",
-      "when": "[Date]",
-      "text": "[Post text — pulled live from X]",
-      "image": null
-    },
-    {
-      "platform": "instagram",
-      "handle": "@simranrishibagga",
-      "profile": "https://www.instagram.com/simranrishibagga/",
-      "url": "https://www.instagram.com/simranrishibagga/",
-      "when": "[Date]",
-      "text": "[Caption — pulled from Instagram]",
-      "ratio": "1 / 1",
-      "image": null
-    },
-    {
-      "platform": "instagram",
-      "handle": "@simranrishibagga",
-      "profile": "https://www.instagram.com/simranrishibagga/",
-      "url": "https://www.instagram.com/simranrishibagga/",
-      "when": "[Date]",
-      "text": "[Caption — pulled from Instagram]",
-      "ratio": "4 / 5",
-      "image": null
+      "text": "Some journeys become even more special when they come full circle. ❤️✨",
+      "ratio": "3 / 4",
+      "image": "/media/photos/shoot-2.webp"
     },
     {
       "platform": "x",

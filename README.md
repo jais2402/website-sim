@@ -36,6 +36,14 @@ Set `CONTENT_STRICT=1` on production deploys. The build then fails while any `[ 
 | `CONVENTIONS.md` | Rules for adding or changing a section. |
 | `docs/handover/` | The handover, creative direction and design sources. |
 
+## Media
+
+Everything in `public/media/` was taken from the current simran.actor in November 2026: posters, photos, award photos and the YouTube thumbnails of videos that site links to. `public/media/sources.json` lists each file with its original URL.
+
+The handover (§4) asks for photos of Simran to come only from files her team supplies or clears. Treat these as working copies: swap each one for a cleared file before launch, keeping the same path, and nothing else needs to change.
+
+Text taken from the same site: filmography, awards, biography, brands, the in-production slate, article links, and Simran’s own posts (used verbatim for “In her words”, the interview lines and the notes).
+
 ## Content that is still outstanding
 
 Run `npm run content:check` for the full list. The blocking client assets are in `docs/handover/HANDOVER.md` §4: the official autograph SVG, hero loop and poster, key art, clips, photos, and confirmed titles, dates and awards.

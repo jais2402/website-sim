@@ -8,6 +8,8 @@ export type UpcomingFilm = {
   meta: string
   /** Key art path, or null for the typeset gradient stand-in. */
   poster: string | null
+  /** Wide production still (used on the homepage On set scene). */
+  still?: string | null
   /** Small line on the stand-in poster. Ignored while shooting ("Now filming"). */
   posterLine?: string
   /** Drives status, tracker and countdown. Never type a status label. */
