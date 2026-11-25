@@ -1,6 +1,9 @@
 'use client'
 
 import { useState } from 'react'
+import { YouTubeEmbed } from '@/components/ui/YouTubeEmbed'
+import { useReducedMotion } from '@/lib/motion'
+import { youtubeId } from '@/lib/youtube'
 import { Scene, Sub, art, magnetic } from '../ui'
 import s from '../cinema.module.css'
 
@@ -8,8 +11,12 @@ export type ReelClip = { title: string; film: string; duration: string | null; v
 
 const pad = (n: number) => String(n).padStart(2, '0')
 
-/** Scene 05: five frames side by side. Hover, focus or tap one to open it; sound only on play. */
+/**
+ * Scene 05: five frames side by side. Hover, focus or tap one to open it. The
+ * open frame plays a muted preview by itself; play brings the full player with sound.
+ */
 export function Reel({ clips }: { clips: ReelClip[] }) {
+  const reduced = useReducedMotion()
   const [open, setOpen] = useState(0)
   const [playing, setPlaying] = useState<number | null>(null)
   const pick = (k: number) => {
@@ -26,14 +33,29 @@ export function Reel({ clips }: { clips: ReelClip[] }) {
       <div role="group" aria-label="Choose a clip" className={s.frames}>
         {clips.map((c, k) => {
           const on = k === open
-          const live = on && playing === k && c.video
+          const yt = youtubeId(c.url)
+          const canPlay = Boolean(c.video || yt)
+          const live = on && playing === k && canPlay
           return (
-            <div key={`${c.film} · ${c.title}`} className={s.frameCell} data-open={on || undefined} onMouseEnter={() => pick(k)} onClick={() => pick(k)}>
+            <div
+              key={`${c.film} · ${c.title}`}
+              className={s.frameCell}
+              data-open={on || undefined}
+              // While a clip plays with sound, hovering another frame must not stop it.
+              onMouseEnter={() => playing === null && pick(k)}
+              onClick={() => pick(k)}
+            >
               {live ? (
-                <video className={s.cover} src={c.video!} controls autoPlay playsInline />
+                c.video ? (
+                  <video className={s.cover} src={c.video} controls autoPlay playsInline />
+                ) : (
+                  <YouTubeEmbed id={yt!} title={`${c.film}: ${c.title}`} mode="play" />
+                )
               ) : (
                 <>
                   {c.poster ? <img className={s.cover} src={c.poster} alt="" loading="lazy" /> : <div className={`${s.plateWide} ${s.kb}`} style={{ background: art(c.cinema[0], c.cinema[1]) }} />}
+                  {on && !reduced && c.video && <video className={s.cover} src={c.video} muted loop autoPlay playsInline aria-hidden="true" />}
+                  {on && !reduced && !c.video && yt && <YouTubeEmbed id={yt} title={`${c.film}: ${c.title}`} mode="preview" />}
                   <div className={`${s.fill} ${s.frameShade}`} aria-hidden="true" />
                   <div className={s.grain} />
                   <button type="button" className={s.spine} aria-pressed={on} onFocus={() => pick(k)} tabIndex={on ? -1 : 0}>
@@ -48,19 +70,12 @@ export function Reel({ clips }: { clips: ReelClip[] }) {
                     </p>
                     <p className={s.frameTitle}>{c.title}</p>
                   </div>
-                  {on && (c.video || !c.url) && (
-                    <button type="button" className={`${s.playBig} ${s.mag}`} aria-label={`Play ${c.title} with sound`} disabled={!c.video} onClick={() => setPlaying(k)} {...magnetic}>
+                  {on && (
+                    <button type="button" className={`${s.playBig} ${s.mag}`} aria-label={`Play ${c.film}: ${c.title} with sound`} disabled={!canPlay} onClick={() => setPlaying(k)} {...magnetic}>
                       <svg width="22" height="22" viewBox="0 0 12 12" aria-hidden="true">
                         <path d="M3 1.5v9l7.5-4.5z" fill="currentColor" />
                       </svg>
                     </button>
-                  )}
-                  {on && !c.video && c.url && (
-                    <a className={`${s.playBig} ${s.mag}`} href={c.url} target="_blank" rel="noopener" aria-label={`Watch ${c.film}: ${c.title} on YouTube (opens in a new tab)`} {...magnetic}>
-                      <svg width="22" height="22" viewBox="0 0 12 12" aria-hidden="true">
-                        <path d="M3 1.5v9l7.5-4.5z" fill="currentColor" />
-                      </svg>
-                    </a>
                   )}
                 </>
               )}
@@ -68,7 +83,7 @@ export function Reel({ clips }: { clips: ReelClip[] }) {
           )
         })}
       </div>
-      <Sub className={s.reelCaption}>Hover or tap a frame to open it. Press play to watch with sound.</Sub>
+      <Sub className={s.reelCaption}>Hover or tap a frame to open it. Press play for sound.</Sub>
     </Scene>
   )
 }

@@ -41,7 +41,7 @@ function reads(): Read[] {
   const pick = (type: string) => interviews.items.find((i) => i.type === type)
   const pieces = [pick('Video'), pick('Interview'), pick('Article')].filter((i) => i !== undefined)
   return [
-    { type: 'Note to fans', short: note.greet, title: note.greet, body: `${note.body}\n\n— ${fanNotes.signature.name}`, source: note.date },
+    { type: 'Note to fans', short: note.greet, title: note.greet, body: `${note.body}\n\n— ${fanNotes.signature.name}`, source: note.date, image: note.image },
     ...pieces.map((i) => ({
       type: i.type === 'Video' ? 'Video interview' : i.type,
       short: i.title,
@@ -49,6 +49,7 @@ function reads(): Read[] {
       body: i.quote ?? ('dek' in i ? (i.dek ?? '') : ''),
       source: i.source,
       url: i.url,
+      image: i.poster,
     })),
   ]
 }
@@ -66,7 +67,7 @@ export default function Home() {
       <Reel clips={showreel.clips} />
       <Who data={who} bioHref="/about" />
       <Memory films={memoryLane.films} startFilm={memoryLane.startFilm} />
-      <Photos photos={photoshoots.photos.slice(0, 8)} allHref="/photoshoots" />
+      <Photos photos={photoshoots.photos.slice(0, 12)} allHref="/photoshoots" />
       <Honours awards={awards.awards} allHref="/press#honours-list" />
       <Words reads={reads()} />
       <Moments posts={social.posts.slice(0, 4)} profiles={social.follow.profiles} />

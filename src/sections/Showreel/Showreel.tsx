@@ -1,6 +1,8 @@
 'use client'
 
 import { useState } from 'react'
+import { YouTubeEmbed } from '@/components/ui/YouTubeEmbed'
+import { youtubeId } from '@/lib/youtube'
 import { ArrowButton, Container, SectionHeading } from '@/components/ui'
 import { useReducedMotion } from '@/lib/motion'
 import { useAutoAdvance } from '@/lib/useAutoAdvance'
@@ -70,7 +72,9 @@ export function Showreel({ data, id = 'reel', title = 'Showreel' }: { data: Show
           if (d > n / 2) d -= n
           if (d < -n / 2) d += n
           const active = d === 0
-          const isPlaying = playing === i && c.video
+          const yt = youtubeId(c.url)
+          const canPlay = Boolean(c.video || yt)
+          const isPlaying = playing === i && canPlay
           return (
             <li
               key={`${c.film} · ${c.title}`}
@@ -83,29 +87,22 @@ export function Showreel({ data, id = 'reel', title = 'Showreel' }: { data: Show
               {c.video && active && !isPlaying && !reduced && (
                 <video className={s.fill} src={c.video} muted loop autoPlay playsInline preload="none" aria-hidden="true" />
               )}
-              {isPlaying && <video className={s.fill} src={c.video!} controls autoPlay playsInline />}
+              {!c.video && yt && active && !isPlaying && !reduced && <YouTubeEmbed id={yt} title={`${c.film}: ${c.title}`} mode="preview" />}
+              {isPlaying && (c.video ? <video className={s.fill} src={c.video} controls autoPlay playsInline /> : <YouTubeEmbed id={yt!} title={`${c.film}: ${c.title}`} mode="play" />)}
 
               {!isPlaying && (
                 <>
                   <span className={s.kind}>
                     {c.kind}
-                    {c.video ? ' · muted preview' : ''}
+                    {canPlay && !reduced ? ' · muted preview' : ''}
                   </span>
                   {active ? (
                     <>
-                      {c.video || !c.url ? (
-                        <button type="button" className={s.play} aria-label={`Play ${c.title} with sound`} disabled={!c.video} onClick={() => setPlaying(i)}>
+                      <button type="button" className={s.play} aria-label={`Play ${c.film}: ${c.title} with sound`} disabled={!canPlay} onClick={() => setPlaying(i)}>
                         <svg width="22" height="22" viewBox="0 0 12 12" aria-hidden="true">
                           <path d="M3 1.5v9l7.5-4.5z" fill="currentColor" />
                         </svg>
-                        </button>
-                      ) : (
-                        <a className={s.play} href={c.url} target="_blank" rel="noopener" aria-label={`Watch ${c.film}: ${c.title} on YouTube (opens in a new tab)`}>
-                        <svg width="22" height="22" viewBox="0 0 12 12" aria-hidden="true">
-                          <path d="M3 1.5v9l7.5-4.5z" fill="currentColor" />
-                        </svg>
-                        </a>
-                      )}
+                      </button>
                       <div className={s.caption}>
                         <div>
                           <h3 className={s.clipTitle}>{c.title}</h3>
@@ -114,7 +111,7 @@ export function Showreel({ data, id = 'reel', title = 'Showreel' }: { data: Show
                             {c.duration ? ` · ${c.duration}` : ''}
                           </p>
                         </div>
-                        <span className={s.sound}>Sound on ↗</span>
+                        <span className={s.sound}>Press play for sound</span>
                       </div>
                       <span className={s.bar} style={{ transform: `scaleX(${progress})` }} aria-hidden="true" />
                     </>

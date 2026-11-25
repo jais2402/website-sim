@@ -53,17 +53,23 @@ type SceneProps = {
   take?: string
   className?: string
   children: ReactNode
+  /** Leave out the slate and timecode (the full-screen opening). */
+  bare?: boolean
 }
 
 /** One full-height scene with its slate ("Scene 03 · The films · Take 1") and timecode. */
-export function Scene({ n, name, take = 'Take 1', className, children }: SceneProps) {
+export function Scene({ n, name, take = 'Take 1', className, bare = false, children }: SceneProps) {
   const id = `s${pad(n)}`
   return (
     <section id={id} aria-labelledby={`${id}-h`} className={[s.scene, className].filter(Boolean).join(' ')}>
-      <p className={`${s.mono} ${s.slate}`} aria-hidden="true">
-        Scene {pad(n)} · {name} · {take}
-      </p>
-      <Timecode />
+      {!bare && (
+        <>
+          <p className={`${s.mono} ${s.slate}`} aria-hidden="true">
+            Scene {pad(n)} · {name} · {take}
+          </p>
+          <Timecode />
+        </>
+      )}
       {children}
     </section>
   )

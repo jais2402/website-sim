@@ -5,19 +5,17 @@ import { ShaderCanvas } from '../ShaderCanvas'
 import { Scene, Sub, magnetic, trackPointer } from '../ui'
 import s from '../cinema.module.css'
 
-/** Scene 01: countdown leader, letterbox opening onto projector light, and the name. */
+/** Scene 01: countdown leader, then a full-screen opening onto projector light and the name. */
 export function Opening({ name, tagline, reelHref, image, imageAlt }: { name: string; tagline: string; reelHref: string; image?: string | null; imageAlt?: string }) {
   const pointer = useRef<[number, number]>([0.5, 0.5])
   return (
-    <Scene n={1} name="Opening" className={s.opening}>
+    <Scene n={1} name="Opening" className={s.opening} bare>
       <div className={s.fill} onPointerMove={trackPointer(pointer)}>
         <div className={`${s.fill} ${s.glHero}`}>
           {image && <img className={s.heroPhoto} src={image} alt={imageAlt ?? ''} fetchPriority="high" />}
           <ShaderCanvas shader="hero" pointer={pointer} />
         </div>
         <div className={`${s.fill} ${s.heroShade}`} aria-hidden="true" />
-        <div className={`${s.lb} ${s.lbTop}`} aria-hidden="true" />
-        <div className={`${s.lb} ${s.lbBottom}`} aria-hidden="true" />
 
         <div className={s.heroBody}>
           <h1 id="s01-h" className={s.heroName} aria-label={name}>

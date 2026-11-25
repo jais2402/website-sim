@@ -389,7 +389,9 @@
 /* ---------- 01 Opening ---------- */
 .opening {
   --lead: 0s; /* time already spent on the leader */
-  height: clamp(640px, 100svh, 1000px);
+  /* Full screen: exactly one viewport tall, no letterbox bars. */
+  height: 100vh;
+  height: 100svh;
   min-height: 0;
   overflow: hidden;
 }
@@ -411,8 +413,8 @@
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: contain;
-  object-position: 50% 30%;
+  object-fit: cover;
+  object-position: 50% 22%;
   filter: grayscale(0.35) brightness(0.7) contrast(1.05);
 }
 
@@ -428,28 +430,9 @@
     radial-gradient(ellipse 85% 70% at 50% 50%, transparent 45%, rgb(0 0 0 / 0.75) 100%);
 }
 
-.lb {
-  position: absolute;
-  inset-inline: 0;
-  height: 15%;
-  background: #000;
-  z-index: 3;
-  animation: letterbox 1.3s cubic-bezier(0.7, 0, 0.2, 1) calc(1.7s - var(--lead)) both;
-}
-
-.lbTop {
-  top: 0;
-  transform-origin: top;
-}
-
-.lbBottom {
-  bottom: 0;
-  transform-origin: bottom;
-}
-
 .heroBody {
   position: absolute;
-  inset: 15% 0;
+  inset: 0;
   z-index: 2;
   display: flex;
   flex-direction: column;
@@ -672,7 +655,6 @@
 }
 
 .filmStrip::-webkit-scrollbar,
-.shots::-webkit-scrollbar,
 .years::-webkit-scrollbar {
   display: none;
 }
@@ -1256,57 +1238,41 @@
   }
 }
 
-/* ---------- 08 Photoshoots ---------- */
+/* ---------- 08 Photoshoots: a grid, so many photos show at once ---------- */
 .photoStage {
+  aspect-ratio: auto;
+  min-height: 0;
+  margin-top: 96px; /* below the scene label, which sits at the top of the scene */
+  padding: 44px var(--inset) 28px;
   background: #0a0908;
-  min-height: 600px;
 }
 
 .photoHead {
-  position: absolute;
-  inset: 44px var(--right) auto var(--inset);
-  z-index: 2;
   display: flex;
   justify-content: space-between;
   align-items: baseline;
   gap: 16px;
-}
-
-.filmstrip {
-  position: absolute;
-  inset: 120px 0 auto;
-  height: 420px;
-  background: #141210;
-}
-
-.sprockets {
-  position: absolute;
-  inset: 10px 0 auto;
-  height: 14px;
-  border-radius: 2px;
-  background: repeating-linear-gradient(90deg, transparent 0 14px, rgb(245 242 236 / 0.22) 14px 28px, transparent 28px 40px);
-}
-
-.sprocketsBottom {
-  inset: auto 0 10px;
+  margin-bottom: 28px;
 }
 
 .shots {
-  position: absolute;
-  inset: 36px 0;
-  display: flex;
-  gap: 10px;
-  overflow-x: auto;
-  scrollbar-width: none;
-  padding: 0 calc(var(--rail) + 48px) 0 var(--inset);
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
 }
 
 .shot {
   position: relative;
-  flex: none;
-  height: 100%;
+  aspect-ratio: 3 / 4;
   overflow: hidden;
   border-radius: 3px;
+  background: #141210;
+}
+
+.photoStage .caption {
+  position: static;
+  margin-top: 22px;
+  text-align: center;
 }
 
 .shotImg {
@@ -1463,6 +1429,34 @@
   top: 130px;
   width: min(560px, 40%);
   z-index: 2;
+}
+
+/* The selected piece's picture, in the space between the text and the list. */
+.readImage {
+  position: absolute;
+  z-index: 2;
+  top: 120px;
+  bottom: 76px;
+  left: calc(var(--inset) + min(560px, 40%) + 48px);
+  right: calc(var(--right) + 380px + 48px);
+  overflow: hidden;
+  border-radius: 4px;
+  box-shadow: 0 30px 60px rgb(0 0 0 / 0.55);
+}
+
+.readImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 25%;
+  animation: fadeIn 0.6s ease both;
+}
+
+/* Too little room between the text and the list: leave the picture out. */
+@media (max-width: 1150px) and (min-width: 901px) {
+  .readImage {
+    display: none;
+  }
 }
 
 .readTitle {
@@ -1714,13 +1708,6 @@
   }
   to {
     clip-path: circle(75% at 50% 50%);
-  }
-}
-
-/* Bars start closed (meeting mid-screen) and open to 15% each. Scale, not height, so nothing reflows. */
-@keyframes letterbox {
-  from {
-    transform: scaleY(3.334);
   }
 }
 
@@ -2106,23 +2093,28 @@
 
   /* 08 */
   .photoStage {
-    height: 480px;
-    min-height: 0;
+    margin-top: 0;
+    padding: 24px var(--gut) 20px;
   }
 
   .photoHead {
-    top: 20px;
+    margin-bottom: 18px;
   }
 
-  .filmstrip {
-    top: 84px;
-    height: 320px;
+  .shots {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
   }
 
-  .photoStage .caption {
-    position: absolute;
-    inset: auto 0 12px;
-    padding-block: 0;
+  /* Touch: Download stays visible, since there is no hover. */
+  .dl {
+    opacity: 1;
+    transform: none;
+    min-height: 36px;
+    padding: 0 12px;
+    font-size: 12px;
+    right: 8px;
+    bottom: 8px;
   }
 
   /* 09 */
@@ -2174,6 +2166,13 @@
 
   .readPane {
     min-height: 230px;
+  }
+
+  .readImage {
+    position: relative;
+    inset: auto;
+    height: 240px;
+    margin: 20px var(--gut) 0;
   }
 
   .readTitle {
@@ -2248,7 +2247,6 @@
   .word,
   .reveal,
   .iris,
-  .lb,
   .sweep,
   .ln,
   .roll,

@@ -13,6 +13,8 @@ export type Read = {
   body: string
   source: string
   url?: string | null
+  /** Picture shown beside the text: poster, still or video thumbnail. */
+  image?: string | null
 }
 
 const ICON: Record<string, string> = {
@@ -20,7 +22,7 @@ const ICON: Record<string, string> = {
   'Video interview': 'M3 1.5v9l7.5-4.5z',
 }
 
-/** Scene 10: notes, interviews and articles. Hover, focus or tap a row to read it on the left. */
+/** Scene 10: notes, interviews and articles. Hover, focus or tap a row to read it on the left, with its picture beside it. */
 export function Words({ reads }: { reads: Read[] }) {
   const [index, setIndex] = useState(0)
   const [shown, setShown] = useState(0)
@@ -58,6 +60,12 @@ export function Words({ reads }: { reads: Read[] }) {
             )}
           </p>
         </div>
+
+        {read.image && (
+          <div className={s.readImage} aria-hidden="true">
+            <img key={read.image} src={read.image} alt="" loading="lazy" />
+          </div>
+        )}
 
         <ul className={s.readList}>
           {reads.map((r, k) => (
