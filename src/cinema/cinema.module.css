@@ -26,6 +26,8 @@
   --font-ui: 'Inter Tight', system-ui, sans-serif;
   --font-poster: var(--cinzel);
   --h2: clamp(30px, 3vw, 44px);
+  /* Scene numbers are counted per page in reading order (see .slate). */
+  counter-reset: scene;
   position: relative;
   background: #000;
   color: var(--ivory);
@@ -36,7 +38,7 @@
 
 /* Scene links land just below the sticky header. */
 :global(html):has(.page) {
-  scroll-padding-top: var(--hdr);
+  scroll-padding-top: 64px; /* = --hdr; the variable is defined on .page, not on html */
 }
 
 .page a:hover {
@@ -318,6 +320,21 @@
 
 .slate {
   left: var(--gut);
+}
+
+/* "Scene 03 · …": numbered by the page, so every page counts 01, 02, 03 in order. */
+.slate::before {
+  counter-increment: scene;
+  content: 'Scene ' counter(scene, decimal-leading-zero) ' · ';
+}
+
+/* The opening (homepage) and the page title (inner pages) are scene 01 but show no label. */
+.opening,
+.pageTitle {
+  counter-increment: scene;
+}
+
+.slate {
   color: rgb(245 242 236 / 0.7);
 }
 

@@ -4,7 +4,7 @@ The official site for Simran, built from the *Title Sequence* handover pack in `
 
 Next.js (App Router) + TypeScript + CSS modules, with GSAP/ScrollTrigger for the hero. Fonts are self-hosted.
 
-The homepage follows the design canvas artboard **V9 · WebGL Cinema**: twelve full-height scenes with live WebGL backgrounds. The inner pages still use the earlier *Title Sequence* sections.
+Every page follows the design canvas artboard **V9 · WebGL Cinema**: full-height scenes on a black ground with live WebGL backgrounds. The homepage runs through twelve scenes; the other pages reuse the same scenes, header and credits footer.
 
 ## Run it
 
@@ -28,9 +28,10 @@ Set `CONTENT_STRICT=1` on production deploys. The build then fails while any `[ 
 | `content/*.json` | All copy and data. Nothing is hard-coded in components. |
 | `src/app/` | Routes: `/`, `/work`, `/about`, `/reel`, `/press`, `/connect`, `/photoshoots`. |
 | `src/cinema/` | The homepage: `scenes/` (one component per scene), `shaders.ts`, `ShaderCanvas.tsx`, shared `ui.tsx` and `cinema.module.css`. |
-| `src/sections/` | Sections used by the inner pages, each taking a typed `data` prop. |
-| `src/components/layouts/` | Inner-page layouts: `PageIntro`, `Chapters`, `Filmography`, `LedgerList`. |
-| `src/components/ui/` | `Container`, `SectionHeading`, `ArrowButton`, `TextLink`, `Wordmark`. |
+| `src/cinema/pages/` | Page-specific pieces for Work, Reel, About, Photoshoots, Press and Connect. |
+| `src/cinema/InnerShell.tsx`, `PageTitle.tsx` | Shell and opening block shared by every page except the homepage. |
+| `src/components/ui/YouTubeEmbed.tsx` | YouTube player: muted autoplay preview, or with sound after play. |
+| `docs/plans/`, `docs/research/` | Social-feed plans and hero-transition research. |
 | `src/app/globals.css` | Design tokens. |
 | `src/lib/status.ts` | Date-driven release status for the crawl and Coming Soon. |
 | `CONVENTIONS.md` | Rules for adding or changing a section. |

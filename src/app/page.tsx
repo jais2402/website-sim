@@ -2,8 +2,6 @@ import awards from '@content/awards.json'
 import buzz from '@content/buzz.json'
 import connect from '@content/connect.json'
 import crawl from '@content/crawl.json'
-import fanNotes from '@content/fan-notes.json'
-import interviews from '@content/interviews.json'
 import memoryLane from '@content/memory-lane.json'
 import photoshoots from '@content/photoshoots.json'
 import reelWall from '@content/reel-wall.json'
@@ -25,7 +23,8 @@ import { Opening } from '@/cinema/scenes/Opening'
 import { Photos } from '@/cinema/scenes/Photos'
 import { Reel } from '@/cinema/scenes/Reel'
 import { Who } from '@/cinema/scenes/Who'
-import { Words, type Read } from '@/cinema/scenes/Words'
+import { Words } from '@/cinema/scenes/Words'
+import { reads } from '@/cinema/reads'
 
 // Release states (Now playing, On set) are date-driven, so refresh hourly.
 export const revalidate = 3600
@@ -34,25 +33,6 @@ export const revalidate = 3600
 
 // Play the film leader once per browser session; on return visits go straight to the title.
 const SKIP_LEADER = `try{if(sessionStorage.getItem('leader'))document.documentElement.classList.add('seen');else sessionStorage.setItem('leader','1')}catch(e){}`
-
-/** "In her words": the latest note, then one each of the first video, interview and article. */
-function reads(): Read[] {
-  const note = fanNotes.notes[0]
-  const pick = (type: string) => interviews.items.find((i) => i.type === type)
-  const pieces = [pick('Video'), pick('Interview'), pick('Article')].filter((i) => i !== undefined)
-  return [
-    { type: 'Note to fans', short: note.greet, title: note.greet, body: `${note.body}\n\n— ${fanNotes.signature.name}`, source: note.date, image: note.image },
-    ...pieces.map((i) => ({
-      type: i.type === 'Video' ? 'Video interview' : i.type,
-      short: i.title,
-      title: i.title,
-      body: i.quote ?? ('dek' in i ? (i.dek ?? '') : ''),
-      source: i.source,
-      url: i.url,
-      image: i.poster,
-    })),
-  ]
-}
 
 export default function Home() {
   const now = new Date()
@@ -68,7 +48,7 @@ export default function Home() {
       <Who data={who} bioHref="/about" />
       <Memory films={memoryLane.films} startFilm={memoryLane.startFilm} />
       <Photos photos={photoshoots.photos.slice(0, 12)} allHref="/photoshoots" />
-      <Honours awards={awards.awards} allHref="/press#honours-list" />
+      <Honours awards={awards.awards} allHref="/press#awards" />
       <Words reads={reads()} />
       <Moments posts={social.posts.slice(0, 4)} profiles={social.follow.profiles} />
       <Credits email={site.email} line="Press · Brands · Professional enquiries" social={site.social} year={now.getFullYear()} links={site.nav} />

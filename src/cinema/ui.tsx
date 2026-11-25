@@ -65,7 +65,7 @@ export function Scene({ n, name, take = 'Take 1', className, bare = false, child
       {!bare && (
         <>
           <p className={`${s.mono} ${s.slate}`} aria-hidden="true">
-            Scene {pad(n)} · {name} · {take}
+            {name} · {take}
           </p>
           <Timecode />
         </>

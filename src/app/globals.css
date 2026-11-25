@@ -22,9 +22,9 @@
   --line: rgb(243 237 227 / 0.08);
   --line-strong: rgb(243 237 227 / 0.12);
 
-  --font-display: 'Cormorant Garamond', 'Times New Roman', serif;
-  --font-ui: 'Inter', system-ui, sans-serif;
-  --font-poster: 'Oswald', 'Arial Narrow', sans-serif;
+  --font-display: 'Cinzel', 'Times New Roman', serif;
+  --font-ui: 'Inter Tight', system-ui, sans-serif;
+  --font-poster: 'Cinzel', 'Times New Roman', serif;
 
   --container: 1280px;
   --gutter: 32px;

@@ -2,11 +2,11 @@
 
 Read `docs/handover/HANDOVER.md` first. It overrides `docs/handover/simran-direction.md`.
 
-## Sections
+## Structure
 
-- One folder per section: `src/sections/<Name>/<Name>.tsx` + `<Name>.module.css`.
-- A section is a reusable layout. It takes all of its content through a typed `data` prop (export the type from the section file) and holds no copy of its own apart from fixed UI labels (button names, aria labels).
-- Content lives in `content/<name>.json`. The page imports the JSON and passes it in.
+- Every page uses the cinema look (design artboard **V9 · WebGL Cinema**). The homepage is `src/app/page.tsx` + `src/cinema/CinemaHome.tsx`; every other page sits in `src/cinema/InnerShell.tsx` (header, black ground, credits footer) via `src/app/(inner)/layout.tsx`.
+- Building blocks: the scenes in `src/cinema/scenes/` (reuse them on any page), `PageTitle` for an inner page's opening, and page-specific pieces in `src/cinema/pages/<page>/` with their own `*.module.css`.
+- A scene takes its content through props; content lives in `content/<name>.json` and the page passes it in. No copy in components apart from fixed UI labels.
 - Server component by default. Add `'use client'` only to the file that needs state or effects.
 
 ## Content rules
@@ -18,10 +18,9 @@ Read `docs/handover/HANDOVER.md` first. It overrides `docs/handover/simran-direc
 
 ## Styling
 
-- CSS modules. Colours, fonts, easing and container width come from the variables in `src/app/globals.css`. Section-specific scenery colours (wood, brass gradients and so on) may be literal, copied from the design source.
-- Desktop matches the design source at 1440px. Headings use `SectionHeading` (64px serif, fluid down to 40px). No numbered eyebrows.
-- Use `Container` for the 1280px / 32px-gutter column.
-- Must work at 390px with no horizontal page scroll. Mobile rules are in HANDOVER.md §5.
+- CSS modules. The look lives in `src/cinema/cinema.module.css`: `.page` defines the cinema colours and fonts (Cinzel, Inter Tight, JetBrains Mono) and re-points the site tokens in `src/app/globals.css` to them, so anything inside it matches.
+- Scene labels ("Scene 03 · The films · Take 1") are numbered per page by a CSS counter: write only the name and take; the opening/page title counts as scene 01.
+- Must work at 390px with no horizontal page scroll. Below 900px scenes stack instead of overlaying.
 
 ## Interaction rules (HANDOVER.md §5–6)
 
@@ -34,6 +33,7 @@ Read `docs/handover/HANDOVER.md` first. It overrides `docs/handover/simran-direc
 
 ## Shared pieces
 
-`@/components/ui`: `Container`, `SectionHeading`, `ArrowButton`, `TextLink`, `Wordmark`.
-`@/lib/motion`: `gsap`, `ScrollTrigger`, `useGSAP`, `useReducedMotion`.
-`@/lib/status`: date-driven release status.
+`@/cinema/ui`: `Scene`, `Sub`, `Timecode`, `magnetic`, `tilt`, `art`.
+`@/cinema/PageTitle`, `@/cinema/ShaderCanvas`, `@/components/ui/YouTubeEmbed` (muted preview or player with sound).
+`@/lib/motion`: `gsap`, `ScrollTrigger`, `useGSAP`, `useReducedMotion`. `@/lib/useAutoAdvance`: timers that stop for reduced motion.
+`@/lib/status`: date-driven release status. `@/lib/youtube`: video id from a link.

@@ -1,0 +1,291 @@
+/* /press: plain scenes on the black ground, in the homepage's cinema look.
+   Tokens (--gut, --tungsten, --cinzel, --monof, --ease, --hdr) come from .page in cinema.module.css. */
+
+.block {
+  position: relative;
+  scroll-margin-top: var(--hdr);
+  padding: 140px var(--gut) 112px;
+  background: #000;
+  border-top: 1px solid rgb(245 242 236 / 0.08);
+}
+
+.inner {
+  max-width: 1160px;
+  margin: 0 auto;
+}
+
+.head {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 48px;
+}
+
+/* ---------- Awards ledger ---------- */
+.ledger {
+  border-bottom: 1px solid rgb(245 242 236 / 0.12);
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 110px minmax(0, 1fr) auto;
+  align-items: baseline;
+  gap: 8px 28px;
+  padding: 18px 0;
+  border-top: 1px solid rgb(245 242 236 / 0.12);
+}
+
+.year {
+  font-family: var(--cinzel);
+  font-size: 26px;
+  letter-spacing: 0.06em;
+  line-height: 1;
+  color: var(--tungsten);
+  font-variant-numeric: lining-nums tabular-nums;
+}
+
+/* Same year as the row above: kept for screen readers, hidden on screen. */
+.year[data-repeat] {
+  opacity: 0;
+}
+
+.row:has(.year[data-repeat]) {
+  border-top-color: rgb(245 242 236 / 0.05);
+}
+
+.rowMain {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.award {
+  font-size: 19px;
+  line-height: 1.35;
+  color: var(--ivory);
+}
+
+.detail {
+  font-size: 15px;
+  color: rgb(245 242 236 / 0.6);
+}
+
+.result {
+  font-size: 11px;
+  color: rgb(245 242 236 / 0.55);
+  white-space: nowrap;
+}
+
+.result[data-won] {
+  color: var(--tungsten);
+}
+
+/* ---------- Press grid ---------- */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(330px, 100%), 1fr));
+  gap: 40px 28px;
+}
+
+.grid > li {
+  display: flex;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  color: var(--ivory);
+}
+
+.cardImage {
+  position: relative;
+  display: block;
+  aspect-ratio: 2.39 / 1;
+  overflow: hidden;
+  border-radius: 4px;
+  background: #0b0a09;
+  box-shadow: 0 24px 50px rgb(0 0 0 / 0.5);
+}
+
+.cardImage img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 25%;
+  opacity: 0.78;
+  transition:
+    transform 0.9s var(--ease),
+    opacity 0.5s ease;
+}
+
+/* Gold rule that draws in under the picture on hover, focus or tap. */
+.cardImage::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: var(--tungsten);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.6s var(--ease);
+}
+
+.cardBody {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 20px;
+  flex: 1;
+}
+
+.cardKicker {
+  font-size: 11px;
+}
+
+.cardTitle {
+  font-family: var(--cinzel);
+  font-size: 23px;
+  line-height: 1.25;
+  letter-spacing: 0.03em;
+}
+
+.cardDek {
+  font-size: 15px;
+  line-height: 1.55;
+  color: rgb(245 242 236 / 0.68);
+}
+
+.cardSource {
+  margin-top: auto;
+  padding-top: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  font-size: 11px;
+  color: rgb(245 242 236 / 0.55);
+}
+
+.cardAction {
+  flex: none;
+  color: var(--ivory);
+  display: inline-block;
+  transition: transform 0.45s var(--ease);
+}
+
+ /* .page a:hover already turns the title gold; match it on focus and tap. */
+.card:focus-visible,
+.card:active {
+  color: var(--tungsten);
+}
+
+.card:hover .cardImage img,
+.card:focus-visible .cardImage img,
+.card:active .cardImage img {
+  transform: scale(1.05);
+  opacity: 1;
+}
+
+.card:hover .cardImage::after,
+.card:focus-visible .cardImage::after,
+.card:active .cardImage::after {
+  transform: scaleX(1);
+}
+
+.card:hover .cardAction,
+.card:focus-visible .cardAction,
+.card:active .cardAction {
+  transform: translateX(6px);
+}
+
+/* ---------- Brands ---------- */
+.brands {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(250px, 100%), 1fr));
+  border-top: 1px solid rgb(245 242 236 / 0.12);
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 22px 20px 22px 0;
+  border-bottom: 1px solid rgb(245 242 236 / 0.12);
+}
+
+.brandName {
+  font-family: var(--cinzel);
+  font-size: 22px;
+  letter-spacing: 0.05em;
+  line-height: 1.2;
+}
+
+.brandMeta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 12px;
+  font-size: 14px;
+  color: rgb(245 242 236 / 0.6);
+}
+
+.brandMeta .mono {
+  font-size: 11px;
+}
+
+@media (max-width: 900px) {
+  .block {
+    padding: 92px var(--gut) 64px;
+  }
+
+  .head {
+    margin-bottom: 32px;
+  }
+
+  .row {
+    grid-template-columns: 64px minmax(0, 1fr);
+    gap: 6px 16px;
+    padding: 16px 0;
+  }
+
+  .year {
+    font-size: 20px;
+  }
+
+  .result {
+    grid-column: 2;
+  }
+
+  .award {
+    font-size: 17px;
+  }
+
+  .cardTitle {
+    font-size: 20px;
+  }
+
+  .brandName {
+    font-size: 19px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cardImage img,
+  .cardImage::after,
+  .cardAction {
+    transition: none;
+  }
+
+  .card:hover .cardImage img,
+  .card:focus-visible .cardImage img,
+  .card:active .cardImage img {
+    transform: none;
+  }
+}

@@ -1,13 +1,4 @@
 /* Self-hosted fonts (no third-party request). Only the weights the design uses. */
-@import '@fontsource/cormorant-garamond/latin-400.css';
-@import '@fontsource/cormorant-garamond/latin-500.css';
-@import '@fontsource/cormorant-garamond/latin-400-italic.css';
-@import '@fontsource/cormorant-garamond/latin-500-italic.css';
-@import '@fontsource/inter/latin-400.css';
-@import '@fontsource/inter/latin-500.css';
-@import '@fontsource/oswald/latin-500.css';
-@import '@fontsource/oswald/latin-600.css';
-/* Homepage ("WebGL Cinema") */
 @import '@fontsource/cinzel/latin-400.css';
 @import '@fontsource/cinzel/latin-500.css';
 @import '@fontsource/inter-tight/latin-400.css';
