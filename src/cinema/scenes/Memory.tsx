@@ -1,11 +1,21 @@
 'use client'
 
 import { useEffect, useMemo, useRef, useState } from 'react'
+import { YouTubeEmbed } from '@/components/ui/YouTubeEmbed'
+import { useReducedMotion } from '@/lib/motion'
 import { ShaderCanvas } from '../ShaderCanvas'
 import { Scene, art } from '../ui'
 import s from '../cinema.module.css'
 
-export type MemoryFilm = { title: string; year: number; language: string; image?: string | null }
+export type MemoryFilm = {
+  title: string
+  year: number
+  language: string
+  image?: string | null
+  /** Background clip: a video file, or a YouTube id. Plays muted behind the year; without one the sepia burn stays. */
+  video?: string | null
+  youtube?: string | null
+}
 
 // One sepia tone per year on the dial, repeating if there are more years.
 const TINTS = ['#8a6a45', '#8f6f4a', '#9a7a4c', '#a3835a', '#94704a', '#8a6a45', '#7d6a52', '#6e5a48', '#7a6650', '#5f5446', '#8a7658']
@@ -20,6 +30,19 @@ export function Memory({ films, startFilm }: { films: MemoryFilm[]; startFilm?: 
   const yi = years.indexOf(film.year)
   const tint = TINTS[yi % TINTS.length]
   const n = films.length
+  const reduced = useReducedMotion()
+
+  // Only run a background clip while the scene is on screen.
+  const stage = useRef<HTMLDivElement>(null)
+  const [inView, setInView] = useState(false)
+  useEffect(() => {
+    const el = stage.current
+    if (!el) return
+    const io = new IntersectionObserver(([e]) => setInView(e.isIntersecting), { rootMargin: '200px' })
+    io.observe(el)
+    return () => io.disconnect()
+  }, [])
+  const playClip = inView && !reduced
 
   // On narrow screens the dial scrolls; keep the chosen year in view without moving the page.
   const dial = useRef<HTMLDivElement>(null)
@@ -31,10 +54,16 @@ export function Memory({ films, startFilm }: { films: MemoryFilm[]; startFilm?: 
 
   return (
     <Scene n={7} name="Memory lane">
-      <div className={s.stage}>
+      <div className={s.stage} ref={stage}>
         <div className={s.fill} style={{ background: art(tint, DARK) }}>
           <ShaderCanvas shader="mem" colors={[tint, DARK]} />
         </div>
+        {playClip && film.video && <video key={film.video} className={s.memVideo} src={film.video} muted loop autoPlay playsInline aria-hidden="true" />}
+        {playClip && !film.video && film.youtube && (
+          <div key={film.youtube} className={s.memVideo}>
+            <YouTubeEmbed id={film.youtube} title={film.title} mode="preview" />
+          </div>
+        )}
         {film.image && <img key={film.image} className={s.memPhoto} src={film.image} alt="" loading="lazy" />}
         <div className={`${s.fill} ${s.memShade}`} aria-hidden="true" />
         <div className={`${s.grain} ${s.grainHeavy}`} />

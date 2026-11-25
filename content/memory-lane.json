@@ -1,5 +1,5 @@
 {
-  "_note": "Posters and archive photos from the current simran.actor. Quotes in [ ] still need Simran’s own words; the Arasu, Rocketry and Tiger 3 lines are verbatim from her posts.",
+  "_note": "Posters and archive photos from the current simran.actor. Quotes in [ ] still need Simran’s own words; the Arasu, Rocketry and Tiger 3 lines are verbatim from her posts. `youtube` is a background clip id (muted, sepia) for the homepage Memory lane; films without one show the sepia burn.",
   "heading": "Memory Lane",
   "tagline": "Three decades, one frame at a time.",
   "badge": "Simran",
@@ -24,7 +24,8 @@
       "language": "Tamil",
       "quote": "[A line on VIP — memory, co-star or song, in Simran’s words]",
       "video": null,
-      "image": "/media/posters/vip.webp"
+      "image": "/media/posters/vip.webp",
+      "youtube": null
     },
     {
       "title": "Nerukku Ner",
@@ -32,7 +33,8 @@
       "language": "Tamil",
       "quote": "[A line on Nerukku Ner — memory, co-star or song, in Simran’s words]",
       "video": null,
-      "image": "/media/posters/nerukku-ner.webp"
+      "image": "/media/posters/nerukku-ner.webp",
+      "youtube": null
     },
     {
       "title": "Once More",
@@ -40,7 +42,8 @@
       "language": "Tamil",
       "quote": "[A line on Once More — memory, co-star or song, in Simran’s words]",
       "video": null,
-      "image": "/media/posters/once-more.webp"
+      "image": "/media/posters/once-more.webp",
+      "youtube": null
     },
     {
       "title": "Kannedhirey Thondrinal",
@@ -48,7 +51,8 @@
       "language": "Tamil",
       "quote": "[A line on Kannedhirey Thondrinal — memory, co-star or song, in Simran’s words]",
       "video": null,
-      "image": null
+      "image": null,
+      "youtube": null
     },
     {
       "title": "Vaali",
@@ -56,7 +60,8 @@
       "language": "Tamil",
       "quote": "[A line on Vaali — memory, co-star or song, in Simran’s words]",
       "video": null,
-      "image": "/media/posters/vaali.webp"
+      "image": "/media/posters/vaali.webp",
+      "youtube": null
     },
     {
       "title": "Thulladha Manamum Thullum",
@@ -64,7 +69,8 @@
       "language": "Tamil",
       "quote": "[A line on Thulladha Manamum Thullum — memory, co-star or song, in Simran’s words]",
       "video": null,
-      "image": "/media/posters/thulladha-manamum-thullum.webp"
+      "image": "/media/posters/thulladha-manamum-thullum.webp",
+      "youtube": null
     },
     {
       "title": "Samarasimha Reddy",
@@ -72,7 +78,8 @@
       "language": "Telugu",
       "quote": "[A line on Samarasimha Reddy — memory, co-star or song, in Simran’s words]",
       "video": null,
-      "image": null
+      "image": null,
+      "youtube": null
     },
     {
       "title": "Priyamaanavale",
@@ -80,7 +87,8 @@
       "language": "Tamil",
       "quote": "[A line on Priyamaanavale — memory, co-star or song, in Simran’s words]",
       "video": null,
-      "image": "/media/posters/priyamaanavale.webp"
+      "image": "/media/posters/priyamaanavale.webp",
+      "youtube": null
     },
     {
       "title": "Kalisundam Raa",
@@ -88,7 +96,8 @@
       "language": "Telugu",
       "quote": "[A line on Kalisundam Raa — memory, co-star or song, in Simran’s words]",
       "video": null,
-      "image": "/media/posters/kalisundam-raa.webp"
+      "image": "/media/posters/kalisundam-raa.webp",
+      "youtube": null
     },
     {
       "title": "Parthale Paravasam",
@@ -96,7 +105,8 @@
       "language": "Tamil",
       "quote": "[A line on Parthale Paravasam — memory, co-star or song, in Simran’s words]",
       "video": null,
-      "image": null
+      "image": null,
+      "youtube": null
     },
     {
       "title": "Narasimha Naidu",
@@ -104,7 +114,8 @@
       "language": "Telugu",
       "quote": "[A line on Narasimha Naidu — memory, co-star or song, in Simran’s words]",
       "video": null,
-      "image": "/media/posters/narasimha-naidu.webp"
+      "image": "/media/posters/narasimha-naidu.webp",
+      "youtube": null
     },
     {
       "title": "Kannathil Muthamittal",
@@ -112,7 +123,8 @@
       "language": "Tamil",
       "quote": "[A line on Kannathil Muthamittal — memory, co-star or song, in Simran’s words]",
       "video": null,
-      "image": "/media/posters/kannathil-muthamittal.webp"
+      "image": "/media/posters/kannathil-muthamittal.webp",
+      "youtube": null
     },
     {
       "title": "Pammal K. Sambandam",
@@ -120,7 +132,8 @@
       "language": "Tamil",
       "quote": "[A line on Pammal K. Sambandam — memory, co-star or song, in Simran’s words]",
       "video": null,
-      "image": "/media/posters/pammal-k-sambandam.webp"
+      "image": "/media/posters/pammal-k-sambandam.webp",
+      "youtube": null
     },
     {
       "title": "Panchathantiram",
@@ -128,7 +141,8 @@
       "language": "Tamil",
       "quote": "[A line on Panchathantiram — memory, co-star or song, in Simran’s words]",
       "video": null,
-      "image": "/media/posters/panchathantiram.webp"
+      "image": "/media/posters/panchathantiram.webp",
+      "youtube": null
     },
     {
       "title": "Arasu",
@@ -136,7 +150,8 @@
       "language": "Tamil",
       "quote": "Working with Sarathkumar and the entire Arasu team was an amazing experience, and I’m incredibly proud of the film we created together.",
       "video": null,
-      "image": "/media/posters/arasu.webp"
+      "image": "/media/posters/arasu.webp",
+      "youtube": null
     },
     {
       "title": "Vaaranam Aayiram",
@@ -144,7 +159,8 @@
       "language": "Tamil",
       "quote": "[A line on Vaaranam Aayiram — memory, co-star or song, in Simran’s words]",
       "video": null,
-      "image": "/media/posters/vaaranam-aayiram.webp"
+      "image": "/media/posters/vaaranam-aayiram.webp",
+      "youtube": null
     },
     {
       "title": "Petta",
@@ -152,7 +168,8 @@
       "language": "Tamil",
       "quote": "[A line on Petta — memory, co-star or song, in Simran’s words]",
       "video": null,
-      "image": "/media/posters/petta.webp"
+      "image": "/media/posters/petta.webp",
+      "youtube": "FCB0ZfQ9Rzs"
     },
     {
       "title": "Paava Kadhaigal",
@@ -160,7 +177,8 @@
       "language": "Tamil",
       "quote": "[A line on Paava Kadhaigal — memory, co-star or song, in Simran’s words]",
       "video": null,
-      "image": "/media/posters/paava-kadhaigal.webp"
+      "image": "/media/posters/paava-kadhaigal.webp",
+      "youtube": "MteHcVk-_jo"
     },
     {
       "title": "Mahaan",
@@ -168,7 +186,8 @@
       "language": "Tamil",
       "quote": "[A line on Mahaan — memory, co-star or song, in Simran’s words]",
       "video": null,
-      "image": "/media/posters/mahaan.webp"
+      "image": "/media/posters/mahaan.webp",
+      "youtube": "i4ORfM-q35Y"
     },
     {
       "title": "Rocketry: The Nambi Effect",
@@ -176,7 +195,8 @@
       "language": "Multilingual",
       "quote": "‘Rocketry’ has been a special film for me, as it allowed me to explore a character with depth, vulnerability, and strength.",
       "video": null,
-      "image": "/media/posters/rocketry.webp"
+      "image": "/media/posters/rocketry.webp",
+      "youtube": "wwGbt878_g0"
     },
     {
       "title": "Gulmohar",
@@ -184,7 +204,8 @@
       "language": "Hindi",
       "quote": "[A line on Gulmohar — memory, co-star or song, in Simran’s words]",
       "video": null,
-      "image": "/media/posters/gulmohar.webp"
+      "image": "/media/posters/gulmohar.webp",
+      "youtube": null
     },
     {
       "title": "Tiger 3",
@@ -192,7 +213,8 @@
       "language": "Hindi",
       "quote": "From the moment I read the script, I knew “Tiger 3” was going to be a special project.",
       "video": null,
-      "image": "/media/posters/tiger-3.webp"
+      "image": "/media/posters/tiger-3.webp",
+      "youtube": "vEjTUDjjU6A"
     },
     {
       "title": "Andhagan",
@@ -200,7 +222,8 @@
       "language": "Tamil",
       "quote": "[A line on Andhagan — memory, co-star or song, in Simran’s words]",
       "video": null,
-      "image": "/media/posters/andhagan.webp"
+      "image": "/media/posters/andhagan.webp",
+      "youtube": "SM563_YbcuQ"
     },
     {
       "title": "Tourist Family",
@@ -208,7 +231,8 @@
       "language": "Tamil",
       "quote": "[A line on Tourist Family — memory, co-star or song, in Simran’s words]",
       "video": null,
-      "image": "/media/posters/tourist-family.webp"
+      "image": "/media/posters/tourist-family.webp",
+      "youtube": "9sH1PoGOydc"
     }
   ],
   "polaroids": [

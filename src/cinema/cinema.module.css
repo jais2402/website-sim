@@ -11,6 +11,21 @@
   --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
   --cinzel: 'Cinzel', 'Times New Roman', serif;
   --monof: 'JetBrains Mono', ui-monospace, monospace;
+  /* Site-wide tokens (src/app/globals.css) re-pointed at the cinema look, so
+     shared components used inside .page match the homepage. */
+  --ground: #000;
+  --ink: var(--ivory);
+  --ink-warm: var(--ivory);
+  --ink-soft: rgb(245 242 236 / 0.82);
+  --ink-mute: rgb(245 242 236 / 0.62);
+  --ink-faint: rgb(245 242 236 / 0.45);
+  --gold: var(--tungsten);
+  --line: rgb(245 242 236 / 0.08);
+  --line-strong: rgb(245 242 236 / 0.14);
+  --font-display: var(--cinzel);
+  --font-ui: 'Inter Tight', system-ui, sans-serif;
+  --font-poster: var(--cinzel);
+  --h2: clamp(30px, 3vw, 44px);
   position: relative;
   background: #000;
   color: var(--ivory);
@@ -372,7 +387,8 @@
 }
 
 .page .hdrLinks a:hover,
-.hdrLinks a:focus-visible {
+.hdrLinks a:focus-visible,
+.hdrLinks a[aria-current='page'] {
   color: var(--tungsten);
 }
 
@@ -384,6 +400,55 @@
   border: none;
   color: var(--ivory);
   cursor: pointer;
+}
+
+/* ---------- Page title (inner pages): a short full-bleed still with the title ---------- */
+.pageTitle {
+  position: relative;
+  min-height: clamp(380px, 62vh, 640px);
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  background: #050505;
+}
+
+.pageTitle > img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: var(--pos, 50% 30%);
+  filter: brightness(0.62) contrast(1.05);
+}
+
+.pageTitleShade {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(0deg, #000 0%, rgb(0 0 0 / 0.55) 38%, transparent 72%),
+    linear-gradient(90deg, rgb(0 0 0 / 0.55) 0%, transparent 60%);
+}
+
+.pageTitleBody {
+  position: relative;
+  z-index: 2;
+  padding: 0 var(--inset) 56px;
+  max-width: 980px;
+}
+
+.pageTitleBody h1 {
+  margin-top: 14px;
+  font-family: var(--cinzel);
+  font-weight: 400;
+  font-size: clamp(48px, 8vw, 120px);
+  line-height: 0.95;
+  letter-spacing: 0.06em;
+}
+
+.pageTitleBody .sub {
+  margin-top: 20px;
+  max-width: 620px;
 }
 
 /* ---------- 01 Opening ---------- */
@@ -1212,6 +1277,16 @@
 
 .years [aria-pressed='true'] i {
   transform: none;
+}
+
+/* The film's clip, silent and toned sepia, behind the year. */
+.memVideo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: sepia(0.75) contrast(1.05) brightness(0.5);
 }
 
 /* The film's poster as a small sepia print pinned beside the year. */
@@ -2089,6 +2164,15 @@
   .years {
     justify-content: flex-start;
     gap: 6px;
+  }
+
+  /* Page title */
+  .pageTitle {
+    min-height: 340px;
+  }
+
+  .pageTitleBody {
+    padding: 0 var(--gut) 32px;
   }
 
   /* 08 */

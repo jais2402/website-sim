@@ -1,16 +1,10 @@
 import type { ReactNode } from 'react'
-import { Footer, Header } from '@/lib/site'
+import { InnerShell } from '@/cinema/InnerShell'
 
-// Release states in the crawl are date-driven, so refresh hourly.
+// Release states are date-driven, so refresh hourly.
 export const revalidate = 3600
 
-/** Shell for every page except the homepage: header visible from the start. */
+/** Every page except the homepage uses the same cinema shell as the homepage. */
 export default function InnerLayout({ children }: { children: ReactNode }) {
-  return (
-    <>
-      <Header />
-      <main id="main">{children}</main>
-      <Footer />
-    </>
-  )
+  return <InnerShell>{children}</InnerShell>
 }

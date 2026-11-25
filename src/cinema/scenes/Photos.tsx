@@ -7,7 +7,7 @@ export type Photo = { ratio: string; image: string | null; alt?: string }
 const PLATES = [s.m1, s.m2, s.m3]
 
 /** Scene 08: a grid of photos. Hover, focus or tap one to download it. */
-export function Photos({ photos, allHref }: { photos: Photo[]; allHref: string }) {
+export function Photos({ photos, allHref }: { photos: Photo[]; allHref?: string | null }) {
   return (
     <Scene n={8} name="Photoshoots">
       <div className={`${s.stage} ${s.photoStage}`}>
@@ -15,9 +15,11 @@ export function Photos({ photos, allHref }: { photos: Photo[]; allHref: string }
           <h2 id="s08-h" className={`${s.h2} ${s.reveal}`}>
             Photoshoots
           </h2>
-          <Link href={allHref} className={`${s.uline} ${s.mono}`}>
-            View all →
-          </Link>
+          {allHref && (
+            <Link href={allHref} className={`${s.uline} ${s.mono}`}>
+              View all →
+            </Link>
+          )}
         </div>
         <ul className={`${s.shots} ${s.reveal}`}>
           {photos.map((p, k) => (
