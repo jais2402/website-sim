@@ -145,5 +145,10 @@
         "#33190b"
       ]
     }
-  ]
+  ],
+  "more": {
+    "label": "Explore more",
+    "note": "The complete filmography on the current simran.actor",
+    "href": "https://simran.actor/filmography-complete-list-of-movies/"
+  }
 }

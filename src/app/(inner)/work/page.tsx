@@ -29,7 +29,7 @@ export default function WorkPage() {
         image="/media/stills/dharman-team.webp"
         imagePosition="50% 35%"
       />
-      <Films films={reelWall.films} allHref="/work" />
+      <Films films={reelWall.films} allHref="/work" more={reelWall.more} />
       <NowPlaying data={crawl as RollData} now={now} />
       {/* The homepage links "Production updates" to /work#upcoming. */}
       <div id="upcoming">

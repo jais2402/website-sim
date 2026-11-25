@@ -813,6 +813,46 @@
   color: rgb(245 242 236 / 0.75);
 }
 
+/* Last card in the strip: a way out to the full filmography. */
+.moreCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 14px;
+  padding: 28px 24px;
+  opacity: 1;
+  background:
+    radial-gradient(ellipse 90% 70% at 50% 30%, rgb(232 199 122 / 0.16), transparent 70%),
+    #0b0a09;
+  border: 1px solid rgb(232 199 122 / 0.35);
+}
+
+.moreTitle {
+  font-family: var(--cinzel);
+  font-size: 34px;
+  line-height: 1.05;
+  letter-spacing: 0.04em;
+}
+
+.moreNote {
+  color: rgb(245 242 236 / 0.75);
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.moreCta {
+  align-self: flex-start;
+  margin-top: 8px;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.moreCard:hover .moreCta,
+.moreCard:focus-visible .moreCta {
+  background: var(--tungsten);
+  border-color: var(--tungsten);
+  color: #000;
+}
+
 .filmCaption {
   left: 440px;
 }
@@ -1523,32 +1563,30 @@
   z-index: 2;
 }
 
-/* The selected piece's picture, in the space between the text and the list. */
+/* The selected piece's picture fills the scene, with the text laid over it. */
 .readImage {
   position: absolute;
-  z-index: 2;
-  top: 120px;
-  bottom: 76px;
-  left: calc(var(--inset) + min(560px, 40%) + 48px);
-  right: calc(var(--right) + 380px + 48px);
+  inset: 0;
+  z-index: 1;
   overflow: hidden;
-  border-radius: 4px;
-  box-shadow: 0 30px 60px rgb(0 0 0 / 0.55);
 }
 
 .readImage img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 50% 25%;
+  object-position: 60% 25%;
   animation: fadeIn 0.6s ease both;
 }
 
-/* Too little room between the text and the list: leave the picture out. */
-@media (max-width: 1150px) and (min-width: 901px) {
-  .readImage {
-    display: none;
-  }
+/* Dark on the left for the text, on the right for the list, and at the foot for the caption. */
+.readImage::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgb(0 0 0 / 0.9) 0%, rgb(0 0 0 / 0.62) 38%, rgb(0 0 0 / 0.2) 60%, rgb(0 0 0 / 0.78) 82%, rgb(0 0 0 / 0.9) 100%),
+    linear-gradient(0deg, rgb(0 0 0 / 0.85) 0%, transparent 30%);
 }
 
 .readTitle {
@@ -1645,10 +1683,17 @@
 
 .postText {
   position: absolute;
-  inset: 40% 28px auto;
+  inset: 30% 28px auto;
   font-family: var(--cinzel);
-  font-size: 24px;
-  line-height: 1.3;
+  font-size: 19px;
+  line-height: 1.4;
+  /* Real posts can be long: show the opening lines; the full post is a click away. */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 7;
+  line-clamp: 7;
+  overflow: hidden;
+  overflow-wrap: anywhere;
 }
 
 .postHandle {
@@ -2269,11 +2314,32 @@
     min-height: 230px;
   }
 
+  /* Phones: the picture sits under the heading and the text rises over its lower half. */
   .readImage {
     position: relative;
     inset: auto;
-    height: 240px;
-    margin: 20px var(--gut) 0;
+    order: 1;
+    height: 300px;
+    margin-top: 20px;
+  }
+
+  .readImage::after {
+    background: linear-gradient(0deg, #000 0%, rgb(0 0 0 / 0.55) 45%, transparent 75%);
+  }
+
+  .readPane {
+    order: 2;
+    margin-top: -120px !important;
+    position: relative;
+    z-index: 2;
+  }
+
+  .readList {
+    order: 3;
+  }
+
+  .stage:has(.readList) .caption {
+    order: 4;
   }
 
   .readTitle {
@@ -2303,8 +2369,10 @@
   }
 
   .postText {
-    inset: 34% 14px auto;
-    font-size: 16px;
+    inset: 18% 14px auto;
+    font-size: 14px;
+    -webkit-line-clamp: 8;
+    line-clamp: 8;
   }
 
   .postHandle {
@@ -2317,9 +2385,20 @@
     top: 20px;
   }
 
+  /* Phones: the follow buttons sit below the photos instead of over them. */
+  .stage:has(.split) {
+    height: auto;
+  }
+
+  .stage:has(.split) .split {
+    position: relative;
+    inset: auto;
+    height: 560px;
+  }
+
   .follow {
-    bottom: 24px;
-    padding: 0 var(--gut);
+    position: static;
+    padding: 20px var(--gut) 4px;
     gap: 8px;
   }
 

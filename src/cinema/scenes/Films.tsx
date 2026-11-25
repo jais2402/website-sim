@@ -18,8 +18,10 @@ export type CinemaFilm = {
   cinema: string[]
 }
 
-/** Scene 03: scroll the posters sideways; the year, title and background follow the frame. */
-export function Films({ films, allHref }: { films: CinemaFilm[]; allHref: string }) {
+export type MoreLink = { label: string; note: string; href: string }
+
+/** Scene 03: scroll the posters sideways; the year, title and background follow the frame. Ends on an "explore more" card. */
+export function Films({ films, allHref, more }: { films: CinemaFilm[]; allHref: string; more?: MoreLink | null }) {
   const pointer = useRef<[number, number]>([0.6, 0.5])
   const timer = useRef<ReturnType<typeof setTimeout>>(undefined)
   const [index, setIndex] = useState(0)
@@ -87,6 +89,20 @@ export function Films({ films, allHref }: { films: CinemaFilm[]; allHref: string
               </Link>
             </li>
           ))}
+          {more && (
+            <li className={s.filmCell}>
+              <a href={more.href} target="_blank" rel="noopener" className={`${s.poster} ${s.moreCard}`}>
+                <span className={`${s.mono} ${s.gold}`}>Full filmography</span>
+                <span className={s.moreTitle}>{more.label}</span>
+                <span className={s.moreNote}>{more.note}</span>
+                <span className={`${s.pill} ${s.moreCta}`}>
+                  Open
+                  <span aria-hidden="true">↗</span>
+                  <span className="sr-only"> (opens in a new tab)</span>
+                </span>
+              </a>
+            </li>
+          )}
         </ul>
         <Sub className={`${s.caption} ${s.filmCaption}`}>Scroll the reel sideways — the year follows the frame.</Sub>
       </div>
