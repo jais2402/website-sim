@@ -1,40 +1,45 @@
 {
-  "_note": "From the in-production list on the current simran.actor filmography (November 2026); confirm before launch. The state is computed from `production`: a title flips to NOW SHOWING on its releaseDate.",
+  "_note": "From the in-production list on the current simran.actor filmography (November 2026); confirm before launch. The state is computed from `production`: a title flips to NOW SHOWING on its releaseDate. `image` is the picture beside each title in Now playing (null shows a tinted placeholder frame).",
   "titles": [
     {
       "title": "Dharman",
       "production": {
         "stage": "shooting",
         "releaseDate": null
-      }
+      },
+      "image": "/media/posters/dharman.webp"
     },
     {
       "title": "Teacher",
       "production": {
         "stage": "shooting",
         "releaseDate": null
-      }
+      },
+      "image": null
     },
     {
       "title": "The Last One",
       "production": {
         "stage": "shooting",
         "releaseDate": null
-      }
+      },
+      "image": null
     },
     {
       "title": "Dhruva Natchathiram",
       "production": {
         "stage": "post",
         "releaseDate": null
-      }
+      },
+      "image": "/media/stills/dhruva-natchathiram.webp"
     },
     {
       "title": "Gabru",
       "production": {
         "stage": "post",
         "releaseDate": null
-      }
+      },
+      "image": null
     }
   ]
 }

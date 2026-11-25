@@ -2,7 +2,7 @@ import { crawlState, type CrawlState, type Production } from '@/lib/status'
 import { Scene, Sub } from '../ui'
 import s from '../cinema.module.css'
 
-export type RollData = { titles: { title: string; production: Production }[] }
+export type RollData = { titles: { title: string; production: Production; image?: string | null }[] }
 
 const STATES: Record<CrawlState, { label: string; color: string; live?: boolean }> = {
   shooting: { label: 'Shooting', color: '#FF5A61', live: true },
@@ -11,11 +11,11 @@ const STATES: Record<CrawlState, { label: string; color: string; live?: boolean 
 }
 const ORDER: CrawlState[] = ['shooting', 'coming-soon', 'now-showing']
 
-/** Scene 02: an end-credits roll of what is shooting, coming and showing. States come from dates. */
+/** Scene 02: an end-credits roll of what is shooting, coming and showing, each with its picture. States come from dates. */
 export function NowPlaying({ data, now }: { data: RollData; now: Date }) {
   const items = data.titles
-    .map((t) => ({ title: t.title, state: crawlState(t.production, now) }))
-    .filter((t): t is { title: string; state: CrawlState } => t.state !== null)
+    .map((t) => ({ title: t.title, image: t.image ?? null, state: crawlState(t.production, now) }))
+    .filter((t): t is { title: string; image: string | null; state: CrawlState } => t.state !== null)
     .sort((a, b) => ORDER.indexOf(a.state) - ORDER.indexOf(b.state))
   if (items.length === 0) return null
 
@@ -31,6 +31,9 @@ export function NowPlaying({ data, now }: { data: RollData; now: Date }) {
             </span>
             <span className={s.rollDot} aria-hidden="true">
               ·
+            </span>
+            <span className={s.rollThumb} style={{ ['--tone' as string]: st.color }} aria-hidden="true">
+              {c.image ? <img src={c.image} alt="" loading="lazy" /> : <span className={s.mono}>{c.title.charAt(0)}</span>}
             </span>
             <span className={s.rollTitle}>{c.title}</span>
           </li>

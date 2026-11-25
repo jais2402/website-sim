@@ -660,10 +660,44 @@
 
 .rollRow {
   display: grid;
-  grid-template-columns: 320px 40px 560px;
-  align-items: baseline;
+  grid-template-columns: 260px 24px 84px minmax(0, 560px);
+  column-gap: 20px;
+  align-items: center;
   text-align: center;
-  padding-bottom: 44px;
+  padding-bottom: 36px;
+}
+
+/* The title's picture: poster or still, or a tinted frame with its initial until one is supplied. */
+.rollThumb {
+  position: relative;
+  width: 84px;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  border-radius: 3px;
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(ellipse 90% 70% at 50% 30%, color-mix(in srgb, var(--tone) 28%, transparent), transparent 75%),
+    #141210;
+  box-shadow:
+    0 0 0 1px rgb(245 242 236 / 0.12),
+    0 14px 30px rgb(0 0 0 / 0.55);
+}
+
+.rollThumb img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 25%;
+}
+
+.rollThumb .mono {
+  font-family: var(--cinzel);
+  font-size: 30px;
+  letter-spacing: 0;
+  color: rgb(245 242 236 / 0.55);
 }
 
 .rollState {
@@ -2015,7 +2049,7 @@
 
   /* 02 */
   .rollStage {
-    height: 520px;
+    height: 600px;
   }
 
   .rollWindow {
@@ -2024,8 +2058,14 @@
 
   .rollRow {
     grid-template-columns: 1fr;
-    gap: 6px;
+    justify-items: center;
+    gap: 8px;
     padding-bottom: 36px;
+  }
+
+  .rollThumb {
+    order: -1;
+    width: 72px;
   }
 
   .rollState {
