@@ -2,11 +2,12 @@
 
 import { useRef } from 'react'
 import { ShaderCanvas } from '../ShaderCanvas'
+import { NewsTicker, type NewsItem } from './NewsTicker'
 import { Scene, Sub, magnetic, trackPointer } from '../ui'
 import s from '../cinema.module.css'
 
 /** Scene 01: countdown leader, then a full-screen opening onto projector light and the name. */
-export function Opening({ name, tagline, reelHref, image, imageAlt }: { name: string; tagline: string; reelHref: string; image?: string | null; imageAlt?: string }) {
+export function Opening({ name, tagline, reelHref, image, imageAlt, news = [] }: { name: string; tagline: string; reelHref: string; image?: string | null; imageAlt?: string; news?: NewsItem[] }) {
   const pointer = useRef<[number, number]>([0.5, 0.5])
   return (
     <Scene n={1} name="Opening" className={s.opening} bare>
@@ -43,6 +44,8 @@ export function Opening({ name, tagline, reelHref, image, imageAlt }: { name: st
         <div className={s.cueTrack} aria-hidden="true">
           <span className={s.cue} />
         </div>
+
+        <NewsTicker news={news} />
 
         <div className={s.leader} aria-hidden="true">
           <div className={s.leaderDial}>

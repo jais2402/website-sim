@@ -57,19 +57,11 @@ type SceneProps = {
   bare?: boolean
 }
 
-/** One full-height scene with its slate ("Scene 03 · The films · Take 1") and timecode. */
-export function Scene({ n, name, take = 'Take 1', className, bare = false, children }: SceneProps) {
+/** One full-height scene. `name` and `take` are kept for reference but no longer shown. */
+export function Scene({ n, className, children }: SceneProps) {
   const id = `s${pad(n)}`
   return (
     <section id={id} aria-labelledby={`${id}-h`} className={[s.scene, className].filter(Boolean).join(' ')}>
-      {!bare && (
-        <>
-          <p className={`${s.mono} ${s.slate}`} aria-hidden="true">
-            {name} · {take}
-          </p>
-          <Timecode />
-        </>
-      )}
       {children}
     </section>
   )

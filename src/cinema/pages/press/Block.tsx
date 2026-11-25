@@ -1,5 +1,4 @@
 import type { ReactNode } from 'react'
-import { Timecode } from '../../ui'
 import s from '../../cinema.module.css'
 import c from './press.module.css'
 
@@ -18,10 +17,6 @@ type Props = {
 export function Block({ id, slate, kicker, heading, headingId = `${id}-h`, children }: Props) {
   return (
     <section id={id} aria-labelledby={headingId} className={c.block}>
-      <p className={`${s.mono} ${s.slate}`} aria-hidden="true">
-        {slate}
-      </p>
-      <Timecode />
       <div className={c.inner}>
         <header className={`${c.head} ${s.reveal}`}>
           {kicker && <p className={`${s.mono} ${s.gold}`}>{kicker}</p>}

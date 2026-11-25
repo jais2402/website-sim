@@ -1,4 +1,3 @@
-import { Timecode } from '../../ui'
 import s from '../../cinema.module.css'
 import a from './Archive.module.css'
 
@@ -10,10 +9,6 @@ export function Archive({ id, photos }: { id: string; photos: ArchivePhoto[] }) 
   if (shown.length === 0) return null
   return (
     <section id={id} aria-labelledby={`${id}-h`} className={`${s.scene} ${a.archive}`}>
-      <p className={`${s.mono} ${s.slate}`} aria-hidden="true">
-        Memory lane · Archive
-      </p>
-      <Timecode />
       <div className={`${s.stage} ${s.photoStage}`}>
         <div className={s.photoHead}>
           <h2 id={`${id}-h`} className={`${s.h2} ${s.reveal}`}>

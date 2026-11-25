@@ -4,32 +4,21 @@ import { Scene, Sub } from '../ui'
 import s from '../cinema.module.css'
 
 export type OnSetFilm = { title: string; meta: string; production: Production; still?: string | null; cta?: { label: string; href: string } }
-export type NewsItem = { category: string; title: string; meta: string; href: string }
 
 const fmt = new Intl.DateTimeFormat('en-IN', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'Asia/Kolkata' })
 
 /**
- * Scene 04: the production in front of the camera, the next one coming, and a
- * news ticker. "Shooting now" / "Coming soon" come from each film's dates.
+ * Scene 04: the production in front of the camera and the next one coming. "Shooting now" / "Coming soon" come from each film's dates.
  */
-export function OnSet({ films, news, updatesHref, now }: { films: OnSetFilm[]; news: NewsItem[]; updatesHref: string; now: Date }) {
+export function OnSet({ films, updatesHref, now }: { films: OnSetFilm[]; updatesHref: string; now: Date }) {
   const open = films.filter((f) => stageOn(f.production, now) !== 'released')
   const lead = open.find((f) => stageOn(f.production, now) === 'shooting') ?? open[0]
   if (!lead) return null
   const shooting = stageOn(lead.production, now) === 'shooting'
   const next = open.find((f) => f !== lead)
 
-  const run = (hidden: boolean) =>
-    news.map((n, i) => (
-      <a key={`${hidden}-${i}`} href={n.href} className={s.tickerItem} aria-hidden={hidden || undefined} tabIndex={hidden ? -1 : undefined}>
-        <span className={`${s.mono} ${s.gold}`}>{n.category}</span>
-        <span>{n.title}</span>
-        <span className={`${s.mono} ${s.faint}`}>{n.meta}</span>
-      </a>
-    ))
-
   return (
-    <Scene n={4} name="On set now" className={s.newsreel}>
+    <Scene n={4} name="On set now">
       <div className={s.stage}>
         {lead.still ? <img className={s.onSetPhoto} src={lead.still} alt="" loading="lazy" /> : <div className={`${s.plate} ${s.m3} ${s.kb}`} />}
         <div className={`${s.fill} ${s.onSetShade}`} aria-hidden="true" />
@@ -60,17 +49,6 @@ export function OnSet({ films, news, updatesHref, now }: { films: OnSetFilm[]; n
           )}
         </div>
 
-        {news.length > 0 && (
-          <div className={s.tickerBar}>
-            <span className={`${s.mono} ${s.tickerFlag}`}>Newsreel</span>
-            <div className={s.tickerWindow}>
-              <div className={s.ticker}>
-                {run(false)}
-                {run(true)}
-              </div>
-            </div>
-          </div>
-        )}
       </div>
     </Scene>
   )

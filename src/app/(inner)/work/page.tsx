@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import buzz from '@content/buzz.json'
 import crawl from '@content/crawl.json'
 import filmography from '@content/filmography.json'
 import reelWall from '@content/reel-wall.json'
@@ -35,7 +34,6 @@ export default function WorkPage() {
       <div id="upcoming">
         <OnSet
           films={upcoming.films as OnSetFilm[]}
-          news={buzz.items.slice(0, 3).map((n) => ({ category: n.category, title: n.title, meta: n.meta, href: '/press#buzz' }))}
           updatesHref="/press#buzz"
           now={now}
         />

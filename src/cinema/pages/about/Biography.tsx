@@ -1,4 +1,3 @@
-import { Timecode } from '../../ui'
 import s from '../../cinema.module.css'
 import b from './Biography.module.css'
 
@@ -11,10 +10,6 @@ const pad = (n: number) => String(n).padStart(2, '0')
 export function Biography({ id, chapters, acts = [] }: { id: string; chapters: BioChapter[]; acts?: BioAct[] }) {
   return (
     <section id={id} aria-labelledby={`${id}-h`} className={`${s.scene} ${b.bio}`}>
-      <p className={`${s.mono} ${s.slate}`} aria-hidden="true">
-        Biography · {chapters.length} chapters
-      </p>
-      <Timecode />
       <div className={b.inner}>
         <h2 id={`${id}-h`} className={`${s.h2} ${s.reveal}`}>
           Biography

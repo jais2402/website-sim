@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, type FormEvent } from 'react'
-import { Timecode, magnetic } from '../../ui'
+import {magnetic} from '../../ui'
 import s from '../../cinema.module.css'
 import c from './connect.module.css'
 
@@ -33,10 +33,6 @@ export function EnquiryForm({ line, enquiryTypes, email }: Props) {
 
   return (
     <section id="enquiry" aria-labelledby="enquiry-h" className={c.block}>
-      <p className={`${s.mono} ${s.slate}`} aria-hidden="true">
-        Enquiries · Take 1
-      </p>
-      <Timecode />
       <div className={c.inner}>
         <div className={`${c.intro} ${s.reveal}`}>
           <p className={`${s.mono} ${s.gold}`}>Enquiries</p>

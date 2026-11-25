@@ -39,11 +39,11 @@ export default function Home() {
   return (
     <CinemaHome>
       <script dangerouslySetInnerHTML={{ __html: SKIP_LEADER }} />
-      <Opening name={site.name} tagline={site.tagline} reelHref="#s05" image={site.heroImage} imageAlt={site.heroImageAlt} />
+      <Opening name={site.name} tagline={site.tagline} reelHref="#s05" image={site.heroImage} imageAlt={site.heroImageAlt} news={buzz.items.map((n) => ({ category: n.category, title: n.title, meta: n.meta, href: '/press#buzz' }))} />
       <CinemaHeader brand={site.name} links={site.nav} />
       <NowPlaying data={crawl as RollData} now={now} />
       <Films films={reelWall.films} allHref="/work" more={reelWall.more} />
-      <OnSet films={upcoming.films as OnSetFilm[]} news={buzz.items.slice(0, 3).map((n) => ({ category: n.category, title: n.title, meta: n.meta, href: '/press#buzz' }))} updatesHref="/work#upcoming" now={now} />
+      <OnSet films={upcoming.films as OnSetFilm[]} updatesHref="/work#upcoming" now={now} />
       <Reel clips={showreel.clips} />
       <Who data={who} bioHref="/about" />
       <Memory films={memoryLane.films} startFilm={memoryLane.startFilm} />
