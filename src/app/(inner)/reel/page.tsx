@@ -14,7 +14,7 @@ export default function ReelPage() {
         id="clips"
         heading="In this reel"
         rows={showreel.clips.map((c, i) => ({
-          key: c.title,
+          key: `${c.film} · ${c.title}`,
           lead: String(i + 1).padStart(2, '0'),
           title: c.title,
           detail: c.film,

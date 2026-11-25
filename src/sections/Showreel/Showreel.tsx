@@ -73,7 +73,7 @@ export function Showreel({ data, id = 'reel', title = 'Showreel' }: { data: Show
           const isPlaying = playing === i && c.video
           return (
             <li
-              key={c.title}
+              key={`${c.film} · ${c.title}`}
               className={s.screen}
               data-active={active || undefined}
               data-far={Math.abs(d) > 2 || undefined}
@@ -119,7 +119,7 @@ export function Showreel({ data, id = 'reel', title = 'Showreel' }: { data: Show
                       <span className={s.bar} style={{ transform: `scaleX(${progress})` }} aria-hidden="true" />
                     </>
                   ) : (
-                    <button type="button" className={s.pick} aria-label={`Go to clip ${i + 1}: ${c.title}`} onClick={() => pick(i)}>
+                    <button type="button" className={s.pick} aria-label={`Go to clip ${i + 1}: ${c.film}, ${c.title}`} onClick={() => pick(i)}>
                       <span className={s.pickTitle}>{c.title}</span>
                     </button>
                   )}
@@ -133,7 +133,7 @@ export function Showreel({ data, id = 'reel', title = 'Showreel' }: { data: Show
       <Container>
         <div role="group" aria-label="Clips" className={s.segments}>
           {data.clips.map((c, i) => (
-            <button key={c.title} type="button" className={s.segment} aria-label={`Go to clip ${i + 1}: ${c.title}`} aria-pressed={i === index} onClick={() => pick(i)}>
+            <button key={`${c.film} · ${c.title}`} type="button" className={s.segment} aria-label={`Go to clip ${i + 1}: ${c.film}, ${c.title}`} aria-pressed={i === index} onClick={() => pick(i)}>
               <span className={s.segTrack}>
                 <span className={s.segFill} style={{ transform: `scaleX(${i < index ? 1 : i === index ? progress : 0})` }} />
               </span>

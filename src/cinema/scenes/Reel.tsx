@@ -28,7 +28,7 @@ export function Reel({ clips }: { clips: ReelClip[] }) {
           const on = k === open
           const live = on && playing === k && c.video
           return (
-            <div key={c.title} className={s.frameCell} data-open={on || undefined} onMouseEnter={() => pick(k)} onClick={() => pick(k)}>
+            <div key={`${c.film} · ${c.title}`} className={s.frameCell} data-open={on || undefined} onMouseEnter={() => pick(k)} onClick={() => pick(k)}>
               {live ? (
                 <video className={s.cover} src={c.video!} controls autoPlay playsInline />
               ) : (
