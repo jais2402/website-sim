@@ -13,7 +13,7 @@ export default function ConnectPage() {
     <>
       <PageTitle title="Connect" kicker="Press · Brands · Professional enquiries" lede={connect.line} image="/media/photos/event-2.webp" imagePosition="50% 30%" />
       <EnquiryForm line={connect.line} enquiryTypes={connect.enquiryTypes} email={site.email} />
-      <Moments posts={social.posts.slice(0, 4)} profiles={social.follow.profiles} />
+      <Moments posts={social.posts.slice(0, 4)} profiles={social.follow.profiles} xProfile={social.xProfile} />
     </>
   )
 }

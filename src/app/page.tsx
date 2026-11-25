@@ -50,7 +50,7 @@ export default function Home() {
       <Photos photos={photoshoots.photos.slice(0, 12)} allHref="/photoshoots" />
       <Honours awards={awards.awards} allHref="/press#awards" />
       <Words reads={reads()} />
-      <Moments posts={social.posts.slice(0, 4)} profiles={social.follow.profiles} />
+      <Moments posts={social.posts.slice(0, 4)} profiles={social.follow.profiles} xProfile={social.xProfile} />
       <Credits email={site.email} line="Press · Brands · Professional enquiries" social={site.social} year={now.getFullYear()} links={site.nav} />
     </CinemaHome>
   )

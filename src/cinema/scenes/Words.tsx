@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { Scene, Sub } from '../ui'
+import { Scene } from '../ui'
 import s from '../cinema.module.css'
 
 export type Read = {
@@ -84,7 +84,6 @@ export function Words({ reads }: { reads: Read[] }) {
             </li>
           ))}
         </ul>
-        <Sub className={s.caption}>Notes are published only in Simran’s own words.</Sub>
       </div>
     </Scene>
   )
