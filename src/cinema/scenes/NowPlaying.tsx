@@ -58,7 +58,7 @@ export function NowPlaying({ data, now }: { data: RollData; now: Date }) {
             ))}
           </div>
         </div>
-        <Sub className={s.caption}>Statuses update on release day. Hover to pause the roll.</Sub>
+        <Sub className={s.caption}>Statuses update on release day.</Sub>
       </div>
     </Scene>
   )

@@ -47,7 +47,7 @@ export function Timecode() {
 
 type SceneProps = {
   n: number
-  /** Name on the slate and in the rail, e.g. "The films". */
+  /** Name on the slate, e.g. "The films". */
   name: string
   /** Last part of the slate. Defaults to "Take 1". */
   take?: string
@@ -75,26 +75,6 @@ export function Sub({ children, className, style }: { children: ReactNode; class
     <p className={[s.sub, className].filter(Boolean).join(' ')} style={style}>
       {children}
     </p>
-  )
-}
-
-/* ---------- Scene rail ---------- */
-
-/** Fixed list of scenes down the right edge. */
-export function Rail({ scenes }: { scenes: string[] }) {
-  return (
-    <div className={s.railAnchor}>
-      <nav aria-label="Scenes" className={s.rail}>
-        {scenes.map((name, i) => (
-          <a key={name} href={`#s${pad(i + 1)}`}>
-            <span className={s.mono}>
-              {pad(i + 1)} {name}
-            </span>
-            <span className={s.dot} />
-          </a>
-        ))}
-      </nav>
-    </div>
   )
 }
 

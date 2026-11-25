@@ -12,6 +12,7 @@ import site from '@content/site.json'
 import social from '@content/social.json'
 import upcoming from '@content/upcoming.json'
 import who from '@content/who.json'
+import { CinemaHeader } from '@/cinema/CinemaHeader'
 import { CinemaHome } from '@/cinema/CinemaHome'
 import { Credits } from '@/cinema/scenes/Credits'
 import { Films } from '@/cinema/scenes/Films'
@@ -29,8 +30,7 @@ import { Words, type Read } from '@/cinema/scenes/Words'
 // Release states (Now playing, On set) are date-driven, so refresh hourly.
 export const revalidate = 3600
 
-// Scene order and names follow the design: "V9 · WebGL Cinema".
-const SCENES = ['Opening', 'Now playing', 'The films', 'On set now', 'The reel', 'Who she is', 'Memory lane', 'Photoshoots', 'Honours', 'In her words', 'Moments', 'Credits']
+// Scene order follows the design: "V9 · WebGL Cinema".
 
 // Play the film leader once per browser session; on return visits go straight to the title.
 const SKIP_LEADER = `try{if(sessionStorage.getItem('leader'))document.documentElement.classList.add('seen');else sessionStorage.setItem('leader','1')}catch(e){}`
@@ -56,9 +56,10 @@ function reads(): Read[] {
 export default function Home() {
   const now = new Date()
   return (
-    <CinemaHome scenes={SCENES}>
+    <CinemaHome>
       <script dangerouslySetInnerHTML={{ __html: SKIP_LEADER }} />
       <Opening name={site.name} tagline={site.tagline} reelHref="#s05" image={site.heroImage} imageAlt={site.heroImageAlt} />
+      <CinemaHeader brand={site.name} links={site.nav} />
       <NowPlaying data={crawl as RollData} now={now} />
       <Films films={reelWall.films} allHref="/work" />
       <OnSet films={upcoming.films as OnSetFilm[]} news={buzz.items.slice(0, 3).map((n) => ({ category: n.category, title: n.title, meta: n.meta, href: '/press#buzz' }))} updatesHref="/work#upcoming" now={now} />
