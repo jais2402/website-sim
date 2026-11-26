@@ -8,6 +8,12 @@ section.archive {
 /* Seven photos: one strip on wide screens. `ul.shots` outranks the shared .shots columns. */
 ul.shots {
   grid-template-columns: repeat(7, minmax(0, 1fr));
+  grid-auto-rows: auto;
+}
+
+/* The archive photos are 4:5; show them whole. */
+ul.shots > li {
+  aspect-ratio: 433 / 540;
 }
 
 .figure {

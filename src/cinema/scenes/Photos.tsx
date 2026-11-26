@@ -9,15 +9,6 @@ export type Photo = { ratio: string; image: string | null; alt?: string; message
 
 const PLATES = [s.m1, s.m2, s.m3]
 
-/**
- * Mosaic shape for each position, repeating every 12 photos. Two blocks that
- * each fill 4 columns × 3 rows exactly:
- *   A: big 2×2 · tall · small · small · wide 2×1 · small · small   (7 photos)
- *   B: tall · big 2×2 · tall · wide · wide                         (5 photos)
- */
-const SHAPES = ['big', 'tall', '', '', 'wide', '', '', 'tall', 'big', 'tall', 'wide', 'wide'] as const
-const SHAPE_CLASS: Record<string, string | undefined> = { big: s.shotBig, tall: s.shotTall, wide: s.shotWide }
-
 function DownloadIcon() {
   return (
     <svg width="12" height="12" viewBox="0 0 16 16" aria-hidden="true">
@@ -26,7 +17,7 @@ function DownloadIcon() {
   )
 }
 
-/** Scene 08: a mosaic of photos. Hover shows the set; click opens the photo full screen with download. */
+/** Scene 08: a masonry of photos, each at its own shape (never cropped). Hover shows the set; click opens it full screen. */
 export function Photos({ photos, allHref }: { photos: Photo[]; allHref?: string | null }) {
   const dialog = useRef<HTMLDialogElement>(null)
   const [open, setOpen] = useState(0)
@@ -56,9 +47,9 @@ export function Photos({ photos, allHref }: { photos: Photo[]; allHref?: string 
             </Link>
           )}
         </div>
-        <ul className={`${s.shots} ${s.reveal}`}>
+        <ul className={`${s.masonry} ${s.reveal}`}>
           {photos.map((p, k) => (
-            <li key={p.image ?? k} className={[s.shot, SHAPE_CLASS[SHAPES[k % 12]]].filter(Boolean).join(' ')}>
+            <li key={p.image ?? k} className={`${s.shot} ${s.brick}`} style={{ aspectRatio: p.ratio }}>
               {p.image ? (
                 <button type="button" className={s.shotOpen} onClick={() => show(p)} aria-label={`View full screen${p.alt ? `: ${p.alt}` : ''}`}>
                   <img className={`${s.cover} ${s.shotImg}`} src={p.image} alt="" loading="lazy" />

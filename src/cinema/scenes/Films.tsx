@@ -89,28 +89,25 @@ export function Films({ films, allHref, more }: { films: CinemaFilm[]; allHref: 
             <li key={f.slug} className={s.filmCell}>
               <Link
                 href={`${allHref}#${f.slug}`}
-                className={`${s.poster} ${s.tilt}`}
+                className={s.posterLink}
                 data-current={k === index || undefined}
-                onPointerMove={tilt.onPointerMove}
                 onPointerEnter={(e: PointerEvent<HTMLAnchorElement>) => e.pointerType === 'mouse' && setHovered(k)}
-                onPointerLeave={(e: PointerEvent<HTMLAnchorElement>) => {
-                  tilt.onPointerLeave(e)
-                  setHovered(null)
-                }}
+                onPointerLeave={() => setHovered(null)}
                 onFocus={() => setHovered(k)}
                 onBlur={() => setHovered(null)}
               >
-                {f.poster ? (
-                  <img src={f.poster} alt="" loading="lazy" className={s.cover} />
-                ) : (
-                  <>
-                    <span className={s.fill} style={{ background: art(f.cinema[0], f.cinema[1]) }} />
-                    <span className={`${s.mono} ${s.posterNote}`}>Key art</span>
-                  </>
-                )}
-                {playing === k && f.youtube && <YouTubeEmbed id={f.youtube} title={`${f.title} trailer`} mode="preview" />}
-                <span className={`${s.fill} ${s.posterShade}`} />
-                <span className={`${s.fill} ${s.sheen}`} aria-hidden="true" />
+                <span className={`${s.poster} ${s.tilt}`} data-current={k === index || undefined} onPointerMove={tilt.onPointerMove} onPointerLeave={tilt.onPointerLeave}>
+                  {f.poster ? (
+                    <img src={f.poster} alt="" loading="lazy" className={s.cover} />
+                  ) : (
+                    <>
+                      <span className={s.fill} style={{ background: art(f.cinema[0], f.cinema[1]) }} />
+                      <span className={`${s.mono} ${s.posterNote}`}>Key art</span>
+                    </>
+                  )}
+                  {playing === k && f.youtube && <YouTubeEmbed id={f.youtube} title={`${f.title} trailer`} mode="preview" />}
+                  <span className={`${s.fill} ${s.sheen}`} aria-hidden="true" />
+                </span>
                 <span className={s.posterText}>
                   <span className={s.posterTitle}>{f.title}</span>
                   <span className={`${s.mono} ${s.posterMeta}`}>

@@ -830,12 +830,35 @@
   color: rgb(245 242 236 / 0.6);
 }
 
+/* The poster card: the artwork frame, then its title and year underneath. */
+.posterLink {
+  display: block;
+  color: var(--ivory);
+}
+
+.page .posterLink:hover {
+  color: var(--ivory);
+}
+
 .posterText {
-  position: absolute;
-  inset: auto 18px 16px;
   display: flex;
   flex-direction: column;
   gap: 6px;
+  margin-top: 16px;
+  padding: 0 2px;
+  opacity: 0.6;
+  transition: opacity 0.4s ease;
+}
+
+.posterLink:hover .posterText,
+.posterLink:focus-visible .posterText,
+.posterLink[data-current] .posterText {
+  opacity: 1;
+}
+
+/* Keeps the Explore more card level with the poster frames beside it. */
+.filmCell:has(.moreCard) {
+  padding-bottom: 62px;
 }
 
 .posterTitle {
@@ -1436,18 +1459,16 @@
   background: #141210;
 }
 
-/* Mosaic shapes (see SHAPES in Photos.tsx). */
-.shotBig {
-  grid-column: span 2;
-  grid-row: span 2;
+/* Masonry: columns of photos at their own aspect ratio, so nothing is cropped. */
+.masonry {
+  columns: 4;
+  column-gap: 12px;
 }
 
-.shotTall {
-  grid-row: span 2;
-}
-
-.shotWide {
-  grid-column: span 2;
+.brick {
+  display: block;
+  margin-bottom: 12px;
+  break-inside: avoid;
 }
 
 .shotOpen {
@@ -2458,6 +2479,15 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
     grid-auto-rows: 160px;
     gap: 8px;
+  }
+
+  .masonry {
+    columns: 2;
+    column-gap: 8px;
+  }
+
+  .brick {
+    margin-bottom: 8px;
   }
 
   /* Touch: the set name stays visible, since there is no hover. */
