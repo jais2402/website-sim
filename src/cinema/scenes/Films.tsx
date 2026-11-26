@@ -1,7 +1,9 @@
 'use client'
 
 import Link from 'next/link'
-import { useRef, useState, type UIEvent } from 'react'
+import { useEffect, useRef, useState, type PointerEvent, type UIEvent } from 'react'
+import { YouTubeEmbed } from '@/components/ui/YouTubeEmbed'
+import { useReducedMotion } from '@/lib/motion'
 import { ShaderCanvas } from '../ShaderCanvas'
 import { Scene, Sub, art, tilt, trackPointer } from '../ui'
 import s from '../cinema.module.css'
@@ -14,6 +16,8 @@ export type CinemaFilm = {
   /** Billing line, e.g. "Lead". */
   meta: string
   poster: string | null
+  /** Trailer that plays silently inside the poster (YouTube id). */
+  youtube?: string | null
   /** [inner, outer] colours for the stand-in art and the background wash. */
   cinema: string[]
 }
@@ -26,6 +30,20 @@ export function Films({ films, allHref, more }: { films: CinemaFilm[]; allHref: 
   const timer = useRef<ReturnType<typeof setTimeout>>(undefined)
   const [index, setIndex] = useState(0)
   const [swapping, setSwapping] = useState(false)
+  const reduced = useReducedMotion()
+
+  // Trailers only run while the scene is on screen: the hovered poster, else the current one.
+  const stage = useRef<HTMLDivElement>(null)
+  const [inView, setInView] = useState(false)
+  const [hovered, setHovered] = useState<number | null>(null)
+  useEffect(() => {
+    const el = stage.current
+    if (!el) return
+    const io = new IntersectionObserver(([e]) => setInView(e.isIntersecting), { rootMargin: '100px' })
+    io.observe(el)
+    return () => io.disconnect()
+  }, [])
+  const playing = !reduced && inView ? (hovered ?? index) : -1
   const film = films[index]
 
   const onScroll = (e: UIEvent<HTMLUListElement>) => {
@@ -43,7 +61,7 @@ export function Films({ films, allHref, more }: { films: CinemaFilm[]; allHref: 
 
   return (
     <Scene n={3} name="The films">
-      <div className={s.stage} onPointerMove={trackPointer(pointer)}>
+      <div className={s.stage} ref={stage} onPointerMove={trackPointer(pointer)}>
         <div className={s.fill} style={{ background: art(film.cinema[0], film.cinema[1]) }}>
           <ShaderCanvas shader="film" pointer={pointer} colors={[film.cinema[0], film.cinema[1]]} />
         </div>
@@ -69,7 +87,19 @@ export function Films({ films, allHref, more }: { films: CinemaFilm[]; allHref: 
         <ul className={s.filmStrip} onScroll={onScroll}>
           {films.map((f, k) => (
             <li key={f.slug} className={s.filmCell}>
-              <Link href={`${allHref}#${f.slug}`} className={`${s.poster} ${s.tilt}`} data-current={k === index || undefined} {...tilt}>
+              <Link
+                href={`${allHref}#${f.slug}`}
+                className={`${s.poster} ${s.tilt}`}
+                data-current={k === index || undefined}
+                onPointerMove={tilt.onPointerMove}
+                onPointerEnter={(e: PointerEvent<HTMLAnchorElement>) => e.pointerType === 'mouse' && setHovered(k)}
+                onPointerLeave={(e: PointerEvent<HTMLAnchorElement>) => {
+                  tilt.onPointerLeave(e)
+                  setHovered(null)
+                }}
+                onFocus={() => setHovered(k)}
+                onBlur={() => setHovered(null)}
+              >
                 {f.poster ? (
                   <img src={f.poster} alt="" loading="lazy" className={s.cover} />
                 ) : (
@@ -78,6 +108,7 @@ export function Films({ films, allHref, more }: { films: CinemaFilm[]; allHref: 
                     <span className={`${s.mono} ${s.posterNote}`}>Key art</span>
                   </>
                 )}
+                {playing === k && f.youtube && <YouTubeEmbed id={f.youtube} title={`${f.title} trailer`} mode="preview" />}
                 <span className={`${s.fill} ${s.posterShade}`} />
                 <span className={`${s.fill} ${s.sheen}`} aria-hidden="true" />
                 <span className={s.posterText}>

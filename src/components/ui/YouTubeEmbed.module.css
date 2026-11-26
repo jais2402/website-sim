@@ -10,7 +10,7 @@
   container-type: size;
   pointer-events: none;
   opacity: 0;
-  transition: opacity 0.8s ease 0.6s; /* let the video start before it shows */
+  transition: opacity 0.8s ease;
 }
 
 .preview[data-ready] {

@@ -1,5 +1,5 @@
 {
-  "_note": "Posters, years, languages and roles come from the current simran.actor; replace posters with licensed key art before launch. `plate` is the brass label (language). `meta` is the role. `cinema` is the colour pair for the homepage WebGL wash.",
+  "_note": "Posters, years, languages and roles come from the current simran.actor; replace posters with licensed key art before launch. `plate` is the brass label (language). `meta` is the role. `cinema` is the colour pair for the homepage WebGL wash. `youtube` is the official trailer id that plays silently inside the poster on the homepage.",
   "films": [
     {
       "slug": "tourist-family",
@@ -17,7 +17,8 @@
       "cinema": [
         "#a8743a",
         "#3a2214"
-      ]
+      ],
+      "youtube": "9sH1PoGOydc"
     },
     {
       "slug": "good-bad-ugly",
@@ -35,7 +36,8 @@
       "cinema": [
         "#8e2a30",
         "#2a0d10"
-      ]
+      ],
+      "youtube": "bJbZAXbF3Xo"
     },
     {
       "slug": "andhagan",
@@ -53,7 +55,8 @@
       "cinema": [
         "#2f6d82",
         "#122733"
-      ]
+      ],
+      "youtube": "SM563_YbcuQ"
     },
     {
       "slug": "tiger-3",
@@ -71,7 +74,8 @@
       "cinema": [
         "#2f5a6a",
         "#0f1a20"
-      ]
+      ],
+      "youtube": "vEjTUDjjU6A"
     },
     {
       "slug": "gulmohar",
@@ -89,7 +93,8 @@
       "cinema": [
         "#9a5468",
         "#2b1f22"
-      ]
+      ],
+      "youtube": "dF-DUTR7rxY"
     },
     {
       "slug": "rocketry-the-nambi-effect",
@@ -107,7 +112,8 @@
       "cinema": [
         "#3c5596",
         "#141a33"
-      ]
+      ],
+      "youtube": "wwGbt878_g0"
     },
     {
       "slug": "paava-kadhaigal",
@@ -125,7 +131,8 @@
       "cinema": [
         "#6d4a95",
         "#21152e"
-      ]
+      ],
+      "youtube": "MteHcVk-_jo"
     },
     {
       "slug": "petta",
@@ -143,7 +150,8 @@
       "cinema": [
         "#b0602a",
         "#33190b"
-      ]
+      ],
+      "youtube": "FCB0ZfQ9Rzs"
     }
   ],
   "more": {
