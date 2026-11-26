@@ -59,3 +59,13 @@ Run `npm run content:check` for the full list. The blocking client assets are in
 Four scenes draw a fragment shader behind their content (projector light, film wash, memory burn, stars). `ShaderCanvas` only renders while its scene is on screen, caps the pixel ratio, and draws a single still frame under `prefers-reduced-motion`. If the browser has no GPU acceleration, reports a software renderer, or cannot hold about 24fps, the canvas is hidden and the CSS gradient behind it shows instead, so the page never stalls.
 
 The film leader (3 · 2 · 1) plays once per browser session.
+
+## Password-protecting a preview
+
+Vercel's own Password Protection needs a paid plan. This site has its own gate instead (`src/proxy.ts`), which works on any plan:
+
+1. In Vercel: Project → Settings → Environment Variables, add `SITE_PASSWORD` (and optionally `SITE_USER`, default `simran`).
+2. Redeploy. Visitors get the browser's sign-in prompt; images and pages all stay behind it.
+3. Delete `SITE_PASSWORD` and redeploy to open the site to everyone.
+
+Locally the gate stays off unless you set the variable, e.g. `SITE_PASSWORD=secret npm start`.
